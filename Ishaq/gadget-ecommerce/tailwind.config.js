@@ -22,9 +22,9 @@ module.exports = {
     // },
     extend: {
       backgroundImage: {
-        'hero-rectangle': "url('/src/assets/img/hero-pattern.svg')",
-        'hero-wave': "url('/src/assets/img/bg-vector.svg')",
-        'hero-vector': "url('/src/assets/img/hero-pattern.svg')"
+        'hero-rectangle': "url('/src/assets/img/bg-rectangle.svg')",
+        'hero-wave': "url('/src/assets/img/bg-wave.svg')",
+        'hero-vector': "url('/src/assets/img/bg-vector.svg')"
       },
       fontFamily: {
         'sans': ['"Plus Jakarta Sans"', ...defaultTheme.fontFamily.sans],
