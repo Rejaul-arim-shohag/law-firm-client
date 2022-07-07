@@ -13,13 +13,13 @@ export default function Stats() {
         {
           data?.map((item, index) => (
             <div
-              className="flex flex-col text-left rounded-lg"
+              className="flex flex-col md:text-left text-center rounded-lg"
             >
-              <dd className="font-bold text-3xl">
+              <dd className="font-bold md:text-3xl text-xl">
                 {item.state}
                 {/* <NumberFormat value={item.state} displayType={'text'} thousandsGroupStyle="thousand" suffix="k" /> */}
               </dd>
-              <dt className="text-sm text-dark">
+              <dt className="md:text-sm text-xs text-dark">
                 {item.title}
               </dt>
 

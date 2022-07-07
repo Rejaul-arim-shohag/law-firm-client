@@ -36,13 +36,13 @@ export default function HeroSlider() {
         <div className="slider_card h-full w-full">
             <div className="relative">
                 <div className="w-full flex justify-center items-center" >
-                    <div className=" outline outline-offset-8 outline-primary w-[35rem] h-[35rem]  rounded-full p-10">
-                        <div className="h-full w-full rounded-full bg-primary p-10">
+                    <div className=" outline outline-offset-8 outline-primary w-72 h-72 md:w-[35rem] md:h-[35rem]  rounded-full p-5 md:p-10">
+                        <div className="h-full w-full rounded-full bg-primary md:p-10 p-5">
                             <div className="relative">
                                 <Slider ref={c => (slider.current = c)} {...settings}>
                                     {
                                         heroSlider?.map((item, index) => (
-                                            <div className="rounded-full w-full h-full p-12 ">
+                                            <div className="rounded-full w-full h-full md:p-12 p-5">
                                                 <img src="/images/recent/1.jpg" alt="" className='rounded ' />
                                             </div>
                                         ))
