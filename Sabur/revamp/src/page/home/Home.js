@@ -9,7 +9,6 @@ class Home extends Component {
         return (
             <Fragment>
                 <AppNavbar/>
-                <h2> Home </h2>
             </Fragment>
         );
     }
