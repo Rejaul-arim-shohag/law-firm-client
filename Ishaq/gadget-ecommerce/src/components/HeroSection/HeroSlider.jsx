@@ -7,11 +7,7 @@ import "./HeroSlider.scss";
 export default function HeroSlider() {
     const [heroSlider, setHeroSlider] = useState([]);
     const slider = useRef()
-    const { isLoading, error, data, isFetching } = useQuery("heroPhoto", () =>
-        axios.get(
-            "/data/interior.json"
-        ).then(({ data }) => data)
-    );
+    const { isLoading, error, data, isFetching } = useQuery("heroSliderImg", () => axios.get("/data/sliderBanner.json").then(({ data }) => data));
 
     useEffect(() => setHeroSlider(data), [data])
 
@@ -37,16 +33,17 @@ export default function HeroSlider() {
 
 
     return (
-        <div className="slider_card h-96 w-96">
+        <div className="slider_card h-full w-96">
             <Slider ref={c => (slider.current = c)} {...settings}>
                 {
                     heroSlider?.map((item, index) => {
                         return (
-                            <div className=" h-full w-full relative ">
-                                <img src={item.src} alt="" className='h-100 w-100 rounded' />
-                                <div className="slider_badge bg-primary  d-flex  ">
+                            <div className=" relative " key={index}>
+                                <img src={item.src} alt="" className=' rounded' />
+                                {/* <div className="slider_badge bg-primary  d-flex  ">
                                     <h6 className='text-light my-auto mx-auto text-uppercase mw-bold'>{item.name}</h6>
-                                </div>
+                                </div> */}
+                                {/* <h1>Hello mom</h1> */}
                             </div>
                         )
                     })
@@ -55,10 +52,10 @@ export default function HeroSlider() {
             </Slider>
 
 
-            <div className=" mt-3 d-flex gap-3 justify-content-center">
+            {/* <div className=" mt-3 flex gap-3 justify-center">
                 <button onClick={() => slider.current.slickPrev()} className='testimonialNav rounded-pill px-1 py-1 fw-bold bg-primary text-light border-0'> <HiOutlineChevronLeft className='m-2' /></button>
                 <button onClick={() => slider.current.slickNext()} className='testimonialNav rounded-pill px-1 py-1 fw-bold  bg-primary text-light border-0'> <HiOutlineChevronRight className='m-2' /></button>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -7,20 +7,24 @@ module.exports = {
   theme: {
     container: {
       center: true,
+      padding: '10rem',
     },
     colors:{
+      transparent: 'transparent',
+      current: 'currentColor',
       'primary':"#21BF73",
       'secondary':"#B0EACD",
-      'dark':"#2E374F"
+      'dark':"#2E374F",
+      'white':"#fff"
     },
     // fontFamily: {
     //   'body': ['"Plus Jakarta Sans"']
     // },
     extend: {
       backgroundImage: {
-        'hero-rectangle': "url('/img/hero-pattern.svg')",
-        'hero-wave': "url('/img/hero-pattern.svg')",
-        'hero-vector': "url('/img/hero-pattern.svg')",
+        'hero-rectangle': "url('/src/assets/img/hero-pattern.svg')",
+        'hero-wave': "url('/src/assets/img/bg-vector.svg')",
+        'hero-vector': "url('/src/assets/img/hero-pattern.svg')"
       },
       fontFamily: {
         'sans': ['"Plus Jakarta Sans"', ...defaultTheme.fontFamily.sans],
