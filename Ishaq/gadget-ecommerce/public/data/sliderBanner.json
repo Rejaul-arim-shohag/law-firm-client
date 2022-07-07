@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Cutting room",
+        "src": "/images/banner/pro-1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Manicure-Pedicure room",
+        "src": "/images/banner/pro-2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Cutting room",
+        "src": "/images/banner/pro-1.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Manicure-Pedicure room",
+        "src": "/images/banner/pro-2.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Cutting room",
+        "src": "/images/banner/pro-1.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Manicure-Pedicure room",
+        "src": "/images/banner/pro-2.jpg"
+    }
+]
