@@ -7,6 +7,9 @@ import Courses from "./page/courses/Courses";
 import Contact from "./page/contact/Contact";
 import Join from "./page/join/Join";
 
+// Include Style
+import './assets/app.css';
+
 // React Router
 import {Route, Routes} from "react-router-dom";
 
