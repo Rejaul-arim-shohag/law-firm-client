@@ -34,42 +34,38 @@ export default function HeroSlider() {
 
     return (
         <div className="slider_card h-full w-full">
-            <div className="relative ">
+            <div className="relative">
                 <div className="w-full flex justify-center items-center" >
                     <div className=" outline outline-offset-8 outline-primary w-[35rem] h-[35rem]  rounded-full p-10">
                         <div className="h-full w-full rounded-full bg-primary p-10">
-                            <img src="/images/recent/1.jpg" alt="" className=' rounded-full w-full h-full' />
+                            <div className="relative">
+                                <Slider ref={c => (slider.current = c)} {...settings}>
+                                    {
+                                        heroSlider?.map((item, index) => (
+                                            <div className="rounded-full w-full h-full p-12 ">
+                                                <img src="/images/recent/1.jpg" alt="" className='rounded ' />
+                                            </div>
+                                        ))
+                                    }
 
+                                </Slider>
+                            </div>
+
+                        </div>
+                        <div className="ml-2 flex gap-3 justify-center">
+                            <button onClick={() => slider.current.slickPrev()} className=' rounded-full px-1 py-1 fw-bold bg-primary text-white border-0'> <HiOutlineChevronLeft className='m-2' /></button>
+                            <button onClick={() => slider.current.slickNext()} className=' rounded-full px-1 py-1 fw-bold  bg-primary text-white border-0'> <HiOutlineChevronRight className='m-2' /></button>
                         </div>
 
                     </div>
 
+
                 </div>
-                {/* <Slider ref={c => (slider.current = c)} {...settings}>
-                    {
-                        heroSlider?.map((item, index) => {
-                            return (
-                                <div className="w-full" key={index}>
-                                    <div className=" outline outline-offset-8 outline-primary w-full h-full  rounded-full">
-                                        <div className="h-full w-full rounded-full bg-primary">
-                                        <img src={item.src} alt="" className=' rounded w-1/2 h-1/2' />
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            )
-                        })
-                    }
-
-                </Slider> */}
 
 
-                {/* <div className=" mt-3 flex gap-3 justify-center">
-                <button onClick={() => slider.current.slickPrev()} className='testimonialNav rounded-pill px-1 py-1 fw-bold bg-primary text-light border-0'> <HiOutlineChevronLeft className='m-2' /></button>
-                <button onClick={() => slider.current.slickNext()} className='testimonialNav rounded-pill px-1 py-1 fw-bold  bg-primary text-light border-0'> <HiOutlineChevronRight className='m-2' /></button>
-            </div> */}
+
+
+
             </div>
         </div>
     )

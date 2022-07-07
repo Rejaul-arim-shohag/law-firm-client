@@ -6,7 +6,7 @@ import Stats from './Stats'
 export default function HeroSection() {
 
   return (
-    <div className='relative bg-gradient-to-r from-[#b0eacd8b]'>
+    <div className='relative py-16 bg-gradient-to-r from-[#b0eacd8b]'>
       <div className="w-full  h-full absolute top-0 left-0 bg-hero-wave bg-contain bg-left bg-no-repeat"></div>
       <div className="w-1/3 h-full absolute top-0 right-0 bg-secondary rounded-bl-[10rem]"></div>
       <div className="flex container justify-between pt-14">

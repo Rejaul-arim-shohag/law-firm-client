@@ -16,10 +16,10 @@ export default function RecentProducts() {
         {
           data?.map((item, index) => (
             <Link
-              to="/" className={`z-10 block p-4  text-green-700 transition-all border-2 border-white rounded-full  hover:scale-110 focus:outline-none focus:ring`}
+              to="/" className={`z-10 block  h-16 w-16 text-green-700 transition-all border-2 border-white rounded-full  hover:scale-110 focus:outline-none focus:ring`}
               type="button" key={index}
             >
-             {/* <img src={item.src} alt="" className='h-5 w-5'/> */}
+             <img src={item.src} alt="" className='rounded-full h-full w-full'/> 
             </Link>
           ))
         }
