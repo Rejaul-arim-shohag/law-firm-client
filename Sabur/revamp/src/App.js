@@ -1,3 +1,4 @@
+import React, {Fragment} from 'react';
 
 // Page Include
 import Home from "./page/home/Home";
@@ -6,17 +7,21 @@ import Courses from "./page/courses/Courses";
 import Contact from "./page/contact/Contact";
 import Join from "./page/join/Join";
 
+// React Router
+import {Route, Routes} from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
-      <h1 className="h6"> Bootstrap Install...!! </h1>
-
-        <Home/>
-        <About/>
-        <Courses/>
-        <Contact/>
-        <Join/>
-    </div>
+      <Fragment>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/join" element={<Join />} />
+        </Routes>
+      </Fragment>
   );
 }
 
