@@ -1,6 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import {Form, Button} from "react-bootstrap";
 
+// Image Include
+import circlePath from '../../assets/images/circle-shape.svg';
+
 // Images
 import react from '../../assets/images/react-icon.svg';
 import vue from '../../assets/images/vue-icon.svg';
@@ -12,6 +15,7 @@ import java from '../../assets/images/java-icon.svg';
 import kotlin from '../../assets/images/kotlin-icon.svg';
 import python from '../../assets/images/python-icon.svg';
 import laravel from '../../assets/images/laravel-icon.svg';
+import rabbilVai from '../../assets/images/rabbil-vai.png';
 
 // Include Style
 import './hero.css';
@@ -68,8 +72,11 @@ class Hero extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-6 col-12 min-vh-100 d-flex align-items-center">
-                                    <h2>right</h2>
+                                <div className="col-lg-6 col-12 min-vh-100 d-flex align-items-center justify-content-lg-start justify-content-md-center">
+                                    <div className="position-relative pseudo-border">
+                                        <img className="h-450 rounded-circle position-relative position-right--80" src={circlePath} alt="Circle path"/>
+                                        <img className="w-397 h-600 position-absolute position-bottom--2 position-left-107" src={rabbilVai} alt="Circle path"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
