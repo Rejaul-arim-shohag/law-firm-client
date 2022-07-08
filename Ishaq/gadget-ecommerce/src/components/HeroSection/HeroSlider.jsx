@@ -33,29 +33,40 @@ export default function HeroSlider() {
 
 
     return (
-        <div className="slider_card h-full w-96">
-            <Slider ref={c => (slider.current = c)} {...settings}>
-                {
-                    heroSlider?.map((item, index) => {
-                        return (
-                            <div className=" relative " key={index}>
-                                <img src={item.src} alt="" className=' rounded' />
-                                {/* <div className="slider_badge bg-primary  d-flex  ">
-                                    <h6 className='text-light my-auto mx-auto text-uppercase mw-bold'>{item.name}</h6>
-                                </div> */}
-                                {/* <h1>Hello mom</h1> */}
+        <div className="slider_card h-full w-full">
+            <div className="relative">
+                <div className="w-full flex justify-center items-center" >
+                    <div className=" outline outline-offset-8 outline-primary w-72 h-72 md:w-[35rem] md:h-[35rem]  rounded-full p-5 md:p-10">
+                        <div className="h-full w-full rounded-full bg-primary md:p-10 p-5">
+                            <div className="relative">
+                                <Slider ref={c => (slider.current = c)} {...settings}>
+                                    {
+                                        heroSlider?.map((item, index) => (
+                                            <div className="rounded-full w-full h-full md:p-12 p-5">
+                                                <img src="/images/recent/1.jpg" alt="" className='rounded ' />
+                                            </div>
+                                        ))
+                                    }
+
+                                </Slider>
                             </div>
-                        )
-                    })
-                }
 
-            </Slider>
+                        </div>
+                        <div className="ml-2 flex gap-3 justify-center">
+                            <button onClick={() => slider.current.slickPrev()} className=' rounded-full px-1 py-1 fw-bold bg-primary text-white border-0'> <HiOutlineChevronLeft className='m-2' /></button>
+                            <button onClick={() => slider.current.slickNext()} className=' rounded-full px-1 py-1 fw-bold  bg-primary text-white border-0'> <HiOutlineChevronRight className='m-2' /></button>
+                        </div>
+
+                    </div>
 
 
-            {/* <div className=" mt-3 flex gap-3 justify-center">
-                <button onClick={() => slider.current.slickPrev()} className='testimonialNav rounded-pill px-1 py-1 fw-bold bg-primary text-light border-0'> <HiOutlineChevronLeft className='m-2' /></button>
-                <button onClick={() => slider.current.slickNext()} className='testimonialNav rounded-pill px-1 py-1 fw-bold  bg-primary text-light border-0'> <HiOutlineChevronRight className='m-2' /></button>
-            </div> */}
+                </div>
+
+
+
+
+
+            </div>
         </div>
     )
 }
