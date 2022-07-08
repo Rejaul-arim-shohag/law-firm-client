@@ -25,13 +25,13 @@ class Hero extends Component {
         return (
             <Fragment>
                 <div className="top-corner-bg">
-                    <div className="container-fluid">
+                    <div className="container-fluid my-50">
                         <div className="container">
-                            <div className="row">
-                                <div className="col-lg-6 col-12 min-vh-100 d-flex align-items-center justify-content-lg-start justify-content-md-center bg-big-shadow">
+                            <div className="row flex-wrap-reverse-M992">
+                                <div className="col-lg-6 col-12 min-100-vh d-flex align-items-center justify-content-lg-start justify-content-md-center bg-big-shadow min-ha-M992">
                                     <div>
                                         <h2 className="themeDarkColor fw-bold headline-1 hero-headline-1-res">Learn Confidently with <br/> <span className="text-uppercase themeColor dot">Rabbil Hasan</span> </h2>
-                                        <p className="themeDarkColor fs-5 my-4 opacity-80"> Are you looking for amazing e-course platform? <br /> Don't worry! We got it for you! </p>
+                                        <p className="themeDarkColor fs-5 my-4 opacity-80"> Are you looking for amazing e-course platform? <br className="d-none d-sm-block" /> Don't worry! We got it for you! </p>
                                         <div className="position-relative search-courses">
                                             <Form className="d-flex">
                                                 <Form.Control
@@ -64,18 +64,17 @@ class Hero extends Component {
                                             <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-warning ml--25" src={php} alt="react icon"/>
                                             <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-dark ml--25" src={dart} alt="react icon"/>
                                             <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-primary ml--25" src={flutter} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-secondary ml--25" src={java} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-warning ml--25" src={kotlin} alt="react icon"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-secondary ml--25 d-none d-sm-block" src={java} alt="react icon"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-warning ml--25 d-none d-sm-block" src={kotlin} alt="react icon"/>
                                             <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-info ml--25" src={python} alt="react icon"/>
                                             <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-danger ml--25" src={laravel} alt="react icon"/>
                                             <span className="themeWhiteBG h-60 w-60 p-12 rounded-circle border border-success bw-2 ml--25 d-inline-block headline-4 fw-bold bodyXLarge">20+</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-6 col-12 min-vh-100 d-flex align-items-center justify-content-lg-start justify-content-md-center">
+                                <div className="col-lg-6 col-12 min-100-vh d-flex align-items-center justify-content-lg-start justify-content-md-center min-ha-M992">
                                     <div className="position-relative pseudo-border">
-                                        <img className="h-450 rounded-circle position-relative position-right--80" src={circlePath} alt="Circle path"/>
-                                        <img className="w-397 h-600 position-absolute position-bottom--2 position-left-107" src={rabbilVai} alt="Circle path"/>
+                                        <img className="img-fluid position-relative position-right--30 position-right-0-M575 position-top--50" src={rabbilVai} alt="Circle path"/>
                                     </div>
                                 </div>
                             </div>

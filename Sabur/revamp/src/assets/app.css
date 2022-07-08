@@ -247,19 +247,20 @@ a {
 
 .pseudo-border::before {
     content: '';
-    height: 130%;
-    width: 130%;
+    height: 85%;
+    width: 85%;
     border: 2px solid var(--themeColor);
     position: absolute;
-    display: block;
-    /* background: red; */
-    top: -18%;
-    left: 3%;
-    /* z-index: 9; */
+    top: 10%;
+    left: 12%;
     border-radius: 50%;
     border-right-color: #21bf7352;
     border-bottom-color: #21bf7352;
-    transform: rotate(-55deg);
+    transform: rotate(-49deg);
+}
+
+.min-100-vh {
+    min-height: 100vh;
 }
 
 /* Buttons */
@@ -269,7 +270,6 @@ a {
     font-weight: bold;
     padding: 12px 30px;
     border: 9px solid var(--themeWhiteColor);
-    /*border-color: var(--themeWhiteColor);*/
 }
 
 .search-btn:hover {
@@ -374,20 +374,45 @@ a {
     bottom: 0;
 }
 
-.position-left-107 {
-    left: 107px;
+.position-right--30 {
+    right: -30px;
 }
 
-.position-right--80 {
-    right: -80px;
-}
-
-.position-bottom--2 {
-    bottom: -2px;
+.position-top--50 {
+    top: -50px;
 }
 
 /* Responsive */
-@media only screen and (min-width: 992px) and (max-width: 1400px) {
+@media only screen and (max-width: 1400px) {
+    .pseudo-border::before {
+        top: 9%;
+        left: 13%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .pseudo-border::before {
+        top: 7%;
+        left: 14%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .flex-wrap-reverse-M992 {
+        flex-wrap: wrap-reverse;
+    }
+
+    .pseudo-border::before {
+        top: 11%;
+        left: 12%;
+    }
+
+    .min-ha-M992 {
+        min-height: auto !important;
+    }
+}
+
+    @media only screen and (min-width: 992px) and (max-width: 1400px) {
     .hero-headline-1-res {
         font-size: 42px !important;
     }
@@ -397,10 +422,49 @@ a {
     .hero-headline-1-res {
         font-size: 32px !important;
     }
+
+    .pseudo-border::before {
+        top: 8%;
+        left: 13%;
+        transform: rotate(0);
+    }
+
+    .top-corner-bg::before {
+        display: none;
+    }
+
+    .top-corner-bg {
+        background-position: top;
+    }
+
+    .my-50 {
+        margin: 50px 0;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .position-right-0-M575 {
+        right: 0;
+    }
+
+    .pseudo-border::before {
+        left: 7%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .pseudo-border::before {
+        top: 6%;
+    }
 }
 
 @media only screen and (max-width: 390px) {
     .hero-headline-1-res {
         font-size: 25px !important;
+    }
+
+    .pseudo-border::before {
+        top: 3%;
+        left: 7%;
     }
 }
