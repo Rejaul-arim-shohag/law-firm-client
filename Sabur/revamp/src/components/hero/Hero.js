@@ -24,7 +24,7 @@ class Hero extends Component {
     render() {
         return (
             <Fragment>
-                <div className="top-corner-bg">
+                <div className="top-corner-bg lightDeepBG-2 pb-lg-0 pt-lg-0 pt-5 pb-3">
                     <div className="container-fluid my-50">
                         <div className="container">
                             <div className="row flex-wrap-reverse-M992">
@@ -46,18 +46,18 @@ class Hero extends Component {
                                         <div className="row text-center my-4">
                                             <div className="col-4">
                                                 <h2 className="headline-3 themeDarkColor fw-bold"> 2617 </h2>
-                                                <p className="themeDarkColor opacity-80"> Enrolled Students </p>
+                                                <p className="themeDarkColor opacity-80 mb-0"> Enrolled Students </p>
                                             </div>
                                             <div className="col-4">
                                                 <h2 className="headline-3 themeDarkColor fw-bold"> 902 </h2>
-                                                <p className="themeDarkColor opacity-80"> Online Course </p>
+                                                <p className="themeDarkColor opacity-80 mb-0"> Online Course </p>
                                             </div>
                                             <div className="col-4">
                                                 <h2 className="headline-3 themeDarkColor fw-bold"> 30K </h2>
-                                                <p className="themeDarkColor opacity-80"> Platform Followers </p>
+                                                <p className="themeDarkColor opacity-80 mb-0"> Platform Followers </p>
                                             </div>
                                         </div>
-                                        <div className="d-flex">
+                                        <div className="d-flex justify-content-center justify-content-lg-start">
                                             <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-info" src={react} alt="react icon"/>
                                             <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-success ml--25" src={vue} alt="react icon"/>
                                             <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-dark ml--25" src={js} alt="react icon"/>
