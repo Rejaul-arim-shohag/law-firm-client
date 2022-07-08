@@ -37,7 +37,7 @@ class Hero extends Component {
                                                 <Form.Control
                                                     type="search"
                                                     placeholder="Courses Name..."
-                                                    className="me-2 border-0 rounded-pill shadow-lg ps-4 h-65"
+                                                    className="me-2 border-0 rounded-pill shadow-lg ps-4 h-65 input-search-pr"
                                                     aria-label="Search"
                                                 />
                                                 <Button className="position-absolute rounded-pill text-white themeBG search-btn" variant="outline-success">Search Courses</Button>
