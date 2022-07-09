@@ -7,16 +7,16 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '9rem',
     },
-    colors:{
-      transparent: 'transparent',
-      current: 'currentColor',
-      'primary':"#21BF73",
-      'secondary':"#B0EACD",
-      'dark':"#2E374F",
-      'white':"#fff"
-    },
+    // colors:{
+    //   transparent: 'transparent',
+    //   current: 'currentColor',
+    //   'primary':"#21BF73",
+    //   'secondary':"#B0EACD",
+    //   'dark':"#2E374F",
+    //   'white':"#fff"
+    // },
     // fontFamily: {
     //   'body': ['"Plus Jakarta Sans"']
     // },
@@ -28,6 +28,14 @@ module.exports = {
       },
       fontFamily: {
         'sans': ['"Plus Jakarta Sans"', ...defaultTheme.fontFamily.sans],
+      },
+      colors:{
+        transparent: 'transparent',
+        current: 'currentColor',
+        'primary':"#21BF73",
+        'secondary':"#B0EACD",
+        'dark':"#2E374F",
+        'white':"#fff"
       },
     },
   },

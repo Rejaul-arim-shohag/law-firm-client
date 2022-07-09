@@ -43,7 +43,7 @@ export default function HeroSlider() {
                                     {
                                         heroSlider?.map((item, index) => (
                                             <div className="rounded-full w-full h-full md:p-12 p-5">
-                                                <img src="/images/recent/1.jpg" alt="" className='rounded ' />
+                                                <img src="/images/recent/1.jpg" alt="" className='rounded-3xl ' />
                                             </div>
                                         ))
                                     }
