@@ -3,6 +3,7 @@ import DropDown from './DropDown'
 import ProductCard from './ProductCard'
 import Slider from 'react-slick';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 export default function ProductSlider() {
     const slider = useRef()
@@ -57,6 +58,7 @@ export default function ProductSlider() {
                 {/* grid grid-cols-2 md:grid-cols-5 gap-3 */}
                 <div className="mt-16 relative w-full">
                     <div className="bg-hero-spiral bg-no-repeat bg-contain absolute -top-[10%] -left-[15%] md:-top-1/4  md:-left-[5%]  w-1/2 h-1/2 md:w-full md:h-full"></div>
+                    <Link to="/" className="bg-hero-spiral bg-no-repeat bg-contain absolute -top-10 right-0 flex justify-center items-center   gap-2 text-sm rounded-sm text-primary border border-primary px-3"> <span>See all</span> <HiOutlineChevronRight className=''/> </Link>
 
                     <Slider ref={c => (slider.current = c)} {...settings}>
 
