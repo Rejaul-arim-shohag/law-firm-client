@@ -313,6 +313,16 @@ a {
     background-color: var(--themeDarkColor);
 }
 
+.small-dot::after {
+    content: '';
+    height: 6px;
+    width: 6px;
+    margin-left: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: var(--themeColor);
+}
+
 /* Height & Width */
 .h-65 {
     height: 65px;
