@@ -5,6 +5,8 @@ import Stats from './Stats'
 
 export default function HeroSection() {
 
+
+
   return (
     <div className='relative md:py-16 py-10 pt-24 md:pt-16 bg-gradient-to-r from-[#b0eacd8b]'>
       <div className="w-full hidden md:block   h-full absolute -top-64 md:top-0 left-0 bg-hero-wave bg-contain bg-left bg-no-repeat"></div>

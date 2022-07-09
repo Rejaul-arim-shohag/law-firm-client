@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import "./HeroSlider.scss";
 export default function HeroSlider() {
     const [heroSlider, setHeroSlider] = useState([]);
-    const slider = useRef()
+    const slider = useRef();
     const { isLoading, error, data, isFetching } = useQuery("heroSliderImg", () => axios.get("/data/sliderBanner.json").then(({ data }) => data));
 
     useEffect(() => setHeroSlider(data), [data])

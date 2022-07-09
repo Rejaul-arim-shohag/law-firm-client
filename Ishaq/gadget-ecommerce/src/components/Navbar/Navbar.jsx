@@ -1,9 +1,8 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { Fragment } from 'react'
-import { BsApple,BsHouse } from 'react-icons/bs'
+import { BsApple, BsHouse } from 'react-icons/bs'
 import { GiSmartphone } from 'react-icons/gi'
 import { SiSamsung, SiXiaomi } from 'react-icons/si'
 import { Link } from 'react-router-dom'
@@ -11,27 +10,27 @@ import { Link } from 'react-router-dom'
 const smartphones = [
   {
     name: 'Apple',
-    to: '#',
+    to: '/',
     icon: <BsApple />,
   },
   {
     name: 'Xiaomi',
-    to: '#',
+    to: '/',
     icon: <SiXiaomi />,
   },
   {
     name: 'Samsung',
-    to: '#',
+    to: '/',
     icon: <SiSamsung />
   },
   {
     name: 'OPPO',
-    to: '#',
+    to: '/',
     icon: <GiSmartphone />,
   },
   {
     name: 'Vivo',
-    to: '#',
+    to: '/',
     icon: <GiSmartphone />,
   },
 ]
@@ -39,27 +38,27 @@ const smartphones = [
 const menu = [
   {
     name: 'Home',
-    to: '#',
+    to: '/',
     icon:  <BsHouse />,
   },
   {
     name: 'Smartphones',
-    to: '#',
+    to: '/',
     icon:  <GiSmartphone />,
   },
   {
     name: 'Mobile Accessories',
-    to: '#',
+    to: '/',
     icon:  <GiSmartphone />,
   },
   {
     name: 'About',
-    to: '#',
+    to: '/',
     icon:  <GiSmartphone />,
   },
   {
     name: 'Contact',
-    to: '#',
+    to: '/',
     icon:  <GiSmartphone />,
   },
 ]
@@ -75,10 +74,10 @@ export default function Example() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link to="/" className='bg-dark md:text-3xl py-2 px-4 rounded-tr-2xl'>
+            <Link to="/" className='bg-dark md:text-sm py-2 px-4 rounded-tr-2xl'>
               <span className='text-primary'>gadget</span>
               <br />
-              <span className='text-white uppercase font-bold'>Shop <span className='bg-primary rounded-full h-2 w-2 inline-block'></span></span>
+              <span className='text-white uppercase font-bold'>Shop <span className='bg-primary rounded-full h-1 w-1 inline-block'></span></span>
 
             </Link>
           </div>
@@ -141,13 +140,13 @@ export default function Example() {
               )}
             </Popover>
 
-            <Link to="#" className="text-base font-medium text-dark hover:text-gray-400">
+            <Link to="/" className="text-base font-medium text-dark hover:text-gray-400">
               Mobile Accessories
             </Link>
-            <Link to="#" className="text-base font-medium text-dark hover:text-gray-400">
+            <Link to="/" className="text-base font-medium text-dark hover:text-gray-400">
               About
             </Link>
-            <Link to="#" className="text-base font-medium text-dark hover:text-gray-400">
+            <Link to="/" className="text-base font-medium text-dark hover:text-gray-400">
               Contact
             </Link>
 
