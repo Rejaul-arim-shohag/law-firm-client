@@ -1,15 +1,14 @@
 import axios from 'axios';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import { useQuery } from 'react-query';
 import Slider from 'react-slick';
 import "./HeroSlider.scss";
 export default function HeroSlider() {
-    const [heroSlider, setHeroSlider] = useState([]);
     const slider = useRef();
     const { isLoading, error, data, isFetching } = useQuery("heroSliderImg", () => axios.get("/data/sliderBanner.json").then(({ data }) => data));
 
-    useEffect(() => setHeroSlider(data), [data])
+  
 
 
     // if (testimonial?.length === 0) {
@@ -41,7 +40,7 @@ export default function HeroSlider() {
                             <div className="relative">
                                 <Slider ref={c => (slider.current = c)} {...settings}>
                                     {
-                                        heroSlider?.map((item, index) => (
+                                        data?.map((item, index) => (
                                             <div className="rounded-full w-full h-full md:p-12 p-5">
                                                 <img src="/images/recent/1.jpg" alt="" className='rounded-3xl ' />
                                             </div>

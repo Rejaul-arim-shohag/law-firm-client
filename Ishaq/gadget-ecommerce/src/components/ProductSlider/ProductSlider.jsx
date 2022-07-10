@@ -4,7 +4,7 @@ import ProductCard from './ProductCard'
 import Slider from 'react-slick';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
-
+import "./ProductSlider.scss"
 export default function ProductSlider() {
     const slider = useRef()
 
