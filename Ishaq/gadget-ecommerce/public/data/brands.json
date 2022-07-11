@@ -1,0 +1,40 @@
+[
+    {
+        "id": 3,
+        "src": "/images/brands/apple.svg"
+    },
+    {
+        "id": 4,
+        "src": "/images/brands/samsung.svg"
+    },
+    {
+        "id": 5,
+        "src": "/images/brands/huawei.svg"
+    },
+    {
+        "id": 3,
+        "src": "/images/brands/nokia.svg"
+    },
+    {
+        "id": 4,
+        "src": "/images/brands/one-plus.svg"
+    },
+
+    {
+        "id": 5,
+        "src": "/images/brands/apple.svg"
+    },
+    {
+        "id": 3,
+        "src": "/images/brands/nokia.svg"
+    },
+    {
+        "id": 4,
+        "src": "/images/brands/one-plus.svg"
+    },
+
+    {
+        "id": 5,
+        "src": "/images/brands/apple.svg"
+    }
+]
