@@ -218,6 +218,11 @@ body {
     background-image: url("../assets/images/section-title-bg.svg");
 }
 
+.small-section-title {
+    text-align: center;
+    font-size: var(--bodySmal);
+}
+
 .text-overflow-hidden {
     width: 100%;
     overflow: hidden;
@@ -369,8 +374,20 @@ a {
     padding-top: -10px;
 }
 
-.p-12 {
-    padding: 12px;
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.mb-ce-12 p {
+    margin-bottom: 12px;
+}
+
+.mb-ce-12 p:last-child {
+    margin-bottom: 0;
+}
+
+.pb-ce-55-last-child p:last-child {
+    padding-bottom: 55px;
 }
 
 /* Background Images */
