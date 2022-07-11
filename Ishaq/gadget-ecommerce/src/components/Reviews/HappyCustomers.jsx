@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
-export default function RecentProducts() {
+export default function HappyCustomers() {
   const [recentProducts, setRecentProducts] = useState([]);
   const { isLoading, error, data, isFetching } = useQuery("recentProducts", () => axios.get("/data/recentProducts.json").then(({ data }) => data));
 
