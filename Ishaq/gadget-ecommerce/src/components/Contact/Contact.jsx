@@ -75,10 +75,10 @@ export default function Contact() {
                     <div className="mt-3">
                         <h4 className='text-xl font-semibold'>Follow Us</h4>
                         <div className="flex gap-3 mt-2">
-                            <p className='bg-emerald-400 rounded-full duration-200 hover:bg-dark p-3 text-xl'><BsFacebook className='' /></p>
-                            <p className='bg-emerald-400 rounded-full duration-200 hover:bg-dark p-3 text-xl'><BsTwitter className='' /></p>
-                            <p className='bg-emerald-400 rounded-full duration-200 hover:bg-dark p-3 text-xl'><BsInstagram className='' /></p>
-                            <p className='bg-emerald-400 rounded-full duration-200 hover:bg-dark p-3 text-xl'><BsLinkedin className='' /></p>
+                            <a href='/' target="_blank" className='block bg-emerald-400 rounded-full duration-200 hover:bg-dark p-3 text-xl'><BsFacebook className='' /></a>
+                            <a href='/' target="_blank" className='block bg-emerald-400 rounded-full duration-200 hover:bg-dark p-3 text-xl'><BsTwitter className='' /></a>
+                            <a href='/' target="_blank" className='block bg-emerald-400 rounded-full duration-200 hover:bg-dark p-3 text-xl'><BsInstagram className='' /></a>
+                            <a href='/' target="_blank" className='block bg-emerald-400 rounded-full duration-200 hover:bg-dark p-3 text-xl'><BsLinkedin className='' /></a>
                         </div>
                     </div>
                 </div>
