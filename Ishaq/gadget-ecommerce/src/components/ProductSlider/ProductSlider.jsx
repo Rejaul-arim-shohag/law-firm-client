@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import "./ProductSlider.scss"
-export default function ProductSlider() {
+export default function ProductSlider({title}) {
     const slider = useRef()
 
     const settings = {
@@ -51,7 +51,7 @@ export default function ProductSlider() {
             <div className="relative container py-16 bg-[#F4F4F6] flex justify-center flex-col items-center">
                 <div className="flex flex-col items-center justify-center">
                     <h3 className='font-extrabold md:text-3xl text-xl  text-dark flex justify-center items-center bg-hero-vector bg-contain bg-left bg-no-repeat  md:py-1 md:w-96 w-52 md:h-16 h-8 text-center'>
-                        Top Selling
+                       {title}
                     </h3>
                     <DropDown />
                 </div>
