@@ -1,4 +1,5 @@
 import React from 'react'
+import Contact from '../components/Contact/Contact'
 import HeroSection from '../components/HeroSection/HeroSection'
 import Navbar from '../components/Navbar/Navbar'
 import ProductSlider from '../components/ProductSlider/ProductSlider'
@@ -10,9 +11,10 @@ export default function Home() {
     <div className='relative'>
       <Navbar />
       <HeroSection />
-      <ShopByBrands/>
       <ProductSlider/>
+      <ShopByBrands/>
       <Reviews/>
+      <Contact/>
     </div>
   )
 }

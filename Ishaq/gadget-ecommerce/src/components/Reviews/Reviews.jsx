@@ -11,9 +11,9 @@ export default function Reviews() {
     const settings = {
         dots: false,
         infinite: true,
-        // autoplay: true,
+        autoplay: true,
         speed: 500,
-        // autoplaySpeed: 5000,
+        autoplaySpeed: 5000,
         slidesToShow: 1,
         slidesToScroll: 1,
         initialSlide: 0,
@@ -45,15 +45,15 @@ export default function Reviews() {
                                             <div className="flex justify-between ">
                                                 <div className="">
                                                     <h3 className='font-bold'>Rabbil Hasan</h3>
-                                                    <p className='text-xs font-bold text-primary'>Software Developer</p>
+                                                    <p className='text-xs font-bold text-primary'>Software Engineer</p>
                                                 </div>
-                                                <img src="/images/review/right-quote.svg" alt="" className='w-20 h-16 opacity-50' />
+                                                <img src="/images/review/right-quote.svg" alt="" className='w-20 h-16 opacity-40' />
                                                 {/* <GoQuote className='rotate-180'/> */}
                                             </div>
                                             <p className='text-xs'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia rem iusto neque eum, ipsa saepe unde architecto aperiam vel culpa!</p>
                                         </div>
                                         <div className="img z-10 hidden md:block col-start-1 col-end-12 row-start-4 row-end-7  md:col-start-6 md:col-end-10 md:row-start-1 md:row-end-4">
-                                            <img src="/images/review/1.jpg" alt="" className='w-full h-full' />
+                                            <img src="/images/review/1.jpg" alt="" className='w-full h-full rounded-lg' />
                                         </div>
 
                                     </div>
