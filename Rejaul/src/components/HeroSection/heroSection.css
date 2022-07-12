@@ -5,11 +5,10 @@
 }
 
 .rightbg{
-    /* background: url(../../Assets/images/bg-rectangle3.svg) !important; */
     background-color: #B0EACD;
     background-size: contain;
     width:30%;
-    height: 800px;
+    height: 700px;
     position:absolute;
     top:0px;
     right:0;
@@ -26,7 +25,7 @@
 }
 
 .heroMainImage>img{
-    width:100%;
+    width:90%;
     z-index: 78457;
 }
 .serchBox{
@@ -80,8 +79,10 @@
 }
 .heroServices>:last-child{
    position:absolute;
+   background-color: #1eb46c;
    top:0;
    right:15px;
+   
 }
 .heroServices>div>svg{
   font-size: 40px;
@@ -91,5 +92,5 @@
 .servicePlus{
   font-size:25px;
   margin-top:10px;
-  color:black;
+  color:white;
 }

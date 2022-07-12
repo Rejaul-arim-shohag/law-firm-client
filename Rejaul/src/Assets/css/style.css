@@ -40,6 +40,61 @@ a:hover {
 .swal2-styled:focus{
   box-shadow: none !important;
 }
+@media only screen and (max-width: 992px) {
+  .heroMainImage>img{
+    width:100%;
+    z-index: 78457;
+}
+ .rightbg{
+  display:none;
+ }
+ .leftBg{
+  display:none;
+ }
+}
+
+@media only screen and (max-width: 1200px) {
+  .attorneys>div{
+    display:grid;
+    grid-template-columns: 1fr;
+  }
+  .attorneys>div>div{
+    text-align: center
+  }
+}
+@media only screen and (max-width: 768px) {
+  .attorneys{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:2%;
+  }
+  .serviceSearchButton{
+    width:90px !important;
+    font-size: 15px;
+  }
+  .serchBox{
+    width:100%;
+  }
+  .attorneys>div{
+    display:grid;
+    grid-template-columns: 0.7fr auto;
+    margin-top:10px;
+  }
+}
+@media only screen and (max-width: 514px) {
+  .attorneys{
+    display:grid;
+    grid-template-columns: 1fr;
+    margin-top:10px;
+  }
+  .attorneys>div{
+    display:flex;
+    justify-content: center;
+
+  }
+}
+
+
 
 @import "sidebar.css";
 @import "progress.css";

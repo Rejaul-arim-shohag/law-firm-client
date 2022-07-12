@@ -10,9 +10,9 @@ const HeroSection = () => {
             <NavBar/>
             <div className="leftBg"></div>
             <div className="rightbg"></div>
-            <div className="container pt-5">
-                <div className="row pt-3 ">
-                    <div className="heroContent pt-4 col-md-6">
+            <div className="container pt-4">
+                <div className="row heroContentAndImage">
+                    <div className="heroContent pt-5 col-md-6">
                         <div>
                             <h1><span className="heroSpan">Legal Attony  Help In</span> </h1>
                             <h1>BANGLADESH.</h1>
@@ -31,7 +31,13 @@ const HeroSection = () => {
                                     <p>INJURY CASES</p>
                                 </div>
                             </div>
-                            <div className="heroServices my-3">
+                            
+                        </div>
+                        <div className="serchBox">
+                            <input className="serviceSearchField w-100" placeholder="Search" type="text" />
+                            <button className="serviceSearchButton">Search</button>
+                        </div>
+                        <div className="heroServices my-3">
                                 <div className="singleService">
                                     <VscLaw/>
                                 </div>
@@ -45,13 +51,8 @@ const HeroSection = () => {
                                    <p className="servicePlus">10+</p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="serchBox">
-                            <input className="serviceSearchField w-100" placeholder="Search" type="text" />
-                            <button className="serviceSearchButton">Search</button>
-                        </div>
                     </div>
-                    <div className="heroMainImage d-flex col-md-6 justify-content-end">
+                    <div className="heroMainImage pb-5 d-flex col-md-6  justify-content-end">
                         <img src={heroMainImage} alt="" />
                     </div>
                 </div>

@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.f96d373c.css",
-    "main.js": "/static/js/main.28278d82.js",
+    "main.css": "/static/css/main.8c812ff7.css",
+    "main.js": "/static/js/main.18b0e764.js",
     "static/media/heroLawyear.svg": "/static/media/heroLawyear.64e0b8421546ff2191e58f729673e3ed.svg",
     "static/media/curvebg.svg": "/static/media/curvebg.607b41d3d3d5b9bcf71c.svg",
+    "static/media/people-2.jpg": "/static/media/people-2.12841e3423bd31527cc3.jpg",
+    "static/media/people-1.jpg": "/static/media/people-1.c41093dfcf1976007f49.jpg",
+    "static/media/people-4.jpg": "/static/media/people-4.76657d1f99e811c2569a.jpg",
+    "static/media/people-3.jpg": "/static/media/people-3.35384d35ee7bbf8d3b94.jpg",
     "index.html": "/index.html",
     "static/media/logo2.svg": "/static/media/logo2.e41f6087382055646c1c02d0a63583d5.svg",
-    "main.f96d373c.css.map": "/static/css/main.f96d373c.css.map",
-    "main.28278d82.js.map": "/static/js/main.28278d82.js.map"
+    "main.8c812ff7.css.map": "/static/css/main.8c812ff7.css.map",
+    "main.18b0e764.js.map": "/static/js/main.18b0e764.js.map"
   },
   "entrypoints": [
-    "static/css/main.f96d373c.css",
-    "static/js/main.28278d82.js"
+    "static/css/main.8c812ff7.css",
+    "static/js/main.18b0e764.js"
   ]
 }

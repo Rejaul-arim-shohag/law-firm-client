@@ -1,0 +1,22 @@
+.attorneys{
+   display:grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-gap: 1%;
+}
+.attorneys>div{
+   display: grid;
+   grid-template-columns: 0.8fr auto;
+}
+.attorneyimage>img{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    
+}
+.Attornycontent>h6{
+    margin:5px 0 !important;
+}
+.Attornycontent>p{
+    margin:5px 0 !important;
+    text-align: center;
+}
