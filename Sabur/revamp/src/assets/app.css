@@ -281,14 +281,16 @@ a {
     content: '';
     height: 85%;
     width: 85%;
-    border: 2px solid var(--themeColor);
+    border: 2px solid;
     position: absolute;
     top: 10%;
     left: 12%;
     border-radius: 50%;
     border-right-color: #21bf7352;
     border-bottom-color: #21bf7352;
-    transform: rotate(-49deg);
+    border-top-color: var(--themeColor);
+    border-left-color: var(--themeColor);
+    transform: rotate(-42.5deg);
 }
 
 .min-100-vh {

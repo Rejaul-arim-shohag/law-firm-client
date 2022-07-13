@@ -19,7 +19,7 @@ class OurCourse extends Component {
                     <div className="container">
                         <p className="small-section-title fw-bold themeColor mb-2 headline-2"> Our Course </p>
                         <div className="d-flex justify-content-center">
-                            <h2 className="section-title fw-bold mb-3"> Our Top-Picked Courses </h2>
+                            <h2 className="section-title fw-bold mb-4"> Our Top-Picked Courses </h2>
                         </div>
                         <div className="row">
                             <div className="col-md-6 mb-4">
