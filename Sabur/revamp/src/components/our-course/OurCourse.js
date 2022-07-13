@@ -5,6 +5,7 @@ import course_img_2 from "../../assets/images/course-Image2.png";
 import course_img_3 from "../../assets/images/course-Image3.png";
 import course_img_4 from "../../assets/images/course-Image4.png";
 
+import BackgroundImg from "../../assets/images/circle-bg.svg";
 import Background from "../../assets/images/mark-icon.svg";
 import user_avatar from "../../assets/images/rabbil-vai-avater.png";
 
@@ -13,15 +14,19 @@ import './our-course.css';
 
 class OurCourse extends Component {
     render() {
+        let bgTopLeft = {
+            backgroundSize: "cover",
+            backgroundImage: "url(" + { BackgroundImg } + ")"
+        };
         return (
             <Fragment>
                 <div className="pt-5 pb-5">
-                    <div className="container">
+                    <div className="container position-relative">
                         <p className="small-section-title fw-bold themeColor mb-2 headline-2"> Our Course </p>
                         <div className="d-flex justify-content-center">
                             <h2 className="section-title fw-bold mb-4"> Our Top-Picked Courses </h2>
                         </div>
-                        <div className="row">
+                        <div className="row coursesBG">
                             <div className="col-md-6 mb-4">
                                 <div className="row gx-0">
                                     <div className="col-6 lightDeepBG-2 shadow rounded">
