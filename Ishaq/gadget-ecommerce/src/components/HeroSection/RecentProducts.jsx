@@ -10,8 +10,6 @@ export default function RecentProducts() {
 
   return (
     <div className="resentProducts mt-5">
-
-
       <div className="flex items-center -space-x-4 hover:space-x-1">
         {
           data?.map((item, index) => (
@@ -23,8 +21,6 @@ export default function RecentProducts() {
             </Link>
           ))
         }
-
-
       </div>
     </div>
   )

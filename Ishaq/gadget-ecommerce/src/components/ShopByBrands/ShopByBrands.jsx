@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useRef } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom'
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 export default function ShopByBrands() {
     const { isLoading, error, data, isFetching } = useQuery("shopByBrands", () => axios.get("/data/brands.json").then(({ data }) => data));
     const slider = useRef()
@@ -55,10 +56,11 @@ export default function ShopByBrands() {
                 </div>
                 {/* grid grid-cols-2 md:grid-cols-5 gap-3 */}
                 <div className="mt-16 relative w-full">
+                {/* <div className="bg-hero-spiral bg-no-repeat bg-contain absolute -top-[10%] -left-[15%] md:-top-1/4  md:-left-[5%]  w-1/2 h-1/2 md:w-full md:h-full"></div> */}
                     <Slider ref={c => (slider.current = c)} {...settings}>
                         {
                             data?.map((item, index) => (
-                                <div className="p-2">
+                                <div className="p-2 ">
                                     <Link to="/" className="rounded w-full h-full shadow-md    md:p-12 p-5 flex items-center justify-center" key={index}>
                                         <img src={item.src} alt="" className='rounded w-full' />
                                     </Link>
@@ -67,6 +69,10 @@ export default function ShopByBrands() {
                         }
 
                     </Slider>
+                    <div className="mt-10 flex gap-3 justify-center">
+                        <button onClick={() => slider.current.slickPrev()} className=' rounded-full px-1 py-1 fw-bold bg-slate-300 hover:bg-emerald-100 duration-150 text-white hover:text-primary border-0'> <HiOutlineChevronLeft className='m-2' /></button>
+                        <button onClick={() => slider.current.slickNext()} className=' rounded-full px-1 py-1 fw-bold  bg-slate-300 hover:bg-emerald-100 duration-150 text-white hover:text-primary border-0'> <HiOutlineChevronRight className='m-2' /></button>
+                    </div>
 
                 </div>
             </div>
