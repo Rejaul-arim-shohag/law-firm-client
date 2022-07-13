@@ -49,6 +49,16 @@ body {
     color: var(--themeColor);
 }
 
+.themeColor-h:hover {
+    color: var(--themeColor);
+}
+
+.themeColor-f:focus {
+    outline: 0;
+    box-shadow: none;
+    color: var(--themeColor);
+}
+
 .secondaryColor {
     color: var(--secondaryColor);
 }
@@ -249,11 +259,12 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus,
+select:focus,
 .btn:focus,
 button:focus {
-    border-color: rgba(126, 239, 104, 0);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(126, 239, 104, 0);
-    outline: 0 none;
+    border-color: rgba(126, 239, 104, 0) !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(126, 239, 104, 0) !important;
+    outline: 0 none !important;
 }
 
 /* Common Style */
