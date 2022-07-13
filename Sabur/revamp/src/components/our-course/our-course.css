@@ -1,0 +1,10 @@
+@media only screen and (max-width: 768px) {
+    .courses-img-responsive {
+        height: 230px;
+    }
+
+    .courses-creator-img-res {
+        height: 35px;
+        width: 35px;
+    }
+}
