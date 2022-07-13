@@ -39,8 +39,8 @@ class WhyChooseUs extends Component {
                                         id malesuada elit. Proin vulputate eu lorem ac lacinia.  </p>
 
                                 </div>
-                                <div className="position-absolute position-bottom-0 lightDeepBG-2 pt-3 pt-md-0 w-100">
-                                    <Link to="/join" className="btn rounded-pill text-white themeBG btn-outline-success border-0 px-4 py-2">Join Today</Link>
+                                <div className="position-absolute position-bottom-0 lightDeepBG-2 pt-3 pt-md-0">
+                                    <Link to="/join" className="btn rounded-pill text-white themeBG btn-outline-success border-1 px-4 py-2">Join Today</Link>
                                     <Link to="/" className="btn rounded-pill darkColor btn-outline-success border border-success px-4 py-2 ms-3">Learn More</Link>
                                 </div>
                             </div>

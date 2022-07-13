@@ -5,6 +5,7 @@ import AppNavbar from "../../components/navbar/AppNavbar";
 import Hero from "../../components/hero/Hero";
 import TopRecomendations from "../../components/top_recomendations/TopRecomendations";
 import WhyChooseUs from "../../components/why_choose_us/WhyChooseUs";
+import OurCourse from "../../components/our-course/OurCourse";
 
 // Include Style
 import './home.css';
@@ -17,6 +18,7 @@ class Home extends Component {
                 <Hero/>
                 <TopRecomendations/>
                 <WhyChooseUs/>
+                <OurCourse/>
             </Fragment>
         );
     }

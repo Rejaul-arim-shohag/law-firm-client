@@ -11,7 +11,7 @@
     /* Greyscale Color */
     --lightColor: #9EA3AE;
     --lightDeepColor-1: #9EA3AE;
-    --lightDeepColor-2: #E5E6EB;
+    --lightDeepColor-2: #FAF8F6;
     --lightDeepColor-3: #D3D5DA;
     --lightDeepColor-4: #9EA3AE;
 
@@ -281,14 +281,16 @@ a {
     content: '';
     height: 85%;
     width: 85%;
-    border: 2px solid var(--themeColor);
+    border: 2px solid;
     position: absolute;
     top: 10%;
     left: 12%;
     border-radius: 50%;
     border-right-color: #21bf7352;
     border-bottom-color: #21bf7352;
-    transform: rotate(-49deg);
+    border-top-color: var(--themeColor);
+    border-left-color: var(--themeColor);
+    transform: rotate(-42.5deg);
 }
 
 .min-100-vh {
@@ -374,6 +376,10 @@ a {
     padding-top: -10px;
 }
 
+.p-12 {
+    padding: 12px;
+}
+
 .mb-12 {
     margin-bottom: 12px;
 }
@@ -424,8 +430,16 @@ a {
     top: 0;
 }
 
+.position-top-7 {
+    top: 7px;
+}
+
 .position-left-0 {
     left: 0;
+}
+
+.position-left-30 {
+    left: 30px;
 }
 
 .position-right-0 {
@@ -491,6 +505,23 @@ a {
         font-size: 42px !important;
     }
 }
+@media only screen and (max-width: 768px) {
+    .fs-12-max768 {
+        font-size: 12px !important;
+    }
+
+    .h-40-mx-768 {
+        height: 40px;
+    }
+
+    .h-20-mx-768 {
+        height: 20px;
+    }
+
+    .mb-5-mx-768 {
+        margin-bottom: 5px;
+    }
+}
 
 @media only screen and (max-width: 767px) {
     .hero-headline-1-res {
@@ -514,6 +545,11 @@ a {
     .my-50 {
         margin: 50px 0;
     }
+
+    /*.rounded-start {*/
+    /*    border-top-right-radius: 0.375rem !important;*/
+    /*    border-bottom-right-radius: 0.375rem !important;*/
+    /*}*/
 }
 
 @media only screen and (max-width: 575px) {
