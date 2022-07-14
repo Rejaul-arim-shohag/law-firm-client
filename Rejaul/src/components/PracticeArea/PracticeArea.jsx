@@ -27,10 +27,10 @@ const PracticeArea = () => {
         }
     };
     return (
-        <div className="py-5">
+        <div className="py-5 my-5">
             <div className="container">
                 <p className="text-center">LEGAL HELP</p>
-                <h3 className="text-center">Practice Areas</h3>
+                <h3 className="text-center">Our Legal Services</h3>
                 <div className="d-flex justify-content-end">
                     <Button type="button" class="btn btn-outline-primary">View More <AiOutlineArrowRight/></Button>
                 </div>

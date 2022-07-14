@@ -1,0 +1,34 @@
+.testimonial{
+    background-color: #21BF73;
+}
+.clinetreviewImage>img{
+   width:70px;
+   height:70px;
+   border-radius: 50%;
+   border: 2px solid white;
+}
+.clinetreviewImage{
+    margin:0 -12px;
+}
+.clinetreviewImage:first-child{
+    margin:0;
+}
+.clinetreviewImage:hover{
+    margin:0;
+    z-index: 5444;
+    transition: 0.3s;
+}
+.reviewCount{
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 247, 255);
+    background:white;
+    
+}
+.reviewCount>p{
+    color:#21BF73;
+    font-size: 18px;
+    text-align: center;
+    margin-top:15px;
+}
