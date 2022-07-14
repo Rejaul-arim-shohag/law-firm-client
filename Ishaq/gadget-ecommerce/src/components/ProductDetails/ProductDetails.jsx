@@ -1,52 +1,21 @@
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import "./productDetails.scss";
 import ReactSlick from "./ReactSlick";
 import Specifications from "./Specifications";
-import { Link } from "react-router-dom"
-import { BsHouse } from 'react-icons/bs'
 export default function ProductDetails() {
-
-
-
+    const breadcrumbs = ['Smartphones', 'Apple', 'IPhone 13 Pro Max 128GB']
     return (
         <div className=" bg-slate-200">
+            <div className="bg-primary opacity-50 w-[34em] rounded-bl-full h-24 ml-auto"></div>
 
-            <div className="breadcrumbs">
-                <div class="flex items-center py-4 overflow-y-auto whitespace-nowrap">
-                    <Link to="#" class="text-gray-600 dark:text-gray-200">
+            <Breadcrumbs breadcrumbs={breadcrumbs} />
 
-                        <BsHouse />
-                    </Link>
+            <div className="flex flex-col md:flex-row gap-3 py-16 container ">
 
-                    <span class="mx-5 text-gray-500 dark:text-gray-300">
-                        /
-                    </span>
-
-                    <Link to="#" class="text-gray-600 dark:text-gray-200 hover:underline">
-                        Account
-                    </Link>
-
-                    <span class="mx-5 text-gray-500 dark:text-gray-300">
-                        /
-                    </span>
-
-                    <Link to="#" class="text-gray-600 dark:text-gray-200 hover:underline">
-                        Profile
-                    </Link>
-
-                    <span class="mx-5 text-gray-500 dark:text-gray-300">
-                        /
-                    </span>
-
-                    <Link to="#" class="text-blue-600 dark:text-blue-400 hover:underline">
-                        Settings
-                    </Link>
-                </div>
-            </div>
-            <div className="flex gap-3 py-16 container ">
-                <div className=" w-1/2 relative ">
+                <div className="w-full md:w-1/2 relative ">
                     <ReactSlick />
                 </div>
-                <div className="w-1/2 ">
+                <div className="w-full md:w-1/2 ">
                     <Specifications />
                 </div>
 

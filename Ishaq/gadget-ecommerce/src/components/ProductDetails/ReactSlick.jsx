@@ -21,7 +21,7 @@ export default function ReactSlick() {
         autoplaySpeed: 5000,
         customPaging: function (i) {
             return (
-                <div className="">
+                <div className="hidden md:block">
                     <img src={data[i]} alt="" className='w-16 h-16 rounded-2xl ' />
                 </div>
             );
