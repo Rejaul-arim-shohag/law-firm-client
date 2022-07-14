@@ -1,0 +1,15 @@
+.cardCustomWidth{
+    width:25%;
+}
+.practiceCarosel{
+    margin:0, 1%;
+}
+.react-multiple-carousel__arrow::before{
+    color:#f1f1f1
+}
+.react-multiple-carousel__arrow{
+    background:#21BF73;
+}
+.react-multiple-carousel__arrow:hover{
+    background:#1c9e5f;
+}

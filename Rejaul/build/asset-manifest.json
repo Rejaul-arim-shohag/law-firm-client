@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6cda89a1.css",
+    "main.js": "/static/js/main.ed1663c7.js",
+    "static/media/heroLawyear.svg": "/static/media/heroLawyear.64e0b8421546ff2191e58f729673e3ed.svg",
+    "static/media/accident.jpg": "/static/media/accident.2c7fa306a9027db51a27.jpg",
+    "static/media/curvebg.svg": "/static/media/curvebg.607b41d3d3d5b9bcf71c.svg",
+    "static/media/law-book.webp": "/static/media/law-book.8a1ec3ac75c1614b2982.webp",
+    "static/media/people-2.jpg": "/static/media/people-2.12841e3423bd31527cc3.jpg",
+    "static/media/people-1.jpg": "/static/media/people-1.c41093dfcf1976007f49.jpg",
+    "static/media/people-4.jpg": "/static/media/people-4.76657d1f99e811c2569a.jpg",
+    "static/media/people-3.jpg": "/static/media/people-3.35384d35ee7bbf8d3b94.jpg",
+    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/index.html",
+    "static/media/logo2.svg": "/static/media/logo2.e41f6087382055646c1c02d0a63583d5.svg",
+    "main.6cda89a1.css.map": "/static/css/main.6cda89a1.css.map",
+    "main.ed1663c7.js.map": "/static/js/main.ed1663c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6cda89a1.css",
+    "static/js/main.ed1663c7.js"
+  ]
+}

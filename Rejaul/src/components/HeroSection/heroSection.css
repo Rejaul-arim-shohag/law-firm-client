@@ -1,0 +1,101 @@
+.heroSection{
+    background-color: #E9F5EC;
+    position: relative;
+    background-size: contain;
+}
+
+.rightbg{
+    background-color: #B0EACD;
+    background-size: contain;
+    width:30%;
+    height: 700px;
+    position:absolute;
+    top:0px;
+    right:0;
+    background-repeat: no-repeat;
+    border-radius: 0px 0px 0px 150px;
+}
+.leftBg{
+    background-image: url(../../Assets/images/curvebg.svg);
+    position:absolute;
+    top:-200px;
+    left:-100px;
+    width:400px;
+    height: 800px;
+}
+
+.heroMainImage>img{
+    width:90%;
+    z-index: 78457;
+}
+.serchBox{
+    position: relative;
+    width: 80%;
+}
+.serviceSearchField{
+    width:100% !important;
+    position: inherit;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    border-radius: 34px;
+    outline: 0;
+    border: 0;
+}
+.serviceSearchButton{
+    transition:0.3s;
+    position: absolute;
+    top: 6px;
+    right:4px;
+    width: 120px;
+    height: 50px;
+    border:0;
+    outline: 0;
+    border-radius: 40px;
+    background-color:#21BF73;
+    color:white;
+    font-size: 15px;
+}
+.serviceSearchButton:hover{
+    background-color:#169156;
+}
+.heroContent{
+    z-index: 444;
+}
+.heroSpan{
+    color:black;
+}
+.heroServices{
+    width:283px;
+    display:flex;
+    position:relative;
+}
+.heroServices>div{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:1px solid gray;
+    text-align: center;
+    background:white;
+}
+.heroServices>:last-child{
+   position:absolute;
+   background-color: #1eb46c;
+   top:0;
+   right:15px;
+   
+}
+.heroServices>div>svg{
+  font-size: 40px;
+  margin-top:10px;
+  color:black
+}
+.servicePlus{
+  font-size:25px;
+  margin-top:10px;
+  color:white;
+}
+.singleService >img{
+    width:60px;
+    height: 60px;
+    border-radius:50%;
+}
