@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Breadcrumbs({breadcrumbs}) {
     return (
-        <div className="breadcrumbs mx-auto border-8 border-transparent container">
+        <div className="breadcrumbs mx-auto border-8 border-transparent container hidden md:block">
             <div class="flex items-center justify-start  py-4 overflow-y-auto whitespace-nowrap  ">
                 <Link to="#" class="text-gray-600 dark:text-gray-200">
                     <BsHouse />

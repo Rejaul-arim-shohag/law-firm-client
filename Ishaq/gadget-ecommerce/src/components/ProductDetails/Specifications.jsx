@@ -12,7 +12,6 @@ export default function Specifications() {
     ]
     return (
         <>
-
             <div class="bg-white dark:bg-gray-900 rounded-md shadow-md mt-16 md:mt-0">
                 <div class="container px-6 py-8 mx-auto">
                     <div class="p-8 pt-2  space-y-2  dark:bg-gray-800 rounded-xl">
