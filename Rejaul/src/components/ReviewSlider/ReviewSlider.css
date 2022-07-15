@@ -1,0 +1,22 @@
+.singleReview>img{
+    width:60%;
+}
+.singleReview{
+    position:relative;
+}
+.review-content{
+    background:#F7F7F7;
+    width: 56%;
+    position:absolute;
+    top:48px;
+    left:27px;
+    z-index:8888 !important;
+}
+.slick-dots{
+    display: none !important;
+}
+.reviewTitle{
+    font-size:20px!important;
+
+}
+

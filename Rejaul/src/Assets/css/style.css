@@ -80,6 +80,9 @@ a:hover {
     grid-template-columns: 0.7fr auto;
     margin-top:10px;
   }
+  .reviewSliders{
+    margin-top:30px;
+  }
 }
 @media only screen and (max-width: 514px) {
   .attorneys{

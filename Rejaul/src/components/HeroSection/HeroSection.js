@@ -1,6 +1,7 @@
 import React from 'react';
 import "./heroSection.css";
 import heroMainImage from "../../Assets/images/heroLawyear.svg";
+import lawImage from "../../Assets/images/law-book.webp";
 import NavBar from '../NavBar/NavBar';
 import { VscLaw } from "react-icons/vsc";
 import { GiClawHammer } from "react-icons/gi";
@@ -39,13 +40,13 @@ const HeroSection = () => {
                         </div>
                         <div className="heroServices my-3">
                                 <div className="singleService">
-                                    <VscLaw/>
+                                   <img src={lawImage} alt="" />
                                 </div>
                                 <div className="singleService">
-                                    <GiClawHammer/>
+                                <img src={lawImage} alt="" />
                                 </div>
                                 <div className="singleService">
-                                    <VscLaw/>
+                                <img src={lawImage} alt="" />
                                 </div>
                                 <div className="singleService">
                                    <p className="servicePlus">10+</p>
