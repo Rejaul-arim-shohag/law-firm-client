@@ -7,6 +7,7 @@ import TopRecomendations from "../../components/top_recomendations/TopRecomendat
 import WhyChooseUs from "../../components/why_choose_us/WhyChooseUs";
 import OurCourse from "../../components/our-course/OurCourse";
 import BrowseCourses from "../../components/browse-courses/BrowseCourses";
+import Testimonial from "../../components/testimonial/Testimonial";
 
 // Include Style
 import './home.css';
@@ -21,6 +22,7 @@ class Home extends Component {
                 <WhyChooseUs/>
                 <OurCourse/>
                 <BrowseCourses/>
+                <Testimonial/>
             </Fragment>
         );
     }

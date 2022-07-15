@@ -82,122 +82,172 @@ class BrowseCourses extends Component {
             <Fragment>
                 <div className="pt-5 pb-5 lightDeepBG-2 browse-courses">
                     <div className="container">
-                    <div className="d-flex justify-content-center">
-                        <h2 className="section-title fw-bold mb-2"> Browse Courses </h2>
-                    </div>
-                    <div className="d-flex justify-content-center mb-4">
-                        <Dropdown>
-                            <Dropdown.Toggle className="small-section-title fw-bold themeColor mb-2 headline-2 bg-transparent themeColor border-0 p-0 themeColor-h themeColor-f" id="dropdown-basic">
-                                All Category
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">All Category</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Category 01</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Category 02</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Category 03</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </div>
+                        <div className="d-flex justify-content-center">
+                            <h2 className="section-title fw-bold mb-2"> Browse Courses </h2>
+                        </div>
+                        <div className="d-flex justify-content-center mb-4">
+                            <Dropdown>
+                                <Dropdown.Toggle
+                                    className="small-section-title fw-bold themeColor mb-2 headline-2 bg-transparent themeColor border-0 p-0 themeColor-h themeColor-f"
+                                    id="dropdown-basic">
+                                    All Category
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item href="#/action-1">All Category</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">Category 01</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Category 02</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Category 03</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
 
-                    <Slider {...settings}>
-                        <div className="mb-4">
-                            <Card className="mx-2 border-0 border-rounded shadow">
-                                <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className="mb-4">
-                            <Card className="mx-2 border-0 border-rounded shadow">
-                                <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className="mb-4">
-                            <Card className="mx-2 border-0 border-rounded shadow">
-                                <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className="mb-4">
-                            <Card className="mx-2 border-0 border-rounded shadow">
-                                <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className="mb-4">
-                            <Card className="mx-2 border-0 border-rounded shadow">
-                                <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className="mb-4">
-                            <Card className="mx-2 border-0 border-rounded shadow">
-                                <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className="mb-4">
-                            <Card className="mx-2 border-0 border-rounded shadow">
-                                <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className="mb-4">
-                            <Card className="mx-2 border-0 border-rounded shadow">
-                                <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </Slider>
-                </div>
+                        <Slider {...settings}>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_2}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_3}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_4}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_2}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_3}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_4}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_2}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_3}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_4}/>
+                                    <Card.Body>
+                                        <Card.Title>Card Title</Card.Title>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        </Slider>
+                    </div>
                 </div>
             </Fragment>
         );

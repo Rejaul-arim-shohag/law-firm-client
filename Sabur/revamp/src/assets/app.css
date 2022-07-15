@@ -233,6 +233,13 @@ body {
     font-size: var(--bodySmal);
 }
 
+.sm-sec-bg {
+    padding: 10px;
+    background-size: 150px 42px;
+    background-repeat: no-repeat;
+    background-image: url("../assets/images/section-title-bg.svg");
+}
+
 .text-overflow-hidden {
     width: 100%;
     overflow: hidden;
@@ -358,6 +365,10 @@ a {
     height: 20px;
 }
 
+.h-400 {
+    height: 400px;
+}
+
 .w-20 {
     width: 20px;
 }
@@ -405,6 +416,15 @@ a {
 
 .pb-ce-55-last-child p:last-child {
     padding-bottom: 55px;
+}
+
+/* Z - Index */
+.z-index-1 {
+    z-index: 1;
+}
+
+.z-index-2 {
+    z-index: 2;
 }
 
 /* Background Images */
@@ -469,6 +489,14 @@ a {
     top: -50px;
 }
 
+.position-left--40 {
+    left: -40px;
+}
+
+.position-right--40 {
+    right: -40px;
+}
+
 .input-search-pr {
     padding-right: 35%;
 }
@@ -511,11 +539,12 @@ a {
     }
 }
 
-    @media only screen and (min-width: 992px) and (max-width: 1400px) {
+@media only screen and (min-width: 992px) and (max-width: 1400px) {
     .hero-headline-1-res {
         font-size: 42px !important;
     }
 }
+
 @media only screen and (max-width: 768px) {
     .fs-12-max768 {
         font-size: 12px !important;
@@ -531,6 +560,58 @@ a {
 
     .mb-5-mx-768 {
         margin-bottom: 5px;
+    }
+
+    .flex-wrap-reverse-M768 {
+        flex-wrap: wrap-reverse;
+    }
+
+    .position-absolute-mx-768 {
+        position: absolute !important;
+    }
+
+    .rounded-circle-mx-768 {
+        border-radius: 50% !important;
+    }
+
+    .height-auto-mx-768 {
+        height: auto;
+    }
+
+    .d-none-mx-768 {
+        display: none !important;
+    }
+
+    .h-250-mx-768 {
+        height: 250px;
+    }
+
+    .w-250-mx-768 {
+        width: 250px;
+    }
+
+    .mt-100-mx-768 {
+        margin-top: 100px;
+    }
+
+    .pt-150-mx-768 {
+        margin-top: 150px;
+    }
+
+    .position-top--100-mx-768 {
+        top: -100px;
+    }
+
+    .pb-50-mx-768 {
+        padding-bottom: 50px;
+    }
+
+    .position-right-0 {
+        right: 0 !important;
+    }
+
+    .px-10-mx-768 {
+        padding: 0 10px;
     }
 }
 
