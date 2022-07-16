@@ -117,6 +117,10 @@ body {
     background-color: var(--themeColor);
 }
 
+.themeBG-h:hover {
+    background-color: var(--themeColor);
+}
+
 .themeDeepDark-h:hover {
     background-color: var(--darkDeepColor-4);
 }
@@ -302,6 +306,14 @@ a {
 
 .borderSecondary {
     border-color: var(--secondaryColor);
+}
+
+.filter-invert-1 img {
+    filter: invert(1);
+}
+
+.filter-invert-0-h:hover img {
+    filter: invert(0);
 }
 
 .pseudo-border::before {

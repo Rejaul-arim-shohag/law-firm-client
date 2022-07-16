@@ -9,6 +9,7 @@ import OurCourse from "../../components/our-course/OurCourse";
 import BrowseCourses from "../../components/browse-courses/BrowseCourses";
 import Testimonial from "../../components/testimonial/Testimonial";
 import Contact_Section from "../../components/contact/Contact_Section";
+import Footer from "../../components/footer/Footer";
 
 // Include Style
 import './home.css';
@@ -25,6 +26,7 @@ class Home extends Component {
                 <BrowseCourses/>
                 <Testimonial/>
                 <Contact_Section/>
+                <Footer/>
             </Fragment>
         );
     }
