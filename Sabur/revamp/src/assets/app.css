@@ -4,6 +4,7 @@
 :root {
     /* Main Color */
     --themeColor: #21bf73;
+    --themeLightColor: #56d598;
     --secondaryColor: #B0EACD;
     --themeDarkColor: #2E374F;
     --themeWhiteColor: #ffffff;
@@ -114,6 +115,14 @@ body {
 /* Background Color */
 .themeBG {
     background-color: var(--themeColor);
+}
+
+.themeDeepDark-h:hover {
+    background-color: var(--darkDeepColor-4);
+}
+
+.themeLightBG {
+    background-color: var(--themeLightColor);
 }
 
 .secondaryBG {
@@ -353,12 +362,24 @@ a {
     height: 65px;
 }
 
+.h-15 {
+    height: 15px;
+}
+
 .h-60 {
     height: 60px;
 }
 
 .w-60 {
     width: 60px;
+}
+
+.h-40 {
+    height: 40px;
+}
+
+.w-40 {
+    width: 40px;
 }
 
 .h-20 {

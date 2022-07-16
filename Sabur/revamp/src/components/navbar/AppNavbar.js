@@ -22,7 +22,7 @@ class AppNavbar extends Component {
                 {/*                <Link className="nav-link text-uppercase fw-bold active" to="/">Home</Link>*/}
                 {/*                <Link className="nav-link text-uppercase fw-bold" to="/about">About</Link>*/}
                 {/*                <Link className="nav-link text-uppercase fw-bold" to="/courses">Courses</Link>*/}
-                {/*                <Link className="nav-link text-uppercase fw-bold" to="/contact">Contact</Link>*/}
+                {/*                <Link className="nav-link text-uppercase fw-bold" to="/contact">Contact_Section</Link>*/}
                 {/*                <Link className="nav-link text-uppercase fw-bold rounded-pill text-white themeBG py-2 px-4 ms-3" to="/join">Join</Link>*/}
                 {/*            </Nav>*/}
                 {/*        </Navbar.Collapse>*/}
