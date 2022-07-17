@@ -80,7 +80,7 @@ class Testimonial extends Component {
         };
         return (
             <Fragment>
-                <div className="pt-5 pb-5 themeBG testimonials">
+                <div className="pt-5 pb-5 themeBG position-relative testimonials testimonialsBG">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-6 mb-5 mb-md-0">
@@ -111,12 +111,12 @@ class Testimonial extends Component {
                             </div>
                             <div className="col-md-6">
                                 <Slider {...settings}>
-                                    <div className="mt-100-mx-768 pb-50-mx-768">
+                                    <div className="mt-100-mx-768 pb-50-mx-768 position-relative">
                                         <div className="row h-400 height-auto-mx-768">
                                             <div className="col-md-6 d-flex align-items-end">
                                                 <Card className="position-relative rounded-3 position-right--40 position-right-0 z-index-2 position-static-mx-768 px-10-mx-768">
                                                     <div className="d-flex justify-content-center pt-150-mx-768">
-                                                        <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} />
+                                                        <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} alt="ReviewUser" />
                                                     </div>
                                                     <Card.Body>
                                                         <p className="headline-4 fw-bold m-0"> Roney Khan </p>
@@ -132,7 +132,7 @@ class Testimonial extends Component {
                                             <div className="col-md-6 d-flex d-md-block justify-content-center d-none-mx-768">
                                                 <img
                                                     className="img-fluid rounded-3 position-relative position-left--40 z-index-1"
-                                                    src={reviewUser} alt="Review User Photo"/>
+                                                    src={reviewUser} alt="ReviewUser"/>
                                             </div>
                                         </div>
                                     </div>
@@ -141,7 +141,7 @@ class Testimonial extends Component {
                                             <div className="col-md-6 d-flex align-items-end">
                                                 <Card className="position-relative rounded-3 position-right--40 position-right-0 z-index-2 position-static-mx-768 px-10-mx-768">
                                                     <div className="d-flex justify-content-center pt-150-mx-768">
-                                                        <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} />
+                                                        <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} alt="ReviewUser" />
                                                     </div>
                                                     <Card.Body>
                                                         <p className="headline-4 fw-bold m-0"> Roney Khan </p>
@@ -157,7 +157,7 @@ class Testimonial extends Component {
                                             <div className="col-md-6 d-flex d-md-block justify-content-center d-none-mx-768">
                                                 <img
                                                     className="img-fluid rounded-3 position-relative position-left--40 z-index-1"
-                                                    src={reviewUser} alt="Review User Photo"/>
+                                                    src={reviewUser} alt="ReviewUser"/>
                                             </div>
                                         </div>
                                     </div>
@@ -166,7 +166,7 @@ class Testimonial extends Component {
                                             <div className="col-md-6 d-flex align-items-end">
                                                 <Card className="position-relative rounded-3 position-right--40 position-right-0 z-index-2 position-static-mx-768 px-10-mx-768">
                                                     <div className="d-flex justify-content-center pt-150-mx-768">
-                                                        <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} />
+                                                        <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} alt="ReviewUser" />
                                                     </div>
                                                     <Card.Body>
                                                         <p className="headline-4 fw-bold m-0"> Roney Khan </p>
@@ -182,7 +182,7 @@ class Testimonial extends Component {
                                             <div className="col-md-6 d-flex d-md-block justify-content-center d-none-mx-768">
                                                 <img
                                                     className="img-fluid rounded-3 position-relative position-left--40 z-index-1"
-                                                    src={reviewUser} alt="Review User Photo"/>
+                                                    src={reviewUser} alt="ReviewUser"/>
                                             </div>
                                         </div>
                                     </div>
@@ -191,7 +191,7 @@ class Testimonial extends Component {
                                         <div className="col-md-6 d-flex align-items-end">
                                             <Card className="position-relative rounded-3 position-right--40 position-right-0 z-index-2 position-static-mx-768 px-10-mx-768">
                                                 <div className="d-flex justify-content-center pt-150-mx-768">
-                                                    <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} />
+                                                    <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} alt="ReviewUser" />
                                                 </div>
                                                 <Card.Body>
                                                     <p className="headline-4 fw-bold m-0"> Roney Khan </p>
@@ -207,7 +207,7 @@ class Testimonial extends Component {
                                         <div className="col-md-6 d-flex d-md-block justify-content-center d-none-mx-768">
                                             <img
                                                 className="img-fluid rounded-3 position-relative position-left--40 z-index-1"
-                                                src={reviewUser} alt="Review User Photo"/>
+                                                src={reviewUser} alt="ReviewUser"/>
                                         </div>
                                     </div>
                                 </div>
@@ -216,7 +216,7 @@ class Testimonial extends Component {
                                         <div className="col-md-6 d-flex align-items-end">
                                             <Card className="position-relative rounded-3 position-right--40 position-right-0 z-index-2 position-static-mx-768 px-10-mx-768">
                                                 <div className="d-flex justify-content-center pt-150-mx-768">
-                                                    <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} />
+                                                    <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} alt="ReviewUser" />
                                                 </div>
                                                 <Card.Body>
                                                     <p className="headline-4 fw-bold m-0"> Roney Khan </p>
@@ -232,7 +232,7 @@ class Testimonial extends Component {
                                         <div className="col-md-6 d-flex d-md-block justify-content-center d-none-mx-768">
                                             <img
                                                 className="img-fluid rounded-3 position-relative position-left--40 z-index-1"
-                                                src={reviewUser} alt="Review User Photo"/>
+                                                src={reviewUser} alt="ReviewUser"/>
                                         </div>
                                     </div>
                                 </div>
@@ -241,7 +241,7 @@ class Testimonial extends Component {
                                         <div className="col-md-6 d-flex align-items-end">
                                             <Card className="position-relative rounded-3 position-right--40 position-right-0 z-index-2 position-static-mx-768 px-10-mx-768">
                                                 <div className="d-flex justify-content-center pt-150-mx-768">
-                                                    <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} />
+                                                    <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} alt="ReviewUser" />
                                                 </div>
                                                 <Card.Body>
                                                     <p className="headline-4 fw-bold m-0"> Roney Khan </p>
@@ -257,7 +257,7 @@ class Testimonial extends Component {
                                         <div className="col-md-6 d-flex d-md-block justify-content-center d-none-mx-768">
                                             <img
                                                 className="img-fluid rounded-3 position-relative position-left--40 z-index-1"
-                                                src={reviewUser} alt="Review User Photo"/>
+                                                src={reviewUser} alt="ReviewUser"/>
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +266,7 @@ class Testimonial extends Component {
                                             <div className="col-md-6 d-flex align-items-end">
                                                 <Card className="position-relative rounded-3 position-right--40 position-right-0 z-index-2 position-static-mx-768 px-10-mx-768">
                                                     <div className="d-flex justify-content-center pt-150-mx-768">
-                                                        <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} />
+                                                        <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} alt="ReviewUser" />
                                                     </div>
                                                     <Card.Body>
                                                         <p className="headline-4 fw-bold m-0"> Roney Khan </p>
@@ -282,7 +282,7 @@ class Testimonial extends Component {
                                             <div className="col-md-6 d-flex d-md-block justify-content-center d-none-mx-768">
                                                 <img
                                                     className="img-fluid rounded-3 position-relative position-left--40 z-index-1"
-                                                    src={reviewUser} alt="Review User Photo"/>
+                                                    src={reviewUser} alt="ReviewUser"/>
                                             </div>
                                         </div>
                                     </div>
@@ -291,7 +291,7 @@ class Testimonial extends Component {
                                             <div className="col-md-6 d-flex align-items-end">
                                                 <Card className="position-relative rounded-3 position-right--40 position-right-0 z-index-2 position-static-mx-768 px-10-mx-768">
                                                     <div className="d-flex justify-content-center pt-150-mx-768">
-                                                        <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} />
+                                                        <Card.Img className="d-block d-md-none rounded-circle-mx-768 h-250-mx-768 w-250-mx-768 img-thumbnail position-absolute-mx-768 position-top--100-mx-768" variant="top" src={reviewUser} alt="ReviewUser" />
                                                     </div>
                                                     <Card.Body>
                                                         <p className="headline-4 fw-bold m-0"> Roney Khan </p>
@@ -307,7 +307,7 @@ class Testimonial extends Component {
                                             <div className="col-md-6 d-flex d-md-block justify-content-center d-none-mx-768">
                                                 <img
                                                     className="img-fluid rounded-3 position-relative position-left--40 z-index-1"
-                                                    src={reviewUser} alt="Review User Photo"/>
+                                                    src={reviewUser} alt="ReviewUser"/>
                                             </div>
                                         </div>
                                     </div>

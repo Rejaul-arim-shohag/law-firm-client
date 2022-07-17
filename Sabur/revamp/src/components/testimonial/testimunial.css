@@ -1,3 +1,16 @@
+/* Circle Background */
+.testimonialsBG::after {
+    content: '';
+    z-index: 1;
+    bottom: -10%;
+    right: 11%;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-size: 300px 300px;
+    background-image: url("../../assets/images/themeCircle.svg");
+}
+
 .testimonials .slick-dots li button:before {
     opacity: 1;
     color: var(--themeWhiteColor);
