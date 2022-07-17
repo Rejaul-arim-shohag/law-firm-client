@@ -23,8 +23,8 @@ export default function Reviews() {
  
 
     return (
-        <>
-            <div className="relative container py-16 md:max-h-96 bg-primary flex flex-col  md:flex-row gap-3 items-start justify-center md:justify-start flex-wrap overflow-hidden">
+        <div className='bg-primary '>
+            <div className="relative container py-16 md:max-h-96 flex flex-col  md:flex-row gap-3 items-start justify-center md:justify-start flex-wrap overflow-hidden">
                 <div className="flex-1 text-white">
                     <p className='text-xs font-bold  text-white flex justify-start items-center bg-hero-vector bg-contain bg-left bg-no-repeat   w-24  h-8  '>Testimonial</p>
                     <h3 className='text-xl font-bold w-2/3'>What customers say about Gadget Shop</h3>
@@ -73,6 +73,6 @@ export default function Reviews() {
 
 
             </div>
-        </>
+        </div>
     )
 }
