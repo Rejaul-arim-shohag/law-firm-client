@@ -14,10 +14,6 @@ import './our-course.css';
 
 class OurCourse extends Component {
     render() {
-        let bgTopLeft = {
-            backgroundSize: "cover",
-            backgroundImage: "url(" + { BackgroundImg } + ")"
-        };
         return (
             <Fragment>
                 <div className="pt-5 pb-5">

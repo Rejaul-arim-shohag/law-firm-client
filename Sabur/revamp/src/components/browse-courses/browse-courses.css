@@ -1,3 +1,16 @@
+/* Circle Background */
+.browse-coursesBG::after {
+    content: '';
+    z-index: 1;
+    top: 5%;
+    left: 9%;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-size: 300px 300px;
+    background-image: url("../../assets/images/circle-bg.svg");
+}
+
 .browse-courses .slick-arrow {
     position: absolute;
 }
