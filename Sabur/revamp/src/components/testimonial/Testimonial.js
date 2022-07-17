@@ -49,8 +49,8 @@ class Testimonial extends Component {
             slidesToScroll: 1,
             nextArrow: <SampleNextArrow/>,
             prevArrow: <SamplePrevArrow/>,
-            // autoplay: true,
-            autoplaySpeed: 2000,
+            autoplay: true,
+            autoplaySpeed: 3000,
             responsive: [
                 {
                     breakpoint: 1200,
@@ -83,7 +83,7 @@ class Testimonial extends Component {
                 <div className="pt-5 pb-5 themeBG position-relative testimonials testimonialsBG">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-6 mb-5 mb-md-0">
+                            <div className="col-md-4 col-lg-6 mb-5 mb-md-0">
                                 <div className="h-100 d-flex align-items-center">
                                     <div className="d-inline-block">
                                         <p className="small-section-title sm-sec-bg fw-bold themeColor text-start mb-2 headline-2 text-white-50"> Testimonial </p>
@@ -109,7 +109,7 @@ class Testimonial extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-8 col-lg-6">
                                 <Slider {...settings}>
                                     <div className="mt-100-mx-768 pb-50-mx-768 position-relative">
                                         <div className="row h-400 height-auto-mx-768">
