@@ -50,7 +50,7 @@ export default function ProductFAQ() {
                             ))
                         }
 
-                        <hr className="my-8 border-gray-200 dark:border-gray-700" />
+                        {/* <hr className="my-8 border-gray-200 dark:border-gray-700" /> */}
 
 
                     </div>

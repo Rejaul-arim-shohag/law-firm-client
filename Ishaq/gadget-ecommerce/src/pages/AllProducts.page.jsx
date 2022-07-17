@@ -1,22 +1,19 @@
 import React from 'react'
+import AllProducts from '../components/AllProducts/AllProducts'
 import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import ProductDetails from '../components/ProductDetails/ProductDetails'
-import ProductSlider from '../components/ProductSlider/ProductSlider'
 import Reviews from '../components/Reviews/Reviews'
 
-export default function ProductDetailsPage() {
-
+export default function AllProductsPage() {
     return (
         <div>
+            
             <Navbar />
-            <ProductDetails />
-            <ProductSlider title="Related Products" />
+            <AllProducts />
             <Reviews />
             <Contact />
             <Footer />
-
         </div>
     )
 }
