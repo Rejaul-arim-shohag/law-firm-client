@@ -68,7 +68,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Navbar() {
   return (
     <Popover className="absolute top-0 right-0 left-0 z-50 container">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">

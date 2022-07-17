@@ -1,3 +1,24 @@
+.coursesBG::before,
+.coursesBG::after {
+    content: '';
+    z-index: -1;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-size: 300px 300px;
+    background-image: url("../../assets/images/circle-bg.svg");
+}
+
+.coursesBG::before {
+    top: 0;
+    left: -8%;
+}
+
+.coursesBG::after {
+    right: -8%;
+    bottom: -14%;
+}
+
 @media only screen and (max-width: 768px) {
     .courses-img-responsive {
         height: 230px;
@@ -6,5 +27,10 @@
     .courses-creator-img-res {
         height: 35px;
         width: 35px;
+    }
+
+    .coursesBG::before,
+    .coursesBG::after {
+        display: none;
     }
 }

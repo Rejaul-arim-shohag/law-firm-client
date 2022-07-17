@@ -1,9 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {Form, Button} from "react-bootstrap";
 
-// Image Include
-import circlePath from '../../assets/images/circle-shape.svg';
-
 // Images
 import react from '../../assets/images/react-icon.svg';
 import vue from '../../assets/images/vue-icon.svg';
@@ -58,16 +55,16 @@ class Hero extends Component {
                                             </div>
                                         </div>
                                         <div className="d-flex justify-content-center justify-content-lg-start">
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-info" src={react} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-success ml--25" src={vue} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-dark ml--25" src={js} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-warning ml--25" src={php} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-dark ml--25" src={dart} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-primary ml--25" src={flutter} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-secondary ml--25 d-none d-sm-block" src={java} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-warning ml--25 d-none d-sm-block" src={kotlin} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-info ml--25" src={python} alt="react icon"/>
-                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-danger ml--25" src={laravel} alt="react icon"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-info" src={react} alt="logo"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-success ml--25" src={vue} alt="logo"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-dark ml--25" src={js} alt="logo"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-warning ml--25" src={php} alt="logo"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-dark ml--25" src={dart} alt="logo"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-primary ml--25" src={flutter} alt="logo"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-secondary ml--25 d-none d-sm-block" src={java} alt="logo"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-warning ml--25 d-none d-sm-block" src={kotlin} alt="logo"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-info ml--25" src={python} alt="logo"/>
+                                            <img className="themeWhiteBG img-fluid h-60 w-60 p-2 rounded-circle border-2 border-danger ml--25" src={laravel} alt="logo"/>
                                             <span className="themeWhiteBG h-60 w-60 p-12 rounded-circle border border-success bw-2 ml--25 d-inline-block headline-4 fw-bold bodyXLarge">20+</span>
                                         </div>
                                     </div>

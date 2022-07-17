@@ -1,6 +1,7 @@
 import React from 'react'
 import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
+import { paymentImgSrc } from './PaymentImg'
 export default function Footer() {
     return (
         <footer className=' bg-secondary'>
@@ -30,20 +31,20 @@ export default function Footer() {
                 <div className="contactUs flex-1 mt-10 md:mt-0 md:p-10 ">
                     <h3 className='text-2xl font-bold'>Contact Us</h3>
                     <p className='mt-5 text-sm block'>support@gadgetShop.com</p>
-                    <iframe title='fbPage' className='mt-5' src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2FprogrammerRabbil&tabs=timeline&width=340&height=271&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1326338011183994" width="340" height="100"  scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    <iframe title='fbPage' className='mt-5' src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2FprogrammerRabbil&tabs=timeline&width=340&height=271&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1326338011183994" width="340" height="100" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
             </div>
-            <div className="border-t border-gray-200 container py-5 flex flex-col gap-4 md:flex-row justify-between items-center">
+           <div className="border-t border-gray-200">
+           <div className=" container py-5 flex flex-col gap-4 md:flex-row justify-between items-center">
                 <p className='text-sm'>©2022 Rabbil Hasan - All right reserved </p>
                 <div className="flex gap-4">
-                    <img src="/images/payment/BKash.svg" alt="" className='w-10 md:w-16 h-auto'/>
-                    <img src="/images/payment/Nagad.svg" alt="" className='w-10 md:w-16 h-auto'/>
-                    <img src="/images/payment/Mastercard.svg" alt="" className='w-10 md:w-16 h-auto'/>
-                    <img src="/images/payment/Visa.svg" alt="" className='w-10 md:w-16 h-auto'/>
-                    <img src="/images/payment/Stripe.svg" alt="" className='w-10 md:w-16 h-auto'/>
-                    <img src="/images/payment/American_Express.svg" alt="" className='w-10 md:w-16 h-auto'/>
+                    {paymentImgSrc.map((item, i) => (
+                        <img key={i} src={item} alt="" className='w-10 md:w-16 h-auto' />
+
+                    ))}
                 </div>
             </div>
+           </div>
 
 
 

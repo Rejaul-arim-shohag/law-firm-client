@@ -1,20 +1,24 @@
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.page";
-import { QueryClient, QueryClientProvider } from 'react-query';
+import ProductDetailsPage from "./pages/ProductDetails.page";
 
 
 function App() {
   const queryClient = new QueryClient()
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+    <div className="relative">
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/details" element={<ProductDetailsPage />} />
+          </Routes>
 
-      </BrowserRouter>
+        </BrowserRouter>
 
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </div>
 
   );
 }
