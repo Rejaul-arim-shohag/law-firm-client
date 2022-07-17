@@ -4,9 +4,9 @@
   display: none;
 }
 
-body {
-  background:#F9F8F8;
+body{
   font-size: 14px;
+  background: #f0f0f0 !important;
   font-family: 'Poppins', sans-serif !important;
 }
 h1,h2,h3,h4,h5,h6,button,input,textarea{
@@ -39,6 +39,26 @@ a:hover {
 
 .swal2-styled:focus{
   box-shadow: none !important;
+}
+.mainButton{
+  transition:0.3s;
+  width: 120px;
+  height: 50px;
+  border:0;
+  outline: 0;
+  border-radius: 40px;
+  background-color:#21BF73;
+  color:white;
+}
+.mainButton2{
+  transition:0.3s;
+  width: 170px;
+  height: 50px;
+  border:0;
+  outline: 0;
+  border-radius: 2px;
+  background-color:#21BF73;
+  color:white;
 }
 @media only screen and (max-width: 992px) {
   .heroMainImage>img{

@@ -1,6 +1,9 @@
 import React from 'react';
+import Contact from '../components/Contact/Contact';
+import Footer from '../components/Footer/Footer';
 import HeroSection from '../components/HeroSection/HeroSection';
 import PracticeArea from '../components/PracticeArea/PracticeArea';
+import PricingPlans from '../components/PricingPlans/PricingPlans';
 import Testimonial from '../components/Testimonial/Testimonial';
 import TopRecomendaton from '../components/TopRecomendatons/TopRecomendaton';
 
@@ -11,7 +14,9 @@ const HomePage = () => {
            <TopRecomendaton/>
            <PracticeArea/>
            <Testimonial/>
-           
+           <PricingPlans/>
+           <Contact/>
+           {/* <Footer/> */}
         </div>
     );
 };
