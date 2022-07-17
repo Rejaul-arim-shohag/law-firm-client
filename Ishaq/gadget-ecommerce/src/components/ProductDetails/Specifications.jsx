@@ -16,9 +16,7 @@ export default function Specifications() {
                 <div class="container px-6 py-8 mx-auto">
                     <div class="p-8 pt-2  space-y-2  dark:bg-gray-800 rounded-xl">
                         <div class="flex items-center justify-between  mb-10">
-
-                            <h2 class="text-2xl font-semibold text-primary dark:text-primary sm:text-3xl">Tk. 13500<span class=" line-through ml-2 text-gray-400 font-semibold  md:text-sm text-xs">Tk. 15000</span></h2>
-
+                            <h2 class="text-2xl font-semibold text-primary dark:text-primary sm:text-3xl">Tk. 13500<span class=" line-through ml-2 text-grey-400 font-semibold  md:text-sm text-xs">Tk. 15000</span></h2>
                             <div class="px-2 text-xs hidden md:block text-primary bg-gray-100 rounded-full dark:text-primary sm:px-4 sm:py-1 dark:bg-gray-700 ">
                                 Save 10%
                             </div>
@@ -40,9 +38,7 @@ export default function Specifications() {
                                 ))}
                             </div>
                         </div>
-
                     </div>
-
                     <div class="flex justify-center mt-2">
                         <button class="px-8 py-2 tracking-wide text-white  md:w-1/3  transition-colors duration-200 transform bg-primary rounded-md  uppercase">
                             Purchase
