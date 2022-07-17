@@ -25,7 +25,7 @@ const Testimonial = () => {
 
     ]
     return (
-        <div className="testimonial py-5">
+        <div className="testimonial ">
             <div className="container py-5">
                 <div className="row">
                     <div className="col-md-6">

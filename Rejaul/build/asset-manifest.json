@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.6cda89a1.css",
-    "main.js": "/static/js/main.ed1663c7.js",
+    "main.css": "/static/css/main.2fffa07f.css",
+    "main.js": "/static/js/main.fa3d01f4.js",
     "static/media/heroLawyear.svg": "/static/media/heroLawyear.64e0b8421546ff2191e58f729673e3ed.svg",
+    "static/media/client2.jpg": "/static/media/client2.50ae333cc8a3e23956f0.jpg",
     "static/media/accident.jpg": "/static/media/accident.2c7fa306a9027db51a27.jpg",
     "static/media/curvebg.svg": "/static/media/curvebg.607b41d3d3d5b9bcf71c.svg",
+    "static/media/clinet1.jpg": "/static/media/clinet1.f397bee2325e75d84a4b.jpg",
     "static/media/law-book.webp": "/static/media/law-book.8a1ec3ac75c1614b2982.webp",
     "static/media/people-2.jpg": "/static/media/people-2.12841e3423bd31527cc3.jpg",
     "static/media/people-1.jpg": "/static/media/people-1.c41093dfcf1976007f49.jpg",
@@ -13,13 +15,17 @@
     "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "static/media/logo2.svg": "/static/media/logo2.e41f6087382055646c1c02d0a63583d5.svg",
-    "main.6cda89a1.css.map": "/static/css/main.6cda89a1.css.map",
-    "main.ed1663c7.js.map": "/static/js/main.ed1663c7.js.map"
+    "main.2fffa07f.css.map": "/static/css/main.2fffa07f.css.map",
+    "main.fa3d01f4.js.map": "/static/js/main.fa3d01f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cda89a1.css",
-    "static/js/main.ed1663c7.js"
+    "static/css/main.2fffa07f.css",
+    "static/js/main.fa3d01f4.js"
   ]
 }
