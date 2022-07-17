@@ -5,7 +5,6 @@ import course_img_2 from "../../assets/images/course-Image2.png";
 import course_img_3 from "../../assets/images/course-Image3.png";
 import course_img_4 from "../../assets/images/course-Image4.png";
 
-import BackgroundImg from "../../assets/images/circle-bg.svg";
 import Background from "../../assets/images/mark-icon.svg";
 import user_avatar from "../../assets/images/rabbil-vai-avater.png";
 

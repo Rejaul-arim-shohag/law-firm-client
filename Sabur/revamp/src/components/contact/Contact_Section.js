@@ -23,7 +23,7 @@ class Contact_Section extends Component {
                 <div className="pt-5 pb-5 lightDeepBG-2">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-8 mb-4 mb-sm-0">
+                            <div className="col-lg-8 col-md-6 mb-4 mb-md-0">
                                 <h2 className="section-title text-start p-1 fw-bold mb-2"> Send A Message </h2>
                                 <p className="themeDarkColor mb-5"> Pellentesque felis cursus. Proin lacus magna,
                                     lobortis vel quam ac, dignissim dapibus odio. Pellentesque vulputate </p>
@@ -57,7 +57,7 @@ class Contact_Section extends Component {
                                     </Button>
                                 </Form>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-lg-4 col-md-6">
                                 <div className="themeBG h-100 p-4 d-flex align-items-center">
                                     <div>
                                         <h3 className="text-light fw-bold mb-4"> Contact Info </h3>
@@ -65,7 +65,7 @@ class Contact_Section extends Component {
                                             <div className="flex-shrink-0">
                                                 <div
                                                     className="h-60 w-60 bg-white rounded-circle d-flex justify-content-center align-items-center">
-                                                    <img src={locationIcon} alt="..."/>
+                                                    <img src={locationIcon} alt="icon"/>
                                                 </div>
                                             </div>
                                             <div className="flex-grow-1 ms-3">
@@ -77,7 +77,7 @@ class Contact_Section extends Component {
                                             <div className="flex-shrink-0">
                                                 <div
                                                     className="h-60 w-60 bg-white rounded-circle d-flex justify-content-center align-items-center">
-                                                    <img src={mailIcon} alt="..."/>
+                                                    <img src={mailIcon} alt="icon"/>
                                                 </div>
                                             </div>
                                             <div className="flex-grow-1 ms-3">
@@ -89,7 +89,7 @@ class Contact_Section extends Component {
                                             <div className="flex-shrink-0">
                                                 <div
                                                     className="h-60 w-60 bg-white rounded-circle d-flex justify-content-center align-items-center">
-                                                    <img src={phoneIcon} alt="..."/>
+                                                    <img src={phoneIcon} alt="icon"/>
                                                 </div>
                                             </div>
                                             <div className="flex-grow-1 ms-3">
@@ -101,34 +101,34 @@ class Contact_Section extends Component {
                                             <h6 className="text-light fw-bold mb-3 mt-5"> Follow Us </h6>
                                             <div className="d-flex">
                                                 <div className="d-flex align-items-center me-3">
-                                                    <a href="#!">
+                                                    <a href="#">
                                                         <div
                                                             className="h-40 w-40 themeLightBG rounded-circle d-flex justify-content-center align-items-center themeDeepDark-h">
-                                                            <img className="h-15" src={fb} alt="..."/>
+                                                            <img className="h-15" src={fb} alt="icon"/>
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div className="d-flex align-items-center me-3">
-                                                    <a href="#!">
+                                                    <a href="#">
                                                         <div
                                                             className="h-40 w-40 themeLightBG rounded-circle d-flex justify-content-center align-items-center themeDeepDark-h">
-                                                            <img className="h-15" src={twit} alt="..."/>
+                                                            <img className="h-15" src={twit} alt="icon"/>
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div className="d-flex align-items-center me-3">
-                                                    <a href="#!">
+                                                    <a href="#">
                                                         <div
                                                             className="h-40 w-40 themeLightBG rounded-circle d-flex justify-content-center align-items-center themeDeepDark-h">
-                                                            <img className="h-15" src={lnkd} alt="..."/>
+                                                            <img className="h-15" src={lnkd} alt="icon"/>
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div className="d-flex align-items-center me-3">
-                                                    <a href="#!">
+                                                    <a href="#">
                                                         <div
                                                             className="h-40 w-40 themeLightBG rounded-circle d-flex justify-content-center align-items-center themeDeepDark-h">
-                                                            <img className="h-15" src={ins} alt="..."/>
+                                                            <img className="h-15" src={ins} alt="icon"/>
                                                         </div>
                                                     </a>
                                                 </div>

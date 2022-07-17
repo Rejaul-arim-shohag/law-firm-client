@@ -18,7 +18,7 @@ class TopRecomendations extends Component {
                                         <div className="d-flex align-items-center">
                                             <div className="flex-shrink-0">
                                                 <div className="border-2 border-success rounded-circle h-60 w-60 d-flex justify-content-center align-items-center">
-                                                    <span className="border border-5 borderSecondary rounded-circle h-20 w-20 d-inline-block"></span>
+                                                    <span className="border border-5 borderSecondary rounded-circle h-20 w-20 d-inline-block"> </span>
                                                 </div>
                                             </div>
                                             <div className="flex-grow-1 ms-3">
@@ -35,7 +35,7 @@ class TopRecomendations extends Component {
                                         <div className="d-flex align-items-center">
                                             <div className="flex-shrink-0">
                                                 <div className="border-2 border-warning rounded-circle h-60 w-60 d-flex justify-content-center align-items-center">
-                                                    <span className="border border-5 borderSecondary rounded-circle h-20 w-20 d-inline-block"></span>
+                                                    <span className="border border-5 borderSecondary rounded-circle h-20 w-20 d-inline-block"> </span>
                                                 </div>
                                             </div>
                                             <div className="flex-grow-1 ms-3">
@@ -52,7 +52,7 @@ class TopRecomendations extends Component {
                                         <div className="d-flex align-items-center">
                                             <div className="flex-shrink-0">
                                                 <div className="border-2 border-danger rounded-circle h-60 w-60 d-flex justify-content-center align-items-center">
-                                                    <span className="border border-5 borderSecondary rounded-circle h-20 w-20 d-inline-block"></span>
+                                                    <span className="border border-5 borderSecondary rounded-circle h-20 w-20 d-inline-block"> </span>
                                                 </div>
                                             </div>
                                             <div className="flex-grow-1 ms-3">
@@ -69,7 +69,7 @@ class TopRecomendations extends Component {
                                         <div className="d-flex align-items-center">
                                             <div className="flex-shrink-0">
                                                 <div className="border-2 border-dark rounded-circle h-60 w-60 d-flex justify-content-center align-items-center">
-                                                    <span className="border border-5 borderSecondary rounded-circle h-20 w-20 d-inline-block"></span>
+                                                    <span className="border border-5 borderSecondary rounded-circle h-20 w-20 d-inline-block"> </span>
                                                 </div>
                                             </div>
                                             <div className="flex-grow-1 ms-3">

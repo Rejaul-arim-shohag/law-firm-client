@@ -14,7 +14,7 @@ class Footer extends Component {
                 <div className="py-5 secondaryBG">
                     <div className="container">
                         <div className="row text-center text-sm-start">
-                            <div className="col-md-3 col-sm-6 mb-4 mb-sm-0">
+                            <div className="col-md-3 col-sm-6 mb-4 mb-md-0">
                                 <h4 className="text-dark fw-bold mb-2 mb-sm-4"> About Us </h4>
                                 <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis dolor
                                     eveniet exercitationem minima non obcaecati, perspiciatis porro quibusdam quis
@@ -22,40 +22,40 @@ class Footer extends Component {
                                     repellat. </p>
                                 <div className="d-flex justify-content-center justify-content-sm-start">
                                     <div className="d-flex align-items-center me-3">
-                                        <a href="#!">
+                                        <a href="#">
                                             <div
                                                 className="h-40 w-40 themeWhiteBG rounded-circle d-flex justify-content-center align-items-center themeBG-h filter-invert-1 filter-invert-0-h">
-                                                <img className="h-15" src={fb} alt="..."/>
+                                                <img className="h-15" src={fb} alt="icon"/>
                                             </div>
                                         </a>
                                     </div>
                                     <div className="d-flex align-items-center me-3">
-                                        <a href="#!">
+                                        <a href="#">
                                             <div
                                                 className="h-40 w-40 themeWhiteBG rounded-circle d-flex justify-content-center align-items-center themeBG-h filter-invert-1 filter-invert-0-h">
-                                                <img className="h-15" src={twit} alt="..."/>
+                                                <img className="h-15" src={twit} alt="icon"/>
                                             </div>
                                         </a>
                                     </div>
                                     <div className="d-flex align-items-center me-3">
-                                        <a href="#!">
+                                        <a href="#">
                                             <div
                                                 className="h-40 w-40 themeWhiteBG rounded-circle d-flex justify-content-center align-items-center themeBG-h filter-invert-1 filter-invert-0-h">
-                                                <img className="h-15" src={lnkd} alt="..."/>
+                                                <img className="h-15" src={lnkd} alt="icon"/>
                                             </div>
                                         </a>
                                     </div>
                                     <div className="d-flex align-items-center me-3">
-                                        <a href="#!">
+                                        <a href="#">
                                             <div
                                                 className="h-40 w-40 themeWhiteBG rounded-circle d-flex justify-content-center align-items-center themeBG-h filter-invert-1 filter-invert-0-h">
-                                                <img className="h-15" src={ins} alt="..."/>
+                                                <img className="h-15" src={ins} alt="icon"/>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-3 col-sm-6 mb-4 mb-sm-0">
+                            <div className="col-md-3 col-sm-6 mb-4 mb-md-0">
                                 <h4 className="text-dark fw-bold mb-2 mb-sm-4"> Our Courses </h4>
                                 <ul className="list-unstyled">
                                     <li><Link to="/" className="lh-160 themeDarkColor themeColor-h"> Mearn Stack </Link>
@@ -70,7 +70,7 @@ class Footer extends Component {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="col-md-3 col-sm-6 mb-4 mb-sm-0">
+                            <div className="col-md-3 col-sm-6 mb-4 mb-md-0">
                                 <h4 className="text-dark fw-bold mb-2 mb-sm-4"> Legal </h4>
                                 <ul className="list-unstyled">
                                     <li><Link to="/" className="lh-160 themeDarkColor themeColor-h"> Privacy </Link>
@@ -82,7 +82,7 @@ class Footer extends Component {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="col-md-3 col-sm-6 mb-4 mb-sm-0">
+                            <div className="col-md-3 col-sm-6 mb-4 mb-md-0">
                                 <h4 className="text-dark fw-bold mb-2 mb-sm-4"> Subscribe Now </h4>
                                 <p> Aliquam vel elit dolor. Vivamus iaculis finibus rutrum. </p>
                                 <div className="d-flex justify-content-center justify-content-sm-start">
@@ -90,7 +90,7 @@ class Footer extends Component {
                                         <input type="text" className="col-10 form-control rounded-0 w-auto"
                                                placeholder="Email Address"/>
                                         <button type="submit" className="col-2 btn rounded-0 themeBG themeDeepDark-h">
-                                            <img src={locationIcon_white} alt="..."/>
+                                            <img src={locationIcon_white} alt="icon"/>
                                         </button>
                                     </form>
                                 </div>

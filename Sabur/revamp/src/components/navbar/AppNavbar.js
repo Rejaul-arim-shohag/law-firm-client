@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 // React Bootstrap
-import {Container, Nav, Navbar, Offcanvas, NavDropdown, Form, Button} from "react-bootstrap";
+import {Container, Nav, Navbar, Offcanvas} from "react-bootstrap";
 
 // React Router
 import {Link} from "react-router-dom";
@@ -13,22 +13,7 @@ class AppNavbar extends Component {
     render() {
         return (
             <div>
-                {/*<Navbar bg="light" expand="lg">*/}
-                {/*    <Container>*/}
-                {/*        <Navbar.Brand href="#" className="bodyMedium fw-bold themeDarkBG">learnwith <br/> <span className="text-white small-dot">RABBIL</span></Navbar.Brand>*/}
-                {/*        <Navbar.Toggle aria-controls="navbarScroll" />*/}
-                {/*        <Navbar.Collapse id="navbarScroll">*/}
-                {/*            <Nav className="ms-auto my-2 my-lg-0">*/}
-                {/*                <Link className="nav-link text-uppercase fw-bold active" to="/">Home</Link>*/}
-                {/*                <Link className="nav-link text-uppercase fw-bold" to="/about">About</Link>*/}
-                {/*                <Link className="nav-link text-uppercase fw-bold" to="/courses">Courses</Link>*/}
-                {/*                <Link className="nav-link text-uppercase fw-bold" to="/contact">Contact_Section</Link>*/}
-                {/*                <Link className="nav-link text-uppercase fw-bold rounded-pill text-white themeBG py-2 px-4 ms-3" to="/join">Join</Link>*/}
-                {/*            </Nav>*/}
-                {/*        </Navbar.Collapse>*/}
-                {/*    </Container>*/}
-                {/*</Navbar>*/}
-                {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => (
+                {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map(() => (
                     <Navbar key={"lg"} bg="light" expand={"lg"} className="">
                         <Container>
                             <Navbar.Brand href="#" className="bodyMedium fw-bold themeDarkBG">learnwith <br/> <span className="text-white small-dot">RABBIL</span></Navbar.Brand>
