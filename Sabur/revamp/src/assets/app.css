@@ -378,8 +378,16 @@ a {
     height: 15px;
 }
 
+.h-25 {
+    height: 25px;
+}
+
 .h-60 {
     height: 60px;
+}
+
+.w-50 {
+    width: 50px;
 }
 
 .w-60 {

@@ -3,11 +3,24 @@ import fb from "../../assets/images/facebook.svg";
 import twit from "../../assets/images/twitter.svg";
 import lnkd from "../../assets/images/linkend.svg";
 import ins from "../../assets/images/instagram.svg";
-import {Link} from "react-router-dom";
 import locationIcon_white from "../../assets/images/location-icon-white.svg";
 import mapLocation from "../../assets/images/map-location.svg";
 
+// Copyright Image
+import app_pay from "../../assets/images/copyright_image/apple_pay.svg";
+import google_pay from "../../assets/images/copyright_image/google_pay.svg";
+import amazon from "../../assets/images/copyright_image/amazon.svg";
+import affirm from "../../assets/images/copyright_image/affirm.svg";
+import shop_pay from "../../assets/images/copyright_image/shop_pay.svg";
+
+// Router Dom
+import {Link} from "react-router-dom";
+
 class Footer extends Component {
+    // Display Year (Copyright Part)
+    getYear() {
+        return new Date().getFullYear();
+    }
     render() {
         return (
             <Fragment>
@@ -98,6 +111,21 @@ class Footer extends Component {
                                 <div className="mt-3" style={{marginLeft: '-12px'}}>
                                     <img className="d-inline-block" src={mapLocation} alt="Map Location"/>
                                     <span className="d-inline-block themeDarkColor ms-2"> Dhaka Bangladesh </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr className="my-4"/>
+                    <div className="container">
+                        <div className="row d-flex justify-content-between align-items-center">
+                            <p className="col-12 col-md-8 m-0 fw-bold themeDarkColor text-center text-md-start mb-3 mb-md-0"> &copy; {this.getYear()}. Rabbil Hasan -  All rights reserved. </p>
+                            <div className="col-12 col-md-4">
+                                <div className="d-flex text-center text-md-start">
+                                    <div className="me-3 w-50 h-25 py-2 px-3 bg-white"> <img className="img-fluid" src={app_pay} alt="app_pay"/> </div>
+                                    <div className="me-3 w-50 h-25 py-2 px-3 bg-white"> <img className="img-fluid" src={google_pay} alt="google_pay"/> </div>
+                                    <div className="me-3 w-50 h-25 py-2 px-3 bg-white"> <img className="img-fluid" src={amazon} alt="amazon"/> </div>
+                                    <div className="me-3 w-50 h-25 py-2 px-3 bg-white"> <img className="img-fluid" src={affirm} alt="affirm"/> </div>
+                                    <div className="w-50 h-25 py-2 px-3 bg-white"> <img className="img-fluid" src={shop_pay} alt="shop_pay"/> </div>
                                 </div>
                             </div>
                         </div>
