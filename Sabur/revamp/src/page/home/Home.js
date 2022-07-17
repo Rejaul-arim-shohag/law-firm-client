@@ -7,10 +7,12 @@ import WhyChooseUs from "../../components/why_choose_us/WhyChooseUs";
 import OurCourse from "../../components/our-course/OurCourse";
 import BrowseCourses from "../../components/browse-courses/BrowseCourses";
 import Testimonial from "../../components/testimonial/Testimonial";
-import Contact_Section from "../../components/contact/Contact_Section";
+import ContactSection from "../../components/contact/ContactSection";
 
 // Include Style
 import './home.css';
+
+// Home Page / Landing Page - Almost Done
 
 class Home extends Component {
     render() {
@@ -22,7 +24,7 @@ class Home extends Component {
                 <OurCourse/>
                 <BrowseCourses/>
                 <Testimonial/>
-                <Contact_Section/>
+                <ContactSection/>
             </Fragment>
         );
     }

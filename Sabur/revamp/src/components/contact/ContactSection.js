@@ -16,7 +16,7 @@ import ins from "../../assets/images/instagram.svg";
 // Include Style
 import './contact.css';
 
-class Contact_Section extends Component {
+class ContactSection extends Component {
     render() {
         return (
             <Fragment>
@@ -145,4 +145,4 @@ class Contact_Section extends Component {
     }
 }
 
-export default Contact_Section;
+export default ContactSection;
