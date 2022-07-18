@@ -2,9 +2,16 @@ import React, {Component, Fragment} from 'react';
 
 // Include Style
 import './courses.css';
+
+// Rect Helmet
 import {Helmet} from "react-helmet";
+
+// Images
 import favicon from "../../assets/images/title-icon.ico";
 import og_image from "../../assets/images/og-image.png";
+
+// React Dom
+import {Link} from "react-router-dom";
 
 class Courses extends Component {
     render() {
@@ -21,7 +28,16 @@ class Courses extends Component {
                     <meta property="og:image" content={og_image} />
                 </Helmet>
 
-                <h2> Courses </h2>
+                <div className="min-100-vh d-flex justify-content-center align-items-center">
+                    <div className="container">
+                        <div className="row w-100">
+                            <div className="col-md-5 mb-4 mb-md-0"> <Link to="/courses-page-one"> <div className="w-100 bg-warning p-5 text-center text-white fw-bold fs-1 text-uppercase rounded"> Courses Page 01 </div> </Link> </div>
+                            <div className="col-md-2 mb-4 mb-md-0 px-5 py-3"> </div>
+                            <div className="col-md-5 mb-4 mb-md-0"> <Link to="/courses-page-two"> <div className="w-100 bg-info p-5 text-center text-white fw-bold fs-1 text-uppercase rounded"> Courses Page 02 </div> </Link> </div>
+                        </div>
+                    </div>
+
+                </div>
             </Fragment>
         );
     }

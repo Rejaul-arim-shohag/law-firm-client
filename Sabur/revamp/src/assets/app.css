@@ -262,6 +262,14 @@ body {
     -webkit-box-orient: vertical;
 }
 
+/* Breadcrumb */
+.breadcrumb-link a {
+    padding: 0 5px;
+}
+.breadcrumb-link a:last-child {
+    color: var(--themeColor);
+}
+
 /* Remove Bootstrap focus shadow */
 textarea:focus,
 input[type="text"]:focus,
@@ -554,6 +562,12 @@ a {
     .pseudo-border::before {
         top: 7%;
         left: 14%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .headline-1-important-min-992 {
+        font-size: var(--headline-1) !important;
     }
 }
 
