@@ -35,8 +35,8 @@ export default function Reviews() {
                 <div className="flex-1 w-96 relative">
                     <Slider ref={c => (slider.current = c)} {...settings}>
                         {
-                            data?.map((item, index) => (
-                                <div className="">
+                            data?.map((item, i) => (
+                                <div className="" key={i}>
                                     <div className="grid grid-cols-12   grid-rows-6  max-h-96 w-full pr-5">
                                         {/* <div className="chevrons col-start-1 col-end-3 ">
 

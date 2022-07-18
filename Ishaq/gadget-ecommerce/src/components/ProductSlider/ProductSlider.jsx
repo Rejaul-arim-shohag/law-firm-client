@@ -61,9 +61,9 @@ export default function ProductSlider({title}) {
                     <Link to="/all" className="bg-hero-spiral bg-no-repeat bg-contain absolute -top-10 right-0 flex justify-center items-center   gap-2 text-sm rounded-sm text-primary hover:text-dark border border-primary hover:border-dark px-3"> <span>See all</span> <HiOutlineChevronRight className=''/> </Link>
                     <Slider ref={c => (slider.current = c)} {...settings}>
                         {
-                            [...Array(12)].map((item, index) => {
+                            [...Array(12)].map((item, i) => {
                                 return (
-                                    <ProductCard />
+                                    <ProductCard key={i}/>
                                 )
                             })
                         }

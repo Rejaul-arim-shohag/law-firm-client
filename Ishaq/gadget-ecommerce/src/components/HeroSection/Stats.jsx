@@ -11,9 +11,10 @@ export default function Stats() {
     <div className="stats">
       <dl className="grid  grid-cols-3 w-full">
         {
-          data?.map((item, index) => (
+          data?.map((item, i) => (
             <div
               className="flex flex-col md:text-left text-center rounded-lg"
+              key={i}
             >
               <dd className="font-bold md:text-3xl text-xl">
                 {item.state}

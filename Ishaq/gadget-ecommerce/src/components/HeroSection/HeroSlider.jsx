@@ -19,8 +19,8 @@ export default function HeroSlider() {
                 <div className="w-full flex justify-center items-center" >
                     <div className=" outline outline-offset-8 outline-primary w-72 h-72 md:w-[35rem] md:h-[35rem]   rounded-full p-5 md:p-10">
                         <div className="h-full w-full rounded-full bg-primary md:p-10 p-5 ">
-                            <div className="rounded-full w-80 -mt-12 md:-mt-24 z-30">
-                                <img src="/images/recent/3.png" alt="" className='rounded-3xl w-1/2 h-1/2  md:w-full md:h-full' />
+                            <div className="rounded-full w-full -mt-12 md:-mt-24 z-30">
+                                <img src="/images/recent/3.png" alt="" className='rounded-3xl w-full h-full' />
                             </div>
                         </div>
                     </div>

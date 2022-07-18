@@ -59,9 +59,9 @@ export default function ShopByBrands() {
                     {/* <div className="bg-hero-spiral bg-no-repeat bg-contain absolute -top-[10%] -left-[15%] md:-top-1/4  md:-left-[5%]  w-1/2 h-1/2 md:w-full md:h-full"></div> */}
                     <Slider ref={c => (slider.current = c)} {...settings}>
                         {
-                            data?.map((item, index) => (
-                                <div className="p-2 ">
-                                    <Link to="/" className="rounded w-full h-full shadow-md bg-white   md:p-12 p-5 flex items-center justify-center" key={index}>
+                            data?.map((item, i) => (
+                                <div className="p-2 " key={i}>
+                                    <Link to="/" className="rounded w-full h-full shadow-md bg-white   md:p-12 p-5 flex items-center justify-center" >
                                         <div className="flex gap-3">
                                         <img src={item.src} alt="" className=' p-1 h-10 w-10 border rounded-full border-primary' />
                                             <div className="">
