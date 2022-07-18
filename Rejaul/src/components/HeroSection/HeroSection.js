@@ -15,20 +15,20 @@ const HeroSection = () => {
                     <div className="heroContent pt-5 col-md-6">
                         <div>
                             <h1><span className="heroSpan">Legal Attony  Help In</span> </h1>
-                            <h1>BANGLADESH.</h1>
+                            <h1 className="highlightName">BANGLADESH.</h1>
                             <p className="my-2">Appareat reformidans his te. Mundi erroribus <br /> ad eum, mea ut dicam nostro copiosae. </p>
-                            <div className="serviceCounted w-80 d-flex justify-content-between">
+                            <div className="serviceCounted d-flex justify-content-between">
                                 <div>
                                     <h4 className="text-center">98%</h4>
-                                    <p>SUCCESSFUL CASES</p>
+                                    <p  className="text-center">SUCCESSFUL CASES</p>
                                 </div>
                                 <div>
                                     <h4 className="text-center">1700+</h4>
-                                    <p>TRUSTED CLIENTS</p>
+                                    <p  className="text-center">TRUSTED CLIENTS</p>
                                 </div>
                                 <div>
                                     <h4 className="text-center">10,600</h4>
-                                    <p>INJURY CASES</p>
+                                    <p  className="text-center">INJURY CASES</p>
                                 </div>
                             </div>
                             
