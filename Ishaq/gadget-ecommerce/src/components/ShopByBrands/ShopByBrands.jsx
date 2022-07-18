@@ -55,13 +55,13 @@ export default function ShopByBrands() {
                     </h3>
                 </div>
                 {/* grid grid-cols-2 md:grid-cols-5 gap-3 */}
-                <div className="mt-16 relative w-full">
+                <div className="mt-5 relative w-full">
                     {/* <div className="bg-hero-spiral bg-no-repeat bg-contain absolute -top-[10%] -left-[15%] md:-top-1/4  md:-left-[5%]  w-1/2 h-1/2 md:w-full md:h-full"></div> */}
                     <Slider ref={c => (slider.current = c)} {...settings}>
                         {
                             data?.map((item, i) => (
                                 <div className="p-2 " key={i}>
-                                    <Link to="/" className="rounded w-full h-full shadow-md bg-white   md:p-12 p-5 flex items-center justify-center" >
+                                    <Link to="/" className="rounded w-full h-full shadow-md bg-white    p-5 flex items-center justify-center" >
                                         <div className="flex gap-3">
                                         <img src={item.src} alt="" className=' p-1 h-10 w-10 border rounded-full border-primary' />
                                             <div className="">
@@ -76,7 +76,7 @@ export default function ShopByBrands() {
                         }
 
                     </Slider>
-                    <div className="mt-10 flex gap-3 justify-center">
+                    <div className="mt-3  flex gap-3 justify-center">
                         <button onClick={() => slider.current.slickPrev()} className=' rounded-full px-1 py-1 fw-bold bg-blue-grey-300 hover:bg-emerald-100 duration-150 text-white  border-0'> <HiOutlineChevronLeft className='m-2' /></button>
                         <button onClick={() => slider.current.slickNext()} className=' rounded-full px-1 py-1 fw-bold  bg-blue-grey-300 hover:bg-emerald-100 duration-150 text-white  border-0'> <HiOutlineChevronRight className='m-2' /></button>
                     </div>
