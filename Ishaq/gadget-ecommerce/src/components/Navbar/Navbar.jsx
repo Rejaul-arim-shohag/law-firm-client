@@ -1,15 +1,13 @@
 import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import { ChevronDownIcon, LoginIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon } from '@heroicons/react/solid'
+import 'animate.css'
 import { Fragment } from 'react'
-import { BsApple, BsCameraFill, BsCart, BsCart2, BsFillPhoneFill, BsFillPlugFill, BsFillTabletFill, BsHouse, BsLaptopFill, BsPerson } from 'react-icons/bs'
-import { GiSmartphone } from 'react-icons/gi'
+import { AiFillAppstore } from 'react-icons/ai'
+import { BsApple, BsCameraFill, BsCart, BsCartDash, BsFillPhoneFill, BsFillPlugFill, BsFillTabletFill, BsHouseFill, BsLaptopFill, BsPerson } from 'react-icons/bs'
+import { GiMicrochip, GiSmartphone } from 'react-icons/gi'
 import { SiSamsung, SiXiaomi } from 'react-icons/si'
-import { IoIosLogIn } from 'react-icons/io'
 import { Link } from 'react-router-dom'
-import { IconButton } from '@material-tailwind/react'
 import useScrollPosition from '../../hooks/useScrollPosition'
-
 const smartphones = [
   {
     name: 'Apple',
@@ -41,39 +39,48 @@ const smartphones = [
 const menu = [
   {
     name: 'Home',
+    short:"Home",
     to: '/',
-    icon: <BsHouse />,
+    icon: <BsHouseFill />,
+
   },
   {
     name: 'All Categories',
+    short:"Categories",
     to: '/',
-    icon: <GiSmartphone />,
+    icon: <GiMicrochip />,
   },
   {
     name: 'Brands',
+    short:"Brands",
     to: '/',
-    icon: <GiSmartphone />,
+    icon: <AiFillAppstore />,
+  },
+  {
+    name: 'Add to cart',
+    short:"Cart",
+    to: '/',
+    icon: <BsCartDash />,
+  },
+  {
+    name: 'Login',
+    short:"Login",
+    to: '/',
+    icon: <BsPerson />,
   },
   {
     name: 'About',
+    short:"",
     to: '/',
     icon: <GiSmartphone />,
   },
   {
     name: 'Contact',
+    short:"",
     to: '/',
     icon: <GiSmartphone />,
   },
-  {
-    name: 'Add to cart',
-    to: '/',
-    icon: <GiSmartphone />,
-  },
-  {
-    name: 'Login',
-    to: '/',
-    icon: <GiSmartphone />,
-  },
+ 
 ]
 
 const catagories = [
@@ -93,24 +100,18 @@ export default function Navbar() {
   const scrollPosition = useScrollPosition();
   return (
     <div className="relative ">
-      <Popover className={`fixed ${scrollPosition > 0 ? "bg-white" : ""}  top-0 right-0 left-0 z-50`}>
+      <Popover className={`md:fixed absolute ${scrollPosition > 0 ? "md:bg-white animate__animated animate__fadeInDown " : "animate__animated animate__fadeInUp"}  top-0 right-0 left-0 z-50 `}>
         <div className="container">
           <div className="max-w-7xl container mx-auto px-4 sm:px-6">
             <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
               <div className="flex justify-start lg:w-0 lg:flex-1">
-                <Link to="/" className='bg-dark md:text-sm py-2 px-4 rounded-tr-2xl'>
-                  <span className='text-primary'>gadget</span>
-                  <br />
-                  <span className='text-white uppercase font-bold'>Shop <span className='bg-primary rounded-full h-1 w-1 inline-block'></span></span>
+                <Link to="/" className='bg-dark md:text-sm py-2 px-4 flex md:flex-col gap-2 md:gap-0 justify-center items-center rounded-tr-2xl'>
+                  <span className='text-primary text-sm '>gadget</span>
+                  <span className='text-white uppercase text-xs font-bold'>Shop <span className='bg-primary rounded-full h-1 w-1 inline-block'></span></span>
 
                 </Link>
               </div>
-              <div className="-mr-2 -my-2 md:hidden">
-                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none  focus:ring-0">
-                  <span className="sr-only">Open menu</span>
-                  <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                </Popover.Button>
-              </div>
+            
               <Popover.Group as="nav" className="hidden md:flex space-x-10">
                 <Popover className="relative">
                   {({ open }) => (
@@ -241,64 +242,10 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Transition
-            as={Fragment}
-            enter="duration-200 ease-out"
-            enterFrom="opacity-0 scale-95"
-            enterTo="opacity-100 scale-100"
-            leave="duration-100 ease-in"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
-          >
-            <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-              <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-                <div className="pt-5 pb-6 px-5">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Link to="/" className='bg-dark text-xs py-2 px-4 rounded-tr-2xl'>
-                        {/* <span className='text-primary'>gadget </span> */}
-
-                        <span className='text-white uppercase font-medium'>Shop <span className='bg-primary rounded-full h-1 w-1 inline-block'></span></span>
-
-                      </Link>
-                    </div>
-                    <div className="-mr-2">
-                      <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none  focus:ring-0">
-                        <span className="sr-only">Close menu</span>
-                        <XIcon className="h-6 w-6" aria-hidden="true" />
-                      </Popover.Button>
-                    </div>
-                  </div>
-                  <div className="mt-6">
-                    <nav className="grid gap-y-8">
-                      {
-                        menu.map((item) => (
-                          <Link
-                            key={item.name}
-                            to={item.to}
-                            className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-                          >
-                            <p className='flex-shrink-0 h-6 w-6 text-primary'>{item.icon}</p>
-                            {/* <item.icon className="flex-shrink-0 h-6 w-6 text-primary" aria-hidden="true" /> */}
-                            <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
-                          </Link>
-                        ))
-                      }
-
-                    </nav>
-                  </div>
-                </div>
-
-              </div>
-            </Popover.Panel>
-          </Transition>
+        
         </div>
       </Popover>
-      <div className="">
-        <div className="">
-          
-        </div>
-      </div>
+    
     </div>
   )
 }
