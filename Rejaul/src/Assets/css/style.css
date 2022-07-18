@@ -5,6 +5,7 @@
 }
 
 body{
+  width: 100%;
   font-size: 14px;
   background: #f0f0f0 !important;
   font-family: 'Poppins', sans-serif !important;
@@ -60,6 +61,8 @@ a:hover {
   background-color:#21BF73;
   color:white;
 }
+
+
 @media only screen and (max-width: 992px) {
   .heroMainImage>img{
     width:100%;
@@ -73,6 +76,9 @@ a:hover {
  }
 }
 
+/* @media only screen and (max-width: 514px){
+  
+} */
 @media only screen and (max-width: 1200px) {
   .attorneys>div{
     display:grid;
@@ -103,6 +109,25 @@ a:hover {
   .reviewSliders{
     margin-top:30px;
   }
+  .plansGridContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2%;
+}
+.setCommentBtn{
+ text-align: center;
+ margin-bottom: 50px;
+}
+/* .contact-right-side{
+  position: relative;
+}
+.contact-image{
+  position:absolute;
+  display: block;
+  top:5px;
+  right:5px;
+} */
+/* .contact-image */
 }
 @media only screen and (max-width: 514px) {
   .attorneys{
@@ -113,12 +138,21 @@ a:hover {
   .attorneys>div{
     display:flex;
     justify-content: center;
-
   }
+  .attorneys>div:last-child{
+    margin-bottom: 40px;
+  }
+  .plansGridContainer{
+    display: grid;
+    grid-template-columns: 350px;
+    grid-gap: 2%;
+    justify-items: center;
+    margin: 0 auto;
+}
 }
 
 
 
-@import "sidebar.css";
+/* @import "sidebar.css";
 @import "progress.css";
-@import "dropdownmenu.css";
+@import "dropdownmenu.css"; */

@@ -9,23 +9,26 @@
 .single_plan:nth-child(2)>button{
    background:rgb(19, 111, 128);
 }
+
 .plansGridContainer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 5%;
+    grid-gap: 2%;
 }
 .plansGridContainer>div{
     background-color: rgb(255, 255, 255);
     padding:40px 30px;
     border-radius: 5px;
 }
+.single_plan>h6 {
+    line-height: 2 !important;
+    font-size: 14px;
+}
 .single_plan>h4, .single_plan>p{
     text-align: center;
-    line-height:2 !important;
+    
 }
-.single_plan>h6{
-    line-height:2 !important;
-}
+
 .planing_price{
     font-size:40px;
 }

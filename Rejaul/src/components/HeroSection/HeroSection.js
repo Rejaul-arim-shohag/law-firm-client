@@ -8,7 +8,6 @@ import { GiClawHammer } from "react-icons/gi";
 const HeroSection = () => {
     return (
         <div className="heroSection">
-            <NavBar/>
             <div className="leftBg"></div>
             <div className="rightbg"></div>
             <div className="container pt-4">

@@ -18,8 +18,8 @@ const PracticeArea = () => {
             items: 4
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
+            breakpoint: { max: 1024, min: 672 },
+            items: 3
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
@@ -28,7 +28,7 @@ const PracticeArea = () => {
     };
     return (
         <div className="py-5 my-5">
-            <div className="container">
+            <div className="container caroselArea">
                 <p className="text-center">LEGAL HELP</p>
                 <h3 className="text-center">Our Legal Services</h3>
                 <div className="d-flex justify-content-end">
@@ -84,7 +84,7 @@ const PracticeArea = () => {
                         </Card>
                     </div>
                     <div>
-                        <Card style={{ width: '16.5rem' }}>
+                        <Card style={{width: '16.5rem' }}>
                             <Card.Img variant="top" src={accidentImage} />
                             <Card.Body>
                                 <Card.Title>Tax Disputes</Card.Title>

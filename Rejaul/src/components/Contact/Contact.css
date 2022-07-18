@@ -1,5 +1,6 @@
 .custom-form{
     border:0;
+    margin: 10px 0;
     padding:13px 20px;
     width:100%;
     background-color: #fff;
@@ -8,6 +9,7 @@
     outline: none;
 }
 .custom-textArea{
+    margin: 10px 0;
     border:0;
     padding-bottom:120px;
     padding-top:13px;
@@ -23,7 +25,8 @@
     padding:8px;
     background:#FFFFFF;
     border-radius:50%;
-    color:#2E374F
+    color:#2E374F;
+    margin-right:10px;
 
 }
 .contact_info>p{
