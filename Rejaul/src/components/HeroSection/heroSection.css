@@ -30,7 +30,7 @@
 }
 .serchBox{
     position: relative;
-    width: 80%;
+    width: 76%;
 }
 .serviceSearchField{
     width:100% !important;
@@ -98,4 +98,10 @@
     width:60px;
     height: 60px;
     border-radius:50%;
+}
+.serviceCounted{
+    width:75%;
+}
+.highlightName{
+    color:#169156;
 }
