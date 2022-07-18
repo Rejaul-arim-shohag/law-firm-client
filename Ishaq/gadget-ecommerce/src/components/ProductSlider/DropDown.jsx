@@ -12,7 +12,7 @@ export default function DropDown() {
         { title: "Camera", icon: <BsCameraFill /> },
     ]
     return (
-        <div className="relative w-56 text-center  z-50">
+        <div className="relative w-56 text-center  z-10">
             <Menu as="div" className="relative inline-block text-center">
                 <Menu.Button className="inline-flex w-full justify-center items-center rounded-md bg-opacity-0  px-4 py-2 text-base font-medium text-primary hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                     All Categories

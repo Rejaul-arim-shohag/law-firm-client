@@ -12,8 +12,8 @@ export default function Home() {
     <div className='relative'>
       <Navbar />
       <HeroSection />
-      <ProductSlider title="Top Selling"/>
       <ShopByBrands/>
+      <ProductSlider title="Top Selling"/>
       <ProductSlider title="New Arrival"/>
       <Reviews/>
       <Contact/>

@@ -1,40 +1,49 @@
 [
     {
         "id": 3,
-        "src": "/images/brands/apple.svg"
+        "src": "/images/brands/apple.svg",
+        "title":"Apple"
     },
     {
         "id": 4,
-        "src": "/images/brands/samsung.svg"
+        "src": "/images/brands/samsung.svg",
+        "title":"Samsung"
     },
     {
         "id": 5,
-        "src": "/images/brands/huawei.svg"
+        "src": "/images/brands/huawei.svg",
+        "title":"Huawei"
     },
     {
         "id": 3,
-        "src": "/images/brands/nokia.svg"
+        "src": "/images/brands/nokia.svg",
+        "title":"Nokia"
     },
     {
         "id": 4,
-        "src": "/images/brands/one-plus.svg"
+        "src": "/images/brands/one-plus.svg",
+        "title":"One Plus"
     },
 
     {
         "id": 5,
-        "src": "/images/brands/apple.svg"
+        "src": "/images/brands/apple.svg",
+        "title":"Apple"
     },
     {
         "id": 3,
-        "src": "/images/brands/nokia.svg"
+        "src": "/images/brands/nokia.svg",
+        "title":"Nokia"
     },
     {
         "id": 4,
-        "src": "/images/brands/one-plus.svg"
+        "src": "/images/brands/one-plus.svg",
+        "title":"One Plus"
     },
 
     {
         "id": 5,
-        "src": "/images/brands/apple.svg"
+        "src": "/images/brands/apple.svg",
+        "title":"Apple"
     }
 ]

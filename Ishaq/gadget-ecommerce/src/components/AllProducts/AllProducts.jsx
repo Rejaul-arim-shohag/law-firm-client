@@ -12,7 +12,7 @@ export default function AllProducts() {
                         <div className="lg:sticky lg:top-4">
                             <details
                                 open
-                                className="overflow-hidden border border-gray-200 rounded"
+                                className="overflow-hidden shadow-xl rounded"
                             >
                                 <summary className="flex items-center justify-between px-5 py-3 bg-gray-100 lg:hidden">
                                     <span className="text-sm font-medium">
@@ -26,7 +26,7 @@ export default function AllProducts() {
 
                                 <form
                                     action=""
-                                    className="border-t border-gray-200 lg:border-t-0"
+                                    className="border-t border-grey-500 lg:border-t-0"
                                 >
                                     <fieldset>
                                         <legend className="block w-full px-5 py-3 text-xs font-medium bg-gray-50">
@@ -176,7 +176,7 @@ export default function AllProducts() {
                                         </fieldset>
                                     </div>
 
-                                    <div className="flex justify-between px-5 py-3 border-t border-gray-200">
+                                    <div className="flex justify-between px-5 py-3 border-t border-grey-500">
                                         <button
                                             name="reset"
                                             type="button"
@@ -188,7 +188,7 @@ export default function AllProducts() {
                                         <button
                                             name="commit"
                                             type="button"
-                                            className="px-5 py-3 text-xs font-medium text-white bg-green-600 rounded"
+                                            className="px-5 py-3 text-xs font-medium text-white bg-primary rounded"
                                         >
                                             Apply Filters
                                         </button>
@@ -228,7 +228,7 @@ export default function AllProducts() {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-4 gap-5 mt-4 bg-gray-200 ">
+                            <div className="grid grid-cols-3 gap-5 mt-4 bg-gray-200 ">
                             {
                             [...Array(12)].map((item, index) => {
                                 return (

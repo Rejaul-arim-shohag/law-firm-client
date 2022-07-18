@@ -14,8 +14,8 @@ export default function ProductSlider({title}) {
         autoplay: true,
         speed: 500,
         autoplaySpeed: 5000,
-        slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToShow: 4,
+        slidesToScroll: 4,
         initialSlide: 0,
         responsive: [
             {
@@ -48,7 +48,7 @@ export default function ProductSlider({title}) {
 
     return (
         <div className='bg-[#F4F4F6]'>
-            <div className="relative container py-16  flex justify-center flex-col items-center ">
+            <div className="relative container py-5  flex justify-center flex-col items-center ">
                 <div className="flex flex-col items-center justify-center">
                     <h3 className='font-extrabold md:text-3xl text-xl  text-dark flex justify-center items-center bg-hero-vector bg-contain bg-left bg-no-repeat  md:py-1 md:w-96 w-52 md:h-16 h-8 text-center'>
                        {title}
@@ -69,8 +69,8 @@ export default function ProductSlider({title}) {
                         }
                     </Slider>
                     <div className="mt-10 flex gap-3 justify-center">
-                        <button onClick={() => slider.current.slickPrev()} className=' rounded-full px-1 py-1 fw-bold bg-slate-300 hover:bg-emerald-100 duration-150 text-white hover:text-primary border-0'> <HiOutlineChevronLeft className='m-2' /></button>
-                        <button onClick={() => slider.current.slickNext()} className=' rounded-full px-1 py-1 fw-bold  bg-slate-300 hover:bg-emerald-100 duration-150 text-white hover:text-primary border-0'> <HiOutlineChevronRight className='m-2' /></button>
+                        <button onClick={() => slider.current.slickPrev()} className=' rounded-full px-1 py-1 fw-bold bg-blue-grey-300  hover:bg-emerald-100 duration-150 text-white hover:text-primary border-0'> <HiOutlineChevronLeft className='m-2' /></button>
+                        <button onClick={() => slider.current.slickNext()} className=' rounded-full px-1 py-1 fw-bold  bg-blue-grey-300  hover:bg-emerald-100 duration-150 text-white hover:text-primary border-0'> <HiOutlineChevronRight className='m-2' /></button>
                     </div>
 
                 </div>

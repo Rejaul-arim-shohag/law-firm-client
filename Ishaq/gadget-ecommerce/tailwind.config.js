@@ -19,8 +19,19 @@ module.exports = withMT(
           // '2xl': '9rem',
         },
       },
-    
-     
+      screens: {
+        sm: '640px',
+
+        md: '768px',
+
+        lg: '1024px',
+
+        xl: '1280px',
+
+        // 2xl: '1536px'
+      },
+
+
       extend: {
         backgroundImage: {
           'hero-rectangle': "url('/src/assets/img/bg-rectangle.svg')",
