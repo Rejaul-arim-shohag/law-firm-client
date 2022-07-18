@@ -22,7 +22,7 @@ const PricingPlans = () => {
                         <h6><ImCross />Upfront cost and expectancy</h6>
                         <h6><ImCross />Payment plans available</h6>
                         <h6><ImCross />No overcharges</h6>
-                        <button className="mainButton2 mt-5">Sign up</button>
+                        <button className="mainButton2 mt-1">Sign up</button>
                     </div>
                     <div className="single_plan shadow">
                         <h4 className="active_plan">Flat Fee</h4>
@@ -32,7 +32,7 @@ const PricingPlans = () => {
                         <h6><AiOutlineCheck />Upfront cost and expectancy</h6>
                         <h6><AiOutlineCheck />Payment plans available</h6>
                         <h6><AiOutlineCheck />No overcharges</h6>
-                        <button className="mainButton2 mt-5">Sign up</button>
+                        <button className="mainButton2 mt-1">Sign up</button>
                     </div>
                     <div className="single_plan shadow">
                         <h4>Hourly Fee</h4>
@@ -42,7 +42,7 @@ const PricingPlans = () => {
                         <h6><AiOutlineCheck />Upfront cost and expectancy</h6>
                         <h6><AiOutlineCheck />Payment plans available</h6>
                         <h6><AiOutlineCheck />No overcharges</h6>
-                        <button className="mainButton2 mt-5">Sign up</button>
+                        <button className="mainButton2 mt-1">Sign up</button>
                     </div>
                 </div>
             </div>

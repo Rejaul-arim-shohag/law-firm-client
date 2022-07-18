@@ -8,17 +8,17 @@ import { BsInstagram } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
-
+import contactImage from "../../Assets/images/contact.jpg"
 
 const Contact = () => {
     return (
         <div className="py-5">
             <div className="container">
                 <div className="row gx-5">
-                    <div className="col-md-8">
+                    <div className="col-md-7">
                         <h4>Send A Message</h4>
                         <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, non?</p>
-                        <div className="row my-3 gx-4">
+                        <div className="row  gx-4">
                             <div className="col-md-6">
                                 <input placeholder="Your Name" className="custom-form " type="text" />
                             </div>
@@ -26,7 +26,7 @@ const Contact = () => {
                                 <input placeholder="Email Address" className="custom-form" type="text" />
                             </div>
                         </div>
-                        <div className="row my-5">
+                        <div className="row ">
                             <div className="col-md-6">
                                 <input placeholder="Your Phone" className="custom-form" type="text" />
                             </div>
@@ -34,41 +34,43 @@ const Contact = () => {
                                 <input placeholder="Subject" className="custom-form" type="text" />
                             </div>
                         </div>
-                        <div className="row my-3">
+                        <div className="row ">
                             <div className="col-md-12">
                                 <input placeholder="Message" className="custom-textArea" type="text" />
                             </div>
                         </div>
-                        <button className=" mainButton2">POST COMMENT<BsArrowRight /></button>
+                        <div className="setCommentBtn">
+                            <button className="mainButton2">POST COMMENT<BsArrowRight /></button>
+                        </div>
                     </div>
 
-                    <div className="col-md-4">
-                        <div className="contact_details">
+                    <div className="col-md-5 contact-right-side">
+                        <div className="contact_details py-3">
                             <h3 className="contact_heading pt-4 px-4">Contact Info</h3>
-                            <div className="row my-5 px-3">
-                                <div className="contact_icon col-md-2">
+                            <div className="d-flex my-4 px-3">
+                                <div className="contact_icon mt-2">
                                     <TiLocationArrow />
                                 </div>
-                                <div className="contact_info col-md-10">
+                                <div className="contact_info ">
                                     <p>Location</p>
                                     <p>Dhaka</p>
                                     <p>Bangaladesh</p>
                                 </div>
                             </div>
-                            <div className="row my-5 px-3">
-                                <div className="contact_icon col-md-2">
+                            <div className="d-flex my-4 px-3">
+                                <div className="contact_icon ">
                                     <MdEmail />
                                 </div>
-                                <div className="contact_info col-md-10">
+                                <div className="contact_info ">
                                     <p>Email</p>
-                                    <p>rejaulkarim4740@gmail.com</p>
+                                    <p>rejaulkarim@gmail.com</p>
                                 </div>
                             </div>
-                            <div className="row my-4 px-3">
-                                <div className="contact_icon col-md-2">
+                            <div className="d-flex my-4 px-3">
+                                <div className="contact_icon ">
                                     <FaPhoneAlt />
                                 </div>
-                                <div className="contact_info col-md-10">
+                                <div className="contact_info ">
                                     <p>Phone</p>
                                     <p>(+880) 1778839434</p>
                                 </div>
@@ -81,6 +83,9 @@ const Contact = () => {
                                     <AiFillLinkedin />
                                     <FaTwitter />
                                 </div>
+                            </div>
+                            <div className="contact-image d-none">
+                                <img src={contactImage} alt="" />
                             </div>
                         </div>
                     </div>
