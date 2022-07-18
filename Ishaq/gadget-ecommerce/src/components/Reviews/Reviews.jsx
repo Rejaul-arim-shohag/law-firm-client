@@ -20,7 +20,7 @@ export default function Reviews() {
 
 
     };
- 
+
 
     return (
         <div className='bg-primary '>
@@ -42,15 +42,17 @@ export default function Reviews() {
 
                                         </div> */}
                                         <div className="comment col-start-1 col-end-12 row-start-2 row-end-7 md:col-start-2  md:h-2/3 md:col-end-7 md:row-start-3 md:row-end-7 bg-white p-5 z-20 rounded-md flex flex-col flex-wrap">
-                                            <div className="flex justify-between ">
-                                                <div className="">
-                                                    <h3 className='font-bold'>Rabbil Hasan</h3>
-                                                    <p className='text-xs font-bold text-primary'>Software Engineer</p>
+                                            <div className="">
+                                                <div className="flex justify-between ">
+                                                    <div className="">
+                                                        <h3 className='font-bold '>Rabbil Hasan</h3>
+                                                        <p className='text-xs font-bold text-primary'>Software Engineer</p>
+                                                    </div>
+                                                    <img src="/images/review/right-quote.svg" alt="" className='w-20 h-8  xl:w-20 xl:h-16 opacity-40' />
+                                                    {/* <GoQuote className='rotate-180'/> */}
                                                 </div>
-                                                <img src="/images/review/right-quote.svg" alt="" className='w-20 h-16 opacity-40' />
-                                                {/* <GoQuote className='rotate-180'/> */}
+                                                <p className='text-xs'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia rem iusto neque eum, ipsa saepe unde architecto aperiam vel culpa!</p>
                                             </div>
-                                            <p className='text-xs'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia rem iusto neque eum, ipsa saepe unde architecto aperiam vel culpa!</p>
                                         </div>
                                         <div className="img z-10 hidden md:block col-start-1 col-end-12 row-start-4 row-end-7  md:col-start-6 md:col-end-10 md:row-start-1 md:row-end-4">
                                             <img src="/images/review/1.jpg" alt="" className='w-full h-full rounded-lg' />

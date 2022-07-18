@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap");
+
+.productTab {
+    box-shadow: none !important;
+    .z-20{
+        color: #000;
+    }
+    &:focus{
+        .z-20{
+            color: #fff!important;
+        }
+    }
+    .absolute{
+        border-radius: 0;
+        background: #21bf73;
+    }
+
+   
+}
