@@ -56,7 +56,7 @@ export default function ProductSlider({title}) {
                     <DropDown />
                 </div>
                 {/* grid grid-cols-2 md:grid-cols-5 gap-3 */}
-                <div className="mt-16 relative w-full">
+                <div className="mt-10 relative w-full">
                     <div className="bg-hero-spiral bg-no-repeat bg-contain absolute -top-[10%] -left-[15%] md:-top-1/4  md:-left-[10%]  w-1/2 h-1/2 md:w-full md:h-full"></div>
                     <Link to="/all" className="bg-hero-spiral bg-no-repeat bg-contain absolute -top-10 right-0 flex justify-center items-center   gap-2 text-sm rounded-sm text-primary hover:text-dark border border-primary hover:border-dark px-3"> <span>See all</span> <HiOutlineChevronRight className=''/> </Link>
                     <Slider ref={c => (slider.current = c)} {...settings}>

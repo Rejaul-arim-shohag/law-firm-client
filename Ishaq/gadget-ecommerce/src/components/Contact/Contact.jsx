@@ -15,26 +15,26 @@ export default function Contact() {
 
                             <section className="w-full mx-auto ">
                                 <div className="mt-6 ">
-                                    <div className="items-center -mx-2 md:flex">
-                                        <div className="w-full mx-2">
+                                    <div className="items-center  md:flex md:gap-5">
+                                        <div className="w-full ">
                                             <label className="block mb-2 text-sm font-medium text-gray-600 ">Name</label>
 
-                                            <input className="block w-full px-4 py-2 text-gray-700 bg-white   border-0   rounded-md focus:border-0 focus:ring-0  focus:outline-none" type="text" />
+                                            <input className="block w-full px-4  py-2 text-gray-700 bg-white border  border-secondary  rounded-md focus:border-primary focus:ring-0  focus:outline-none" type="text" />
                                         </div>
 
-                                        <div className="w-full mx-2 mt-4 md:mt-0">
+                                        <div className="w-full  mt-4 md:mt-0">
                                             <label className="block mb-2 text-sm font-medium text-gray-600 ">Email address</label>
 
-                                            <input className="block w-full px-4 py-2 text-gray-700 bg-white   border-0   rounded-md focus:border-0 focus:ring-0  focus:outline-none" type="email" />
+                                            <input className="block w-full px-4 py-2 text-gray-700 bg-white   border  border-secondary   rounded-md focus:border-primary focus:ring-0  focus:outline-none" type="email" />
                                         </div>
                                     </div>
                                     <div className="w-full mt-4">
                                         <label className="block  text-sm font-medium text-gray-600 mb-3">Message</label>
-                                        <textarea className=" h-40 block w-full px-4 py-2 text-gray-700 bg-white   border-0   rounded-md focus:border-0 focus:ring-0  focus:outline-none"></textarea>
+                                        <textarea className=" h-40 block w-full px-4 py-2 text-gray-700 bg-white  border  border-secondary   rounded-md focus:border-primary focus:ring-0  focus:outline-none"></textarea>
                                     </div>
 
                                     <div className="flex justify-left mt-6">
-                                        <button className="px-4 py-2 uppercase text-white transition-colors rounded-md duration-200 flex items-center justify-center gap-3 transform bg-primary  hover:bg-gray-600 focus:outline-none focus:bg-gray-600 text-xs"><span>Send Message</span> <BsArrowRight /> </button>
+                                        <button className="px-4 py-4 uppercase text-white transition-colors rounded-md duration-200 flex items-center justify-center gap-3 transform bg-primary  hover:bg-gray-600 focus:outline-none focus:bg-gray-600 text-xs"><span>Send Message</span> <BsArrowRight /> </button>
                                     </div>
                                 </div>
                             </section>
