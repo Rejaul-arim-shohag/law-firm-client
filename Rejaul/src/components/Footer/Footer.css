@@ -1,6 +1,11 @@
 .footer{
     background-color:#B0EACD;
 }
+.footer_content{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5%;
+}
 .footer_socialIcon>svg{
     color:rgb(24, 25, 37);
     background-color:#fff;
@@ -12,7 +17,4 @@
 .footer_socialIcon>svg:first-child{
     color:#fff;
     background-color:#21BF73;
-}
-.footer_services{
-    margin: 0 auto !important;
 }

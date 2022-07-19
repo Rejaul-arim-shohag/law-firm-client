@@ -6,16 +6,16 @@ import "./NavBar.css"
 const NavBar = () => {
     const [navbar, setNavbar] = useState(false);
     const changeBackground = () => {
-        if(window.scrollY>=80){
+        if (window.scrollY >= 80) {
             setNavbar(true)
-        } else{
+        } else {
             setNavbar(false)
         }
         console.log(window.scrollY)
     }
     window.addEventListener("scroll", changeBackground)
     return (
-        <div className={navbar?"MainNavbar activeNav":"MainNavbar"}>
+        <div className={navbar ? "MainNavbar activeNav" : "MainNavbar"}>
             <Navbar className="mainNav mx-w-100  bg-transparent" expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">
@@ -24,12 +24,20 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link>
+                                <Link to="/">Home</Link>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <Link to="/team">Team</Link>
+                            </Nav.Link>
                             <Nav.Link href="#link">Contact</Nav.Link>
-                            <Nav.Link href="#home">Success</Nav.Link>
+                            
                             <Nav.Link href="#link">Pricing</Nav.Link>
-                            <Nav.Link href="#link">About</Nav.Link>
-                            <button className="navigationBtn mainButton">Join Now</button>
+                            <Nav.Link>
+                                <Link to="/about">About</Link>
+                            </Nav.Link>
+
+                            <button className="navigationBtn mainButton">Make an Appointment</button>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

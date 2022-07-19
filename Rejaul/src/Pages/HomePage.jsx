@@ -14,11 +14,11 @@ const HomePage = () => {
            <NavBar/>
            <HeroSection/>
            <TopRecomendaton/>
-           {/* <PracticeArea/> */}
+           <PracticeArea/>
            <Testimonial/>
            <PricingPlans/>
            <Contact/>
-           {/* <Footer/> */}
+           <Footer/>
         </div>
     );
 };

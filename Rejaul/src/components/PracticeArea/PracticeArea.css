@@ -1,35 +1,29 @@
-.cardCustomWidth{
-    width:25%;
+.expertise_area{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:3%;
 }
-/* .caroselArea>div{
-    margin-right: 10px !important;
+/* .expertise >svg{
+   padding:0 10px !important;
 } */
-.react-multiple-carousel__arrow::before{
-    color:#f1f1f1
-}
-.react-multiple-carousel__arrow{
-    background:#21BF73;
-}
-.react-multiple-carousel__arrow:hover{
-    background:#1c9e5f;
-}
-.react-multi-carousel-item {
-    margin: 0 5px;
-}
-@media only screen and (max-width: 1200px) {
-    .practiceCarosel>div{
-        margin-right: 10px !important;
-    }
-   .card{
-        width:15rem !important;
-    }
 
-  }
+.expertise{
+    background:#fff;
+    border-radius: 5px;
+    padding:30px !important;
+    /* border: 1px solid red; */
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
 
-  @media only screen and (max-width: 1025px) {
-    .card{
-        width:400px;
-    }
-
-  }
- 
+.iconAndServiceName{
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+.iconAndServiceName>h4:first-child{
+    margin-right: 10px;
+}
+.practiceAreaP{
+    width:70%;
+    margin:0 auto;
+}
