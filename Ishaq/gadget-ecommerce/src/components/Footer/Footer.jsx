@@ -5,7 +5,7 @@ import { paymentImgSrc } from './PaymentImg'
 export default function Footer() {
     return (
         <footer className=' bg-secondary'>
-            <div className=" py-10 flex flex-col md:flex-row justify-between  container">
+            <div className="    flex flex-col md:flex-row justify-between  container">
                 <div className="aboutUs flex-1 p-10 pl-0">
                     <h3 className='text-2xl font-bold'>About Us</h3>
                     <p className='mt-5 text-sm'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quam, dignissimos repellat optio quisquam dolores quis. Atque eos voluptatem harum?</p>
@@ -37,7 +37,7 @@ export default function Footer() {
                     <iframe title='fbPage' className='mt-5' src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2FprogrammerRabbil&tabs=timeline&width=340&height=271&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1326338011183994" width="340" height="100" scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
             </div>
-           <div className="border-t border-gray-200">
+           <div className="border-t border-gray-200 mb-16 md:mb-0 mt-3 md:mt-0">
            <div className=" container py-5 flex flex-col gap-4 md:flex-row justify-between items-center">
                 <p className='text-sm'>©2022 Rabbil Hasan - All right reserved </p>
                 <div className="flex gap-4">

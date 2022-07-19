@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllProductsPage from './pages/AllProducts.page';
 import Home from "./pages/Home.page";
 import ProductDetailsPage from "./pages/ProductDetails.page";
-
+import '/node_modules/preline/dist/hs-ui.bundle.js'
 
 function App() {
   const queryClient = new QueryClient()

@@ -6,6 +6,7 @@ module.exports = withMT(
     darkMode: 'class',
     content: [
       "./src/**/*.{js,jsx,ts,tsx}",
+      'node_modules/preline/dist/*.js'
     ],
     theme: {
       container: {
@@ -52,6 +53,6 @@ module.exports = withMT(
         },
       },
     },
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp'),],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp'),require('preline/plugin')],
   }
 )
