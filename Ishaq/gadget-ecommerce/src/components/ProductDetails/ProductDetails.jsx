@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import "./productDetails.scss";
-import ProductTab from "./ProductTab";
 import ProductTabs from "./ProductTabs";
 import ReactSlick from "./ReactSlick";
 import Specifications from "./Specifications";

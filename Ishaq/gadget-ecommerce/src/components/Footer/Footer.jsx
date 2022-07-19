@@ -20,11 +20,11 @@ export default function Footer() {
                 <div className="customerService flex-1 md:p-10 ">
                     <h3 className='text-2xl font-bold'>Customer Service</h3>
                     <div className="mt-5 flex flex-col gap-5 text-sm">
-                        <Link to="/" className='hover:text-primary'>Terms & Conditions</Link>
-                        <Link to="/" className='hover:text-primary'>Return Policy</Link>
-                        <Link to="/" className='hover:text-primary'>Privacy Policy</Link>
-                        <Link to="/" className='hover:text-primary'>Cookie Policy</Link>
-                        <Link to="/" className='hover:text-primary'>Legal Documents</Link>
+                        <Link to="/utilities/terms" className='hover:text-primary'>Terms & Conditions</Link>
+                        <Link to="/utilities/return" className='hover:text-primary'>Return Policy</Link>
+                        <Link to="/utilities/privacy" className='hover:text-primary'>Privacy Policy</Link>
+                        <Link to="/utilities/cookie" className='hover:text-primary'>Cookie Policy</Link>
+                        <Link to="/utilities/legal" className='hover:text-primary'>Legal Documents</Link>
                         <Link to="/" className='hover:text-primary'>About Us</Link>
                         <Link to="/" className='hover:text-primary'>Contact Us</Link>
                     </div>
