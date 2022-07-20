@@ -11,6 +11,10 @@ import og_image from "../../assets/images/og-image.png";
 import SmallHero from "../../components/small-hero/SmallHero";
 import TopRecomendations from "../../components/top_recomendations/TopRecomendations";
 import SuggestesCourses from "../../components/suggested-courses/SuggestesCourses";
+import OurCourse from "../../components/our-course/OurCourse";
+import Testimonial from "../../components/testimonial/Testimonial";
+import ContactSection from "../../components/contact/ContactSection";
+import Footer from "../../components/footer/Footer";
 
 class CoursesPageOne extends Component {
     render() {
@@ -30,6 +34,9 @@ class CoursesPageOne extends Component {
                 <SmallHero/>
                 <TopRecomendations/>
                 <SuggestesCourses/>
+                <OurCourse/>
+                <Testimonial/>
+                <ContactSection/>
             </Fragment>
         );
     }
