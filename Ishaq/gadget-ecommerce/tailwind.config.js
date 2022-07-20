@@ -48,6 +48,7 @@ module.exports = withMT(
           current: 'currentColor',
           'primary': "#21BF73",
           'secondary': "#B0EACD",
+          'light': "#F4F4F6",
           'dark': "#2E374F",
           'white': "#fff"
         },

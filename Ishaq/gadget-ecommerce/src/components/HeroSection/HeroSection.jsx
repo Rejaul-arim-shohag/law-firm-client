@@ -16,7 +16,7 @@ export default function HeroSection() {
           <p className='text-xs leading-loose my-3 tracking-wider text-dark'><span>Are you looking for a budget-friendly and best quality gadget?</span> <br /> <span>Don't worry we have everything you need?</span> </p>
           <div className="search relative my-5">
             <input type="text" placeholder='Search product' className='py-3 focus:ring-0 border-0 md:py-3 px-10 w-full md:w-10/12  rounded-full focus:outline-0 text-dark' />
-            <button className='py-3 absolute px-3 md:right-[6.5rem] right-1  text-xs md:top-[.3em] top-1 bg-primary text-white font-bold rounded-full hover:bg-[#21bf73c7] duration-150'> <BsSearch/> </button>
+            <button className='py-3 absolute px-3 md:right-[6.5rem] right-1  text-sm top-[.30rem] bg-primary text-white font-bold rounded-full hover:bg-[#21bf73c7] duration-150'> <BsSearch/> </button>
           </div>
           <Stats />
           <RecentProducts />

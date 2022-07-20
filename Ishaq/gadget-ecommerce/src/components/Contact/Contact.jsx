@@ -3,7 +3,7 @@ import { BsArrowRight, BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from 're
 import { GiEnvelope, GiPaperPlane, GiPhone } from 'react-icons/gi'
 export default function Contact() {
     return (
-        <div className="bg-[#e5e5e562]">
+        <div className="bg-light">
             <div className='container py-10 md:px-40 '>
                 <div className="flex gap-5 flex-col md:flex-row">
                     <div className="contactForm w-full md:w-2/3">
