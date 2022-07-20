@@ -43,8 +43,9 @@ a:hover {
 }
 .mainButton{
   transition:0.3s;
-  width: 120px;
-  height: 50px;
+  width: 220px;
+  height: 60px;
+  font-size: 15px;
   border:0;
   outline: 0;
   border-radius: 40px;
@@ -55,6 +56,16 @@ a:hover {
   transition:0.3s;
   width: 170px;
   height: 50px;
+  border:0;
+  outline: 0;
+  border-radius: 2px;
+  background-color:#21BF73;
+  color:white;
+}
+.mainButton3{
+  transition:0.3s;
+  width: 130px;
+  height: 40px;
   border:0;
   outline: 0;
   border-radius: 2px;
@@ -80,11 +91,24 @@ a:hover {
  .leftBg{
   display:none;
  }
+ .expertise_area{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:3%;
+}
+.practice_area-fullSection{
+  margin-bottom:110px!important;
+}
+.expertise_area{
+  margin-top:10px;
+}
+.footer_content{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap:0;
+}
 }
 
-/* @media only screen and (max-width: 514px){
-  
-} */
 @media only screen and (max-width: 1200px) {
   .attorneys>div{
     display:grid;
@@ -124,18 +148,17 @@ a:hover {
  text-align: center;
  margin-bottom: 50px;
 }
-/* .contact-right-side{
-  position: relative;
+.practiceAreaP{
+  width: 100%;
 }
-.contact-image{
-  position:absolute;
-  display: block;
-  top:5px;
-  right:5px;
-} */
-/* .contact-image */
+.footer_content{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:5%;
+}
 }
 @media only screen and (max-width: 514px) {
+  
   .attorneys{
     display:grid;
     grid-template-columns: 1fr;
@@ -150,10 +173,25 @@ a:hover {
   }
   .plansGridContainer{
     display: grid;
-    grid-template-columns: 350px;
+    grid-template-columns: 1fr;
     grid-gap: 2%;
     justify-items: center;
     margin: 0 auto;
+}
+.expertise_area{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap:3%;
+}
+.expertise>div:last-child{
+  margin-bottom:50px;
+}
+.testimonial{
+  margin-top:284px !important;
+}
+.footer_content{
+  display:grid;
+  grid-template-columns: 1fr;
 }
 }
 

@@ -1,0 +1,10 @@
+.team_hero_section{
+    height:300px;
+    background-image: url(../../Assets/images/page-bennar.jpg);
+    position: relative;
+}
+.team_hero_content{
+    position: absolute;
+    top: 45%;
+    left:50%;
+}
