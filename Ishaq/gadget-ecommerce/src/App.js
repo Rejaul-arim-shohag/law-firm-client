@@ -1,11 +1,13 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Registration from './components/Authorization/Registration';
 import CookiePolicy from './components/Policy/CookiePolicy';
 import LegalDocuments from './components/Policy/LegalDocuments';
 import PrivacyPolicy from './components/Policy/PrivacyPolicy';
 import ReturnPolicy from './components/Policy/ReturnPolicy';
 import TermsConditions from './components/Policy/TermsConditions';
 import AllProductsPage from './pages/AllProducts.page';
+import AuthorizationPage from './pages/Authorization.page';
 import Home from "./pages/Home.page";
 import ProductDetailsPage from "./pages/ProductDetails.page";
 import UtilitiesPage from './pages/Utilities.page';
@@ -18,7 +20,8 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<AuthorizationPage />} />
+            {/* <Route path="/" element={<Home />} /> */}
             <Route path="/details" element={<ProductDetailsPage />} />
             <Route path="/all" element={<AllProductsPage />} />
             <Route path='/utilities' element={<UtilitiesPage />}>

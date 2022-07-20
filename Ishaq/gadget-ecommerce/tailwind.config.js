@@ -38,7 +38,8 @@ module.exports = withMT(
           'hero-rectangle': "url('/src/assets/img/bg-rectangle.svg')",
           'hero-wave': "url('/src/assets/img/bg-wave.svg')",
           'hero-vector': "url('/src/assets/img/bg-vector.svg')",
-          'hero-spiral': "url('/src/assets/img/bg-spiral.svg')"
+          'hero-spiral': "url('/src/assets/img/bg-spiral.svg')",
+          'hero-auth': "url('/src/assets/img/registration.svg')"
         },
         fontFamily: {
           'sans': ['"Plus Jakarta Sans"', ...defaultTheme.fontFamily.sans],
@@ -47,6 +48,7 @@ module.exports = withMT(
           transparent: 'transparent',
           current: 'currentColor',
           'primary': "#21BF73",
+          // 'teal': "#21BF73",
           'secondary': "#B0EACD",
           'light': "#F4F4F6",
           'dark': "#2E374F",

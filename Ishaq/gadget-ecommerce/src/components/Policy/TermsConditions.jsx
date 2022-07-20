@@ -13,7 +13,6 @@ export default function TermsConditions() {
           </h3>
         </div>
         <div className="mt-5 relative w-full">
-          <div className="mt-5 relative w-full">
             Last updated: 20-3-2022
 
             These Terms & Conditions governs your use of our Service and explains how we collect, safeguard and disclose information that results from your use of our web pages. Your agreement with us includes these Terms and our Privacy Policy. You acknowledge that you have read and understood Agreements, and agree to be bound of them.
@@ -34,7 +33,6 @@ export default function TermsConditions() {
 
 
           </div>
-        </div>
       </div>
     </div>
 
