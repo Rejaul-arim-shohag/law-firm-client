@@ -104,7 +104,7 @@ class SuggestesCourses extends Component {
                                 <Card className="mx-2 border-0 border-rounded shadow">
                                     <Card.Img className="img-fluid rounded-top" variant="top" src={img_1} alt="suggested-course"/>
                                     <Card.Body>
-                                        <Card.Title className="bodyXLarge themeDarkColor">MERN Stack Basic</Card.Title>
+                                        <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
                                         <div className="row">
                                             <div className="col-8 mb-3 mb-md-0">
                                                 <span className="d-block bodyLarge lightColor d-flex">
@@ -128,7 +128,7 @@ class SuggestesCourses extends Component {
                                 <Card className="mx-2 border-0 border-rounded shadow">
                                     <Card.Img className="img-fluid rounded-top" variant="top" src={img_2} alt="suggested-course"/>
                                     <Card.Body>
-                                        <Card.Title className="bodyXLarge themeDarkColor">MERN Stack Basic</Card.Title>
+                                        <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
                                         <div className="row">
                                             <div className="col-8 mb-3 mb-md-0">
                                                 <span className="d-block bodyLarge lightColor d-flex">
@@ -152,7 +152,7 @@ class SuggestesCourses extends Component {
                                 <Card className="mx-2 border-0 border-rounded shadow">
                                     <Card.Img className="img-fluid rounded-top" variant="top" src={img_3} alt="suggested-course"/>
                                     <Card.Body>
-                                        <Card.Title className="bodyXLarge themeDarkColor">MERN Stack Basic</Card.Title>
+                                        <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
                                         <div className="row">
                                             <div className="col-8 mb-3 mb-md-0">
                                                 <span className="d-block bodyLarge lightColor d-flex">
@@ -176,7 +176,7 @@ class SuggestesCourses extends Component {
                                 <Card className="mx-2 border-0 border-rounded shadow">
                                     <Card.Img className="img-fluid rounded-top" variant="top" src={img_4} alt="suggested-course"/>
                                     <Card.Body>
-                                        <Card.Title className="bodyXLarge themeDarkColor">MERN Stack Basic</Card.Title>
+                                        <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
                                         <div className="row">
                                             <div className="col-8 mb-3 mb-md-0">
                                                 <span className="d-block bodyLarge lightColor d-flex">
@@ -200,7 +200,7 @@ class SuggestesCourses extends Component {
                                 <Card className="mx-2 border-0 border-rounded shadow">
                                     <Card.Img className="img-fluid rounded-top" variant="top" src={img_1} alt="suggested-course"/>
                                     <Card.Body>
-                                        <Card.Title className="bodyXLarge themeDarkColor">MERN Stack Basic</Card.Title>
+                                        <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
                                         <div className="row">
                                             <div className="col-8 mb-3 mb-md-0">
                                                 <span className="d-block bodyLarge lightColor d-flex">
