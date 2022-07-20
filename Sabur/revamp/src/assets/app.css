@@ -550,6 +550,21 @@ a {
     padding-right: 35%;
 }
 
+/*******************************
+       Circle Background
+*******************************/
+.top-left-circleBG::after {
+    content: '';
+    z-index: 1;
+    top: 5%;
+    left: 9%;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-size: 300px 300px;
+    background-image: url("./images/circle-bg.svg");
+}
+
 /* Responsive */
 @media only screen and (max-width: 1400px) {
     .pseudo-border::before {
@@ -723,5 +738,83 @@ a {
     .pseudo-border::before {
         top: 3%;
         left: 7%;
+    }
+}
+
+/***********************************
+        Slick Carousel Arrow
+***********************************/
+.slick-carousel-arrow .slick-arrow {
+    position: absolute;
+}
+
+.slick-carousel-arrow .slick-prev,
+.slick-carousel-arrow .slick-next {
+    top: 104%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    transition: all ease-in-out 0.4s;
+}
+
+.slick-carousel-arrow .slick-prev:hover,
+.slick-carousel-arrow .slick-next:hover {
+    background-color: #E0F0E8;
+}
+
+.slick-carousel-arrow .slick-prev {
+    left: 46%;
+}
+
+.slick-carousel-arrow .slick-prev:before {
+    transform: rotate(180deg);
+}
+
+.slick-carousel-arrow .slick-next {
+    right: 46%;
+}
+
+.slick-carousel-arrow .slick-prev:before,
+.slick-carousel-arrow .slick-next:before {
+    content: "";
+    top: 10px;
+    left: 15px;
+    width: 12px;
+    height: 20px;
+    text-align: center;
+    position: absolute;
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-image: url("./images/next_prev-icon.png");
+}
+
+@media only screen and (max-width: 992px) {
+    .slick-carousel-arrow .slick-next {
+        right: 42%;
+    }
+
+    .slick-carousel-arrow .slick-prev {
+        left: 42%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .slick-carousel-arrow .slick-next {
+        right: 40%;
+    }
+
+    .slick-carousel-arrow .slick-prev {
+        left: 40%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .slick-carousel-arrow .slick-next {
+        right: 37%;
+    }
+
+    .slick-carousel-arrow .slick-prev {
+        left: 37%;
     }
 }

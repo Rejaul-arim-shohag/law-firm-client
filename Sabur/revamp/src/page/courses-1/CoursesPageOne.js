@@ -9,6 +9,8 @@ import og_image from "../../assets/images/og-image.png";
 
 // Include Components
 import SmallHero from "../../components/small-hero/SmallHero";
+import TopRecomendations from "../../components/top_recomendations/TopRecomendations";
+import SuggestesCourses from "../../components/suggested-courses/SuggestesCourses";
 
 class CoursesPageOne extends Component {
     render() {
@@ -26,6 +28,8 @@ class CoursesPageOne extends Component {
                 </Helmet>
 
                 <SmallHero/>
+                <TopRecomendations/>
+                <SuggestesCourses/>
             </Fragment>
         );
     }
