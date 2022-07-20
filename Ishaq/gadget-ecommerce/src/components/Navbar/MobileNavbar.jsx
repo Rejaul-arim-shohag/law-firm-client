@@ -16,13 +16,13 @@ const menu = [
   {
     name: 'All Categories',
     short: "Categories",
-    to: '/',
+    to: '/all',
     icon: <GiMicrochip />,
   },
   {
     name: 'Brands',
     short: "Brands",
-    to: '/',
+    to: '/all',
     icon: <AiFillAppstore />,
   },
   {
@@ -40,13 +40,13 @@ const menu = [
   {
     name: 'About',
     short: "",
-    to: '/',
+    to: '/aboutUs',
     icon: <GiSmartphone />,
   },
   {
     name: 'Contact',
     short: "",
-    to: '/',
+    to: '/contact',
     icon: <GiSmartphone />,
   },
 
@@ -54,36 +54,36 @@ const menu = [
 const brands = [
   {
     title: 'Apple',
-    to: '/',
+    to: '/all',
     icon: <BsApple />,
   },
   {
     title: 'Xiaomi',
-    to: '/',
+    to: '/all',
     icon: <SiXiaomi />,
   },
   {
     title: 'Samsung',
-    to: '/',
+    to: '/all',
     icon: <SiSamsung />
   },
   {
     title: 'Asus',
-    to: '/',
+    to: '/all',
     icon: <SiAsus />,
   },
   {
     title: 'Dell',
-    to: '/',
+    to: '/all',
     icon: <SiDell />,
   },
 ]
 const catagories = [
-  { title: "Phones", to: "/", icon: <GiVibratingSmartphone /> },
-  { title: "Tablets", to: "/", icon: <BsTabletLandscape /> },
-  { title: "Accessories", to: "/", icon: <BsPlug /> },
-  { title: "Laptop", to: "/", icon: <BsLaptop /> },
-  { title: "Camera", to: "/", icon: <BsCamera /> },
+  { title: "Phones", to: "/all", icon: <GiVibratingSmartphone /> },
+  { title: "Tablets", to: "/all", icon: <BsTabletLandscape /> },
+  { title: "Accessories", to: "/all", icon: <BsPlug /> },
+  { title: "Laptop", to: "/all", icon: <BsLaptop /> },
+  { title: "Camera", to: "/all", icon: <BsCamera /> },
 ]
 export default function MobileNavbar() {
   const scrollPosition = useScrollPosition();

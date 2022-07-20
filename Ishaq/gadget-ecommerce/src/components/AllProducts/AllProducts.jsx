@@ -32,7 +32,7 @@ export default function AllProducts() {
 
                             </div>
 
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-4 bg-gray-200 ">
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-5 mt-4 bg-gray-200 ">
                                 {
                                     [...Array(12)].map((item, index) => {
                                         return (

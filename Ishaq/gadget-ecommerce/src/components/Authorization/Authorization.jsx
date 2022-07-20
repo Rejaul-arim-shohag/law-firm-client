@@ -1,18 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Input } from '@material-tailwind/react'
-export default function Registration() {
+export default function Authorization({ login }) {
 
     return (
         <div>
 
-            <div className="flex max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-grey-800 lg:max-w-4xl">
+            <div className="flex max-w-sm mx-auto p-2 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-grey-800 lg:max-w-4xl">
 
 
                 <div className="w-full px-6 py-8 md:px-8 lg:w-1/2 ">
-                    <h2 className="text-2xl font-semibold text-left text-dark dark:text-white">Sign Up Here</h2>
+                    <h2 className="text-2xl font-semibold text-left text-dark dark:text-white">{login ? "Login Here" : "Sign Up Here"}</h2>
 
-                    <p className="text-xs text-left text-grey-400 dark:text-grey-200">Get started with us</p>
+                    <p className="text-xs text-left text-grey-400 dark:text-grey-200">{login ? "Welcome back" : "Get started with us"}</p>
 
                     <Link to="/" className="flex items-center justify-center mt-4 text-grey-600 transition-colors duration-200 transform border rounded-lg dark:border-grey-700 dark:text-grey-200 hover:bg-grey-50 dark:hover:bg-grey-600">
                         <div className="px-4 py-2">
@@ -38,12 +38,17 @@ export default function Registration() {
                     <div className="mt-4">
                         <Input label="Email" className='' color='teal' size='lg' />
                     </div>
-                    <div className="mt-4">
-                        <Input label="Name" className='' color='teal' size='lg' />
-                    </div>
-                    <div className="mt-4">
-                        <Input label="Phone No." className='' color='teal' size='lg' />
-                    </div>
+                    {
+                        login ? <></> : <>
+                            <div className="mt-4">
+                                <Input label="Name" className='' color='teal' size='lg' />
+                            </div>
+                            <div className="mt-4">
+                                <Input label="Phone No." className='' color='teal' size='lg' />
+                            </div>
+                        </>
+                    }
+
 
                     <div className="mt-4">
                         <div className="flex flex-col justify-between">
@@ -56,9 +61,15 @@ export default function Registration() {
 
                     <div className="mt-8">
                         <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-primary rounded hover:bg-grey-600 focus:outline-none focus:bg-grey-600">
-                            Sign Up
+                            {login ? "Login" : "Sign Up"}
                         </button>
                     </div>
+                    <div className="mt-5">
+                        <Link to={login ? "/registration" : "/login"} className="w-full text-xs font-semibold  text-grey-500 duration-200   rounded hover:text-primary ">
+                            {login ? "Need an account ?" : "Already have an account?"}
+                        </Link>
+                    </div>
+
 
                 </div>
                 <div className="hidden  md:w-1/2 md:flex justify-center items-center ">

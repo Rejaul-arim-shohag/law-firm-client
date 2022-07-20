@@ -1,16 +1,24 @@
 import React, { useEffect } from 'react'
-import Registration from '../components/Authorization/Registration'
+import Authorization from '../components/Authorization/Authorization'
+import Footer from '../components/Footer/Footer'
+import MobileNavbar from '../components/Navbar/MobileNavbar'
+import Navbar from '../components/Navbar/Navbar'
 
-export default function AuthorizationPage() {
+export default function AuthorizationPage({ login }) {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
     return (
-        <div className='bg-secondary h-screen pt-24'>
-            <div className=" relative w-full">
-                <Registration />
+        <>
+            <Navbar />
+            <MobileNavbar/>
+            <div className='bg-secondary h-screen pt-24'>
+                <div className=" relative w-full">
+                    <Authorization login={login} />
+                </div>
             </div>
-        </div>
+            <Footer/>
+        </>
 
     )
 }

@@ -44,12 +44,12 @@ export default function SidebarFilter() {
         { title: "Camera", quantity: 15, to: "/", icon: <BsCamera /> },
     ]
     return (
-        <div className="lg:sticky lg:top-4">
+        <div className="md:sticky md:top-4 hidden md:block">
             <details
-                
+                open
                 className="overflow-hidden "
             >
-                <summary className="flex items-center justify-between px-5 py-3 bg-grey-100 lg:hidden">
+                <summary className="flex items-center justify-between px-5 py-3 bg-grey-100 ">
                     <span className="text-sm font-medium">
                         Product Filters
                     </span>
@@ -61,16 +61,16 @@ export default function SidebarFilter() {
 
                 <form
                     action=""
-                    className="border-t border-grey-500 lg:border-t-0"
+                    className="border-t border-grey-500 md:border-t-0 md:mt-14"
                 >
                     <div className="shadow-md  mb-10 bg-white py-5 px-5">
                         <div className="w-full">
-                            <Input label="Search product" icon={<BsSearch />} color="teal" />
+                            <Input label="Search product" icon={<BsSearch className='font-bold text-dark '/>} color="teal" />
                         </div>
 
                     </div>
                     <div className='shadow-md  mb-10 bg-white py-5'>
-                        <p className="block w-full px-5 py-2 text-lg  font-semibold ">
+                        <p className="block w-full px-5 py-2 text-md  font-semibold ">
                             Catagories
                         </p>
 
@@ -104,7 +104,7 @@ export default function SidebarFilter() {
                     </div>
 
                     <div className='shadow-md  mb-10 bg-white py-5'>
-                        <p className="block w-full px-5 py-2 text-lg  font-semibold ">
+                        <p className="block w-full px-5 py-2 text-md  font-semibold ">
                             Brands
                         </p>
 
