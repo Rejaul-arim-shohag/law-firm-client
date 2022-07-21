@@ -47,7 +47,7 @@ class SuggestesCourses extends Component {
             slidesToScroll: 1,
             nextArrow: <SampleNextArrow/>,
             prevArrow: <SamplePrevArrow/>,
-            // autoplay: true,
+            autoplay: true,
             autoplaySpeed: 2000,
             responsive: [
                 {

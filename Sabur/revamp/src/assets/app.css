@@ -266,6 +266,7 @@ body {
 .breadcrumb-link a {
     padding: 0 5px;
 }
+
 .breadcrumb-link a:last-child {
     color: var(--themeColor);
 }
@@ -290,7 +291,7 @@ input[type="color"]:focus,
 select:focus,
 .btn:focus,
 button:focus {
-    border-color: rgba(126, 239, 104, 0) !important;
+    border-color: var(--themeColor) !important;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(126, 239, 104, 0) !important;
     outline: 0 none !important;
 }
@@ -548,6 +549,69 @@ a {
 
 .input-search-pr {
     padding-right: 35%;
+}
+
+/* Checkbox */
+.filter-checkbox .checkbox-content {
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.filter-checkbox .checkbox-content:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.checkbox input[type=checkbox] {
+    visibility: hidden;
+}
+
+.checkbox label {
+    padding-left: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.checkbox label:before,
+.checkbox label:after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--themeColor);
+    border-radius: 4px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: all 0.25s;
+}
+
+.checkbox label:after {
+    height: 7px;
+    width: 13px;
+    border-radius: 0 0 0 4px;
+    border: 2px solid var(--themeColor);
+    border-top: none;
+    border-right: none;
+    opacity: 0;
+    transform: rotate(-45deg);
+    top: 15px;
+    left: 6px;
+}
+
+.checkbox input[type=checkbox]:checked + label {
+    font-weight: 600;
+}
+
+.checkbox input[type=checkbox]:checked + label:before {
+    opacity: 0;
+    top: -10px;
+}
+
+.checkbox input[type=checkbox]:checked + label:after {
+    opacity: 1;
+    top: 6px;
 }
 
 /*******************************
