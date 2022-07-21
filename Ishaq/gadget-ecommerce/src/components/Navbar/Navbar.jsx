@@ -1,12 +1,13 @@
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import 'animate.css'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { BsApple, BsCameraFill, BsCart, BsFillPhoneFill, BsFillPlugFill, BsFillTabletFill, BsLaptopFill, BsPerson } from 'react-icons/bs'
 import { GiSmartphone } from 'react-icons/gi'
 import { SiSamsung, SiXiaomi } from 'react-icons/si'
 import { Link } from 'react-router-dom'
 import useScrollPosition from '../../hooks/useScrollPosition'
+import CartSidebar from '../Cart/CartSidebar'
 const smartphones = [
   {
     name: 'Apple',
@@ -52,6 +53,8 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const scrollPosition = useScrollPosition();
+  const [showCartSideBar, setShowCartSideBar] = useState(true)
+
   return (
     <div className="relative ">
       <Popover className={`md:fixed absolute ${scrollPosition > 0 ? "md:bg-white animate__animated animate__fadeInDown " : "animate__animated animate__fadeInUp"}  top-0 right-0 left-0 z-50 `}>
@@ -177,7 +180,7 @@ export default function Navbar() {
                   Contact
                 </Link>
 
-                <Link to="/" className="">
+                <button  className="">
                   <strong className="inline-flex items-center  relative px-1 py-1 ">
                     <span className="w-5 h-5 text-white text-xs bg-primary flex items-center justify-center rounded-full absolute -top-2.5 -right-2.5">10</span>
                     <span className="text-dark  text-xl">
@@ -185,7 +188,7 @@ export default function Navbar() {
                     </span>
                   </strong>
 
-                </Link>
+                </button>
                 <Link to="/login" className=" text-base flex items-center gap-2 font-medium text-dark hover:text-gray-400">
                   <BsPerson className='text-xl' /> <span>My Account</span>
                 </Link>
@@ -199,6 +202,7 @@ export default function Navbar() {
         
         </div>
       </Popover>
+      {/* <CartSidebar show={showCartSideBar} setShowCartSideBar={setShowCartSideBar} /> */}
     
     </div>
   )

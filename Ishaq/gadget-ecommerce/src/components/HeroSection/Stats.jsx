@@ -20,7 +20,7 @@ export default function Stats() {
                 {item.state}
                 {/* <NumberFormat value={item.state} displayType={'text'} thousandsGroupStyle="thousand" suffix="k" /> */}
               </dd>
-              <dt className="md:text-sm text-xs text-dark">
+              <dt className=" text-xs text-dark">
                 {item.title}
               </dt>
 
