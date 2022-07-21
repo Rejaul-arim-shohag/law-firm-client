@@ -6,9 +6,6 @@ import "./mentor.css";
 // React Helmet
 import {Helmet} from "react-helmet";
 
-// Include Component
-import SmallHero from "../../components/small-hero/SmallHero";
-
 // React Bootstrap
 import {Card} from "react-bootstrap";
 
@@ -71,7 +68,7 @@ class Mentor extends Component {
                             <div className="col-md-12 col-lg-3">
                                 <div className="position-sticky position-top-15 shadow-sm rounded p-3 mb-4">
                                     <div className="text-center">
-                                        <img className="img-fluid img-thumbnail" src={user} alt="user-photo"
+                                        <img className="img-fluid img-thumbnail" src={user} alt="user-avatar"
                                              style={{maxWidth: 224}}/>
                                         <h4 className="bodyLarge fw-bold text-uppercase mt-3"> Rabbil Hasan </h4>
                                         <h4 className="bodySmall mb-4"> Sr. Software Engineer @ IDLC </h4>
