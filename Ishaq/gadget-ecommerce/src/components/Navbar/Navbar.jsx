@@ -2,93 +2,47 @@ import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import 'animate.css'
 import { Fragment } from 'react'
-import { AiFillAppstore } from 'react-icons/ai'
-import { BsApple, BsCameraFill, BsCart, BsCartDash, BsFillPhoneFill, BsFillPlugFill, BsFillTabletFill, BsHouseFill, BsLaptopFill, BsPerson } from 'react-icons/bs'
-import { GiMicrochip, GiSmartphone } from 'react-icons/gi'
+import { BsApple, BsCameraFill, BsCart, BsFillPhoneFill, BsFillPlugFill, BsFillTabletFill, BsLaptopFill, BsPerson } from 'react-icons/bs'
+import { GiSmartphone } from 'react-icons/gi'
 import { SiSamsung, SiXiaomi } from 'react-icons/si'
 import { Link } from 'react-router-dom'
 import useScrollPosition from '../../hooks/useScrollPosition'
 const smartphones = [
   {
     name: 'Apple',
-    to: '/',
+    to: '/all',
     icon: <BsApple />,
   },
   {
     name: 'Xiaomi',
-    to: '/',
+    to: '/all',
     icon: <SiXiaomi />,
   },
   {
     name: 'Samsung',
-    to: '/',
+    to: '/all',
     icon: <SiSamsung />
   },
   {
     name: 'OPPO',
-    to: '/',
+    to: '/all',
     icon: <GiSmartphone />,
   },
   {
     name: 'Vivo',
-    to: '/',
+    to: '/all',
     icon: <GiSmartphone />,
   },
 ]
 
-const menu = [
-  {
-    name: 'Home',
-    short:"Home",
-    to: '/',
-    icon: <BsHouseFill />,
 
-  },
-  {
-    name: 'All Categories',
-    short:"Categories",
-    to: '/',
-    icon: <GiMicrochip />,
-  },
-  {
-    name: 'Brands',
-    short:"Brands",
-    to: '/',
-    icon: <AiFillAppstore />,
-  },
-  {
-    name: 'Add to cart',
-    short:"Cart",
-    to: '/',
-    icon: <BsCartDash />,
-  },
-  {
-    name: 'Login',
-    short:"Login",
-    to: '/',
-    icon: <BsPerson />,
-  },
-  {
-    name: 'About',
-    short:"",
-    to: '/',
-    icon: <GiSmartphone />,
-  },
-  {
-    name: 'Contact',
-    short:"",
-    to: '/',
-    icon: <GiSmartphone />,
-  },
- 
-]
 
 const catagories = [
-  { title: "Phones", to: "/", icon: <BsFillPhoneFill /> },
-  { title: "Tablets", to: "/", icon: <BsFillTabletFill /> },
-  { title: "Accessories", to: "/", icon: <BsFillPlugFill /> },
-  { title: "Laptop", to: "/", icon: <BsLaptopFill /> },
-  { title: "Camera", to: "/", icon: <BsCameraFill /> },
+  { title: "Phones", to: "/all", icon: <BsFillPhoneFill /> },
+  { title: "Tablets", to: "/all", icon: <BsFillTabletFill /> },
+  { title: "Accessories", to: "/all", icon: <BsFillPlugFill /> },
+  { title: "Laptop", to: "/all", icon: <BsLaptopFill /> },
+  { title: "Camera", to: "/all", icon: <BsCameraFill /> },
 ]
 
 
@@ -216,10 +170,10 @@ export default function Navbar() {
                 </Popover>
 
 
-                <Link to="/" className="text-base font-medium text-dark hover:text-gray-400">
+                <Link to="/aboutUs" className="text-base font-medium text-dark hover:text-gray-400">
                   About
                 </Link>
-                <Link to="/" className="text-base font-medium text-dark hover:text-gray-400">
+                <Link to="/contact" className="text-base font-medium text-dark hover:text-gray-400">
                   Contact
                 </Link>
 
@@ -232,7 +186,7 @@ export default function Navbar() {
                   </strong>
 
                 </Link>
-                <Link to="/" className=" text-base flex items-center gap-2 font-medium text-dark hover:text-gray-400">
+                <Link to="/login" className=" text-base flex items-center gap-2 font-medium text-dark hover:text-gray-400">
                   <BsPerson className='text-xl' /> <span>My Account</span>
                 </Link>
 

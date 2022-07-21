@@ -25,8 +25,8 @@ export default function Footer() {
                         <Link to="/utilities/privacy" className='hover:text-primary'>Privacy Policy</Link>
                         <Link to="/utilities/cookie" className='hover:text-primary'>Cookie Policy</Link>
                         <Link to="/utilities/legal" className='hover:text-primary'>Legal Documents</Link>
-                        <Link to="/" className='hover:text-primary'>About Us</Link>
-                        <Link to="/" className='hover:text-primary'>Contact Us</Link>
+                        <Link to="/aboutUs" className='hover:text-primary'>About Us</Link>
+                        <Link to="/contact" className='hover:text-primary'>Contact Us</Link>
                     </div>
 
 

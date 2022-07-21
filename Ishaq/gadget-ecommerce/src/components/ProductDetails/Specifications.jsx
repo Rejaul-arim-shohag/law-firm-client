@@ -12,7 +12,7 @@ export default function Specifications() {
     ]
     return (
         <>
-            <div className="bg-white dark:bg-gray-900 rounded-md shadow-md mt-16 md:mt-0">
+            <div className="bg-white dark:bg-gray-900 rounded-md shadow-md mt-10 md:mt-0">
                 <div className="container px-6 py-8 mx-auto">
                     <div className="p-8 pt-2  space-y-2  dark:bg-gray-800 rounded-xl">
                         <div className="flex items-center justify-between  mb-10">
@@ -29,78 +29,59 @@ export default function Specifications() {
                                 </div>
                             ))
                         }
-                        <div className="grid grid-cols-2 gap-8">
-                            <div className="relative">
-                                <input className="hidden group peer" type="radio" name="shippingOption" value="standard_alt" id="standard_alt" />
+                        <div className="flex items-center border-b border-grey-300  justify-between text-gray-800 dark:text-gray-200">
+                            <p className="text-sm flex justify-center items-center"><BsDot className='text-primary text-3xl' /> <span>Memory</span></p>
+                            <div className="w-1/2 mb-2 text-center">
+                                <div className="grid grid-cols-2 gap-2">
+                                    <div className="relative shadow-lg border-secondary border">
+                                        <input className="hidden group peer" type="radio" name="shippingOption" value="standard_alt" id="ram_one" />
 
-                                <label className="block p-4 text-sm font-medium transition-colors border border-gray-100 rounded-lg shadow-sm cursor-pointer peer-checked:border-primary hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-primary" for="standard_alt">
-                                    <span> RAM </span>
+                                        <label className="flex justify-center p-2 text-sm font-medium transition-colors text-center shadow-sm cursor-pointer peer-checked:border-primary border-4 border-transparent hover:bg-grey-50 " for="ram_one">
+                                            <span>8GB</span>
+                                        </label>
 
-                                    <span className="block mt-1 text-xs text-gray-500">
-                                        8GB
-                                    </span>
-                                </label>
 
-                                <svg className="absolute w-5 h-5 text-primary opacity-0 top-4 right-4 peer-checked:opacity-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
+                                    </div>
 
-                            <div className="relative">
-                                <input className="hidden group peer" type="radio" name="shippingOption" value="next_day_alt" id="next_day_alt" />
+                                    <div className="relative shadow-lg border-secondary border">
+                                        <input className="hidden group peer" type="radio" name="shippingOption" value="next_day_alt" id="ram_two" />
 
-                                <label className="block p-4 text-sm font-medium transition-colors border border-gray-100 rounded-lg shadow-sm cursor-pointer peer-checked:border-primary hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-primary" for="next_day_alt">
-                                    <span> RAM </span>
+                                        <label className="flex justify-center p-2 text-sm font-medium transition-colors text-center shadow-sm cursor-pointer peer-checked:border-primary border-4 border-transparent hover:bg-grey-50 " for="ram_two">
+                                            <span>32GB</span>
+                                        </label>
 
-                                    <span className="block mt-1 text-xs text-gray-500">
-                                        32GB
-                                    </span>
-                                </label>
 
-                                <svg className="absolute w-5 h-5 text-primary opacity-0 top-4 right-4 peer-checked:opacity-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-8">
-                            <div className="relative">
-                                <input className="hidden group peer" type="radio" name="shippingOption" value="standard_alt" id="standard_alt" />
+                        <div className="flex items-center border-b border-grey-300  justify-between text-gray-800 dark:text-gray-200">
+                            <p className="text-sm flex justify-center items-center"><BsDot className='text-primary text-3xl' /> <span>Color</span></p>
+                            <div className="w-1/2 mb-2 text-center">
+                                <div className="grid grid-cols-2 gap-2">
+                                    <div className="relative shadow-lg  bg-grey-600">
+                                        <input className="hidden group peer" type="radio" name="shippingOption" value="color_one" id="color_one" />
 
-                                <label className="block p-4 text-sm font-medium transition-colors border border-gray-100 rounded-lg shadow-sm cursor-pointer peer-checked:border-primary hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-primary" for="standard_alt">
-                                    <span> RAM </span>
+                                        <label className="block p-4 text-sm font-medium transition-colors  shadow-sm cursor-pointer peer-checked:border-primary border-4 border-transparent" for="color_one">
+                                        </label>
+                                    </div>
 
-                                    <span className="block mt-1 text-xs text-gray-500">
-                                        8GB
-                                    </span>
-                                </label>
+                                    <div className="relative shadow-lg  bg-dark">
+                                        <input className="hidden group peer" type="radio" name="shippingOption" value="color_two" id="color_two" />
 
-                                <svg className="absolute w-5 h-5 text-primary opacity-0 top-4 right-4 peer-checked:opacity-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-
-                            <div className="relative">
-                                <input className="hidden group peer" type="radio" name="shippingOption" value="next_day_alt" id="next_day_alt" />
-
-                                <label className="block p-4 text-sm font-medium transition-colors border border-gray-100 rounded-lg shadow-sm cursor-pointer peer-checked:border-primary hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-primary" for="next_day_alt">
-                                    <span> RAM </span>
-
-                                    <span className="block mt-1 text-xs text-gray-500">
-                                        32GB
-                                    </span>
-                                </label>
-
-                                <svg className="absolute w-5 h-5 text-primary opacity-0 top-4 right-4 peer-checked:opacity-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
+                                        <label className="block p-4 text-sm font-medium transition-colors   shadow-sm cursor-pointer peer-checked:border-primary border-4 border-transparent" for="color_two">
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                     <div className="flex justify-center gap-2 mt-2">
-                        <button className="px-8 py-2 tracking-wide text-white  md:w-1/3  transition-colors duration-200 transform bg-primary rounded-md  uppercase">
+                        <button className="px-3 py-2 text-xs tracking-wide text-white  md:w-1/3  transition-colors duration-200 transform bg-primary rounded-md  uppercase">
                             Add to Cart
                         </button>
-                        <button className="px-8 py-2 tracking-wide text-white  md:w-1/3  transition-colors duration-200 transform bg-primary rounded-md  uppercase">
+                        <button className="px-3 py-2 text-xs  tracking-wide text-white  md:w-1/3  transition-colors duration-200 transform bg-primary rounded-md  uppercase">
                             Buy Now
                         </button>
                     </div>
