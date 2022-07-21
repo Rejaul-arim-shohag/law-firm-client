@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from "../../Assets/images/logo2.svg"
 import "./NavBar.css"
 const NavBar = () => {
+    let navigate = useNavigate()
     const [navbar, setNavbar] = useState(false);
     const changeBackground = () => {
         if (window.scrollY >= 80) {
@@ -11,9 +12,11 @@ const NavBar = () => {
         } else {
             setNavbar(false)
         }
-        console.log(window.scrollY)
     }
     window.addEventListener("scroll", changeBackground)
+    const handleNavigateToAppoinment=()=>{
+        navigate("/appointment")
+    }
     return (
         <div className={navbar ? "MainNavbar activeNav" : "MainNavbar"}>
             <Navbar className="mainNav mx-w-100  bg-transparent" expand="lg">
@@ -30,14 +33,16 @@ const NavBar = () => {
                             <Nav.Link>
                                 <Link to="/team">Team</Link>
                             </Nav.Link>
-                            <Nav.Link href="#link">Contact</Nav.Link>
-                            
-                            <Nav.Link href="#link">Pricing</Nav.Link>
                             <Nav.Link>
-                                <Link to="/about">About</Link>
+                                <Link to="/contact-us">Contact</Link>
+                            </Nav.Link>
+                           
+                            {/* <Nav.Link href="#link">Pricing</Nav.Link> */}
+                            <Nav.Link>
+                                <Link to="/aboutUs">About</Link>
                             </Nav.Link>
 
-                            <button className="navigationBtn mainButton">Make an Appointment</button>
+                            <button onClick={handleNavigateToAppoinment} className="navigationBtn mainButton">Make an Appointment</button>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
