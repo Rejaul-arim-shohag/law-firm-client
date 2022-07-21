@@ -1,5 +1,6 @@
 .footer{
     background-color:#B0EACD;
+    background-size: content;
 }
 .footer_content{
     display:grid;
