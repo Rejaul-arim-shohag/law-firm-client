@@ -83,19 +83,19 @@ class CourseGallery extends Component {
         };
         return (
             <Fragment>
-                <div className="pt-5 pb-5 lightDeepBG-2 slick-carousel-arrow position-relative top-left-circleBG">
+                <div className="pt-5 pb-5 lightDeepBG-2 slick-carousel-arrow position-relative">
                     <div className="container">
                         <div className="d-flex justify-content-center">
                             <h2 className="section-title fw-bold mb-4"> Our Top-Picked Courses </h2>
                         </div>
 
                         <div className="row">
-                            <div className="col-md-12 col-lg-3">
-                                <Accordion className="position-relative z-index-2 border-0" defaultActiveKey="0">
+                            <div className="col-lg-12 col-xl-3">
+                                <Accordion className="position-sticky position-top-15 z-index-2 border-0 top-left-circleBG" defaultActiveKey="0">
                                     <Accordion.Item eventKey="0" className="border-0 bg-transparent">
-                                        <Accordion.Header className="d-block d-md-none">Accordion Item
+                                        <Accordion.Header className="d-block d-xl-none">Accordion Item
                                             #1</Accordion.Header>
-                                        <Accordion.Body>
+                                        <Accordion.Body className="pt-0">
                                             <div className="themeWhiteBG rounded-2 shadow-sm mb-3">
                                                 <div className="d-flex justify-content-center">
                                                     <div className="input-group rounded-0 m-3">
@@ -208,153 +208,153 @@ class CourseGallery extends Component {
                                     </Accordion.Item>
                                 </Accordion>
                             </div>
-                            <div className="col-md-12 col-lg-9">
+                            <div className="col-lg-12 col-xl-9">
                                 <Slider {...settings}>
-                                    <div className="mb-4">
-                                        <Card className="mx-2 border-0 border-rounded shadow-sm">
-                                            <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}
-                                                      alt="suggested-course"/>
-                                            <Card.Body>
-                                                <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack
-                                                    Basic</Card.Title>
-                                                <div className="row">
-                                                    <div className="col-8 mb-3 mb-md-0">
+                                       <div className="mb-4">
+                                           <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                               <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}
+                                                         alt="suggested-course"/>
+                                               <Card.Body>
+                                                   <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack
+                                                       Basic</Card.Title>
+                                                   <div className="row">
+                                                       <div className="col-8 mb-3 mb-md-0">
                                                 <span className="d-block bodyLarge lightColor d-flex">
                                                     <img src={courses_icon} alt="courses icon"/> <span
                                                     className="d-inline-block ms-1 mb-2"> MERN Series </span>
                                                 </span>
-                                                        <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
-                                                    </div>
-                                                    <div className="col-4 text-end">
+                                                           <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
+                                                       </div>
+                                                       <div className="col-4 text-end">
                                                 <span className="d-block bodyLarge lightColor d-flex mb-2">
                                                     <img style={{height: 23}} src={user_icon} alt="user"/> <span
                                                     className="d-inline-block ms-1"> 4.9K </span>
                                                 </span>
-                                                        <span className="d-block bodyLarge lightColor d-flex">
+                                                           <span className="d-block bodyLarge lightColor d-flex">
                                                     <img src={start_icon} alt="react"/> <span
-                                                            className="d-inline-block ms-1"> 4.9 </span>
+                                                               className="d-inline-block ms-1"> 4.9 </span>
                                                 </span>
-                                                    </div>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="mb-4">
-                                        <Card className="mx-2 border-0 border-rounded shadow-sm">
-                                            <Card.Img className="img-fluid rounded-top" variant="top" src={img_2}
-                                                      alt="suggested-course"/>
-                                            <Card.Body>
-                                                <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack
-                                                    Basic</Card.Title>
-                                                <div className="row">
-                                                    <div className="col-8 mb-3 mb-md-0">
+                                                       </div>
+                                                   </div>
+                                               </Card.Body>
+                                           </Card>
+                                       </div>
+                                       <div className="mb-4">
+                                           <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                               <Card.Img className="img-fluid rounded-top" variant="top" src={img_2}
+                                                         alt="suggested-course"/>
+                                               <Card.Body>
+                                                   <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack
+                                                       Basic</Card.Title>
+                                                   <div className="row">
+                                                       <div className="col-8 mb-3 mb-md-0">
                                                 <span className="d-block bodyLarge lightColor d-flex">
                                                     <img src={courses_icon} alt="courses icon"/> <span
                                                     className="d-inline-block ms-1 mb-2"> MERN Series </span>
                                                 </span>
-                                                        <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
-                                                    </div>
-                                                    <div className="col-4 text-end">
+                                                           <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
+                                                       </div>
+                                                       <div className="col-4 text-end">
                                                 <span className="d-block bodyLarge lightColor d-flex mb-2">
                                                     <img style={{height: 23}} src={user_icon} alt="user"/> <span
                                                     className="d-inline-block ms-1"> 4.9K </span>
                                                 </span>
-                                                        <span className="d-block bodyLarge lightColor d-flex">
+                                                           <span className="d-block bodyLarge lightColor d-flex">
                                                     <img src={start_icon} alt="react"/> <span
-                                                            className="d-inline-block ms-1"> 4.9 </span>
+                                                               className="d-inline-block ms-1"> 4.9 </span>
                                                 </span>
-                                                    </div>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="mb-4">
-                                        <Card className="mx-2 border-0 border-rounded shadow-sm">
-                                            <Card.Img className="img-fluid rounded-top" variant="top" src={img_3}
-                                                      alt="suggested-course"/>
-                                            <Card.Body>
-                                                <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack
-                                                    Basic</Card.Title>
-                                                <div className="row">
-                                                    <div className="col-8 mb-3 mb-md-0">
+                                                       </div>
+                                                   </div>
+                                               </Card.Body>
+                                           </Card>
+                                       </div>
+                                       <div className="mb-4">
+                                           <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                               <Card.Img className="img-fluid rounded-top" variant="top" src={img_3}
+                                                         alt="suggested-course"/>
+                                               <Card.Body>
+                                                   <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack
+                                                       Basic</Card.Title>
+                                                   <div className="row">
+                                                       <div className="col-8 mb-3 mb-md-0">
                                                 <span className="d-block bodyLarge lightColor d-flex">
                                                     <img src={courses_icon} alt="courses icon"/> <span
                                                     className="d-inline-block ms-1 mb-2"> MERN Series </span>
                                                 </span>
-                                                        <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
-                                                    </div>
-                                                    <div className="col-4 text-end">
+                                                           <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
+                                                       </div>
+                                                       <div className="col-4 text-end">
                                                 <span className="d-block bodyLarge lightColor d-flex mb-2">
                                                     <img style={{height: 23}} src={user_icon} alt="user"/> <span
                                                     className="d-inline-block ms-1"> 4.9K </span>
                                                 </span>
-                                                        <span className="d-block bodyLarge lightColor d-flex">
+                                                           <span className="d-block bodyLarge lightColor d-flex">
                                                     <img src={start_icon} alt="react"/> <span
-                                                            className="d-inline-block ms-1"> 4.9 </span>
+                                                               className="d-inline-block ms-1"> 4.9 </span>
                                                 </span>
-                                                    </div>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="mb-4">
-                                        <Card className="mx-2 border-0 border-rounded shadow-sm">
-                                            <Card.Img className="img-fluid rounded-top" variant="top" src={img_4}
-                                                      alt="suggested-course"/>
-                                            <Card.Body>
-                                                <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack
-                                                    Basic</Card.Title>
-                                                <div className="row">
-                                                    <div className="col-8 mb-3 mb-md-0">
+                                                       </div>
+                                                   </div>
+                                               </Card.Body>
+                                           </Card>
+                                       </div>
+                                       <div className="mb-4">
+                                           <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                               <Card.Img className="img-fluid rounded-top" variant="top" src={img_4}
+                                                         alt="suggested-course"/>
+                                               <Card.Body>
+                                                   <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack
+                                                       Basic</Card.Title>
+                                                   <div className="row">
+                                                       <div className="col-8 mb-3 mb-md-0">
                                                 <span className="d-block bodyLarge lightColor d-flex">
                                                     <img src={courses_icon} alt="courses icon"/> <span
                                                     className="d-inline-block ms-1 mb-2"> MERN Series </span>
                                                 </span>
-                                                        <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
-                                                    </div>
-                                                    <div className="col-4 text-end">
+                                                           <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
+                                                       </div>
+                                                       <div className="col-4 text-end">
                                                 <span className="d-block bodyLarge lightColor d-flex mb-2">
                                                     <img style={{height: 23}} src={user_icon} alt="user"/> <span
                                                     className="d-inline-block ms-1"> 4.9K </span>
                                                 </span>
-                                                        <span className="d-block bodyLarge lightColor d-flex">
+                                                           <span className="d-block bodyLarge lightColor d-flex">
                                                     <img src={start_icon} alt="react"/> <span
-                                                            className="d-inline-block ms-1"> 4.9 </span>
+                                                               className="d-inline-block ms-1"> 4.9 </span>
                                                 </span>
-                                                    </div>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="mb-4">
-                                        <Card className="mx-2 border-0 border-rounded shadow-sm">
-                                            <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}
-                                                      alt="suggested-course"/>
-                                            <Card.Body>
-                                                <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack
-                                                    Basic</Card.Title>
-                                                <div className="row">
-                                                    <div className="col-8 mb-3 mb-md-0">
+                                                       </div>
+                                                   </div>
+                                               </Card.Body>
+                                           </Card>
+                                       </div>
+                                       <div className="mb-4">
+                                           <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                               <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}
+                                                         alt="suggested-course"/>
+                                               <Card.Body>
+                                                   <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack
+                                                       Basic</Card.Title>
+                                                   <div className="row">
+                                                       <div className="col-8 mb-3 mb-md-0">
                                                 <span className="d-block bodyLarge lightColor d-flex">
                                                     <img src={courses_icon} alt="courses icon"/> <span
                                                     className="d-inline-block ms-1 mb-2"> MERN Series </span>
                                                 </span>
-                                                        <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
-                                                    </div>
-                                                    <div className="col-4 text-end">
+                                                           <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
+                                                       </div>
+                                                       <div className="col-4 text-end">
                                                 <span className="d-block bodyLarge lightColor d-flex mb-2">
                                                     <img style={{height: 23}} src={user_icon} alt="user"/> <span
                                                     className="d-inline-block ms-1"> 4.9K </span>
                                                 </span>
-                                                        <span className="d-block bodyLarge lightColor d-flex">
+                                                           <span className="d-block bodyLarge lightColor d-flex">
                                                     <img src={start_icon} alt="react"/> <span
-                                                            className="d-inline-block ms-1"> 4.9 </span>
+                                                               className="d-inline-block ms-1"> 4.9 </span>
                                                 </span>
-                                                    </div>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
+                                                       </div>
+                                                   </div>
+                                               </Card.Body>
+                                           </Card>
+                                       </div>
                                 </Slider>
                             </div>
                         </div>

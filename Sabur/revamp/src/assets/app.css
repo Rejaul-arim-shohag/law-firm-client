@@ -45,6 +45,10 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+.position-sticky {
+    transition: 0.4s ease-in-out all;
+}
+
 /* Text Color */
 .themeColor {
     color: var(--themeColor);
@@ -515,6 +519,10 @@ a {
     top: 7px;
 }
 
+.position-top-15 {
+    top: 15px;
+}
+
 .position-left-0 {
     left: 0;
 }
@@ -627,6 +635,12 @@ a {
     position: absolute;
     background-size: 300px 300px;
     background-image: url("./images/circle-bg.svg");
+}
+
+.position-sticky.top-left-circleBG::after {
+    z-index: -1;
+    top: -22%;
+    left: -40%;
 }
 
 /* Responsive */

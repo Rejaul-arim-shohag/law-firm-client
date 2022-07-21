@@ -2,7 +2,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 999;
     height: 62px;
     position: fixed;
     transition: all ease-in-out 0.5s;
@@ -33,6 +33,10 @@
 
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
     color: var(--themeColor);
+}
+
+.mouseScroll .position-sticky {
+    top: 80px;
 }
 
 @media only screen and (max-width: 400px) {
