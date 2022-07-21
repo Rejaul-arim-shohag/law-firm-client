@@ -20,7 +20,7 @@ class CourseGallery extends Component {
     render() {
         return (
             <Fragment>
-                <div className="pt-5 pb-5 course-gallery lightDeepBG-2 slick-carousel-arrow position-relative">
+                <div className="pt-5 pb-5 course-gallery lightDeepBG-2 position-relative">
                     <div className="container">
                         <div className="d-flex justify-content-center">
                             <h2 className="section-title fw-bold mb-4"> Our Top-Picked Courses </h2>

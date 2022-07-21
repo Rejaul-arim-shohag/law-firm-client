@@ -350,6 +350,22 @@ a {
 }
 
 /* Buttons */
+.themeBtn {
+    width: 100%;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: 0.4s ease-in-out all;
+    color: var(--themeWhiteColor);
+    border: 2px solid var(--themeColor);
+    background-color: var(--themeColor);
+}
+
+.themeBtn:hover {
+    color: var(--themeColor);
+    background-color: transparent;
+}
+
 .search-btn {
     top: 0;
     right: 10px;
