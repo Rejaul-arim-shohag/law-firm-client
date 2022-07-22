@@ -1,173 +1,94 @@
 import React from 'react';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import accidentImage from "../../Assets/images/accident.jpg";
 import "./PracticeArea.css";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { FaUsers, FaEdit, FaHireAHelper } from "react-icons/fa";
+import { BsBank2, BsGraphUp } from "react-icons/bs";
+import { GiDrawbridge } from "react-icons/gi";
+
 const PracticeArea = () => {
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 4
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
-        }
-    };
     return (
-        <div className="py-5 my-5">
+        <div className="py-5 mt-5 mb-5 practice_area-fullSection">
             <div className="container">
-                <p className="text-center">LEGAL HELP</p>
-                <h3 className="text-center">Our Legal Services</h3>
-                <div className="d-flex justify-content-end">
-                    <Button type="button" class="btn btn-outline-primary">View More <AiOutlineArrowRight/></Button>
+                <h2 className="text-center practiceAreaMainHeading">OUR AREAS OF EXPERTISE</h2>
+                <h4 className="text-center mt-2 text-secondary">The Learned Counsels | Lawyers & Consultants</h4>
+                <div className="practiceAreaP mt-2">
+                    <p className="text-center">The Learned Counsels is a vibrant law firm accommodating a number of young and bright lawyers & consultants. We are capable of meeting the demands  of the growing world of divergent legal issues and maintain high professional standards with following areas of expertise.</p>
                 </div>
-                <Carousel className="py-4 practiceCarosel" responsive={responsive}>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Auto Accident</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
+                <div className="expertise_area mt-5">
+                    <div className="expertise">
+                        <div className="iconAndServiceName">
+                            <h4><FaUsers /></h4>
+                            <h4>Commercial Law</h4>
+                        </div>
+                        <p>
+                            We advise clients on all aspects of commercial and financial transactions and negotiations including foreign and local investments in Bangladesh; distribution; agency; terms and conditions of business; partnerships; industrial relations; and employment.
+                        </p>
+                        <div className="practiceArea_button">
+                            <button className="btn btn-outline-success">READ MORE</button>
+                        </div>
                     </div>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Constraction Loans</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
+                    <div className="expertise">
+                        <div className="iconAndServiceName">
+                            <h4><FaEdit /></h4>
+                            <h4>Company Law</h4>
+                        </div>
+
+                        <p>
+                            We provide advice to private and public companies in all phases of business development and continuation, including local and off-shore company incorporations; company secretarial services; preparation of annual company reports; organisational documentation
+                        </p>
+                        <div className="practiceArea_button">
+                            <button className="btn btn-outline-success">READ MORE</button>
+                        </div>
                     </div>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Real State</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
+                    <div className="expertise">
+                        <div className="iconAndServiceName">
+                            <h4><GiDrawbridge /></h4>
+                            <h4>Banking Law</h4>
+                        </div>
+
+                        <p>
+                            The Learned Counsels's professional services offered to our clients encompass a broad range of banking-related matters such as security documentation and structuring debt equity arrangements. Feel free to revert us at your convenient.
+                        </p>
+                        <div className="practiceArea_button">
+                            <button className="btn btn-outline-success">READ MORE</button>
+                        </div>
                     </div>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Finanace Law</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
+                    <div className="expertise">
+                        <div className="iconAndServiceName">
+                            <h4><BsBank2 /></h4>
+                            <h4>Property Law</h4>
+                        </div>
+                        <p>
+                            We provide legal services on acquisition and disposal of premises, secured lending, purchase and sale of investment property, environmental law, landlord and tenant issues (including drafting lease agreements), and services for property managers.
+                        </p>
+                        <div className="practiceArea_button">
+                            <button className="btn btn-outline-success">READ MORE</button>
+                        </div>
                     </div>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Tax Disputes</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
+                    <div className="expertise">
+                        <div className="iconAndServiceName">
+                            <h4><BsGraphUp /></h4>
+                            <h4>Construction Law</h4>
+                        </div>
+                        <p>
+                            We manage construction contract documentation and conduct contract negotiations between architects, contractors, sub-contractors and suppliers. The Chamber represents owners, developers and contractors in all phases.
+                        </p>
+                        <div className="practiceArea_button">
+                            <button className="btn btn-outline-success">READ MORE</button>
+                        </div>
                     </div>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Tax Disputes</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
+                    <div className="expertise">
+                        <div className="iconAndServiceName">
+                            <h4><FaHireAHelper /></h4>
+                            <h4>Investment Services</h4>
+                        </div>
+                        <p>
+                            We act as independent financial advisers and this provides an additional service to clients. We can carry out investment and portfolio planning (including stocks, shares, bonds, gilts, deposit accounts) as well as insurance business (including life insurance, regular savings plans).
+                        </p>
+                        <div className="practiceArea_button">
+                            <button className="btn btn-outline-success">READ MORE</button>
+                        </div>
                     </div>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Tax Disputes</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Tax Disputes</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Divorce</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Helth Care</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div>
-                        <Card style={{ width: '16.5rem' }}>
-                            <Card.Img variant="top" src={accidentImage} />
-                            <Card.Body>
-                                <Card.Title>Child Abuse</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                </Carousel>
+                </div>
             </div>
         </div>
     );

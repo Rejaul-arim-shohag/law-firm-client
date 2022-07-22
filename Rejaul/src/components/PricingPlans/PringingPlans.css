@@ -1,0 +1,47 @@
+.priceing_plans{
+    background-color: #F4F2FF;
+    padding:80px 0px;
+}
+.single_plan:nth-child(2){
+    background-color:rgb(71, 201, 140);
+    color:#fcfbff;
+}
+.single_plan:nth-child(2)>button{
+   background:rgb(19, 111, 128);
+}
+
+.plansGridContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2%;
+}
+.plansGridContainer>div{
+    background-color: rgb(255, 255, 255);
+    padding:40px 30px;
+    border-radius: 5px;
+}
+.single_plan>h6 {
+    line-height: 2 !important;
+    font-size: 14px;
+}
+.single_plan>h4, .single_plan>p{
+    text-align: center;
+    
+}
+
+.planing_price{
+    font-size:40px;
+}
+.single_plan>h6>svg{
+    font-size:10px;
+   margin-right: 4px;
+}
+.single_plan{
+    cursor: pointer;
+}
+.single_plan:hover>button{
+    background-color:rgb(19, 111, 128);
+}
+.planing_price, .active_plan{
+    color:#fff !important;
+}

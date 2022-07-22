@@ -4,9 +4,10 @@
   display: none;
 }
 
-body {
-  background:#F9F8F8;
+body{
+  width: 100%;
   font-size: 14px;
+  background: #f0f0f0 !important;
   font-family: 'Poppins', sans-serif !important;
 }
 h1,h2,h3,h4,h5,h6,button,input,textarea{
@@ -40,7 +41,46 @@ a:hover {
 .swal2-styled:focus{
   box-shadow: none !important;
 }
+.mainButton{
+  transition:0.3s;
+  width: 220px;
+  height: 60px;
+  font-size: 15px;
+  border:0;
+  outline: 0;
+  border-radius: 40px;
+  background-color:#21BF73;
+  color:white;
+}
+.mainButton2{
+  transition:0.3s;
+  width: 170px;
+  height: 50px;
+  border:0;
+  outline: 0;
+  border-radius: 2px;
+  background-color:#21BF73;
+  color:white;
+}
+.mainButton3{
+  transition:0.3s;
+  width: 130px;
+  height: 40px;
+  border:0;
+  outline: 0;
+  border-radius: 2px;
+  background-color:#21BF73;
+  color:white;
+}
+
+
 @media only screen and (max-width: 992px) {
+  .navbar-nav{
+    background:#fff;
+  }
+  .navigationBtn{
+    display:none;
+  }
   .heroMainImage>img{
     width:100%;
     z-index: 78457;
@@ -51,6 +91,27 @@ a:hover {
  .leftBg{
   display:none;
  }
+ .expertise_area{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:2%;
+}
+/* .practice_area-fullSection{
+  margin-bottom:110px!important;
+} */
+.expertise_area{
+  margin-top:10px;
+}
+.footer_content{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap:0;
+}
+.teams_container{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-gap:3%;
+}
 }
 
 @media only screen and (max-width: 1200px) {
@@ -83,8 +144,49 @@ a:hover {
   .reviewSliders{
     margin-top:30px;
   }
+  .plansGridContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2%;
 }
-@media only screen and (max-width: 514px) {
+.setCommentBtn{
+ text-align: center;
+ margin-bottom: 50px;
+}
+.practiceAreaP{
+  width: 100%;
+}
+.footer_content{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:5%;
+}
+/* .team_container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-gap:1%;
+} */
+.teams_container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-gap:1%;
+}
+.ourTeam{
+  margin-bottom: 200px !important;
+}
+}
+@media only screen and (max-width: 515px) {
+  .footer{
+    padding-bottom: 150px !important;
+  }
+  .teams_container{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-gap:1%;
+}
+  .ourTeam>last-child{
+    margin-bottom:0;
+  }
   .attorneys{
     display:grid;
     grid-template-columns: 1fr;
@@ -93,12 +195,46 @@ a:hover {
   .attorneys>div{
     display:flex;
     justify-content: center;
-
+  }
+  .attorneys>div:last-child{
+    margin-bottom: 40px;
+  }
+  .plansGridContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2%;
+    justify-items: center;
+    margin: 0 auto;
+}
+.expertise_area{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap:1%;
+}
+.expertise>div:last-child{
+  margin-bottom:50px;
+}
+/* .testimonial{
+  margin-top:284px !important;
+} */
+.footer_content{
+  display:grid;
+  grid-template-columns: 1fr;
+}
+.ourTeam{
+  margin-bottom: 268px !important;
+}
+}
+@media only screen and (max-width: 480px) {
+  .team_container{
+    display:grid;
+    grid-template-columns:1fr ;
   }
 }
 
 
 
-@import "sidebar.css";
+
+/* @import "sidebar.css";
 @import "progress.css";
-@import "dropdownmenu.css";
+@import "dropdownmenu.css"; */

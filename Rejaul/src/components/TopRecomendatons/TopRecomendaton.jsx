@@ -9,8 +9,8 @@ const TopRecomendaton = () => {
         <div className="my-3">
             <div className="container">
                 <h4>MEET OUR ATTORNEYS</h4>
-                <div className="attorneys my-4">
-                    <div className="shadow">
+                <div className="attorneys  my-4  g-4">
+                    <div className="shadow bg-light p-2">
                         <div className="attorneyimage">
                             <img src={attorny4} alt="attorny" />
                         </div>
@@ -20,7 +20,7 @@ const TopRecomendaton = () => {
                             <p>Tel: 800-700-6200</p>
                         </div>
                     </div>
-                    <div className="shadow">
+                    <div className="shadow bg-light p-2">
                         <div className="attorneyimage">
                             <img src={attorny1} alt="attorny" />
                         </div>
@@ -30,7 +30,7 @@ const TopRecomendaton = () => {
                             <p>Tel: 800-700-6200</p>
                         </div>
                     </div>
-                    <div className="shadow">
+                    <div className="shadow bg-light p-2">
                         <div className="attorneyimage">
                             <img src={attorny2} alt="attorny" />
                         </div>
@@ -40,7 +40,7 @@ const TopRecomendaton = () => {
                             <p>Tel: 800-700-6200</p>
                         </div>
                     </div>
-                    <div className="shadow">
+                    <div className="shadow bg-light p-2">
                         <div className="attorneyimage">
                             <img src={attorny3} alt="attorny" />
                         </div>

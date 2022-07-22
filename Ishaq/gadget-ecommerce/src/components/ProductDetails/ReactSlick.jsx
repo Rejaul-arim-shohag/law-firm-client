@@ -33,7 +33,7 @@ export default function ReactSlick() {
     };
 
     return (
-        <div className="slider_card h-full w-full">
+        <div className="slider_card h-full w-full mt-5">
             <div className="relative">
                 <div className="relative w-full h-[60vh] mx-auto p-1 border-0  bg-gradient-to-r from-primary via-dark to-secondary rounded-md" >
                     <Slider ref={c => (slider.current = c)} {...settings}>

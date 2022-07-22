@@ -1,17 +1,12 @@
-.mainNav{
-    background-color: transparent !important;
-    z-index:666666;
-    box-shadow: 0;
-}
-.navBarInner{
-    background:transparent;
-}
+
 .navLogo{
     height: 40px;
 }
 .nav-link{
     margin-left:30px;
     font-size:17px !important;
+    line-height: 2.5;
+    font-weight: 600;
 }
 .mainButton{
     transition:0.3s;
@@ -32,4 +27,27 @@
 }
 .navbar-toggler .navbar-toggler-icon {
     background-image: red !important;
+}
+.navigationBtn{
+    margin-left: 40px;
+}
+
+.MainNavbar{
+    width: 100%!important;
+    z-index: 99999999;
+    left:0;
+    right:0;
+    top: -20px;
+    position: relative;
+    position:sticky;
+    height: 86px;
+    transition: all ease-in-out 0.5s;
+    background-color: transparent;
+}
+
+.activeNav{
+    background-color:#fff;
+    top:0px;
+   padding-top: 5px;
+   padding-bottom:5px !important;
 }

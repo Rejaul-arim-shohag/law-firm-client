@@ -16,7 +16,7 @@ export default function Breadcrumbs({breadcrumbs}) {
                 {
                     breadcrumbs?.map((item, i) => (
                         <div key={i} className="group">
-                            <Link to="#" class="text-gray-600 dark:text-gray-200 ">
+                            <Link to="/" class="text-gray-600 dark:text-gray-200 hover:text-primary">
                                 {item}
                             </Link>
 

@@ -3,6 +3,9 @@
    grid-template-columns: 1fr 1fr 1fr 1fr;
    grid-gap: 1%;
 }
+.Attornycontent>h6, .Attornycontent>p{
+    text-align: center;
+}
 .attorneys>div{
    display: grid;
    grid-template-columns: 0.8fr auto;
