@@ -572,6 +572,10 @@ a {
     right: 0;
 }
 
+.position-right-10 {
+    right: 10px;
+}
+
 .position-bottom-0 {
     bottom: 0;
 }
