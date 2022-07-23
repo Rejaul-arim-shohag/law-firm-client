@@ -1,0 +1,37 @@
+.small-hero-bg {
+    min-height: 50vh;
+
+    background-image: url("../../assets/images/sm-hero-shadow.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.small-hero-bg::after,
+.small-hero-bg::before {
+    content: '';
+    top: 0;
+    z-index: 0;
+    width: 36%;
+    height: 50%;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.small-hero-bg::after {
+    content: '';
+    right: 0;
+    background-image: url("../../assets/images/sm-hero-bg.svg");
+}
+
+.small-hero-bg::before {
+    content: '';
+    left: 0;
+    background-image: url("../../assets/images/sm-hero-shape.svg");
+}
+
+@media only screen and (max-width: 768px) {
+    .small-hero-bg::before {
+        display: none;
+    }
+}

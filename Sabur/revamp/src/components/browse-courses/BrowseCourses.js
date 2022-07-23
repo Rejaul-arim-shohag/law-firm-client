@@ -80,7 +80,7 @@ class BrowseCourses extends Component {
         };
         return (
             <Fragment>
-                <div className="pt-5 pb-5 lightDeepBG-2 browse-courses position-relative browse-coursesBG">
+                <div className="pt-5 pb-5 lightDeepBG-2 slick-carousel-arrow browse-courses position-relative top-left-circleBG">
                     <div className="container">
                         <div className="d-flex justify-content-center">
                             <h2 className="section-title fw-bold mb-2"> Browse Courses </h2>

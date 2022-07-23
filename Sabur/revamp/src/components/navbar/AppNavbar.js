@@ -33,6 +33,7 @@ class AppNavbar extends Component {
                                         <Link className="nav-link text-uppercase active" to="/">Home</Link>
                                         <Link className="nav-link text-uppercase" to="/about">About</Link>
                                         <Link className="nav-link text-uppercase" to="/courses">Courses</Link>
+                                        <Link className="nav-link text-uppercase" to="/mentor">Mentor</Link>
                                         <Link className="nav-link text-uppercase" to="/contact">Contact</Link>
                                         <Link className="nav-link text-uppercase rounded-pill text-white themeBG py-2 px-4 ms-md-3" to="/join">Join</Link>
                                     </Nav>

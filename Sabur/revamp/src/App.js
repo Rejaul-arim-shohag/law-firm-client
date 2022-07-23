@@ -6,6 +6,10 @@ import About from "./page/about/About";
 import Courses from "./page/courses/Courses";
 import Contact from "./page/contact/Contact";
 import Join from "./page/join/Join";
+import Mentor from "./page/mentor/Mentor";
+
+import CoursesPageOne from "./page/courses-1/CoursesPageOne";
+import CoursesPageTwo from "./page/courses-2/CoursesPageTwo";
 
 // Component Include
 import Footer from "./components/footer/Footer";
@@ -28,6 +32,10 @@ function App() {
                 <Route path="/courses" element={<Courses/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/join" element={<Join/>}/>
+                <Route path="/mentor" element={<Mentor/>}/>
+
+                <Route path="/courses-page-one" element={<CoursesPageOne/>}/>
+                <Route path="/courses-page-two" element={<CoursesPageTwo/>}/>
             </Routes>
             <Footer/>
         </Fragment>

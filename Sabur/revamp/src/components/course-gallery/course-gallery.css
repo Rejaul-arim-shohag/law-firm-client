@@ -1,0 +1,6 @@
+.course-gallery .accordion-header button.accordion-button {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    color: var(--themeWhiteColor);
+    background-color: var(--themeColor);
+}

@@ -6,9 +6,11 @@ import LegalDocuments from './components/Policy/LegalDocuments';
 import PrivacyPolicy from './components/Policy/PrivacyPolicy';
 import ReturnPolicy from './components/Policy/ReturnPolicy';
 import TermsConditions from './components/Policy/TermsConditions';
+import AboutPage from './pages/About.page';
 import AllProductsPage from './pages/AllProducts.page';
 import AuthorizationPage from './pages/Authorization.page';
 import ComingSoonPage from './pages/ComingSoon.page';
+import ContactPage from './pages/Contact.page';
 import Home from "./pages/Home.page";
 import NotFoundPage from './pages/NotFound.page';
 import ProductDetailsPage from "./pages/ProductDetails.page";
@@ -34,8 +36,8 @@ function App() {
               <Route path='legal' element={<LegalDocuments />} />
               <Route path='cookie' element={<CookiePolicy />} />
             </Route>
-            <Route path='/aboutUs' element={<ComingSoonPage />} />
-            <Route path='/contact' element={<ComingSoonPage />} />
+            <Route path='/aboutUs' element={<AboutPage />} />
+            <Route path='/contact' element={<ContactPage/>} />
             <Route path='*' element={<NotFoundPage />} />
 
           </Routes>
