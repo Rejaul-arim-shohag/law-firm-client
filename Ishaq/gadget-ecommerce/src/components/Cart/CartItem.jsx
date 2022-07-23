@@ -37,7 +37,7 @@ export default function CartItem({ deleteHandler, item }) {
             </div>
             <div className="cart-info-group">
                 <div className="cart-info ">
-                    <h6><Link to="/details" className='text-sm font-semibold'>{name}</Link></h6>
+                    <h6><Link to="/details" className='text-sm font-semibold line-clamp-2'>{name}</Link></h6>
                     <p className='text-xs opacity-50 font-semibold'>Unit - BDT.{price}</p>
                 </div>
                 <div className="cart-action-group ">
