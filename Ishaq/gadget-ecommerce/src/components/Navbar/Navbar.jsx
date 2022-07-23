@@ -68,7 +68,7 @@ export default function Navbar() {
 
                 </Link>
               </div>
-            
+
               <Popover.Group as="nav" className="hidden md:flex space-x-10">
                 <Popover className="relative">
                   {({ open }) => (
@@ -180,7 +180,7 @@ export default function Navbar() {
                   Contact
                 </Link>
 
-                <button  className="">
+                <button className="hover:opacity-50" onClick={() => setShowCartSideBar(s => !s)} >
                   <strong className="inline-flex items-center  relative px-1 py-1 ">
                     <span className="w-5 h-5 text-white text-xs bg-primary flex items-center justify-center rounded-full absolute -top-2.5 -right-2.5">10</span>
                     <span className="text-dark  text-xl">
@@ -199,11 +199,11 @@ export default function Navbar() {
             </div>
           </div>
 
-        
+
         </div>
       </Popover>
-      {/* <CartSidebar show={showCartSideBar} setShowCartSideBar={setShowCartSideBar} /> */}
-    
+      <CartSidebar show={showCartSideBar} setShowCartSideBar={setShowCartSideBar} />
+
     </div>
   )
 }
