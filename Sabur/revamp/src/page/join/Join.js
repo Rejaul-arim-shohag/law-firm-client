@@ -9,7 +9,7 @@ import './join.css';
 // Images
 import favicon from "../../assets/images/title-icon.ico";
 import og_image from "../../assets/images/og-image.png";
-import rabbilVai from "../../assets/images/rabbil-vai.png";
+import rabbilVai from "../../assets/images/rabbilVai.png";
 import apple from "../../assets/images/apple.png";
 import google from "../../assets/images/google.png";
 import facebook from "../../assets/images/facebook.png";
@@ -37,7 +37,7 @@ class Join extends Component {
                         <div className="themeWhiteBG rounded-3">
                             <div className="row">
                                 <div className="col-md-6 d-flex align-items-center justify-content-center">
-                                    <div className="pt-5 pb-0 pb-md-5">
+                                    <div className="pt-5 pb-0 pb-md-5  w-75 ps-0 ps-md-3">
                                         <h2 className="themeDarkColor fw-bold"> Interested to join? </h2>
                                         <p className="lightColor mb-4"> Get started with us </p>
 
@@ -79,15 +79,13 @@ class Join extends Component {
                                             </div>
                                         </div>
 
-                                        <p className="m-0 text-center mt-3 mt-md-5">Don’t have account? <Link to="/signup" className="themeColor">Sign up</Link></p>
+                                        <p className="m-0 text-center mt-3 mt-md-5 mb-5 mb-md-0">Don’t have account? <Link to="/signup" className="themeColor">Sign up</Link></p>
                                     </div>
                                 </div>
-                                <div className="col-md-6 d-flex align-items-center">
-                                    <div className="secondaryBG rounded-3 m-4">
-                                        <div className="d-flex align-items-center justify-content-center">
-                                            <div className="position-relative pseudo-border">
-                                                <img className="img-fluid position-relative position-right--30 position-right-0-M575 position-top--50" src={rabbilVai} alt="Circle path"/>
-                                            </div>
+                                <div className="col-md-6 mh-80vh position-relative d-none d-md-block">
+                                    <div className="secondaryBG rounded-3 m-4 position-absolute position-relative-mx-767 position-top-0 position-bottom-0 position-right-10 position-left-0">
+                                        <div className="h-100 w-100 d-flex align-items-center justify-content-center">
+                                            <img className="img-fluid" src={rabbilVai} alt="Circle path"/>
                                         </div>
                                     </div>
                                 </div>

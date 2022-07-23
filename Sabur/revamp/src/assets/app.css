@@ -334,22 +334,6 @@ a {
     filter: invert(0);
 }
 
-.pseudo-border::before {
-    content: '';
-    height: 85%;
-    width: 85%;
-    border: 2px solid;
-    position: absolute;
-    top: 10%;
-    left: 12%;
-    border-radius: 50%;
-    border-right-color: #21bf7352;
-    border-bottom-color: #21bf7352;
-    border-top-color: var(--themeColor);
-    border-left-color: var(--themeColor);
-    transform: rotate(-42.5deg);
-}
-
 .min-100-vh {
     min-height: 100vh;
 }
@@ -462,6 +446,10 @@ a {
 
 .h-450 {
     height: 450px;
+}
+
+.mh-80vh {
+    min-height: 80vh;
 }
 
 /* Margin & Padding */
@@ -580,8 +568,9 @@ a {
     bottom: 0;
 }
 
-.position-right--30 {
-    right: -30px;
+/* # */
+.position-right--80 {
+    right: -80px;
 }
 
 .position-top--50 {
@@ -686,17 +675,9 @@ a {
 
 /* Responsive */
 @media only screen and (max-width: 1400px) {
-    .pseudo-border::before {
-        top: 9%;
-        left: 13%;
-    }
 }
 
 @media only screen and (max-width: 1200px) {
-    .pseudo-border::before {
-        top: 7%;
-        left: 14%;
-    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -706,13 +687,12 @@ a {
 }
 
 @media only screen and (max-width: 992px) {
-    .flex-wrap-reverse-M992 {
-        flex-wrap: wrap-reverse;
+    .position-right-0-M992 {
+        right: 0;
     }
 
-    .pseudo-border::before {
-        top: 11%;
-        left: 12%;
+    .flex-wrap-reverse-M992 {
+        flex-wrap: wrap-reverse;
     }
 
     .min-ha-M992 {
@@ -725,6 +705,10 @@ a {
 
     .section-title {
         font-size: 32px;
+    }
+
+    .top-corner-bg::before {
+        display: none;
     }
 }
 
@@ -809,16 +793,6 @@ a {
         font-size: 32px !important;
     }
 
-    .pseudo-border::before {
-        top: 8%;
-        left: 13%;
-        transform: rotate(0);
-    }
-
-    .top-corner-bg::before {
-        display: none;
-    }
-
     .top-corner-bg {
         background-position: top;
     }
@@ -833,30 +807,9 @@ a {
     /*}*/
 }
 
-@media only screen and (max-width: 575px) {
-    .position-right-0-M575 {
-        right: 0;
-    }
-
-    .pseudo-border::before {
-        left: 7%;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .pseudo-border::before {
-        top: 6%;
-    }
-}
-
 @media only screen and (max-width: 390px) {
     .hero-headline-1-res {
         font-size: 25px !important;
-    }
-
-    .pseudo-border::before {
-        top: 3%;
-        left: 7%;
     }
 }
 

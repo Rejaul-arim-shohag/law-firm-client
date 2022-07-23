@@ -13,7 +13,7 @@ import og_image from "../../assets/images/og-image.png";
 import apple from "../../assets/images/apple.png";
 import google from "../../assets/images/google.png";
 import facebook from "../../assets/images/facebook.png";
-import rabbilVai from "../../assets/images/rabbil-vai.png";
+import rabbilVai from "../../assets/images/rabbilVai.png";
 
 class SignUp extends Component {
     render() {
@@ -92,12 +92,10 @@ class SignUp extends Component {
                                         <p className="m-0 text-center mt-3 mt-md-5 mb-5 mb-md-0">Already have account? <Link to="/join" className="themeColor">Sign In</Link></p>
                                     </div>
                                 </div>
-                                <div className="col-md-6 position-relative d-none d-md-block">
+                                <div className="col-md-6 mh-80vh position-relative d-none d-md-block">
                                     <div className="secondaryBG rounded-3 m-4 position-absolute position-relative-mx-767 position-top-0 position-bottom-0 position-right-10 position-left-0">
                                         <div className="h-100 w-100 d-flex align-items-center justify-content-center">
-                                            <div className="position-relative pseudo-border">
-                                                <img className="img-fluid position-relative position-right--30 position-right-0-M575 position-top--50" src={rabbilVai} alt="Circle path"/>
-                                            </div>
+                                            <img className="img-fluid" src={rabbilVai} alt="Circle path"/>
                                         </div>
                                     </div>
                                 </div>
