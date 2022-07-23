@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.1f7654a1.css",
-    "main.js": "/static/js/main.a570529f.js",
+    "main.css": "/static/css/main.7cb10d46.css",
+    "main.js": "/static/js/main.d8f7c3a0.js",
+    "static/media/Map.png": "/static/media/Map.37be57fab59a07632492.png",
     "static/media/heroLawyear.svg": "/static/media/heroLawyear.64e0b8421546ff2191e58f729673e3ed.svg",
+    "static/media/aboutUsBanner.webp": "/static/media/aboutUsBanner.80d2cb394092266b3fa0.webp",
     "static/media/client2.jpg": "/static/media/client2.50ae333cc8a3e23956f0.jpg",
     "static/media/curvebg.svg": "/static/media/curvebg.607b41d3d3d5b9bcf71c.svg",
-    "static/media/lawyer2.jpg": "/static/media/lawyer2.7dbb889b6060a47d4192.jpg",
     "static/media/clinet1.jpg": "/static/media/clinet1.f397bee2325e75d84a4b.jpg",
+    "static/media/lawyer2.jpg": "/static/media/lawyer2.968fcd5e4f5ff4118d32.jpg",
     "static/media/law-book.webp": "/static/media/law-book.8a1ec3ac75c1614b2982.webp",
+    "static/media/customer1.webp": "/static/media/customer1.8703c22c477b9096961e.webp",
     "static/media/page-bennar.jpg": "/static/media/page-bennar.3418c0389e790f926077.jpg",
     "static/media/people-2.jpg": "/static/media/people-2.12841e3423bd31527cc3.jpg",
     "static/media/people-1.jpg": "/static/media/people-1.c41093dfcf1976007f49.jpg",
@@ -19,11 +22,11 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "static/media/logo2.svg": "/static/media/logo2.e41f6087382055646c1c02d0a63583d5.svg",
-    "main.1f7654a1.css.map": "/static/css/main.1f7654a1.css.map",
-    "main.a570529f.js.map": "/static/js/main.a570529f.js.map"
+    "main.7cb10d46.css.map": "/static/css/main.7cb10d46.css.map",
+    "main.d8f7c3a0.js.map": "/static/js/main.d8f7c3a0.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f7654a1.css",
-    "static/js/main.a570529f.js"
+    "static/css/main.7cb10d46.css",
+    "static/js/main.d8f7c3a0.js"
   ]
 }

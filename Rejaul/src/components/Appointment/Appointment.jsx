@@ -8,9 +8,10 @@ import Col from 'react-bootstrap/Col';
 import ApointmentModal from './ApointmentModal';
 const Appointment = () => {
     const [date, setDate] = useState(new Date());
-    // const [modalShow, setModalShow] = useState(false);
-   
- 
+    const [modalShow, setModalShow] = useState(false);
+    // const toggleModal = () => {
+    //     setModalShow(!modalShow)
+    // }
     const today = new Date();
     let footer = <p>Please pick a day.</p>;
     const appointmentData = [
@@ -103,16 +104,20 @@ const Appointment = () => {
                                     <h6>Company Law</h6>
                                     <p>10 slots available</p>
                                     <p> $120</p>
-                                    <button className="mainButton3">Book Now</button>
-                                </div>
+                                    <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
+                                    <ApointmentModal
+                                      show={modalShow} close={() => setModalShow(false)} 
+                                    />                                </div>
                             </div>
                             <div className="col-md-4 my-3">
                                 <div className="bg-light px-4 py-3">
                                     <h6>Commercial Law</h6>
                                     <p>10 slots available</p>
                                     <p> $123</p>
-                                    <button className="mainButton3">Book Now</button>
-
+                                    <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
+                                    <ApointmentModal
+                                      show={modalShow} close={() => setModalShow(false)} 
+                                    />
                                 </div>
                             </div>
                             <div className="col-md-4 my-3">
@@ -120,24 +125,30 @@ const Appointment = () => {
                                     <h6>Banking Law</h6>
                                     <p>10 slots available</p>
                                     <p> $240</p>
-                                    <button className="mainButton3">Book Now</button>
-                                </div>
+                                    <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
+                                    <ApointmentModal
+                                      show={modalShow} close={() => setModalShow(false)} 
+                                    />                                </div>
                             </div>
                             <div className="col-md-4 my-3">
                                 <div className="bg-light px-4 py-3">
                                     <h6>Property Law</h6>
                                     <p>10 slots available</p>
                                     <p> $120</p>
-                                    <button className="mainButton3">Book Now</button>
-                                </div>
+                                    <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
+                                    <ApointmentModal
+                                      show={modalShow} close={() => setModalShow(false)} 
+                                    />                                </div>
                             </div>
                             <div className="col-md-4 my-3">
                                 <div className="bg-light px-4 py-3">
                                     <h6>Construction Law</h6>
                                     <p>3 slots available</p>
                                     <p> $199</p>
-                                    
-                                    <button className="mainButton3">Book Now</button>
+                                    <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
+                                    <ApointmentModal
+                                      show={modalShow} close={() => setModalShow(false)} 
+                                    />
                                 </div>
                             </div>
                             <div className="col-md-4 my-3">
@@ -145,8 +156,10 @@ const Appointment = () => {
                                     <h6>Investment Services</h6>
                                     <p>10 slots available</p>
                                     <p> $99</p>
-                                    <button className="mainButton3">Book Now</button>
-                                </div>
+                                    <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
+                                    <ApointmentModal
+                                      show={modalShow} close={() => setModalShow(false)} 
+                                    />                                </div>
                             </div>
                         </Row>
                     </div>
