@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
-export default function OffCanvas({ title,items }) {
+export default function OffCanvasLogin({ title,items }) {
 
     return (
         <div className="relative z-40 ">
