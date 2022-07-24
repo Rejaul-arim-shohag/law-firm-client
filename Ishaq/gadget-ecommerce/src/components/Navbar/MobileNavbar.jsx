@@ -80,7 +80,7 @@ export default function MobileNavbar() {
 
 
   return (
-    <div className={`fixed bottom-0 z-40  w-full block md:hidden`}>
+    <div className={`fixed bottom-0 bg-white z-40  w-full block md:hidden`}>
 
       <div className="">
         <nav className="flex justify-evenly items-center bg-white ">
@@ -121,7 +121,6 @@ export default function MobileNavbar() {
             <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
               <span><GiMicrochip /></span>
               <span className='text-[.65rem]'>Categories</span>
-              <OffCanvas title="Categories" items={catagories} />
 
             </div>
           </Link>
@@ -133,22 +132,23 @@ export default function MobileNavbar() {
             <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
               <span><AiFillAppstore /></span>
               <span className='text-[.65rem]'>Brands</span>
-              <OffCanvas title="Brands" items={brands} />
 
             </div>
           </Link>
           <div
-            
-            className="flex items-center pt-2  rounded "
+
+            className="flex items-center pt-2  rounded hs-dropdown-toggle"
             data-hs-offcanvas="#hs-offCanvas-Cart"
           >
             <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
               <span><BsCartDash /></span>
               <span className='text-[.65rem]'>Cart</span>
-              <OffCanvasCart title="Cart" />
-
             </div>
           </div>
+
+
+
+
           <Link
             to={'/login'}
             className="flex items-center pt-2  rounded"
@@ -157,7 +157,6 @@ export default function MobileNavbar() {
             <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
               <span><BsPerson /></span>
               <span className='text-[.65rem]'>Login</span>
-              {/* <OffCanvasLogin title="Login" items={catagories} /> */}
 
             </div>
           </Link>
@@ -166,6 +165,10 @@ export default function MobileNavbar() {
         </nav>
 
       </div>
+      <OffCanvas title="Categories" items={catagories} />
+      <OffCanvas title="Brands" items={brands} />
+
+      <OffCanvasCart title="Cart" />
 
     </div>
   )

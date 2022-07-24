@@ -32,7 +32,7 @@ export default function Reviews() {
                     <HappyCustomers />
                 </div>
 
-                <div className="flex-1 w-96 relative">
+                <div className="flex-1 w-96 relative ">
                     <Slider ref={c => (slider.current = c)} {...settings}>
                         {
                             data?.map((item, i) => (
@@ -64,9 +64,9 @@ export default function Reviews() {
                         }
                     </Slider >
 
-                    <div className="mt-10 flex gap-3 justify-center absolute -bottom-10 left-28 md:bottom-auto  md:top-0 md:left-20">
-                        <button onClick={() => slider.current.slickPrev()} className=' rounded-full px-1 py-1 fw-bold bg-transparent hover:bg-emerald-100 duration-150 text-white hover:text-primary border-0'> <HiOutlineChevronLeft className='m-2' /></button>
-                        <button onClick={() => slider.current.slickNext()} className=' rounded-full px-1 py-1 fw-bold  bg-transparent hover:bg-emerald-100 duration-150 text-white hover:text-primary border-0'> <HiOutlineChevronRight className='m-2' /></button>
+                    <div className=" flex gap-3 justify-center absolute -bottom-10 left-28 md:bottom-auto  md:top-0 md:left-20">
+                        <button onClick={() => slider.current.slickPrev()} className=' rounded-full px-1 py-1 fw-bold bg-transparent  duration-150 text-white  border-0'> <HiOutlineChevronLeft className='m-2' /></button>
+                        <button onClick={() => slider.current.slickNext()} className=' rounded-full px-1 py-1 fw-bold  bg-transparent  duration-150 text-white  border-0'> <HiOutlineChevronRight className='m-2' /></button>
                     </div>
 
 

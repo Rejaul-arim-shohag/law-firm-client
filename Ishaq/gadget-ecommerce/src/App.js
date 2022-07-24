@@ -8,6 +8,7 @@ import TermsConditions from './components/Policy/TermsConditions';
 import AboutPage from './pages/About.page';
 import AllProductsPage from './pages/AllProducts.page';
 import AuthorizationPage from './pages/Authorization.page';
+import ComingSoonPage from './pages/ComingSoon.page';
 import ContactPage from './pages/Contact.page';
 import Home from "./pages/Home.page";
 import NotFoundPage from './pages/NotFound.page';
@@ -36,6 +37,7 @@ function App() {
             </Route>
             <Route path='/aboutUs' element={<AboutPage />} />
             <Route path='/contact' element={<ContactPage/>} />
+            <Route path='/checkout' element={<ComingSoonPage/>} />
             <Route path='*' element={<NotFoundPage />} />
 
           </Routes>

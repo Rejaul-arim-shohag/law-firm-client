@@ -10,7 +10,7 @@ export default function OffCanvas({ title,items }) {
                     <h3 className="font-bold text-sm text-grey-800 dark:text-white">
                         {title}
                     </h3>
-                    <AiOutlineClose />
+                    <button type='button' className='hs-dropdown-toggle' data-hs-offcanvas={`#hs-offCanvas-${title}`}>  <AiOutlineClose /></button>
 
                 </div>
                 <div className="p-4">
