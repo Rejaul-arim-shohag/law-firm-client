@@ -1,10 +1,10 @@
 import React from 'react'
-import Policy from './Policy'
+import CustomContainer from './CustomContainer'
 
 export default function ReturnPolicy() {
    
     return (
-        <Policy title="Return Policy">
+        <CustomContainer title="Return Policy">
             Last updated: 20-3-2022
 
             These Terms & Conditions governs your use of our Service and explains how we collect, safeguard and disclose information that results from your use of our web pages. Your agreement with us includes these Terms and our Privacy Policy. You acknowledge that you have read and understood Agreements, and agree to be bound of them.
@@ -23,7 +23,7 @@ export default function ReturnPolicy() {
 
             ·  We reserve the right to refuse or cancel your order if fraud or an unauthorized or illegal transaction is suspected.
 
-        </Policy>
+        </CustomContainer>
 
     )
 }

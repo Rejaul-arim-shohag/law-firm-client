@@ -4,51 +4,56 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap");
 @layer components {
-    .all_center {
-      @apply flex justify-center items-center;
+  .all_center {
+    @apply flex justify-center items-center;
+  }
+}
+.productTab {
+  box-shadow: none !important;
+  .z-20 {
+    color: #000;
+  }
+  &:focus {
+    .z-20 {
+      color: #fff !important;
     }
   }
-.productTab {
-    box-shadow: none !important;
-    .z-20{
-        color: #000;
-    }
-    &:focus{
-        .z-20{
-            color: #fff!important;
-        }
-    }
-    .absolute{
-        border-radius: 0;
-        background: #21bf73;
-    }
-
-   
+  .absolute {
+    border-radius: 0;
+    background: #21bf73;
+  }
 }
-[data-hs-offcanvas-backdrop-template]{
+[data-hs-offcanvas-backdrop-template] {
   z-index: 0;
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 16px;
-    height: 16px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    border-radius: 100vh;
-    background: #edf2f7;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #cbd5e0;
-    border-radius: 100vh;
-    border: 3px solid #edf2f7;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #a0aec0;
-  }
+  width: 16px;
+  height: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #edf2f7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 100vh;
+  border: 3px solid #edf2f7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+.page_title_bg {
+  background: rgb(176,234,205);
+  background: -moz-radial-gradient(circle, rgba(176,234,205,0.527345972568715) 52%, rgba(244,244,246,0.35647762522977944) 100%);
+  background: -webkit-radial-gradient(circle, rgba(176,234,205,0.527345972568715) 52%, rgba(244,244,246,0.35647762522977944) 100%);
+  background: radial-gradient(circle, rgba(176,234,205,0.527345972568715) 52%, rgba(244,244,246,0.35647762522977944) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b0eacd",endColorstr="#f4f4f6",GradientType=1);
+}

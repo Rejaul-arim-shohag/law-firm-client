@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import ContactUs from '../components/AboutContact/ContactUs'
 import Footer from '../components/Footer/Footer'
+import ContactUs from '../components/Miscellaneous/ContactUs'
 import MobileNavbar from '../components/Navbar/MobileNavbar'
 import Navbar from '../components/Navbar/Navbar'
 import Reviews from '../components/Reviews/Reviews'
