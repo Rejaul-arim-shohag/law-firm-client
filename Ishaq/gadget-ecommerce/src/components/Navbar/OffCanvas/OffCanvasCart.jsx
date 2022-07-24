@@ -5,7 +5,7 @@ import { FaMinus, FaPlus } from 'react-icons/fa';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
-export default function OffCanvasCart({ title, items }) {
+export default function OffCanvasCart({ title }) {
     const { isLoading, error, data, isFetching } = useQuery("cartProducts", () => axios.get("/data/cartProducts.json").then(({ data }) => data));
     // if(isLoading){
     //     return <Loader/>
@@ -13,8 +13,8 @@ export default function OffCanvasCart({ title, items }) {
 
 
     return (
-        <div className="relative z-40 ">
-            <div id={`hs-offCanvas-${title}`} className=" hs-offcanvas hs-offcanvas-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform max-h-[35rem]  h-full w-full bg-white border-b dark:bg-grey-800 dark:border-grey-700" >
+        <div className="relative ">
+            <div id={`hs-offCanvas-${title}`} className=" hs-offcanvas  hs-offcanvas-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform max-h-[35rem]  h-full w-full bg-white border-b dark:bg-grey-800 dark:border-grey-700" >
                 <div className="flex justify-between items-center py-3 px-4 border-b dark:border-grey-700">
                     <h3 className="font-bold text-sm text-grey-800 dark:text-white">
                         {title}

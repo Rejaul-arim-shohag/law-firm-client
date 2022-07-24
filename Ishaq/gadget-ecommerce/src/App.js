@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Registration from './components/Authorization/Authorization';
 import CookiePolicy from './components/Policy/CookiePolicy';
 import LegalDocuments from './components/Policy/LegalDocuments';
 import PrivacyPolicy from './components/Policy/PrivacyPolicy';
@@ -9,13 +8,12 @@ import TermsConditions from './components/Policy/TermsConditions';
 import AboutPage from './pages/About.page';
 import AllProductsPage from './pages/AllProducts.page';
 import AuthorizationPage from './pages/Authorization.page';
-import ComingSoonPage from './pages/ComingSoon.page';
 import ContactPage from './pages/Contact.page';
 import Home from "./pages/Home.page";
 import NotFoundPage from './pages/NotFound.page';
 import ProductDetailsPage from "./pages/ProductDetails.page";
 import UtilitiesPage from './pages/Utilities.page';
-import '/node_modules/preline/dist/hs-ui.bundle.js'
+import '/node_modules/preline/dist/hs-ui.bundle.js';
 
 function App() {
   const queryClient = new QueryClient()

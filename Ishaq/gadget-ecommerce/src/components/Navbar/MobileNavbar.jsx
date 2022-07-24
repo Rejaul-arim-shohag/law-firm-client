@@ -80,7 +80,7 @@ export default function MobileNavbar() {
 
 
   return (
-    <div className={`fixed bottom-0 z-50  w-full block md:hidden`}>
+    <div className={`fixed bottom-0 z-40  w-full block md:hidden`}>
 
       <div className="">
         <nav className="flex justify-evenly items-center bg-white ">
@@ -137,18 +137,18 @@ export default function MobileNavbar() {
 
             </div>
           </Link>
-          <Link
-            to={'/'}
-            className="flex items-center pt-2  rounded"
+          <div
+            
+            className="flex items-center pt-2  rounded "
             data-hs-offcanvas="#hs-offCanvas-Cart"
           >
             <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
               <span><BsCartDash /></span>
               <span className='text-[.65rem]'>Cart</span>
-              <OffCanvasCart title="Cart" items={catagories} />
+              <OffCanvasCart title="Cart" />
 
             </div>
-          </Link>
+          </div>
           <Link
             to={'/login'}
             className="flex items-center pt-2  rounded"
