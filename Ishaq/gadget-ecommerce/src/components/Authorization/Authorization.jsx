@@ -4,9 +4,9 @@ import { Input } from '@material-tailwind/react'
 export default function Authorization({ login }) {
 
     return (
-        <div>
+        <>
 
-            <div className="flex max-w-sm mx-auto p-2 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-grey-800 lg:max-w-4xl">
+            <div className="flex  max-w-sm mx-auto p-2 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-grey-800 lg:max-w-4xl">
 
 
                 <div className="w-full px-6 py-8 md:px-8 lg:w-1/2 ">
@@ -83,6 +83,6 @@ export default function Authorization({ login }) {
                 </div>
 
             </div>
-        </div>
+        </>
     )
 }

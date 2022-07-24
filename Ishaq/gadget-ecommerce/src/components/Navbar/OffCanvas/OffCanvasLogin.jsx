@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
-export default function OffCanvas({ title,items }) {
+export default function OffCanvasLogin({ title,items }) {
 
     return (
         <div className="relative z-40 ">
@@ -10,7 +10,7 @@ export default function OffCanvas({ title,items }) {
                     <h3 className="font-bold text-sm text-grey-800 dark:text-white">
                         {title}
                     </h3>
-                    <button type='button' className='hs-dropdown-toggle' data-hs-offcanvas={`#hs-offCanvas-${title}`}>  <AiOutlineClose /></button>
+                    <AiOutlineClose />
 
                 </div>
                 <div className="p-4">

@@ -5,6 +5,8 @@ import { SiAsus, SiDell, SiSamsung, SiXiaomi } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import OffCanvas from './OffCanvas/OffCanvas';
+import OffCanvasCart from './OffCanvas/OffCanvasCart';
+import OffCanvasLogin from './OffCanvas/OffCanvasLogin';
 const menu = [
   {
     name: 'Home',
@@ -36,19 +38,7 @@ const menu = [
     short: "Login",
     to: '/',
     icon: <BsPerson />,
-  },
-  {
-    name: 'About',
-    short: "",
-    to: '/aboutUs',
-    icon: <GiSmartphone />,
-  },
-  {
-    name: 'Contact',
-    short: "",
-    to: '/contact',
-    icon: <GiSmartphone />,
-  },
+  }
 
 ]
 const brands = [
@@ -90,34 +80,95 @@ export default function MobileNavbar() {
 
 
   return (
-    <div className={`fixed bottom-0 z-50  w-full block md:hidden`}>
+    <div className={`fixed bottom-0 bg-white z-40  w-full block md:hidden`}>
 
       <div className="">
         <nav className="flex justify-evenly items-center bg-white ">
-          {
-            menu?.slice(0, 5)?.map((item) => (
+          {/* {
+            menu?.map((item) => (
               <Link
                 key={item.name}
                 to={item.to}
                 className="flex items-center pt-2  rounded"
                 data-hs-offcanvas={item.short === 'Home' ? '' : `#hs-offcanvas-${item.short}`}
               >
-                <p className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
+                <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
                   <span>{item.icon}</span>
                   <span className='text-[.65rem]'>{item.short}</span>
                   {item.short === 'Home' ? '' : <OffCanvas title={item.short} 
                   items={item.short === 'Categories' ? catagories : item.short === 'Brands' ? brands : []}
                   />}
 
-                </p>
+                </div>
               </Link>
             ))
-          }
 
-         
+          } */}
+          <Link
+            to={'/'}
+            className="flex items-center pt-2  rounded"
+          >
+            <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
+              <span><BsHouseFill /></span>
+              <span className='text-[.65rem]'>Home</span>
+            </div>
+          </Link>
+          <Link
+            to={'/'}
+            className="flex items-center pt-2  rounded"
+            data-hs-offcanvas="#hs-offCanvas-Categories"
+          >
+            <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
+              <span><GiMicrochip /></span>
+              <span className='text-[.65rem]'>Categories</span>
+
+            </div>
+          </Link>
+          <Link
+            to={'/'}
+            className="flex items-center pt-2  rounded"
+            data-hs-offcanvas="#hs-offCanvas-Brands"
+          >
+            <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
+              <span><AiFillAppstore /></span>
+              <span className='text-[.65rem]'>Brands</span>
+
+            </div>
+          </Link>
+          <div
+
+            className="flex items-center pt-2  rounded hs-dropdown-toggle"
+            data-hs-offcanvas="#hs-offCanvas-Cart"
+          >
+            <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
+              <span><BsCartDash /></span>
+              <span className='text-[.65rem]'>Cart</span>
+            </div>
+          </div>
+
+
+
+
+          <Link
+            to={'/login'}
+            className="flex items-center pt-2  rounded"
+            data-hs-offcanvas="#hs-offCanvas-Login"
+          >
+            <div className='hover:text-primary text-dark text-2xl rounded-full bg-white flex flex-col items-center justify-center'>
+              <span><BsPerson /></span>
+              <span className='text-[.65rem]'>Login</span>
+
+            </div>
+          </Link>
+
+
         </nav>
 
       </div>
+      <OffCanvas title="Categories" items={catagories} />
+      <OffCanvas title="Brands" items={brands} />
+
+      <OffCanvasCart title="Cart" />
 
     </div>
   )

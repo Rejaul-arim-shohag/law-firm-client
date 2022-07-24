@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className='relative'>
       <Navbar />
-      <MobileNavbar/>
+      
       <HeroSection />
       <ShopByBrands/>
       <ProductSlider title="Top Selling"/>
@@ -23,6 +23,7 @@ export default function Home() {
       <Reviews/>
       <Contact/>
       <Footer/>
+      <MobileNavbar/>
     </div>
   )
 }

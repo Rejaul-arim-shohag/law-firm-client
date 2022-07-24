@@ -3,7 +3,9 @@
 .d-none{
   display: none;
 }
-
+.modal-backdrop.show {
+  opacity: 0.1 !important;
+}
 body{
   width: 100%;
   font-size: 14px;
