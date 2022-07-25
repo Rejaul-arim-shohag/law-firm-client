@@ -674,12 +674,6 @@ a {
 }
 
 /* Responsive */
-@media only screen and (max-width: 1400px) {
-}
-
-@media only screen and (max-width: 1200px) {
-}
-
 @media only screen and (min-width: 992px) {
     .headline-1-important-min-992 {
         font-size: var(--headline-1) !important;
@@ -718,21 +712,29 @@ a {
     }
 }
 
+@media only screen and (min-width: 768px) {
+    .ht-min-767-animation {
+        top: 0;
+        position: relative;
+        transition: 0.4s ease-in-out all;
+    }
+
+    .ht-min-767-animation:hover {
+        top: -3px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .fs-12-max768 {
         font-size: 12px !important;
     }
 
-    .h-40-mx-768 {
-        height: 40px;
+    .h-30-mx-768 {
+        height: 30px;
     }
 
     .h-20-mx-768 {
         height: 20px;
-    }
-
-    .mb-5-mx-768 {
-        margin-bottom: 5px;
     }
 
     .flex-wrap-reverse-M768 {
@@ -741,6 +743,10 @@ a {
 
     .position-absolute-mx-768 {
         position: absolute !important;
+    }
+
+    .position-relative-mx-768 {
+        position: relative !important;
     }
 
     .rounded-circle-mx-768 {
@@ -801,13 +807,48 @@ a {
         margin: 50px 0;
     }
 
+    .bodySmall-MX-767 {
+        font-size: var(--bodySmal);
+    }
+
+    .bodyXSmall-MX-767 {
+        font-size: var(--bodyXSmal);
+    }
+
+    .border-top-rounded-mx-767 {
+        border-radius: 0.375rem 0.375rem 0 0 !important;
+    }
+
+    .border-bottom-rounded-mx-767 {
+        border-radius: 0 0 0.375rem 0.375rem !important;
+    }
+
+    .position-top-mx-767--13 {
+        top: -13px;
+    }
+
+    .position-top-mx-767--10 {
+        top: -10px;
+    }
+
+    .position-mx-left-0 {
+        left: 0;
+    }
+
     /*.rounded-start {*/
     /*    border-top-right-radius: 0.375rem !important;*/
     /*    border-bottom-right-radius: 0.375rem !important;*/
     /*}*/
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 575px) {
+    .px-6-mx-5758 {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+
+    @media only screen and (max-width: 390px) {
     .hero-headline-1-res {
         font-size: 25px !important;
     }

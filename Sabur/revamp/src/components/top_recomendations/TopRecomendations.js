@@ -13,7 +13,7 @@ class TopRecomendations extends Component {
                         <h2 className="section-title mb-4 text-start fw-bold"> Top Recomendations </h2>
                         <div className="row">
                             <div className="col-sm-6 col-md-4 col-lg-3 mb-992-25">
-                                <Card className="shadow rounded border-0">
+                                <Card className="shadow-sm rounded border-0">
                                     <Card.Body>
                                         <div className="d-flex align-items-center">
                                             <div className="flex-shrink-0">
@@ -30,7 +30,7 @@ class TopRecomendations extends Component {
                                 </Card>
                             </div>
                             <div className="col-sm-6 col-md-4 col-lg-3 mb-992-25">
-                                <Card className="shadow rounded border-0">
+                                <Card className="shadow-sm rounded border-0">
                                     <Card.Body>
                                         <div className="d-flex align-items-center">
                                             <div className="flex-shrink-0">
@@ -47,7 +47,7 @@ class TopRecomendations extends Component {
                                 </Card>
                             </div>
                             <div className="col-sm-6 col-md-4 col-lg-3 mb-992-25">
-                                <Card className="shadow rounded border-0">
+                                <Card className="shadow-sm rounded border-0">
                                     <Card.Body>
                                         <div className="d-flex align-items-center">
                                             <div className="flex-shrink-0">
@@ -64,7 +64,7 @@ class TopRecomendations extends Component {
                                 </Card>
                             </div>
                             <div className="col-sm-6 col-md-4 col-lg-3">
-                                <Card className="shadow rounded border-0">
+                                <Card className="shadow-sm rounded border-0">
                                     <Card.Body>
                                         <div className="d-flex align-items-center">
                                             <div className="flex-shrink-0">

@@ -10,9 +10,9 @@ import og_image from "../../assets/images/og-image.png";
 // Component Include
 import SmallHero from "../../components/small-hero/SmallHero";
 import CourseGallery from "../../components/course-gallery/CourseGallery";
-import OurCourse from "../../components/our-course/OurCourse";
 import Testimonial from "../../components/testimonial/Testimonial";
 import ContactSection from "../../components/contact/ContactSection";
+import OurCoursesCard from "../../components/our-courses-card/OurCoursesCard";
 
 class CoursesPageTwo extends Component {
     render() {
@@ -31,7 +31,20 @@ class CoursesPageTwo extends Component {
 
                 <SmallHero/>
                 <CourseGallery/>
-                <OurCourse/>
+                <div className="pt-5 pb-5">
+                    <div className="container position-relative">
+                        <p className="small-section-title fw-bold themeColor mb-2 headline-2"> Our Course </p>
+                        <div className="d-flex justify-content-center">
+                            <h2 className="section-title fw-bold mb-4"> Our Top-Picked Courses </h2>
+                        </div>
+                        <div className="row coursesBG">
+                            <OurCoursesCard/>
+                            <OurCoursesCard/>
+                            <OurCoursesCard/>
+                            <OurCoursesCard/>
+                        </div>
+                    </div>
+                </div>
                 <Testimonial/>
                 <ContactSection/>
             </Fragment>
