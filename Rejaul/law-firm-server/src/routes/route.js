@@ -1,0 +1,13 @@
+const express = require('express');
+const router = express.Router();
+const UserController = require("../controller/UserController")
+const authVerifyMiddleware = require("../middleware/AuthVerifyMiddleware")
+//user 
+router.post("/createUser", UserController.CreateUser)
+router.post("/loginUser", UserController.LoginUser);
+
+//create
+
+
+
+module.exports=router;
