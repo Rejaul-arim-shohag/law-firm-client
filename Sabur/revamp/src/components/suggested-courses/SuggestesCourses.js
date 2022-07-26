@@ -9,10 +9,10 @@ import img_3 from "../../assets/images/browser-courses-3.png";
 import img_4 from "../../assets/images/browser-courses-4.png";
 
 import courses_icon from "../../assets/images/suggested-courses-icon.svg";
-import user_icon from "../../assets/images/vue-icon.svg";
-import start_icon from "../../assets/images/start-icon.svg";
 
 import Slider from "react-slick";
+import {AiOutlineUser} from "@react-icons/all-files/ai/AiOutlineUser";
+import {AiFillStar} from "@react-icons/all-files/ai/AiFillStar";
 
 // Carousel Button
 function SampleNextArrow(props) {
@@ -101,120 +101,324 @@ class SuggestesCourses extends Component {
 
                         <Slider {...settings}>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
                                     <Card.Img className="img-fluid rounded-top" variant="top" src={img_1} alt="suggested-course"/>
                                     <Card.Body>
-                                        <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
                                         <div className="row">
                                             <div className="col-8 mb-3 mb-md-0">
-                                                <span className="d-block bodyLarge lightColor d-flex">
-                                                    <img src={courses_icon} alt="courses icon"/> <span className="d-inline-block ms-1 mb-2"> MERN Series </span>
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
                                                 </span>
-                                                <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
                                             </div>
                                             <div className="col-4 text-end">
-                                                <span className="d-block bodyLarge lightColor d-flex mb-2">
-                                                    <img  style={ {height: 23}} src={user_icon} alt="user"/> <span className="d-inline-block ms-1"> 4.9K </span>
-                                                </span>
-                                                <span className="d-block bodyLarge lightColor d-flex">
-                                                    <img src={start_icon} alt="react"/> <span className="d-inline-block ms-1"> 4.9 </span>
-                                                </span>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </Card.Body>
                                 </Card>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
                                     <Card.Img className="img-fluid rounded-top" variant="top" src={img_2} alt="suggested-course"/>
                                     <Card.Body>
-                                        <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
                                         <div className="row">
                                             <div className="col-8 mb-3 mb-md-0">
-                                                <span className="d-block bodyLarge lightColor d-flex">
-                                                    <img src={courses_icon} alt="courses icon"/> <span className="d-inline-block ms-1 mb-2"> MERN Series </span>
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
                                                 </span>
-                                                <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
                                             </div>
                                             <div className="col-4 text-end">
-                                                <span className="d-block bodyLarge lightColor d-flex mb-2">
-                                                    <img  style={ {height: 23}} src={user_icon} alt="user"/> <span className="d-inline-block ms-1"> 4.9K </span>
-                                                </span>
-                                                <span className="d-block bodyLarge lightColor d-flex">
-                                                    <img src={start_icon} alt="react"/> <span className="d-inline-block ms-1"> 4.9 </span>
-                                                </span>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </Card.Body>
                                 </Card>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
                                     <Card.Img className="img-fluid rounded-top" variant="top" src={img_3} alt="suggested-course"/>
                                     <Card.Body>
-                                        <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
                                         <div className="row">
                                             <div className="col-8 mb-3 mb-md-0">
-                                                <span className="d-block bodyLarge lightColor d-flex">
-                                                    <img src={courses_icon} alt="courses icon"/> <span className="d-inline-block ms-1 mb-2"> MERN Series </span>
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
                                                 </span>
-                                                <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
                                             </div>
                                             <div className="col-4 text-end">
-                                                <span className="d-block bodyLarge lightColor d-flex mb-2">
-                                                    <img  style={ {height: 23}} src={user_icon} alt="user"/> <span className="d-inline-block ms-1"> 4.9K </span>
-                                                </span>
-                                                <span className="d-block bodyLarge lightColor d-flex">
-                                                    <img src={start_icon} alt="react"/> <span className="d-inline-block ms-1"> 4.9 </span>
-                                                </span>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </Card.Body>
                                 </Card>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
                                     <Card.Img className="img-fluid rounded-top" variant="top" src={img_4} alt="suggested-course"/>
                                     <Card.Body>
-                                        <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
                                         <div className="row">
                                             <div className="col-8 mb-3 mb-md-0">
-                                                <span className="d-block bodyLarge lightColor d-flex">
-                                                    <img src={courses_icon} alt="courses icon"/> <span className="d-inline-block ms-1 mb-2"> MERN Series </span>
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
                                                 </span>
-                                                <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
                                             </div>
                                             <div className="col-4 text-end">
-                                                <span className="d-block bodyLarge lightColor d-flex mb-2">
-                                                    <img  style={ {height: 23}} src={user_icon} alt="user"/> <span className="d-inline-block ms-1"> 4.9K </span>
-                                                </span>
-                                                <span className="d-block bodyLarge lightColor d-flex">
-                                                    <img src={start_icon} alt="react"/> <span className="d-inline-block ms-1"> 4.9 </span>
-                                                </span>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </Card.Body>
                                 </Card>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
                                     <Card.Img className="img-fluid rounded-top" variant="top" src={img_1} alt="suggested-course"/>
                                     <Card.Body>
-                                        <Card.Title className="bodyXLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
                                         <div className="row">
                                             <div className="col-8 mb-3 mb-md-0">
-                                                <span className="d-block bodyLarge lightColor d-flex">
-                                                    <img src={courses_icon} alt="courses icon"/> <span className="d-inline-block ms-1 mb-2"> MERN Series </span>
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
                                                 </span>
-                                                <span className="d-block bodyLarge themeColor fw-bold"> BDT. 3000 </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
                                             </div>
                                             <div className="col-4 text-end">
-                                                <span className="d-block bodyLarge lightColor d-flex mb-2">
-                                                    <img  style={ {height: 23}} src={user_icon} alt="user"/> <span className="d-inline-block ms-1"> 4.9K </span>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_2} alt="suggested-course"/>
+                                    <Card.Body>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <div className="row">
+                                            <div className="col-8 mb-3 mb-md-0">
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
                                                 </span>
-                                                <span className="d-block bodyLarge lightColor d-flex">
-                                                    <img src={start_icon} alt="react"/> <span className="d-inline-block ms-1"> 4.9 </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
+                                            </div>
+                                            <div className="col-4 text-end">
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_3} alt="suggested-course"/>
+                                    <Card.Body>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <div className="row">
+                                            <div className="col-8 mb-3 mb-md-0">
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
                                                 </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
+                                            </div>
+                                            <div className="col-4 text-end">
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_4} alt="suggested-course"/>
+                                    <Card.Body>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <div className="row">
+                                            <div className="col-8 mb-3 mb-md-0">
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
+                                                </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
+                                            </div>
+                                            <div className="col-4 text-end">
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_1} alt="suggested-course"/>
+                                    <Card.Body>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <div className="row">
+                                            <div className="col-8 mb-3 mb-md-0">
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
+                                                </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
+                                            </div>
+                                            <div className="col-4 text-end">
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_2} alt="suggested-course"/>
+                                    <Card.Body>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <div className="row">
+                                            <div className="col-8 mb-3 mb-md-0">
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
+                                                </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
+                                            </div>
+                                            <div className="col-4 text-end">
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_3} alt="suggested-course"/>
+                                    <Card.Body>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <div className="row">
+                                            <div className="col-8 mb-3 mb-md-0">
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
+                                                </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
+                                            </div>
+                                            <div className="col-4 text-end">
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="mb-4">
+                                <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_4} alt="suggested-course"/>
+                                    <Card.Body>
+                                        <Card.Title className="bodyLarge themeDarkColor fw-bold">MERN Stack Basic</Card.Title>
+                                        <div className="row">
+                                            <div className="col-8 mb-3 mb-md-0">
+                                                <span className="d-block bodySmall lightColor d-flex align-items-center">
+                                                    <img src={courses_icon} alt="courses icon"/> <span
+                                                    className="d-inline-block ms-1"> MERN Series </span>
+                                                </span>
+                                                <span className="d-block bodySmall themeColor fw-bold"> BDT. 3000 </span>
+                                            </div>
+                                            <div className="col-4 text-end">
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end mb-2">
+                                                    <AiOutlineUser/>
+                                                    <span className="d-inline-block ms-1"> 4.9K </span>
+                                                </div>
+                                                <div className="d-block bodySmall lightColor d-flex align-items-center justify-content-end">
+                                                    <AiFillStar/>
+                                                    <span className="d-inline-block ms-1"> 4.9 </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </Card.Body>

@@ -7,6 +7,7 @@ import Courses from "./page/courses/Courses";
 import Contact from "./page/contact/Contact";
 import Join from "./page/join/Join";
 import Mentor from "./page/mentor/Mentor";
+import SignUp from "./page/signup/SignUp";
 
 import CoursesPageOne from "./page/courses-1/CoursesPageOne";
 import CoursesPageTwo from "./page/courses-2/CoursesPageTwo";
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/join" element={<Join/>}/>
                 <Route path="/mentor" element={<Mentor/>}/>
+                <Route path="/signup" element={<SignUp/>}/>
 
                 <Route path="/courses-page-one" element={<CoursesPageOne/>}/>
                 <Route path="/courses-page-two" element={<CoursesPageTwo/>}/>

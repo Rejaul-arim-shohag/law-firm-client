@@ -12,7 +12,7 @@ import java from '../../assets/images/java-icon.svg';
 import kotlin from '../../assets/images/kotlin-icon.svg';
 import python from '../../assets/images/python-icon.svg';
 import laravel from '../../assets/images/laravel-icon.svg';
-import rabbilVai from '../../assets/images/rabbil-vai.png';
+import rabbilVai from '../../assets/images/rabbilVai.png';
 
 // Include Style
 import './hero.css';
@@ -69,10 +69,8 @@ class Hero extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-6 col-12 min-100-vh d-flex align-items-center justify-content-lg-start justify-content-md-center min-ha-M992">
-                                    <div className="position-relative pseudo-border">
-                                        <img className="img-fluid position-relative position-right--30 position-right-0-M575 position-top--50" src={rabbilVai} alt="Circle path"/>
-                                    </div>
+                                <div className="col-lg-6 col-12 min-100-vh d-flex align-items-center justify-content-lg-start justify-content-md-center min-ha-M992 mb-4 mb-lg-0">
+                                    <img className="img-fluid position-relative position-right--80 position-right-0-M992" src={rabbilVai} alt="Circle path"/>
                                 </div>
                             </div>
                         </div>

@@ -1,29 +1,27 @@
 import React, {Component, Fragment} from 'react';
 import {Helmet} from "react-helmet";
 import {Form} from "react-bootstrap";
+import {FaRegEye} from "@react-icons/all-files/fa/FaRegEye";
 import {Link} from "react-router-dom";
 
 // Include Style
-import './join.css';
+import "./signup.css";
 
 // Images
 import favicon from "../../assets/images/title-icon.ico";
 import og_image from "../../assets/images/og-image.png";
-import rabbilVai from "../../assets/images/rabbilVai.png";
 import apple from "../../assets/images/apple.png";
 import google from "../../assets/images/google.png";
 import facebook from "../../assets/images/facebook.png";
+import rabbilVai from "../../assets/images/rabbilVai.png";
 
-// Icon
-import {FaRegEye} from "@react-icons/all-files/fa/FaRegEye";
-
-class Join extends Component {
+class SignUp extends Component {
     render() {
         return (
             <Fragment>
                 {/* React Helmet = head title include */}
                 <Helmet>
-                    <title> Join with us </title>
+                    <title> Sign Up </title>
 
                     <link rel="shortcut icon" href={favicon} type="image/x-icon"/>
                     <link rel="icon" href={favicon} type="image/x-icon"/>
@@ -32,13 +30,13 @@ class Join extends Component {
                     <meta property="og:image" content={og_image} />
                 </Helmet>
 
-                <div className="join secondaryBG" style={{paddingTop: '6rem'}}>
+                <div className="signup secondaryBG" style={{paddingTop: '6rem'}}>
                     <div className="container">
                         <div className="themeWhiteBG rounded-3">
                             <div className="row">
                                 <div className="col-md-6 d-flex align-items-center justify-content-center">
-                                    <div className="pt-5 pb-0 pb-md-5  w-75 ps-0 ps-md-3">
-                                        <h2 className="themeDarkColor fw-bold"> Interested to join? </h2>
+                                    <div className="pt-5 pb-0 pb-md-5 w-75 ps-0 ps-md-3">
+                                        <h2 className="themeDarkColor fw-bold"> Sign Up Here </h2>
                                         <p className="lightColor mb-4"> Get started with us </p>
 
                                         <Form className="mb-3 mt-3 ">
@@ -53,7 +51,19 @@ class Join extends Component {
                                                 <button className="position-absolute p-2 d-inline-block bg-white position-right-6 position-top-6 border-0"> <FaRegEye className="darkDeepColor-1"/> </button>
                                                 <div className="text-end"> <Link to="/" className="text-danger bodyXSmall"> Forget Password? </Link> </div>
                                             </Form.Group>
-                                            <button className="btn p-2 rounded-3 themeBtn"> Login </button>
+                                            <Form.Group className="position-relative mb-4" controlId="forName">
+                                                <Form.Label className="position-absolute bodyXSmall bg-white px-1 position-left-10 position-top--8">Full Name</Form.Label>
+                                                <Form.Control className="p-3 border-theme bodySmall rounded-3" type="text" placeholder="Enter Your Name" />
+                                            </Form.Group>
+                                            <Form.Group className="position-relative mb-4" controlId="forNumber">
+                                                <Form.Label className="position-absolute bodyXSmall bg-white px-1 position-left-10 position-top--8">Phone Number</Form.Label>
+                                                <Form.Control className="p-3 border-theme bodySmall rounded-3" type="text" placeholder="Type Your Number" />
+                                            </Form.Group>
+                                            <Form.Group className="position-relative mb-4" controlId="forAddress">
+                                                <Form.Label className="position-absolute bodyXSmall bg-white px-1 position-left-10 position-top--8">Address</Form.Label>
+                                                <Form.Control className="p-3 border-theme bodySmall rounded-3" type="text" placeholder="Your Address" />
+                                            </Form.Group>
+                                            <button className="btn p-2 rounded-3 themeBtn"> Sign Up </button>
                                         </Form>
 
                                         <div className="position-relative my-4">
@@ -79,7 +89,7 @@ class Join extends Component {
                                             </div>
                                         </div>
 
-                                        <p className="m-0 text-center mt-3 mt-md-5 mb-5 mb-md-0">Don’t have account? <Link to="/signup" className="themeColor">Sign up</Link></p>
+                                        <p className="m-0 text-center mt-3 mt-md-5 mb-5 mb-md-0">Already have account? <Link to="/join" className="themeColor">Sign In</Link></p>
                                     </div>
                                 </div>
                                 <div className="col-md-6 mh-80vh position-relative d-none d-md-block">
@@ -98,4 +108,4 @@ class Join extends Component {
     }
 }
 
-export default Join;
+export default SignUp;

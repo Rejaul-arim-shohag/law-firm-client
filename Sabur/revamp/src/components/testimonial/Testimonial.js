@@ -42,7 +42,7 @@ function SamplePrevArrow(props) {
 class Testimonial extends Component {
     render() {
         let settings = {
-            dots: true,
+            dots: false,
             infinite: true,
             speed: 500,
             slidesToShow: 1,
