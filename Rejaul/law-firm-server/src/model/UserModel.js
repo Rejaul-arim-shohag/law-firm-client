@@ -1,20 +1,12 @@
-const  mongoose=require('mongoose');
-const DataSchema=mongoose.Schema({
-    Email:{
-                type:String,
-                unique:true,
-                required:true,
-                validate:{
-                    validator:(v)=>{
-                        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
-                    },
-                    message: "Please enter a valid email"
-                }
-                },
-    Password:{type:String},
-    image:{type:String},
-    isAdmin:{type:Boolean, default:false},
-    CreatedDate:{type:Date,default:Date.now()}
-},{versionKey:false});
-const UsersModel=mongoose.model('users',DataSchema);
-module.exports=UsersModel;
+const mongoose = require("mongoose");
+const userSchema = mongoose.Schema({
+    email:{type: String, unique: true},
+    fullName:{type: String},
+    mobile:{type: String},
+    password:{type: String},
+    photo:{type: String},
+    createDate:{type:Date, default:Date.now()},
+}, {versionKey:false});
+
+const UserModel = mongoose.model("users", userSchema);
+module.exports = UserModel;

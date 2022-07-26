@@ -49,7 +49,7 @@ mongoose.connect(uri, (err)=>{
     }
 });
 //managing backend routing 
-app.use("/api/v1", router);
+// app.use("/api/v1", router);
 
 
 
