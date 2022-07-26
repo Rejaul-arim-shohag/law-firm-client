@@ -12,7 +12,7 @@ export default function AuthorizationPage({ login }) {
         <>
             <Navbar />
             <MobileNavbar/>
-            <div className='bg-secondary h-screen pt-24'>
+            <div className='bg-secondary h-fit md:h-screen pt-24'>
                 <div className=" relative w-full">
                     <Authorization login={login} />
                 </div>

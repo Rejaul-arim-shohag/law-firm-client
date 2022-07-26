@@ -69,8 +69,8 @@ export default function ProductSlider({title}) {
                         }
                     </Slider>
                     <div className="mt-10 flex gap-3 justify-center">
-                        <button onClick={() => slider.current.slickPrev()} className=' rounded-full px-1 py-1 fw-bold bg-blue-grey-300  hover:bg-emerald-100 duration-150 text-white hover:text-primary border-0'> <HiOutlineChevronLeft className='m-2' /></button>
-                        <button onClick={() => slider.current.slickNext()} className=' rounded-full px-1 py-1 fw-bold  bg-blue-grey-300  hover:bg-emerald-100 duration-150 text-white hover:text-primary border-0'> <HiOutlineChevronRight className='m-2' /></button>
+                        <button onClick={() => slider.current.slickPrev()} className=' rounded-full px-1 py-1 fw-bold bg-blue-grey-300  hover:bg-emerald-100 duration-150 text-white hover:text-white  hover:bg-primary border-0'> <HiOutlineChevronLeft className='m-2' /></button>
+                        <button onClick={() => slider.current.slickNext()} className=' rounded-full px-1 py-1 fw-bold  bg-blue-grey-300  hover:bg-emerald-100 duration-150 text-white hover:text-white hover:bg-primary border-0'> <HiOutlineChevronRight className='m-2' /></button>
                     </div>
 
                 </div>

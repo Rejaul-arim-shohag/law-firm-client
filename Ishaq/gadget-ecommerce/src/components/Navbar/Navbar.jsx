@@ -53,7 +53,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const scrollPosition = useScrollPosition();
-  const [showCartSideBar, setShowCartSideBar] = useState(true)
+  const [showCartSideBar, setShowCartSideBar] = useState(false)
 
   return (
     <div className="relative ">

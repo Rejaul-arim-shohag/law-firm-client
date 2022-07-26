@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { paymentImgSrc } from './PaymentImg'
 export default function Footer() {
     return (
-        <footer className=' bg-secondary'>
+        <footer className=' bg-secondary '>
             <div className="    flex flex-col md:flex-row justify-between  container">
                 <div className="aboutUs flex-1 p-10 pl-0">
                     <h3 className='text-2xl font-bold'>About Us</h3>
