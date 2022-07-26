@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const menuSchema = mongoose.Schema({
-   title:String,
-   link:String,
+   title: { type: String, require: true },
+   link: { type: String, require: true },
    createdDate: { type: Date, default: Date.now() }
 
 })

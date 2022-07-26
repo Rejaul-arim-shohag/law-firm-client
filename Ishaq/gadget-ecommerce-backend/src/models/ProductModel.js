@@ -1,22 +1,27 @@
 const mongoose = require('mongoose')
 
 const productSchema = mongoose.Schema({
-    title: String,
-    price:String,
+    name: String,
+    slug:String,
     discount: String,
-    display: String,
-    camera: String,
-    memory: Array,
-    color: Array,
-    sliderImages: Array,
-    brand: String,
+    price:String,
+    // display: String,
+    // camera: String,
+    // memory: Array, /* price should be change depends on memory */
+    specifications:Array,
+    colors: Array, /*color name and hex code*/
+    galleryImg: Array,
+    brand: String, /*brand should be relational*/
     warranty: String,
-    review:String,
     details:Array,
-    reviews:Array,
+    reviews:Array,/*reviews should be relational*/
     faq:Array,
-    img:String,
-    createdDate: { type: Date, default: Date.now() }
+    homeImg:String,
+    category:String, /*category should be relational*/
+    adminID:String,
+    viewCount:String,
+    createdDate: { type: Date, default: Date.now() },
+    updatedDate: { type: Date, default: Date.now() }
 
 })
 

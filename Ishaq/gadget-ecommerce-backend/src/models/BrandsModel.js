@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const brandSchema = mongoose.Schema({
-    title: String,
-    des: String,
-    img: String,
+    title: { type: String, require: true },
+    des: { type: String, require: true },
+    img: { type: String, require: true },
     createdDate: { type: Date, default: Date.now() }
 })
 

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const contactSchema = mongoose.Schema({
-    location: String,
-    email: String,
+    location: { type: String, require: true },
+    email: { type: String, require: true },
     phone: String,
     facebook: String,
     twitter: String,
