@@ -15,7 +15,7 @@ exports.CreateBrand = (req, res) => {
 // read  Brands
 exports.SelectBrands = async (req, res) => {
     let query = {};
-    let projection = '';
+    let projection = 'title des img';
     BrandsModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
@@ -29,7 +29,7 @@ exports.SelectBrands = async (req, res) => {
 exports.SelectBrand = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = '';
+    let projection = 'title des img';
     BrandsModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })

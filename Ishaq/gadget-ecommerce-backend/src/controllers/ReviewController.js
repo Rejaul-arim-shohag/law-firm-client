@@ -15,7 +15,7 @@ exports.CreateReview = (req, res) => {
 // read  Review
 exports.SelectReviews = async (req, res) => {
     let query = {};
-    let projection = '';
+    let projection = 'name designation review img createdDate updatedDate';
     ReviewModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
@@ -29,7 +29,7 @@ exports.SelectReviews = async (req, res) => {
 exports.SelectReview = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = '';
+    let projection = 'name designation review img createdDate updatedDate';
     ReviewModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })

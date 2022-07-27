@@ -15,7 +15,7 @@ exports.CreateUser = (req, res) => {
 // read  User
 exports.SelectUsers = async (req, res) => {
     let query = {};
-    let projection = '';
+    let projection = 'name phone email password isAdmin createdDate updatedDate';
     UserModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
@@ -29,7 +29,7 @@ exports.SelectUsers = async (req, res) => {
 exports.SelectUser = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = '';
+    let projection = 'name phone email password isAdmin createdDate updatedDate';
     UserModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })

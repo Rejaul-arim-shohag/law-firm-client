@@ -15,7 +15,7 @@ exports.CreateContact = (req, res) => {
 // read  Contact
 exports.SelectContacts = async (req, res) => {
     let query = {};
-    let projection = '';
+    let projection = 'location email phone facebook twitter youtube linkedIn';
     ContactModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
@@ -29,7 +29,7 @@ exports.SelectContacts = async (req, res) => {
 exports.SelectContact = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = '';
+    let projection = 'location email phone facebook twitter youtube linkedIn';
     ContactModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })

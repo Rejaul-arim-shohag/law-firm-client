@@ -15,7 +15,7 @@ exports.CreatePromotion = (req, res) => {
 // read  Promotion
 exports.SelectPromotions = async (req, res) => {
     let query = {};
-    let projection = '';
+    let projection = 'img title des createdDate updatedDate';
     PromotionModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
@@ -29,7 +29,7 @@ exports.SelectPromotions = async (req, res) => {
 exports.SelectPromotion = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = '';
+    let projection = 'img title des createdDate updatedDate';
     PromotionModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })

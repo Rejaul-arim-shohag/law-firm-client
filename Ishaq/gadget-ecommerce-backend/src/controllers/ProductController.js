@@ -15,7 +15,7 @@ exports.CreateProduct = (req, res) => {
 // read  products
 exports.SelectProducts = async (req, res) => {
     let query = {};
-    let projection = 'title price';
+    let projection = 'name slug discount price specifications colors galleryImg brand warranty details reviews faq homeImg category adminID viewCount';
     ProductModel.find(query, projection, (e, data) => {
         if (e) {
             res.status(400).send({ status: 'failed', data: e })
@@ -29,7 +29,7 @@ exports.SelectProducts = async (req, res) => {
 exports.SelectProduct = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = 'name price discount';
+    let projection = 'name slug discount price specifications colors galleryImg brand warranty details reviews faq homeImg category adminID viewCount';
     ProductModel.findOne(query, projection, (e, data) => {
         if (e) {
             res.status(400).send({ status: 'failed', data: e })
