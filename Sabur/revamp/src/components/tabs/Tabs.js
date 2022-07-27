@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useState} from "react";
 
 // Include Style
 import "./tabs.css";
@@ -92,8 +92,9 @@ function Tabs() {
     };
 
     return (
-        <div className="container my-4 tabs-container">
-            <div className="row">
+        <div className="container">
+            <div className="my-4 tabs-container">
+                <div className="row">
                 <div className="col-md-12 col-lg-9 mb-3">
                     <div className="row">
                         <div className="col-md-5 col-lg-4">
@@ -364,6 +365,7 @@ function Tabs() {
                         <Link className="d-block w-100 py-2 themeBtn" to="/"> Enroll </Link>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );

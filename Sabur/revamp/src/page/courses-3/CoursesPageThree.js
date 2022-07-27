@@ -10,6 +10,7 @@ import SuggestesCourses from "../../components/suggested-courses/SuggestesCourse
 import Testimonial from "../../components/testimonial/Testimonial";
 import ContactSection from "../../components/contact/ContactSection";
 import Tabs from "../../components/tabs/Tabs";
+import OverviewTabs from "../../components/overview-tabs/OverviewTabs";
 
 class CoursesPageThree extends Component {
     render() {
@@ -47,7 +48,7 @@ class CoursesPageThree extends Component {
                 </div>
 
                 <Tabs/>
-
+                <OverviewTabs/>
                 <SuggestesCourses/>
                 <Testimonial/>
                 <ContactSection/>
