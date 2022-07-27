@@ -79,8 +79,8 @@ class SuggestesCourses extends Component {
         };
         return (
             <Fragment>
-                <div className="pt-5 pb-5 mb-4 lightDeepBG-2 slick-carousel-arrow position-relative top-left-circleBG">
-                    <div className="container">
+                <div className="pt-5 pb-5 lightDeepBG-2 slick-carousel-arrow position-relative top-left-circleBG">
+                    <div className="container mb-4">
                         <div className="d-flex justify-content-center">
                             <h2 className="section-title fw-bold mb-2"> Suggested Courses </h2>
                         </div>

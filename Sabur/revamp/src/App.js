@@ -11,6 +11,7 @@ import SignUp from "./page/signup/SignUp";
 
 import CoursesPageOne from "./page/courses-1/CoursesPageOne";
 import CoursesPageTwo from "./page/courses-2/CoursesPageTwo";
+import CoursesPageThree from "./page/courses-3/CoursesPageThree";
 
 // Component Include
 import Footer from "./components/footer/Footer";
@@ -38,6 +39,7 @@ function App() {
 
                 <Route path="/courses-page-one" element={<CoursesPageOne/>}/>
                 <Route path="/courses-page-two" element={<CoursesPageTwo/>}/>
+                <Route path="/courses-page-three" element={<CoursesPageThree/>}/>
             </Routes>
             <Footer/>
         </Fragment>

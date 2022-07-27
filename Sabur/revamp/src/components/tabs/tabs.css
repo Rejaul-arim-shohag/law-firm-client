@@ -1,0 +1,86 @@
+.tabs-container .tabs {
+    cursor: pointer;
+}
+
+.tabs-container .active-tabs .text-danger  {
+    color: white !important;
+}
+
+.tabs-container .content {
+    display: none;
+    padding: 10px;
+}
+
+.tabs-container .active-content {
+    display: block;
+    border: 5px solid var(--themeColor);
+}
+
+.tabs-container .slick-prev:before, .slick-next:before {
+    opacity: 1;
+}
+
+.tabs-container .slick-prev {
+    left: -28px;
+}
+
+.tabs-container .slick-prev:before {
+    left: -27px;
+}
+
+.tabs-container .slick-next {
+    right: -20px;
+}
+
+.tabs-container .slick-dots li {
+    background-color: white;
+}
+
+.tabs-container .slick-dots li button:before {
+    font-size: 10px;
+    top: -2px;
+}
+
+.tabs-container .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: var(--themeColor);
+}
+
+/* Modal */
+.tabs-container .modal-body {
+    min-height: 340px;
+}
+
+/* Accordion */
+.tabs-container .accordion-button {
+    color: var(--themeDarkColor);
+}
+
+.tabs-container .accordion-button:not(.collapsed) {
+    color: var(--themeWhiteColor);
+    background-color: var(--themeColor);
+}
+
+@media only screen and (min-width: 768px) {
+    .tabs-container .slick-prev:before, .slick-next:before {
+        color: #198754;
+        background: white;
+        padding: 7px 5px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .tabs-container .slick-prev:before, .slick-next:before {
+        padding: 5px 0;
+        background: transparent;
+        color: var(--themeWhiteColor);
+    }
+
+    .tabs-container .slick-prev:before, .slick-next:before {
+        font-size: 22px;
+    }
+
+    .tabs-container .slick-prev {
+        left: -23px;
+    }
+}
