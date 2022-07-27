@@ -315,7 +315,7 @@ a {
 }
 
 .border-theme {
-    border-color: var(--themeColor);
+    border-color: var(--themeColor) !important;
 }
 
 .borderSecondary {
@@ -821,6 +821,10 @@ a {
 
     .bodyXSmall-MX-767 {
         font-size: var(--bodyXSmal);
+    }
+
+    .bodyLarge-MX-767 {
+        font-size: var(--bodyLarge);
     }
 
     .border-top-rounded-mx-767 {
