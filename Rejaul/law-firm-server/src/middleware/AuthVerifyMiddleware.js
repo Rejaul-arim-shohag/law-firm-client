@@ -1,14 +1,13 @@
 var jwt = require('jsonwebtoken');
 module.exports=(req, res, next)=>{
-    const token = req.headers.token;
-    jwt.verify(token, "secret123", (err, decode)=>{
+    let token = req.headers["token"];
+    jwt.verify(token,"SecretKey123456789",(err, decoded)=>{
         if(err){
-            console.log(err)
-            res.status(401).json({"status":"Fail", "data":"json web token error"});
-        }
-        else{
-            const email = decode.Email;
-            req.headers.Email = email;
+            res.status(401).json({status:"unauthorized"})
+        } else{
+            let email=decoded['data'];
+            // console.log(email)
+            req.headers.email=email
             next();
         }
     })
