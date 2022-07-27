@@ -6,7 +6,9 @@ const paymentSchema = mongoose.Schema({
     amount: String,
     productsID: Array,
     paymentMethod:String,
-    createdDate: { type: Date, default: Date.now() }
+    createdDate: { type: Date, default: Date.now() },
+    updatedDate: { type: Date, default: Date.now() }
+
 
 })
 

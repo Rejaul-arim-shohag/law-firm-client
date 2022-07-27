@@ -1,9 +1,9 @@
-const UserModel = require("../models/UserModel");
+const StatModel = require("../models/StatModel");
 
-// add new User
-exports.CreateUser = (req, res) => {
+// add new Stat
+exports.CreateStat = (req, res) => {
     let data = req.body;
-    UserModel.create(data, (e, result) => {
+    StatModel.create(data, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -12,11 +12,11 @@ exports.CreateUser = (req, res) => {
         }
     })
 }
-// read  User
-exports.SelectUsers = async (req, res) => {
+// read  Stat
+exports.SelectStats = async (req, res) => {
     let query = {};
     let projection = '';
-    UserModel.find(query, projection, (e, result) => {
+    StatModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -26,11 +26,11 @@ exports.SelectUsers = async (req, res) => {
     })
 
 }
-exports.SelectUser = async (req, res) => {
+exports.SelectStat = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
     let projection = '';
-    UserModel.findOne(query, projection, (e, result) => {
+    StatModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -40,12 +40,12 @@ exports.SelectUser = async (req, res) => {
     })
 
 }
-// update  User
-exports.UpdateUser = (req, res) => {
+// update  Stat
+exports.UpdateStat = (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
     let updateData = req.body;
-    UserModel.updateOne(query, updateData, (e, result) => {
+    StatModel.updateOne(query, updateData, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -55,11 +55,11 @@ exports.UpdateUser = (req, res) => {
     })
 
 }
-// delete  User
-exports.DeleteUser = (req, res) => {
+// delete  Stat
+exports.DeleteStat = (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    UserModel.deleteOne(query, (e, result) => {
+    StatModel.deleteOne(query, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {

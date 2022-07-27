@@ -7,8 +7,11 @@ const productController = require('../controllers/ProductController');
 // product routes
 router.post("/product", productController.CreateProduct);
 router.get("/products", productController.SelectProducts);
-router.put("/products", productController.UpdateProduct);
-router.delete("/products", productController.DeleteProduct);
+router.get("/product/:id", productController.SelectProduct);
+router.post("/product/:id", productController.UpdateProduct);
+router.delete("/product/:id", productController.DeleteProduct);
+
+
 
 
 
