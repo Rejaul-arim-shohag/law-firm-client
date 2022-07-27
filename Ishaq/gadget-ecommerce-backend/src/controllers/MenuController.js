@@ -1,9 +1,9 @@
-const UserModel = require("../models/UserModel");
+const MenuModel = require("../models/MenuModel");
 
-// add new User
-exports.CreateUser = (req, res) => {
+// add new Menu
+exports.CreateMenu = (req, res) => {
     let data = req.body;
-    UserModel.create(data, (e, result) => {
+    MenuModel.create(data, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -12,11 +12,11 @@ exports.CreateUser = (req, res) => {
         }
     })
 }
-// read  User
-exports.SelectUsers = async (req, res) => {
+// read  Menu
+exports.SelectMenus = async (req, res) => {
     let query = {};
     let projection = '';
-    UserModel.find(query, projection, (e, result) => {
+    MenuModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -26,11 +26,11 @@ exports.SelectUsers = async (req, res) => {
     })
 
 }
-exports.SelectUser = async (req, res) => {
+exports.SelectMenu = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
     let projection = '';
-    UserModel.findOne(query, projection, (e, result) => {
+    MenuModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -40,12 +40,12 @@ exports.SelectUser = async (req, res) => {
     })
 
 }
-// update  User
-exports.UpdateUser = (req, res) => {
+// update  Menu
+exports.UpdateMenu = (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
     let updateData = req.body;
-    UserModel.updateOne(query, updateData, (e, result) => {
+    MenuModel.updateOne(query, updateData, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -55,11 +55,11 @@ exports.UpdateUser = (req, res) => {
     })
 
 }
-// delete  User
-exports.DeleteUser = (req, res) => {
+// delete  Menu
+exports.DeleteMenu = (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    UserModel.deleteOne(query, (e, result) => {
+    MenuModel.deleteOne(query, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {

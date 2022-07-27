@@ -5,7 +5,9 @@ const reviewSchema = mongoose.Schema({
     designation: String,
     review: String,
     img: String,
-    createdDate: { type: Date, default: Date.now() }
+    createdDate: { type: Date, default: Date.now() },
+    updatedDate: { type: Date, default: Date.now() }
+
 })
 
 const ReviewModel = mongoose.model('reviews', reviewSchema);

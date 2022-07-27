@@ -15,7 +15,9 @@ const messageSchema = mongoose.Schema({
     },
     message: String,
     status:String,
-    createdDate: { type: Date, default: Date.now() }
+    createdDate: { type: Date, default: Date.now() },
+    updatedDate: { type: Date, default: Date.now() }
+
 
 })
 

@@ -3,7 +3,9 @@ const mongoose = require('mongoose')
 const menuSchema = mongoose.Schema({
    title: { type: String, require: true },
    link: { type: String, require: true },
-   createdDate: { type: Date, default: Date.now() }
+   createdDate: { type: Date, default: Date.now() },
+   updatedDate: { type: Date, default: Date.now() }
+
 
 })
 

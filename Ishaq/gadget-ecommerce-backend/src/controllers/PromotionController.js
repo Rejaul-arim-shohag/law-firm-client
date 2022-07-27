@@ -1,9 +1,9 @@
-const UserModel = require("../models/UserModel");
+const PromotionModel = require("../models/PromotionModel");
 
-// add new User
-exports.CreateUser = (req, res) => {
+// add new Promotion
+exports.CreatePromotion = (req, res) => {
     let data = req.body;
-    UserModel.create(data, (e, result) => {
+    PromotionModel.create(data, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -12,11 +12,11 @@ exports.CreateUser = (req, res) => {
         }
     })
 }
-// read  User
-exports.SelectUsers = async (req, res) => {
+// read  Promotion
+exports.SelectPromotions = async (req, res) => {
     let query = {};
     let projection = '';
-    UserModel.find(query, projection, (e, result) => {
+    PromotionModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -26,11 +26,11 @@ exports.SelectUsers = async (req, res) => {
     })
 
 }
-exports.SelectUser = async (req, res) => {
+exports.SelectPromotion = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
     let projection = '';
-    UserModel.findOne(query, projection, (e, result) => {
+    PromotionModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -40,12 +40,12 @@ exports.SelectUser = async (req, res) => {
     })
 
 }
-// update  User
-exports.UpdateUser = (req, res) => {
+// update  Promotion
+exports.UpdatePromotion = (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
     let updateData = req.body;
-    UserModel.updateOne(query, updateData, (e, result) => {
+    PromotionModel.updateOne(query, updateData, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -55,11 +55,11 @@ exports.UpdateUser = (req, res) => {
     })
 
 }
-// delete  User
-exports.DeleteUser = (req, res) => {
+// delete  Promotion
+exports.DeletePromotion = (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    UserModel.deleteOne(query, (e, result) => {
+    PromotionModel.deleteOne(query, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
