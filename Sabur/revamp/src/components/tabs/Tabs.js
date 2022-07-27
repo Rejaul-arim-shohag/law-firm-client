@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import * as PropTypes from "prop-types";
 
 // Include Style
 import "./tabs.css";
@@ -6,11 +7,9 @@ import "./tabs.css";
 // Icons
 import {SiYoutube} from "@react-icons/all-files/si/SiYoutube";
 import {RiGuideLine} from "@react-icons/all-files/ri/RiGuideLine";
-import * as PropTypes from "prop-types";
 import {FaUsers} from "@react-icons/all-files/fa/FaUsers";
 import {FaPlay} from "@react-icons/all-files/fa/FaPlay";
 import {MdLaptopMac} from "@react-icons/all-files/md/MdLaptopMac";
-import CourseCard from "../courses-card/CourseCard";
 import Slider from "react-slick";
 import {Accordion, Button, Modal} from "react-bootstrap";
 import {GiNetworkBars} from "@react-icons/all-files/gi/GiNetworkBars";
