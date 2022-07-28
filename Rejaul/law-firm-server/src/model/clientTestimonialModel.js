@@ -5,5 +5,5 @@ const clientTestimonialSchema = mongoose.Schema({
     createDate:{type:Date, default:Date.now()},
 }, {versionKey:false});
 
-constclientTestimonialModel = mongoose.model("clientTestimonial", clientTestimonialSchema);
+constclientTestimonialModel = mongoose.model("clientTestimonials", clientTestimonialSchema);
 module.exports = constclientTestimonialModel;
