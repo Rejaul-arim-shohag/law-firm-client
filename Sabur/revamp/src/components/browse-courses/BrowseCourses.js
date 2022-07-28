@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react';
+import {Link} from "react-router-dom";
 
 // Slick Slider
 import Slider from "react-slick";
@@ -69,12 +70,6 @@ class BrowseCourses extends Component {
                     settings: {
                         slidesToShow: 2,
                     }
-                },
-                {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 1
-                    }
                 }
             ]
         };
@@ -103,148 +98,144 @@ class BrowseCourses extends Component {
 
                         <Slider {...settings}>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to="/">
+                                    <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                        <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                        <Card.Body className="p-2 p-md-3">
+                                            <Card.Title className="bodySmall-MX-767 fw-semibold text-dark">Card Title</Card.Title>
+                                            <Card.Text className="bodyXSmall-MX-767 text-dark">
+                                                Some quick example text to build on the card title and make up the
+                                                bulk of the card's content.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_2}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to="/">
+                                    <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                        <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                        <Card.Body className="p-2 p-md-3">
+                                            <Card.Title className="bodySmall-MX-767 fw-semibold text-dark">Card Title</Card.Title>
+                                            <Card.Text className="bodyXSmall-MX-767 text-dark">
+                                                Some quick example text to build on the card title and make up the
+                                                bulk of the card's content.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_3}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to="/">
+                                    <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                        <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                        <Card.Body className="p-2 p-md-3">
+                                            <Card.Title className="bodySmall-MX-767 fw-semibold text-dark">Card Title</Card.Title>
+                                            <Card.Text className="bodyXSmall-MX-767 text-dark">
+                                                Some quick example text to build on the card title and make up the
+                                                bulk of the card's content.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_4}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to="/">
+                                    <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                        <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                        <Card.Body className="p-2 p-md-3">
+                                            <Card.Title className="bodySmall-MX-767 fw-semibold text-dark">Card Title</Card.Title>
+                                            <Card.Text className="bodyXSmall-MX-767 text-dark">
+                                                Some quick example text to build on the card title and make up the
+                                                bulk of the card's content.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to="/">
+                                    <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                        <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                        <Card.Body className="p-2 p-md-3">
+                                            <Card.Title className="bodySmall-MX-767 fw-semibold text-dark">Card Title</Card.Title>
+                                            <Card.Text className="bodyXSmall-MX-767 text-dark">
+                                                Some quick example text to build on the card title and make up the
+                                                bulk of the card's content.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_2}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to="/">
+                                    <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                        <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                        <Card.Body className="p-2 p-md-3">
+                                            <Card.Title className="bodySmall-MX-767 fw-semibold text-dark">Card Title</Card.Title>
+                                            <Card.Text className="bodyXSmall-MX-767 text-dark">
+                                                Some quick example text to build on the card title and make up the
+                                                bulk of the card's content.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_3}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to="/">
+                                    <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                        <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                        <Card.Body className="p-2 p-md-3">
+                                            <Card.Title className="bodySmall-MX-767 fw-semibold text-dark">Card Title</Card.Title>
+                                            <Card.Text className="bodyXSmall-MX-767 text-dark">
+                                                Some quick example text to build on the card title and make up the
+                                                bulk of the card's content.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_4}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to="/">
+                                    <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                        <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                        <Card.Body className="p-2 p-md-3">
+                                            <Card.Title className="bodySmall-MX-767 fw-semibold text-dark">Card Title</Card.Title>
+                                            <Card.Text className="bodyXSmall-MX-767 text-dark">
+                                                Some quick example text to build on the card title and make up the
+                                                bulk of the card's content.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to="/">
+                                    <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                        <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                        <Card.Body className="p-2 p-md-3">
+                                            <Card.Title className="bodySmall-MX-767 fw-semibold text-dark">Card Title</Card.Title>
+                                            <Card.Text className="bodyXSmall-MX-767 text-dark">
+                                                Some quick example text to build on the card title and make up the
+                                                bulk of the card's content.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </div>
                             <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_2}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                            <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_3}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                            <div className="mb-4">
-                                <Card className="mx-2 border-0 border-rounded shadow">
-                                    <Card.Img className="img-fluid rounded-top" variant="top" src={img_4}/>
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
+                                <Link to="/">
+                                    <Card className="mx-2 border-0 border-rounded shadow-sm">
+                                        <Card.Img className="img-fluid rounded-top" variant="top" src={img_1}/>
+                                        <Card.Body className="p-2 p-md-3">
+                                            <Card.Title className="bodySmall-MX-767 fw-semibold text-dark">Card Title</Card.Title>
+                                            <Card.Text className="bodyXSmall-MX-767 text-dark">
+                                                Some quick example text to build on the card title and make up the
+                                                bulk of the card's content.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Link>
                             </div>
                         </Slider>
                     </div>

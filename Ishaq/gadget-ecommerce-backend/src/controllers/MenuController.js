@@ -15,7 +15,7 @@ exports.CreateMenu = (req, res) => {
 // read  Menu
 exports.SelectMenus = async (req, res) => {
     let query = {};
-    let projection = '';
+    let projection = 'title link';
     MenuModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
@@ -29,7 +29,7 @@ exports.SelectMenus = async (req, res) => {
 exports.SelectMenu = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = '';
+    let projection = 'title link';
     MenuModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })

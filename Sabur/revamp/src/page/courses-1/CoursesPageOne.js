@@ -11,10 +11,9 @@ import og_image from "../../assets/images/og-image.png";
 import SmallHero from "../../components/small-hero/SmallHero";
 import TopRecomendations from "../../components/top_recomendations/TopRecomendations";
 import SuggestesCourses from "../../components/suggested-courses/SuggestesCourses";
-import OurCourse from "../../components/our-course/OurCourse";
 import Testimonial from "../../components/testimonial/Testimonial";
 import ContactSection from "../../components/contact/ContactSection";
-import Footer from "../../components/footer/Footer";
+import OurCoursesCard from "../../components/our-courses-card/OurCoursesCard";
 
 class CoursesPageOne extends Component {
     render() {
@@ -34,7 +33,20 @@ class CoursesPageOne extends Component {
                 <SmallHero/>
                 <TopRecomendations/>
                 <SuggestesCourses/>
-                <OurCourse/>
+                <div className="pt-5 pb-5">
+                    <div className="container position-relative">
+                        <p className="small-section-title fw-bold themeColor mb-2 headline-2"> Our Course </p>
+                        <div className="d-flex justify-content-center">
+                            <h2 className="section-title fw-bold mb-4"> Our Top-Picked Courses </h2>
+                        </div>
+                        <div className="row coursesBG">
+                            <OurCoursesCard/>
+                            <OurCoursesCard/>
+                            <OurCoursesCard/>
+                            <OurCoursesCard/>
+                        </div>
+                    </div>
+                </div>
                 <Testimonial/>
                 <ContactSection/>
             </Fragment>

@@ -15,7 +15,7 @@ exports.CreateStat = (req, res) => {
 // read  Stat
 exports.SelectStats = async (req, res) => {
     let query = {};
-    let projection = '';
+    let projection = 'title stat createdDate updatedDate';
     StatModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
@@ -29,7 +29,7 @@ exports.SelectStats = async (req, res) => {
 exports.SelectStat = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = '';
+    let projection = 'title stat createdDate updatedDate';
     StatModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })

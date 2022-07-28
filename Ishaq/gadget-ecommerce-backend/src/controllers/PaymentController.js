@@ -15,7 +15,7 @@ exports.CreatePayment = (req, res) => {
 // read  Payment
 exports.SelectPayments = async (req, res) => {
     let query = {};
-    let projection = '';
+    let projection = 'transactionId customerId amount coupon productsId paymentMethod status';
     PaymentModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
@@ -29,7 +29,7 @@ exports.SelectPayments = async (req, res) => {
 exports.SelectPayment = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = '';
+    let projection = 'transactionId customerId amount coupon productsId paymentMethod status';
     PaymentModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })

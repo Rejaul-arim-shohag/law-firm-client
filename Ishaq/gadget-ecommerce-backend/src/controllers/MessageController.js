@@ -15,7 +15,7 @@ exports.CreateMessage = (req, res) => {
 // read  Message
 exports.SelectMessages = async (req, res) => {
     let query = {};
-    let projection = '';
+    let projection = 'name email message status';
     MessageModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
@@ -29,7 +29,7 @@ exports.SelectMessages = async (req, res) => {
 exports.SelectMessage = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = '';
+    let projection = 'name email message status';
     MessageModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })

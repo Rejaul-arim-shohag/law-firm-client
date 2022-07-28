@@ -15,7 +15,7 @@ exports.CreateOrder = (req, res) => {
 // read  Order
 exports.SelectOrders = async (req, res) => {
     let query = {};
-    let projection = '';
+    let projection = 'customerId productId color quantity total status';
     OrderModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
@@ -29,7 +29,7 @@ exports.SelectOrders = async (req, res) => {
 exports.SelectOrder = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = '';
+    let projection = 'customerId productId color quantity total status';
     OrderModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })

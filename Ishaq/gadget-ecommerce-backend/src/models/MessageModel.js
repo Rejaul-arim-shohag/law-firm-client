@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const messageSchema = mongoose.Schema({
-    name: String,
+    name: { type: String, require: true },
     email: {
         type: String,
         unique: true,
@@ -13,8 +13,8 @@ const messageSchema = mongoose.Schema({
             message: "Please enter a valid email"
         }
     },
-    message: String,
-    status:String,
+    message: { type: String, require: true },
+    status:{ type: Boolean, default: false },
     createdDate: { type: Date, default: Date.now() },
     updatedDate: { type: Date, default: Date.now() }
 
