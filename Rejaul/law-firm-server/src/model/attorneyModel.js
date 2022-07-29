@@ -9,5 +9,5 @@ const attorneySchema = mongoose.Schema({
     createDate:{type:Date, default:Date.now()},
 }, {versionKey:false});
 
-const attorneyModel = mongoose.model("attorney", attorneySchema);
+const attorneyModel = mongoose.model("attorneys", attorneySchema);
 module.exports = attorneyModel;

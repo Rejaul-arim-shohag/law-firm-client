@@ -6,5 +6,5 @@ const ourPracticeSchema = mongoose.Schema({
     createDate:{type:Date, default:Date.now()},
 }, {versionKey:false});
 
-const ourPracticeModel = mongoose.model("ourPractice", ourPracticeSchema);
+const ourPracticeModel = mongoose.model("ourPractices", ourPracticeSchema);
 module.exports = ourPracticeModel;

@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 const appointmentSchema = mongoose.Schema({
-    email:{ type: String},
     serviceName: { type: String},
-    apointmentDate: { type: string},
-    Weekday: { type: string},
-    time: { type: string},
-    name: { type: string},
-    age: { type: string},
-    phone: { type: string},
+    apointmentDate: { type: String},
+    Weekday: { type: String},
+    slot: { type: String},
+    name: { type: String},
+    age: { type: String},
+    phone: { type: String},
+    email:{ type: String},
     createDate: { type: Date, default: Date.now()},
 }, { versionKey: false });
 
-const appointmentModel = mongoose.model("appointment", appointmentSchema);
+const appointmentModel = mongoose.model("appointments", appointmentSchema);
 module.exports = appointmentModel;

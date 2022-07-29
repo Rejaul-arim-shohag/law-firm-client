@@ -8,5 +8,5 @@ const contactSchema = mongoose.Schema({
     createDate:{type:Date, default:Date.now()},
 }, {versionKey:false});
 
-const  contactModel = mongoose.model(" contact", contactSchema);
+const  contactModel = mongoose.model("contacts", contactSchema);
 module.exports = contactModel;

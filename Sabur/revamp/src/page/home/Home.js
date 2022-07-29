@@ -4,7 +4,6 @@ import React, {Component, Fragment} from 'react';
 import Hero from "../../components/hero/Hero";
 import TopRecomendations from "../../components/top_recomendations/TopRecomendations";
 import WhyChooseUs from "../../components/why_choose_us/WhyChooseUs";
-import OurCourse from "../../components/our-course/OurCourse";
 import BrowseCourses from "../../components/browse-courses/BrowseCourses";
 import Testimonial from "../../components/testimonial/Testimonial";
 import ContactSection from "../../components/contact/ContactSection";
@@ -16,6 +15,7 @@ import og_image from "../../assets/images/og-image.png";
 // Include Style
 import './home.css';
 import {Helmet} from "react-helmet";
+import OurCoursesCard from "../../components/our-courses-card/OurCoursesCard";
 
 // Home Page / Landing Page - Almost Done
 
@@ -48,7 +48,20 @@ class Home extends Component {
                 <Hero/>
                 <TopRecomendations/>
                 <WhyChooseUs/>
-                <OurCourse/>
+                <div className="pt-5 pb-5">
+                    <div className="container position-relative">
+                        <p className="small-section-title fw-bold themeColor mb-2 headline-2"> Our Course </p>
+                        <div className="d-flex justify-content-center">
+                            <h2 className="section-title fw-bold mb-4"> Our Top-Picked Courses </h2>
+                        </div>
+                        <div className="row coursesBG">
+                            <OurCoursesCard/>
+                            <OurCoursesCard/>
+                            <OurCoursesCard/>
+                            <OurCoursesCard/>
+                        </div>
+                    </div>
+                </div>
                 <BrowseCourses/>
                 <Testimonial/>
                 <ContactSection/>
