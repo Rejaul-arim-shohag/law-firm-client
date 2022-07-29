@@ -42,6 +42,7 @@ exports.SelectUser = async (req, res) => {
 }
 // update  User
 exports.UpdateUser = (req, res) => {
+    // let id = req.query.id;
     let id = req.params.id;
     let query = { _id: id }
     let updateData = req.body;

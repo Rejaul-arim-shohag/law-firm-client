@@ -13,6 +13,19 @@ exports.CreateProduct = (req, res) => {
     })
 }
 // read  products
+exports.SelectProductsHome = async (req, res) => {
+    let query = {};
+    let projection = 'name slug discount price';
+    ProductModel.find(query, projection, (e, data) => {
+        if (e) {
+            res.status(400).send({ status: 'failed', data: e })
+        } else {
+            res.status(200).send({ status: 'success', data })
+
+        }
+    })
+
+}
 exports.SelectProducts = async (req, res) => {
     let query = {};
     let projection = 'name slug discount price specifications colors galleryImg brand warranty details reviews faq homeImg category adminID viewCount';
