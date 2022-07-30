@@ -1,7 +1,6 @@
 const UserModel = require ("../model/userModel");
 var jwt = require('jsonwebtoken');
 
-
 exports.userRegistration =(req, res)=>{
     UserModel.create(req.body, (err,data)=>{
         if(err){

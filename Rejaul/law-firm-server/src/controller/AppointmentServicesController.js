@@ -11,6 +11,7 @@ exports.AddAppointmentService = (req, res) => {
 
 exports.readAppointmentService = (req, res) => {
     AppointmentServicesModel.aggregate([
+        {$lookup:{from:"slots", localField:"ServiceID",foreignField:"ServiceID", as:"Slots"}},
         {
             $project: {
                 _id: 0,
