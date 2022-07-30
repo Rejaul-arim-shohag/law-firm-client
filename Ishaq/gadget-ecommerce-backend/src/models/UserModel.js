@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const userSchema = mongoose.Schema({
     name: String,
-    phone: String,
+    phone: Number,
     email: {
         type: String,
         unique: true,
@@ -16,7 +16,6 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        unique: true,
         required: true,
         validate: {
             validator: (v) => {
@@ -26,12 +25,10 @@ const userSchema = mongoose.Schema({
         }
     },
     isAdmin: { type: Boolean, default: false },
+    verified: { type: Boolean, default: false },
     createdDate: { type: Date, default: Date.now() },
     updatedDate: { type: Date, default: Date.now() }
-
-
-
-})
+}, { versionKey: false })
 
 const UserModel = mongoose.model('users', userSchema);
 

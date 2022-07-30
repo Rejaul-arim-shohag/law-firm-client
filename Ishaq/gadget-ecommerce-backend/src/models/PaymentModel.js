@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
 const paymentSchema = mongoose.Schema({
-    transactionId: { type: String, require: true },
-    customerId: { type: String, require: true },
-    amount: { type: String, require: true },
+    transactionID: { type: String, require: true },
+    customerID: { type: String, require: true },
+    amount: { type: Number, require: true },
     coupon: { type: String, require: false },
-    productsId: { type: Array, require: true },
+    allProductsID: { type: Array, require: true },
     paymentMethod:{ type: String, require: true },
     status:{ type: Boolean, default: false },
     createdDate: { type: Date, default: Date.now() },

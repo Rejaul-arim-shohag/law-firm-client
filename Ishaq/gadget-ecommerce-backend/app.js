@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express')
 const app = express();
 const router= require("./src/routes/api");
+const userRouter = require('./src/routes/UserApi');
 
 //Security Middleware Import
 const rateLimit= require('express-rate-limit')
@@ -30,6 +31,7 @@ const limiter = rateLimit({
 })
 app.use(limiter);
 
+// Mongodb database connection
 const uri = "mongodb://127.0.0.1:27017/gadget_ecommerce"; 
 let option={autoIndex:true}
 mongoose.connect(uri,option, (err)=>{
@@ -40,8 +42,15 @@ mongoose.connect(uri,option, (err)=>{
         console.log("Database connection fail")
     }
 });
+
 //managing backend routing 
+app.use("/api/v1", userRouter);
 app.use("/api/v1", router);
+
+// undefined route
+app.use("*",(req,res)=>{
+    res.status(404).send({status:"failed",result:"Not found.."})
+})
 
 
 
