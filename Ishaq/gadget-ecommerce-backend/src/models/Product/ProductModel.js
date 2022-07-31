@@ -8,7 +8,7 @@ const productSchema = mongoose.Schema({
     specifications: { type: Object, require: false },
     colors: { type: Array, require: true }, /*color name and hex code*/
     galleryImg: { type: Array, require: true },
-    brand: { type: String, require: true }, /*brand should be relational*/
+    brandID: { type: String, require: true }, /*brand should be relational*/
     warranty: { type: String, require: true },
     details: { type: Object, require: false },
     reviews: { type: Object, require: false },/*reviews should be relational*/

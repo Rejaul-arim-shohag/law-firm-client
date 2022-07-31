@@ -1,4 +1,4 @@
-const BrandsModel = require("../models/BrandsModel");
+const BrandModel = require("../models/Product/BrandModel");
 
 // add new Brand
 exports.CreateBrand = (req, res) => {
@@ -16,7 +16,7 @@ exports.CreateBrand = (req, res) => {
 exports.SelectBrands = async (req, res) => {
     let query = {};
     let projection = 'title des img';
-    BrandsModel.find(query, projection, (e, result) => {
+    BrandModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -30,7 +30,7 @@ exports.SelectBrand = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
     let projection = 'title des img';
-    BrandsModel.findOne(query, projection, (e, result) => {
+    BrandModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -45,7 +45,7 @@ exports.UpdateBrand = (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
     let updateData = req.body;
-    BrandsModel.updateOne(query, updateData, (e, result) => {
+    BrandModel.updateOne(query, updateData, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
@@ -59,7 +59,7 @@ exports.UpdateBrand = (req, res) => {
 exports.DeleteBrand = (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    BrandsModel.deleteOne(query, (e, result) => {
+    BrandModel.deleteOne(query, (e, result) => {
         if (e) {
             res.status(400).send({ status: 'failed', result: e })
         } else {
