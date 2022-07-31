@@ -11,6 +11,7 @@ import AllProductsPage from './pages/AllProducts.page';
 import AuthorizationPage from './pages/Authorization.page';
 import ComingSoonPage from './pages/ComingSoon.page';
 import ContactPage from './pages/Contact.page';
+import DashboardPage from './pages/Dashboard.page';
 import Home from "./pages/Home.page";
 import NotFoundPage from './pages/NotFound.page';
 import ProductDetailsPage from "./pages/ProductDetails.page";
@@ -24,7 +25,8 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<DashboardPage />} />
+            {/* <Route path="/" element={<Home />} /> */}
             <Route path="/registration" element={<AuthorizationPage login={false} />} />
             <Route path="/login" element={<AuthorizationPage login />} />
             <Route path="/details" element={<ProductDetailsPage />} />
@@ -39,6 +41,9 @@ function App() {
             <Route path='/aboutUs' element={<AboutPage />} />
             <Route path='/contact' element={<ContactPage/>} />
             <Route path='/checkout' element={<ComingSoonPage/>} />
+            <Route path='/dashboard' element={<DashboardPage/>}>
+              
+            </Route>
             <Route path='*' element={<NotFoundPage />} />
           </Routes>
         </BrowserRouter>
