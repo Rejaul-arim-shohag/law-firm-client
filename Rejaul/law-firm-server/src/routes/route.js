@@ -1,16 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const authVerifyMiddleware = require("../middleware/AuthVerifyMiddleware")
 
+//authentication verify middleware
+const authVerifyMiddleware = require("../middleware/AuthVerifyMiddleware")
+//controller 
 const UserController = require("../controller/UserController");
 const AppointmentController = require("../controller/AppointmentController")
 const AppointmentServicesController = require("../controller/AppointmentServicesController");
 const SlotController = require("../controller/SlotController");
 const AttorneyController = require("../controller/AttorneyController");
-
-
-
-//user 
+const ServiceAreaController =require("../controller/ServiceAreaController")
+const PlanController = require ("../controller/PlanController.js")
+const MessageController = require("../controller/MessageController")
+//user route
 router.post("/createUser", UserController.userRegistration);
 router.post("/loginUser", UserController.login);
 router.post("/profileUpdate",authVerifyMiddleware, UserController.profileUpdate);
@@ -21,6 +23,22 @@ router.get("/readAttorneys",authVerifyMiddleware, AttorneyController.readAttorne
 router.post("/updateAttorney/:id",authVerifyMiddleware, AttorneyController.updateAttorney);
 router.get("/deleteAttorney/:id",authVerifyMiddleware, AttorneyController.deleteAttorney);
 
+//service area 
+router.post("/createService",authVerifyMiddleware, ServiceAreaController.createService);
+router.get("/readServiceAreas",authVerifyMiddleware, ServiceAreaController.readServiceAreas);
+router.post("/updateServiceArea/:serviceID",authVerifyMiddleware, ServiceAreaController.updateServiceArea);
+router.get("/deleteServiceArea/:serviceID",authVerifyMiddleware, ServiceAreaController.deleteServiceArea);
+
+//plan areas
+router.post("/createOurPlan",authVerifyMiddleware, PlanController.createOurPlan);
+router.get("/readOurPlans",authVerifyMiddleware, PlanController.readOurPlans);
+router.post("/updateOurPlan/:PlanID",authVerifyMiddleware, PlanController.updateOurPlan);
+router.get("/deleteOurPlan/:PlanID",authVerifyMiddleware, PlanController.deleteOurPlan);
+
+//Contact
+router.post("/CreateMessage",authVerifyMiddleware, MessageController.CreateMessage);
+router.get("/readMessages",authVerifyMiddleware, MessageController.readMessages);
+router.post("/updateMessage/:id",authVerifyMiddleware, MessageController.updateMessage);
 
 
 //appointment services create, and it will be create by admin
