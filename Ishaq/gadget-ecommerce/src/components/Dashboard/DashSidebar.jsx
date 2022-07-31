@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 
 export default function DashSidebar() {
     const [toggleSidebar, setToggleSidebar] = useState(true);
+    let inActiveClassName = "linkInactive";
     let activeClassName = "linkActive";
   
     return (
@@ -16,8 +17,8 @@ export default function DashSidebar() {
                 <ul className="nav-list">
 
                     <li>
-                        <NavLink to="/dashboard" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/dashHome" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         } >
                             <i className='bx bx-grid-alt'></i>
                             <span className="links_name">Dashboard</span>
@@ -26,7 +27,7 @@ export default function DashSidebar() {
                     </li>
                     <li>
                         <NavLink to="/dashboard/analytics" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i className='bx bx-pie-chart-alt-2' ></i>
                             <span className="links_name">Analytics</span>
@@ -34,8 +35,8 @@ export default function DashSidebar() {
                         <span className="tooltip">Analytics</span>
                     </li>
                     <li>
-                        <NavLink to="stock" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/stock" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i class='bx bx-store-alt'></i>
                             <span className="links_name">Stock</span>
@@ -44,8 +45,8 @@ export default function DashSidebar() {
                     </li>
                     <hr className='hr' />
                     <li>
-                        <NavLink to="brand" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/brand" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i class='bx bx-bookmarks'></i>
                             <span className="links_name">Brand</span>
@@ -54,8 +55,8 @@ export default function DashSidebar() {
                     </li>
 
                     <li>
-                        <NavLink to="category" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/category" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i className='bx bx-folder' ></i>
                             <span className="links_name">Category</span>
@@ -63,8 +64,8 @@ export default function DashSidebar() {
                         <span className="tooltip">Category</span>
                     </li>
                     <li>
-                        <NavLink to="product" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/product" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i class='bx bxs-grid'></i>
                             <span className="links_name">Product</span>
@@ -73,8 +74,8 @@ export default function DashSidebar() {
                     </li>
                     <hr className='hr' />
                     <li>
-                        <NavLink to="customer" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/customer" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i class='bx bx-group'></i>
                             <span className="links_name">Customer</span>
@@ -82,8 +83,8 @@ export default function DashSidebar() {
                         <span className="tooltip">Customer</span>
                     </li>
                     <li>
-                        <NavLink to="supplier" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/supplier" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i class='bx bxs-truck'></i>
                             <span className="links_name">Supplier</span>
@@ -92,8 +93,8 @@ export default function DashSidebar() {
                     </li>
                     <hr className='hr' />
                     <li>
-                        <NavLink to="purchase" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/purchase" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i class='bx bx-shopping-bag' ></i>
                             <span className="links_name">Purchase</span>
@@ -103,8 +104,8 @@ export default function DashSidebar() {
 
                     <hr className='hr' />
                     <li>
-                        <NavLink to="expense-type" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/expense-type" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i class='bx bx-trending-down' ></i>
                             <span className="links_name">Expense Type</span>
@@ -112,8 +113,8 @@ export default function DashSidebar() {
                         <span className="tooltip">Expense Type</span>
                     </li>
                     <li>
-                        <NavLink to="expense" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/expense" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i class='bx bx-money' ></i>
                             <span className="links_name">Expense</span>
@@ -122,8 +123,8 @@ export default function DashSidebar() {
                     </li>
                     <hr className='hr' />
                     <li>
-                        <NavLink to="sell" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/sell" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i class='bx bx-cart' ></i>
                             <span className="links_name">Sell</span>
@@ -131,8 +132,8 @@ export default function DashSidebar() {
                         <span className="tooltip">Sell</span>
                     </li>
                     <li>
-                        <NavLink to="return" className={({ isActive }) =>
-                            isActive ? activeClassName : undefined
+                        <NavLink to="/dashboard/return" className={({ isActive }) =>
+                            isActive ? activeClassName : inActiveClassName
                         }>
                             <i class='bx bx-log-out-circle' ></i>
                             <span className="links_name">Return</span>

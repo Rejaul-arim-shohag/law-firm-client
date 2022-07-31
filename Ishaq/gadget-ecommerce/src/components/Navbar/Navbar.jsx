@@ -189,7 +189,7 @@ export default function Navbar() {
                   </strong>
 
                 </button>
-                <Link to="/login" className=" text-base flex items-center gap-2 font-medium text-dark hover:text-gray-400">
+                <Link to="/dashboard" className=" text-base flex items-center gap-2 font-medium text-dark hover:text-gray-400">
                   <BsPerson className='text-xl' /> <span>My Account</span>
                 </Link>
 

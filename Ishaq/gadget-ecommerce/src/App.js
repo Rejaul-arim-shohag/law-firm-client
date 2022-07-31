@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Analytics from './components/Dashboard/DashComponents/Analytics';
 import Brand from './components/Dashboard/DashComponents/Brand';
+import Category from './components/Dashboard/DashComponents/Category';
 import Customer from './components/Dashboard/DashComponents/Customer';
 import DashHome from './components/Dashboard/DashComponents/DashHome';
 import Expense from './components/Dashboard/DashComponents/Expense';
@@ -28,17 +29,21 @@ import Home from "./pages/Home.page";
 import NotFoundPage from './pages/NotFound.page';
 import ProductDetailsPage from "./pages/ProductDetails.page";
 import UtilitiesPage from './pages/Utilities.page';
+import { ToastContainer } from 'react-toastify';
 import '/node_modules/preline/dist/hs-ui.bundle.js';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const queryClient = new QueryClient()
   return (
     <div className="relative">
       <QueryClientProvider client={queryClient}>
+        <ToastContainer />
+
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<DashboardPage />} />
-            {/* <Route path="/" element={<Home />} /> */}
+            {/* <Route path="/" element={<DashboardPage />} /> */}
+            <Route path="/" element={<Home />} />
             <Route path="/registration" element={<AuthorizationPage login={false} />} />
             <Route path="/login" element={<AuthorizationPage login />} />
             <Route path="/details" element={<ProductDetailsPage />} />
@@ -57,9 +62,10 @@ function App() {
               <Route path='dashHome' index element={<DashHome />} />
               <Route path='analytics' element={<Analytics />} />
               <Route path='brand' element={<Brand />} />
+              <Route path='category' element={<Category />} />
               <Route path='customer' element={<Customer />} />
               <Route path='expense' element={<Expense />} />
-              <Route path='expenseType' element={<ExpenseType />} />
+              <Route path='expense-type' element={<ExpenseType />} />
               <Route path='product' element={<Product />} />
               <Route path='purchase' element={<Purchase />} />
               <Route path='return' element={<Return />} />
