@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const slotSchema = mongoose.Schema({
     ServiceID:{type: Number, require:true},
     SlotID: { type: Number, default: function () { return Math.floor(Date.now() / 1000) } },
-    startTime: { type: Date, require:true},
-    endTime: { type: Date, require:true},
-    createDate: { type: Date, default: Date.now()},
+    startTime: { type: String, require:true},
+    endTime: { type: String, require:true},
+    slotDate: { type: String, require:true},
 }, { versionKey: false });
 
 const slotModel = mongoose.model("slots", slotSchema);
