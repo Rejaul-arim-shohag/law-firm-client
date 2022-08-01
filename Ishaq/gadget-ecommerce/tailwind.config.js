@@ -15,7 +15,7 @@ module.exports = withMT(
         padding: {
           DEFAULT: '1rem',
           sm: '2rem',
-          lg: '4rem',
+          lg: '2.7rem',
           // xl: '6rem',
           // '2xl': '9rem',
         },

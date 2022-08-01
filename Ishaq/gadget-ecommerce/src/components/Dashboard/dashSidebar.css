@@ -13,7 +13,8 @@
   height: 100%;
   width: 78px;
   background: #fff;
-  padding: 6px 14px;
+  padding: 6px 0;
+  padding-right: 10px;
   z-index: 99;
   transition: all 0.5s ease;
 }
@@ -72,9 +73,12 @@
   list-style: none;
   border-left:3px solid transparent;
 }
-.sidebar li:hover,.linkActive{
+.linkInactive{
+  border-left:3px solid transparent;
+}
+.linkActive{
   border-left:3px solid #21BF73;
-  opacity: .6;
+  /* opacity: .6; */
 }
 .sidebar li .tooltip{
   position: absolute;
@@ -140,7 +144,7 @@
   display: flex;
   height: 100%;
   width: 100%;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
