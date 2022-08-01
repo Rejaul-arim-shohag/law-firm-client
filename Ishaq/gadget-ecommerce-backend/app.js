@@ -1,7 +1,11 @@
 require('dotenv').config();
 const express = require('express')
 const app = express();
-const router= require("./src/routes/api");
+
+const brandRouter = require('./src/routes/Product/BrandApi');
+const categoryRouter = require('./src/routes/Product/CategoryApi');
+const productRouter= require("./src/routes/Product/ProductApi");
+
 const userRouter = require('./src/routes/UserApi');
 
 //Security Middleware Import
@@ -36,7 +40,7 @@ const uri = "mongodb://127.0.0.1:27017/gadget_ecommerce";
 let option={autoIndex:true}
 mongoose.connect(uri,option, (err)=>{
     if(!err){
-        console.log("Database connection successfully")
+        console.log("Database connected successfully")
     }
     else{
         console.log("Database connection fail")
@@ -44,8 +48,13 @@ mongoose.connect(uri,option, (err)=>{
 });
 
 //managing backend routing 
+
+// productRouter
+app.use("/api/v1",brandRouter);
+app.use("/api/v1",categoryRouter);
+app.use("/api/v1", productRouter);
+
 app.use("/api/v1", userRouter);
-app.use("/api/v1", router);
 
 // undefined route
 app.use("*",(req,res)=>{

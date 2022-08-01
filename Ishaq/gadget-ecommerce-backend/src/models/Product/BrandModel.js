@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
-
-const brandSchema = mongoose.Schema({
+const dataSchema = mongoose.Schema({
     name: { type: String, require: true, unique: true },
     des: { type: String, require: true },
     img: { type: String, require: true },
@@ -9,7 +8,7 @@ const brandSchema = mongoose.Schema({
 
 })
 
-const BrandModel = mongoose.model('brands', brandSchema);
+const BrandModel = mongoose.model('brands', dataSchema);
 
 module.exports = BrandModel;
 

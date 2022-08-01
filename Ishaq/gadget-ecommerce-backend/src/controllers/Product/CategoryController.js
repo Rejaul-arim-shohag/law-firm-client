@@ -1,9 +1,9 @@
-const OrderModel = require("../models/OrderModel");
+const CategoryModel = require("../../models/Product/CategoryModel");
 
-// add new Order
-exports.CreateOrder = (req, res) => {
+// add new Category
+exports.CreateCategory = (req, res) => {
     let data = req.body;
-    OrderModel.create(data, (e, result) => {
+    CategoryModel.create(data, (e, result) => {
         if (e) {
             res.status(400).send({ success: false, result: e })
         } else {
@@ -12,11 +12,11 @@ exports.CreateOrder = (req, res) => {
         }
     })
 }
-// read  Order
-exports.SelectOrders = async (req, res) => {
+// read  Categorys
+exports.SelectCategories = async (req, res) => {
     let query = {};
-    let projection = 'customerId productId color quantity total status';
-    OrderModel.find(query, projection, (e, result) => {
+    let projection = 'title des img';
+    CategoryModel.find(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ success: false, result: e })
         } else {
@@ -26,11 +26,11 @@ exports.SelectOrders = async (req, res) => {
     })
 
 }
-exports.SelectOrder = async (req, res) => {
+exports.SelectCategory = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = 'customerId productId color quantity total status';
-    OrderModel.findOne(query, projection, (e, result) => {
+    let projection = 'title des img';
+    CategoryModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.status(400).send({ success: false, result: e })
         } else {
@@ -40,12 +40,12 @@ exports.SelectOrder = async (req, res) => {
     })
 
 }
-// update  Order
-exports.UpdateOrder = (req, res) => {
+// update  Categorys
+exports.UpdateCategory = (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
     let updateData = req.body;
-    OrderModel.updateOne(query, updateData, (e, result) => {
+    CategoryModel.updateOne(query, updateData, (e, result) => {
         if (e) {
             res.status(400).send({ success: false, result: e })
         } else {
@@ -55,11 +55,11 @@ exports.UpdateOrder = (req, res) => {
     })
 
 }
-// delete  Order
-exports.DeleteOrder = (req, res) => {
+// delete  Categorys
+exports.DeleteCategory = (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    OrderModel.deleteOne(query, (e, result) => {
+    CategoryModel.deleteOne(query, (e, result) => {
         if (e) {
             res.status(400).send({ success: false, result: e })
         } else {
