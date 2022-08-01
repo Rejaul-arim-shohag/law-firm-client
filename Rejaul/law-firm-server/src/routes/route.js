@@ -12,6 +12,7 @@ const AttorneyController = require("../controller/AttorneyController");
 const ServiceAreaController =require("../controller/ServiceAreaController")
 const PlanController = require ("../controller/PlanController.js")
 const MessageController = require("../controller/MessageController")
+const UserCommentCOntroller = require("../controller/UserCommentController");
 //user route
 router.post("/createUser", UserController.userRegistration);
 router.post("/loginUser", UserController.login);
@@ -39,6 +40,16 @@ router.get("/deleteOurPlan/:PlanID",authVerifyMiddleware, PlanController.deleteO
 router.post("/CreateMessage",authVerifyMiddleware, MessageController.CreateMessage);
 router.get("/readMessages",authVerifyMiddleware, MessageController.readMessages);
 router.post("/updateMessage/:id",authVerifyMiddleware, MessageController.updateMessage);
+
+//UserCommet
+router.post("/createUserComment",authVerifyMiddleware, UserCommentCOntroller.createUserComment);
+router.get("/readComment",authVerifyMiddleware, UserCommentCOntroller.readComment);
+router.get("/deleteComment/:id",authVerifyMiddleware, UserCommentCOntroller.deleteComment);
+
+
+
+
+
 
 
 //appointment services create, and it will be create by admin
