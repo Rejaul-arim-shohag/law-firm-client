@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+var uniqueValidator = require('mongoose-unique-validator');
 const dataSchema = mongoose.Schema({
     name: { type: String, require: true, unique: true },
     des: { type: String, require: true },
@@ -8,7 +9,10 @@ const dataSchema = mongoose.Schema({
 
 })
 
+dataSchema.plugin(uniqueValidator,{ message: 'Hi,{VALUE}..you already exist in our database.' });
+
 const BrandModel = mongoose.model('brands', dataSchema);
+
 
 module.exports = BrandModel;
 

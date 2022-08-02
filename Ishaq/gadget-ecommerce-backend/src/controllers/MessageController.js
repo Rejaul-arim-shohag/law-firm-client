@@ -5,9 +5,9 @@ exports.CreateMessage = (req, res) => {
     let data = req.body;
     MessageModel.create(data, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -18,9 +18,9 @@ exports.SelectMessages = async (req, res) => {
     let projection = 'name email message status';
     MessageModel.find(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -32,9 +32,9 @@ exports.SelectMessage = async (req, res) => {
     let projection = 'name email message status';
     MessageModel.findOne(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -47,9 +47,9 @@ exports.UpdateMessage = (req, res) => {
     let updateData = req.body;
     MessageModel.updateOne(query, updateData, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -61,9 +61,9 @@ exports.DeleteMessage = (req, res) => {
     let query = { _id: id }
     MessageModel.deleteOne(query, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })

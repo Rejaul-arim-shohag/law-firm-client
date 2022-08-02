@@ -5,9 +5,9 @@ exports.CreateCategory = (req, res) => {
     let data = req.body;
     CategoryModel.create(data, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -18,9 +18,9 @@ exports.SelectCategories = async (req, res) => {
     let projection = 'title des img';
     CategoryModel.find(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -32,9 +32,9 @@ exports.SelectCategory = async (req, res) => {
     let projection = 'title des img';
     CategoryModel.findOne(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -47,9 +47,9 @@ exports.UpdateCategory = (req, res) => {
     let updateData = req.body;
     CategoryModel.updateOne(query, updateData, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -61,9 +61,9 @@ exports.DeleteCategory = (req, res) => {
     let query = { _id: id }
     CategoryModel.deleteOne(query, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })

@@ -5,9 +5,9 @@ exports.CreateReview = (req, res) => {
     let data = req.body;
     ReviewModel.create(data, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -18,9 +18,9 @@ exports.SelectReviews = async (req, res) => {
     let projection = 'name designation review img createdDate updatedDate';
     ReviewModel.find(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -32,9 +32,9 @@ exports.SelectReview = async (req, res) => {
     let projection = 'name designation review img createdDate updatedDate';
     ReviewModel.findOne(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -47,9 +47,9 @@ exports.UpdateReview = (req, res) => {
     let updateData = req.body;
     ReviewModel.updateOne(query, updateData, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
@@ -61,9 +61,9 @@ exports.DeleteReview = (req, res) => {
     let query = { _id: id }
     ReviewModel.deleteOne(query, (e, result) => {
         if (e) {
-            res.status(400).send({ success: false, result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ success: true, result })
+            res.send({ success: true, result })
 
         }
     })
