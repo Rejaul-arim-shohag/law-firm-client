@@ -18,7 +18,6 @@ import LegalDocuments from './components/Miscellaneous/LegalDocuments';
 import PrivacyPolicy from './components/Miscellaneous/PrivacyPolicy';
 import ReturnPolicy from './components/Miscellaneous/ReturnPolicy';
 import TermsConditions from './components/Miscellaneous/TermsConditions';
-
 import AboutPage from './pages/About.page';
 import AllProductsPage from './pages/AllProducts.page';
 import AuthorizationPage from './pages/Authorization.page';
