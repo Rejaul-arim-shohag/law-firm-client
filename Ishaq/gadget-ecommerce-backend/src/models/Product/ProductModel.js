@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
+var uniqueValidator = require('mongoose-unique-validator');
 
-const productSchema = mongoose.Schema({
-    name: { type: String, require: true },
+const dataSchema = mongoose.Schema({
+    name: { type: String, require: true, unique: true },
     slug: { type: String, require: true },
     discount: { type: Number, require: true },
     price: { type: Number, require: true },
@@ -16,14 +17,17 @@ const productSchema = mongoose.Schema({
     homeImg: { type: String, require: true },
     category: { type: String, require: true }, /*category should be relational*/
     adminId: { type: String, require: true },
-    availability: { type: Boolean,default:true },
+    availability: { type: Boolean, default: true },
     viewCount: { type: Number, require: false },
     createdDate: { type: Date, default: Date.now() },
     updatedDate: { type: Date, default: Date.now() }
 
 })
 
-const ProductModel = mongoose.model('products', productSchema);
+dataSchema.plugin(uniqueValidator, { message: 'Hi,{VALUE}..you already exist in our database.' });
+
+
+const ProductModel = mongoose.model('products', dataSchema);
 
 module.exports = ProductModel;
 

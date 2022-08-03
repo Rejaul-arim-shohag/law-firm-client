@@ -5,9 +5,9 @@ exports.CreatePayment = (req, res) => {
     let data = req.body;
     PaymentModel.create(data, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -18,9 +18,9 @@ exports.SelectPayments = async (req, res) => {
     let projection = 'transactionId customerId amount coupon productsId paymentMethod status';
     PaymentModel.find(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -32,9 +32,9 @@ exports.SelectPayment = async (req, res) => {
     let projection = 'transactionId customerId amount coupon productsId paymentMethod status';
     PaymentModel.findOne(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -47,9 +47,9 @@ exports.UpdatePayment = (req, res) => {
     let updateData = req.body;
     PaymentModel.updateOne(query, updateData, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -61,9 +61,9 @@ exports.DeletePayment = (req, res) => {
     let query = { _id: id }
     PaymentModel.deleteOne(query, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })

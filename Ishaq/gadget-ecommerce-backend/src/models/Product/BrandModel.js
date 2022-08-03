@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-
-const brandSchema = mongoose.Schema({
+var uniqueValidator = require('mongoose-unique-validator');
+const dataSchema = mongoose.Schema({
     name: { type: String, require: true, unique: true },
     des: { type: String, require: true },
     img: { type: String, require: true },
@@ -9,7 +9,10 @@ const brandSchema = mongoose.Schema({
 
 })
 
-const BrandModel = mongoose.model('brands', brandSchema);
+dataSchema.plugin(uniqueValidator,{ message: 'Hi,{VALUE}..you already exist in our database.' });
+
+const BrandModel = mongoose.model('brands', dataSchema);
+
 
 module.exports = BrandModel;
 

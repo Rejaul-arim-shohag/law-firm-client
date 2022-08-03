@@ -5,9 +5,9 @@ exports.CreateMenu = (req, res) => {
     let data = req.body;
     MenuModel.create(data, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -18,9 +18,9 @@ exports.SelectMenus = async (req, res) => {
     let projection = 'title link';
     MenuModel.find(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -32,9 +32,9 @@ exports.SelectMenu = async (req, res) => {
     let projection = 'title link';
     MenuModel.findOne(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -47,9 +47,9 @@ exports.UpdateMenu = (req, res) => {
     let updateData = req.body;
     MenuModel.updateOne(query, updateData, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -61,9 +61,9 @@ exports.DeleteMenu = (req, res) => {
     let query = { _id: id }
     MenuModel.deleteOne(query, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })

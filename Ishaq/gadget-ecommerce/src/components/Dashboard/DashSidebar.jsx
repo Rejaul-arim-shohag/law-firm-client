@@ -9,7 +9,7 @@ export default function DashSidebar() {
     return (
         <div className={`sidebar ${toggleSidebar ? "open" : ""}`}>
             <div className="logo-details">
-                <i class='bx bxs-devices icon'></i>
+                <i className='bx bxs-devices icon'></i>
                 <div className="logo_name">gadget shop</div>
                 <i className={`bx  ${toggleSidebar ? "bx-menu-alt-right" : "bx-menu"}`} id="btn" onClick={() => setToggleSidebar(s => !s)}></i>
             </div>
@@ -38,7 +38,7 @@ export default function DashSidebar() {
                         <NavLink to="/dashboard/stock" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
-                            <i class='bx bx-store-alt'></i>
+                            <i className='bx bx-store-alt'></i>
                             <span className="links_name">Stock</span>
                         </NavLink>
                         <span className="tooltip">Stock</span>
@@ -48,7 +48,7 @@ export default function DashSidebar() {
                         <NavLink to="/dashboard/brand" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
-                            <i class='bx bx-bookmarks'></i>
+                            <i className='bx bx-bookmarks'></i>
                             <span className="links_name">Brand</span>
                         </NavLink>
                         <span className="tooltip">Brand</span>
@@ -67,7 +67,7 @@ export default function DashSidebar() {
                         <NavLink to="/dashboard/product" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
-                            <i class='bx bxs-grid'></i>
+                            <i className='bx bxs-grid'></i>
                             <span className="links_name">Product</span>
                         </NavLink>
                         <span className="tooltip">Product</span>
@@ -77,7 +77,7 @@ export default function DashSidebar() {
                         <NavLink to="/dashboard/customer" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
-                            <i class='bx bx-group'></i>
+                            <i className='bx bx-group'></i>
                             <span className="links_name">Customer</span>
                         </NavLink>
                         <span className="tooltip">Customer</span>
@@ -86,7 +86,7 @@ export default function DashSidebar() {
                         <NavLink to="/dashboard/supplier" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
-                            <i class='bx bxs-truck'></i>
+                            <i className='bx bxs-truck'></i>
                             <span className="links_name">Supplier</span>
                         </NavLink>
                         <span className="tooltip">Supplier</span>
@@ -96,7 +96,7 @@ export default function DashSidebar() {
                         <NavLink to="/dashboard/purchase" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
-                            <i class='bx bx-shopping-bag' ></i>
+                            <i className='bx bx-shopping-bag' ></i>
                             <span className="links_name">Purchase</span>
                         </NavLink>
                         <span className="tooltip">Purchase</span>
@@ -107,7 +107,7 @@ export default function DashSidebar() {
                         <NavLink to="/dashboard/expense-type" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
-                            <i class='bx bx-trending-down' ></i>
+                            <i className='bx bx-trending-down' ></i>
                             <span className="links_name">Expense Type</span>
                         </NavLink>
                         <span className="tooltip">Expense Type</span>
@@ -116,7 +116,7 @@ export default function DashSidebar() {
                         <NavLink to="/dashboard/expense" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
-                            <i class='bx bx-money' ></i>
+                            <i className='bx bx-money' ></i>
                             <span className="links_name">Expense</span>
                         </NavLink>
                         <span className="tooltip">Expense</span>
@@ -126,7 +126,7 @@ export default function DashSidebar() {
                         <NavLink to="/dashboard/sell" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
-                            <i class='bx bx-cart' ></i>
+                            <i className='bx bx-cart' ></i>
                             <span className="links_name">Sell</span>
                         </NavLink>
                         <span className="tooltip">Sell</span>
@@ -135,7 +135,7 @@ export default function DashSidebar() {
                         <NavLink to="/dashboard/return" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
-                            <i class='bx bx-log-out-circle' ></i>
+                            <i className='bx bx-log-out-circle' ></i>
                             <span className="links_name">Return</span>
                         </NavLink>
                         <span className="tooltip">Return</span>

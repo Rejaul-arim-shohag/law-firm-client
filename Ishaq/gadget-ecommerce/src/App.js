@@ -18,7 +18,6 @@ import LegalDocuments from './components/Miscellaneous/LegalDocuments';
 import PrivacyPolicy from './components/Miscellaneous/PrivacyPolicy';
 import ReturnPolicy from './components/Miscellaneous/ReturnPolicy';
 import TermsConditions from './components/Miscellaneous/TermsConditions';
-
 import AboutPage from './pages/About.page';
 import AllProductsPage from './pages/AllProducts.page';
 import AuthorizationPage from './pages/Authorization.page';
@@ -32,51 +31,56 @@ import UtilitiesPage from './pages/Utilities.page';
 import { ToastContainer } from 'react-toastify';
 import '/node_modules/preline/dist/hs-ui.bundle.js';
 import 'react-toastify/dist/ReactToastify.css';
+import { ThemeProvider } from "@material-tailwind/react";
+import BrandList from './components/Dashboard/DashComponents/Brand/BrandList';
 
 function App() {
   const queryClient = new QueryClient()
   return (
     <div className="relative">
-      <QueryClientProvider client={queryClient}>
-        <ToastContainer />
+      <ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+          <ToastContainer />
 
-        <BrowserRouter>
-          <Routes>
-            {/* <Route path="/" element={<DashboardPage />} /> */}
-            <Route path="/" element={<Home />} />
-            <Route path="/registration" element={<AuthorizationPage login={false} />} />
-            <Route path="/login" element={<AuthorizationPage login />} />
-            <Route path="/details" element={<ProductDetailsPage />} />
-            <Route path="/all" element={<AllProductsPage />} />
-            <Route path='/utilities' element={<UtilitiesPage />}>
-              <Route path='terms' index element={<TermsConditions />} />
-              <Route path='privacy' element={<PrivacyPolicy />} />
-              <Route path='return' element={<ReturnPolicy />} />
-              <Route path='legal' element={<LegalDocuments />} />
-              <Route path='cookie' element={<CookiePolicy />} />
-            </Route>
-            <Route path='/aboutUs' element={<AboutPage />} />
-            <Route path='/contact' element={<ContactPage />} />
-            <Route path='/checkout' element={<ComingSoonPage />} />
-            <Route path='/dashboard' element={<DashboardPage />}>
-              <Route path='dashHome' index element={<DashHome />} />
-              <Route path='analytics' element={<Analytics />} />
-              <Route path='brand' element={<Brand />} />
-              <Route path='category' element={<Category />} />
-              <Route path='customer' element={<Customer />} />
-              <Route path='expense' element={<Expense />} />
-              <Route path='expense-type' element={<ExpenseType />} />
-              <Route path='product' element={<Product />} />
-              <Route path='purchase' element={<Purchase />} />
-              <Route path='return' element={<Return />} />
-              <Route path='sell' element={<Sell />} />
-              <Route path='stock' element={<Stock />} />
-              <Route path='supplier' element={<Supplier />} />
-            </Route>
-            <Route path='*' element={<NotFoundPage />} />
-          </Routes>
-        </BrowserRouter>
-      </QueryClientProvider>
+          <BrowserRouter>
+            <Routes>
+              {/* <Route path="/" element={<DashboardPage />} /> */}
+              <Route path="/" element={<Home />} />
+              <Route path="/registration" element={<AuthorizationPage login={false} />} />
+              <Route path="/login" element={<AuthorizationPage login />} />
+              <Route path="/details" element={<ProductDetailsPage />} />
+              <Route path="/all" element={<AllProductsPage />} />
+              <Route path='/utilities' element={<UtilitiesPage />}>
+                <Route path='terms' index element={<TermsConditions />} />
+                <Route path='privacy' element={<PrivacyPolicy />} />
+                <Route path='return' element={<ReturnPolicy />} />
+                <Route path='legal' element={<LegalDocuments />} />
+                <Route path='cookie' element={<CookiePolicy />} />
+              </Route>
+              <Route path='/aboutUs' element={<AboutPage />} />
+              <Route path='/contact' element={<ContactPage />} />
+              <Route path='/checkout' element={<ComingSoonPage />} />
+              <Route path='/dashboard' element={<DashboardPage />}>
+                <Route path='dashHome' index element={<DashHome />} />
+                <Route path='analytics' element={<Analytics />} />
+                <Route path='brand' element={<BrandList />} />
+                <Route path='category' element={<Category />} />
+                <Route path='customer' element={<Customer />} />
+                <Route path='expense' element={<Expense />} />
+                <Route path='expense-type' element={<ExpenseType />} />
+                <Route path='product' element={<Product />} />
+                <Route path='purchase' element={<Purchase />} />
+                <Route path='return' element={<Return />} />
+                <Route path='sell' element={<Sell />} />
+                <Route path='stock' element={<Stock />} />
+                <Route path='supplier' element={<Supplier />} />
+              </Route>
+              <Route path='*' element={<NotFoundPage />} />
+            </Routes>
+          </BrowserRouter>
+        </QueryClientProvider>
+      </ThemeProvider>
+
     </div>
 
   );

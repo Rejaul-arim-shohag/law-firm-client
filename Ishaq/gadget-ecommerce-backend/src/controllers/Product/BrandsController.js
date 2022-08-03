@@ -1,14 +1,14 @@
-const BrandModel = require("../models/Product/BrandModel");
+const BrandModel = require("../../models/Product/BrandModel");
 
 // add new Brand
 exports.CreateBrand = (req, res) => {
     let data = req.body;
-    BrandsModel.create(data, (e, result) => {
+    BrandModel.create(data, (e, result) => {
+        // console.log('Error :: ', e, " ,Result :: ", result);
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e });
         } else {
-            res.status(200).send({ status: 'success', result })
-
+            res.send({ success: true, result });
         }
     })
 }
@@ -18,9 +18,9 @@ exports.SelectBrands = async (req, res) => {
     let projection = 'title des img';
     BrandModel.find(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -32,9 +32,9 @@ exports.SelectBrand = async (req, res) => {
     let projection = 'title des img';
     BrandModel.findOne(query, projection, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -47,9 +47,9 @@ exports.UpdateBrand = (req, res) => {
     let updateData = req.body;
     BrandModel.updateOne(query, updateData, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
@@ -61,9 +61,9 @@ exports.DeleteBrand = (req, res) => {
     let query = { _id: id }
     BrandModel.deleteOne(query, (e, result) => {
         if (e) {
-            res.status(400).send({ status: 'failed', result: e })
+            res.send({ success: false, result: e })
         } else {
-            res.status(200).send({ status: 'success', result })
+            res.send({ success: true, result })
 
         }
     })
