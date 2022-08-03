@@ -5,7 +5,7 @@ export default function OffCanvasLogin({ title,items }) {
 
     return (
         <div className="relative z-40 ">
-            <div id={`hs-offCanvas-${title}`} className=" hs-offcanvas hs-offcanvas-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform max-h-72 h-full w-full bg-white border-b dark:bg-grey-800 dark:border-grey-700" tabindex="-1">
+            <div id={`hs-offCanvas-${title}`} className=" hs-offcanvas hs-offcanvas-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform max-h-72 h-full w-full bg-white border-b dark:bg-grey-800 dark:border-grey-700" tabIndex="-1">
                 <div className="flex justify-between items-center py-3 px-4 border-b dark:border-grey-700">
                     <h3 className="font-bold text-sm text-grey-800 dark:text-white">
                         {title}

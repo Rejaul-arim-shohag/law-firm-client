@@ -6,7 +6,7 @@ export default function Dashboard() {
     return (
         <>
             <DashSidebar />
-            <section className="home-section pt-10">
+            <section className="home-section pt-10 relative overflow-hidden">
                 <Outlet/>
             </section>
 

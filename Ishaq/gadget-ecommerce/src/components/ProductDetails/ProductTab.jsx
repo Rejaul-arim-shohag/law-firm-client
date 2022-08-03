@@ -98,7 +98,7 @@ export default function ProductTab() {
                                 {
                                     about.map((item, i) => (
                                         <div className="">
-                                            <p class="text-xs  flex flex-wrap items-center"><BsDot className='text-primary text-3xl w-1/12 block' /> <span className='block w-11/12 font-semibold'>{item.title}</span></p>
+                                            <p className="text-xs  flex flex-wrap items-center"><BsDot className='text-primary text-3xl w-1/12 block' /> <span className='block w-11/12 font-semibold'>{item.title}</span></p>
                                         </div>
                                     ))
                                 }
