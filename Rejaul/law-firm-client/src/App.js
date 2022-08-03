@@ -7,6 +7,8 @@ import AppointmentPage from "./Pages/AppointmentPage";
 import AboutUsPage from "./Pages/AboutUsPage";
 import RegistrationPage from "./Pages/RegistrationPage";
 import LoginPage from "./Pages/LoginPage";
+import DashboardPage from "./Pages/AdminDashboardPages/DashboardPage";
+import AttorneyAddPage from "./Pages/AdminDashboardPages/AttorneyAddPage";
 
 function App() {
   return (
@@ -20,6 +22,11 @@ function App() {
           <Route path="/aboutUs" element={<AboutUsPage/>} />
           <Route path="/sign-up" element={ <RegistrationPage/>} />
           <Route path="/login" element={ <LoginPage/>} />
+
+          //admin dashboard pages
+          <Route path="/adminDashboard" element={<DashboardPage/>} />
+          <Route path="/AddAtorney" element={<AttorneyAddPage/>} />
+
         </Routes>
       </BrowserRouter>
     </Fragment>

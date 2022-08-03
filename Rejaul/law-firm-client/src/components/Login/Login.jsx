@@ -23,11 +23,11 @@ const Login = () => {
                                 </div>
                                 <div className="row mt-2 p-0">
                                     <div className="p-2">
-                                        <button  className=" mt-3 w-100 float-end mainButton3 animated fadeInUp">Next</button>
+                                        <button  className=" mt-3 w-100 float-end mainButton3 animated fadeInUp">LOGIN</button>
                                     </div>
                                 </div>
                                 <div className="row mt-2 p-0">
-                                    <p className="text-center">Already have an account? <Link to="/login">Signin</Link></p>
+                                    <p className="text-center">Are You New? <Link  to="/sign-up">SignIn</Link></p>
                                 </div>              
                             </div>
                         </div>

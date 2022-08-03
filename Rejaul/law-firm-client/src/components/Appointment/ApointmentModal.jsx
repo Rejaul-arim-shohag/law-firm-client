@@ -8,7 +8,6 @@ import { BsCalendar2Day, BsFillEnvelopeFill, BsFillPersonFill, BsFillTelephoneFi
 import { IoCalendarNumberOutline } from 'react-icons/io5';
 import { TbOld } from 'react-icons/tb';
 const ApointmentModal = (props) => {
-    console.log(props)
     return (
         <>
             <Modal
