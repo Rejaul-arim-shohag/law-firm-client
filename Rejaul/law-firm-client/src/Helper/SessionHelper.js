@@ -1,4 +1,18 @@
 class SessionHelper{
+    setAdminToken(token){
+        localStorage.setItem("adminToken",token)
+    }
+    getAdminToken(){
+        return localStorage.getItem("adminToken")
+    }
+
+    setAdminDetails(AdminDetails){
+        localStorage.setItem("AdminDetails",JSON.stringify(AdminDetails))
+    }
+    getAdminDetails(){
+       return JSON.parse(localStorage.getItem("AdminDetails"))
+    }
+
     setToken(token){
         localStorage.setItem("token",token)
     }
@@ -31,6 +45,6 @@ class SessionHelper{
     }
 }
 export const {
-    setToken,getToken,setUserDetails,getUserDetails,
-     removeSession,setEmail,getEmail,setOTP,getOTP
+    setToken,getToken,setUserDetails,getUserDetails,setAdminDetails,getAdminDetails,
+     removeSession,setEmail,getEmail,setOTP,getOTP, setAdminToken, getAdminToken
 }=new SessionHelper;

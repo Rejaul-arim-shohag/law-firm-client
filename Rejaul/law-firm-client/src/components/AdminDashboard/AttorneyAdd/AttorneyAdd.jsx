@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { attorneyAddRequest } from '../../../ApiRequest/APIRequest';
 import { ErrorToast, getBase64, IsEmail, IsEmpty, IsMobile } from '../../../Helper/FormHelper';
 
 const AttorneyAdd = () => {
@@ -19,26 +20,31 @@ const AttorneyAdd = () => {
         let Name=nameRef.value;
         let mobile=mobileRef.value;
         let title= titleRef.value;
-        let photo=userImgRef.src;
-        let description=descriptionRef.src;
-        
+        let photo= userImgView.src;
+        let description=descriptionRef.value;
+        debugger;
         if(IsEmail(email)){
             ErrorToast("Valid Email Address Required !")
         }
         else if(IsEmpty(Name)){
-            ErrorToast(" Name Required !")
+            ErrorToast("Name Required !")
         }
         else if(IsMobile(mobile)){
             ErrorToast("Valid Mobile  Required !")
         }
         else if(IsEmpty(title)){
+            debugger;
             ErrorToast("title Required !")
         }
-        else if(IsEmpty(photo)){
-            ErrorToast("Photo Required !")
-        }
-        else if(IsEmpty(description)){
-            ErrorToast("description Required !")
+         
+        else{
+            attorneyAddRequest(email,Name,mobile,title,photo,description)
+            .then((res)=>{
+            debugger;
+                if(res===true){
+                    navigate("/")
+                }
+            })
         }
     }
     return (

@@ -1,12 +1,12 @@
 import React, { Fragment, useRef } from "react";
-import { Container, Dropdown, Navbar } from "react-bootstrap";
+import { Container, Navbar} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { AiOutlineCheckCircle, AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfold, AiOutlineUser } from "react-icons/ai";
 import { BsHourglass, BsListNested } from "react-icons/bs";
 import logo from "../../Assets/images/logo2.svg";
 import { MdOutlineCancelPresentation } from "react-icons/md";
 import { RiDashboardLine } from "react-icons/ri";
-import { getUserDetails, removeSession } from "../../Helper/SessionHelper";
+import { removeSession } from "../../Helper/SessionHelper";
 
 const MasterLayout = (props) => {
     let contentRef, sideNavRef = useRef();
@@ -66,11 +66,10 @@ const MasterLayout = (props) => {
 
             <div ref={(div) => { sideNavRef = div }} className="side-nav-open">
 
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/" end>
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/adminDashboard" end>
                     <RiDashboardLine className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Dashboard</span>
                 </NavLink>
-
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddAtorney" >
                     <AiOutlineEdit className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Insert Attorney</span>
