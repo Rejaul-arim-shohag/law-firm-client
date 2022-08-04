@@ -4,7 +4,7 @@ const slotSchema = mongoose.Schema({
     SlotID: { type: Number, default: function () { return Math.floor(Date.now() / 1000) } },
     startTime: { type: String, require:true},
     endTime: { type: String, require:true},
-    slotDate: { type: String, require:true},
+    slotDate: { type:Date, require:true},
 }, { versionKey: false });
 
 const slotModel = mongoose.model("slots", slotSchema);

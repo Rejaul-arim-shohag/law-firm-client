@@ -5,6 +5,7 @@ const userSchema = mongoose.Schema({
     mobile:{type: String},
     password:{type: String},
     photo:{type: String},
+    isAdmin:{type: Number,default:"0"},
     createDate:{type:Date, default:Date.now()},
 }, {versionKey:false});
 
