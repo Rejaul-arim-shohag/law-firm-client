@@ -7,7 +7,7 @@ import Pagination from '../../../../utilities/pagination/Pagination';
 
 export default function BrandList() {
     const slug = 'brandList'
-    const [pageNo, setPageNo] = useState(0);
+    const [pageNo, setPageNo] = useState(1);
     const [perPage, setPerPage] = useState(8);
     const [searchKeyword, setSearchKeyword] = useState(null);
 
