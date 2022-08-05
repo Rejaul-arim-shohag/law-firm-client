@@ -15,6 +15,9 @@ body{
 h1,h2,h3,h4,h5,h6,button,input,textarea{
   font-family: 'Poppins', sans-serif !important;
 }
+.dashboard_nav{
+  background:#fff !important;
+}
 .center-screen {
   display: flex;
   flex-direction: column;
@@ -45,14 +48,18 @@ a:hover {
 }
 .mainButton{
   transition:0.3s;
-  width: 220px;
-  height: 60px;
-  font-size: 15px;
+  width: 305px;
+  height: 70px;
+  font-size: 20px;
   border:0;
   outline: 0;
   border-radius: 40px;
   background-color:#21BF73;
   color:white;
+}
+
+.mainButton:hover{
+background-color:#169156;
 }
 .mainButton2{
   transition:0.3s;
@@ -235,8 +242,6 @@ a:hover {
 }
 
 
-
-
-/* @import "sidebar.css";
+@import "sidebar.css";
 @import "progress.css";
-@import "dropdownmenu.css"; */
+@import "dropdownmenu.css";

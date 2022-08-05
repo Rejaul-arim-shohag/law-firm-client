@@ -9,10 +9,12 @@ import ApointmentModal from './ApointmentModal';
 const Appointment = () => {
     const [date, setDate] = useState(new Date());
     const [modalShow, setModalShow] = useState(false);
-    // const toggleModal = () => {
-    //     setModalShow(!modalShow)
-    // }
     const today = new Date();
+    // const year = date.getFullYear();
+    // const month = date.getMonth() + 1;
+    // const day = date.getDate();
+    //https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
+    console.log(date)
     let footer = <p>Please pick a day.</p>;
     const appointmentData = [
         {

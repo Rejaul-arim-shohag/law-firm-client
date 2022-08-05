@@ -14,9 +14,7 @@ const NavBar = () => {
         }
     }
     window.addEventListener("scroll", changeBackground)
-    const handleNavigateToAppoinment=()=>{
-        navigate("/appointment")
-    }
+    
     return (
         <div className={navbar ? "MainNavbar activeNav" : "MainNavbar"}>
             <Navbar className="mainNav mx-w-100  bg-transparent" expand="lg">
@@ -41,8 +39,11 @@ const NavBar = () => {
                             <Nav.Link>
                                 <Link to="/aboutUs">About</Link>
                             </Nav.Link>
-
-                            <button onClick={handleNavigateToAppoinment} className="navigationBtn mainButton">Make an Appointment</button>
+                            <Nav.Link>
+                                <Link to="/login">Login</Link>
+                            </Nav.Link>
+                           
+                            {/* <button onClick={handleNavigateToAppoinment} className="navigationBtn mainButton">Make an Appointment</button> */}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

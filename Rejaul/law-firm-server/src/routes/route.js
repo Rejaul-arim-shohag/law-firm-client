@@ -3,6 +3,8 @@ const router = express.Router();
 
 //authentication verify middleware
 const authVerifyMiddleware = require("../middleware/AuthVerifyMiddleware")
+const adminVerifyMiddleware = require("../middleware/AdminVerifyMiddleware")
+
 //controller 
 const UserController = require("../controller/UserController");
 const AppointmentController = require("../controller/AppointmentController")
@@ -13,28 +15,40 @@ const ServiceAreaController =require("../controller/ServiceAreaController")
 const PlanController = require ("../controller/PlanController.js")
 const MessageController = require("../controller/MessageController")
 const UserCommentCOntroller = require("../controller/UserCommentController");
+const AdminController = require("../controller/AdminController");
+
+//admin route
+router.post("/AdminRegistration",adminVerifyMiddleware, AdminController.AdminRegistration);
+router.post("/AdminLogin", AdminController.AdminLogin);
+
 //user route
 router.post("/createUser", UserController.userRegistration);
 router.post("/loginUser", UserController.login);
 router.post("/profileUpdate",authVerifyMiddleware, UserController.profileUpdate);
 
+
+
 //attoreny
-router.post("/createAttoreny",authVerifyMiddleware, AttorneyController.createAttoreny);
-router.get("/readAttorneys",authVerifyMiddleware, AttorneyController.readAttorneys);
-router.post("/updateAttorney/:id",authVerifyMiddleware, AttorneyController.updateAttorney);
-router.get("/deleteAttorney/:id",authVerifyMiddleware, AttorneyController.deleteAttorney);
+router.post("/createAttoreny",adminVerifyMiddleware, AttorneyController.createAttoreny);
+router.get("/readAttorneys",adminVerifyMiddleware, AttorneyController.readAttorneys);
+router.post("/updateAttorney/:id",adminVerifyMiddleware, AttorneyController.updateAttorney);
+router.get("/deleteAttorney/:id",adminVerifyMiddleware, AttorneyController.deleteAttorney);
 
 //service area 
-router.post("/createService",authVerifyMiddleware, ServiceAreaController.createService);
-router.get("/readServiceAreas",authVerifyMiddleware, ServiceAreaController.readServiceAreas);
-router.post("/updateServiceArea/:serviceID",authVerifyMiddleware, ServiceAreaController.updateServiceArea);
-router.get("/deleteServiceArea/:serviceID",authVerifyMiddleware, ServiceAreaController.deleteServiceArea);
+router.post("/createService",adminVerifyMiddleware, ServiceAreaController.createService);
+router.get("/readServiceAreas",adminVerifyMiddleware, ServiceAreaController.readServiceAreas);
+router.post("/updateServiceArea/:serviceID",adminVerifyMiddleware, ServiceAreaController.updateServiceArea);
+router.get("/deleteServiceArea/:serviceID",adminVerifyMiddleware, ServiceAreaController.deleteServiceArea);
+
+
 
 //plan areas
-router.post("/createOurPlan",authVerifyMiddleware, PlanController.createOurPlan);
-router.get("/readOurPlans",authVerifyMiddleware, PlanController.readOurPlans);
-router.post("/updateOurPlan/:PlanID",authVerifyMiddleware, PlanController.updateOurPlan);
-router.get("/deleteOurPlan/:PlanID",authVerifyMiddleware, PlanController.deleteOurPlan);
+router.post("/createOurPlan",adminVerifyMiddleware, PlanController.createOurPlan);
+router.get("/readOurPlans",adminVerifyMiddleware, PlanController.readOurPlans);
+router.post("/updateOurPlan/:PlanID",adminVerifyMiddleware, PlanController.updateOurPlan);
+router.get("/deleteOurPlan/:PlanID",adminVerifyMiddleware, PlanController.deleteOurPlan);
+
+
 
 //Contact
 router.post("/CreateMessage",authVerifyMiddleware, MessageController.CreateMessage);
