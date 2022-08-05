@@ -1,7 +1,12 @@
+import { ThemeProvider } from "@material-tailwind/react";
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoadingBar from 'react-top-loading-bar';
 import Analytics from './components/Dashboard/DashComponents/Analytics';
-import Brand from './components/Dashboard/DashComponents/Brand';
+import BrandList from './components/Dashboard/DashComponents/Brand/BrandList';
 import Category from './components/Dashboard/DashComponents/Category';
 import Customer from './components/Dashboard/DashComponents/Customer';
 import DashHome from './components/Dashboard/DashComponents/DashHome';
@@ -28,20 +33,19 @@ import Home from "./pages/Home.page";
 import NotFoundPage from './pages/NotFound.page';
 import ProductDetailsPage from "./pages/ProductDetails.page";
 import UtilitiesPage from './pages/Utilities.page';
-import { ToastContainer } from 'react-toastify';
+import { initLoader } from "./redux/state/loader.slice";
+import store from './redux/store/store';
 import '/node_modules/preline/dist/hs-ui.bundle.js';
-import 'react-toastify/dist/ReactToastify.css';
-import { ThemeProvider } from "@material-tailwind/react";
-import BrandList from './components/Dashboard/DashComponents/Brand/BrandList';
 
 function App() {
   const queryClient = new QueryClient()
+  let progress = useSelector((state) => state.loader.progress)
   return (
     <div className="relative">
       <ThemeProvider>
         <QueryClientProvider client={queryClient}>
           <ToastContainer />
-
+          <LoadingBar color="#21BF73" progress={progress} onLoaderFinished={() => store.dispatch(initLoader())} shadow={true} />
           <BrowserRouter>
             <Routes>
               {/* <Route path="/" element={<DashboardPage />} /> */}
