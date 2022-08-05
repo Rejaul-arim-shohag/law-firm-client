@@ -4,14 +4,15 @@ import { GetItemList } from '../../../../api/ApiRequest';
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import Pagination from '../../../../utilities/pagination/Pagination';
-
+import Modal from '../../../../utilities/model/Modal';
+import CreateBrand from "./CreateBrand"
 export default function BrandList() {
     const slug = 'brandList'
     const [pageNo, setPageNo] = useState(1);
     const [perPage, setPerPage] = useState(8);
     const [searchKeyword, setSearchKeyword] = useState(null);
-
     const searchRef = useRef(null);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         GetItemList(slug, 1, perPage, searchKeyword);
@@ -26,6 +27,13 @@ export default function BrandList() {
         setPageNo(paNo)
         GetItemList(slug, paNo, perPage, searchKeyword);
     }
+
+    function handleAllData() {
+        GetItemList(slug, 1, perPage, null);
+
+    }
+
+
 
     function onChangeHandler() {
         if (searchRef.current?.value === "") {
@@ -44,13 +52,13 @@ export default function BrandList() {
 
         <>
             <div className="container mx-auto px-4 sm:px-8 max-w-6xl mt-10">
-
+                <Modal open={open} setOpen={setOpen} item={<CreateBrand/>}/>
                 <div className="py-8">
                     <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
-                        <h2 className="text-2xl leading-tight" >
+                        <h2 className="text-2xl leading-tight cursor-pointer" onClick={handleAllData}>
                             Brand List <span className='text-xs'>({"Showing " + perPage + " of " + total})</span>
                         </h2>
-                        <div className=" w-1/2 ">
+                        <div className="w-2/3 ">
 
                             <div className="flex flex-col md:flex-row  w-full md:w-full  md:space-x-3 space-y-3 md:space-y-0 justify-center">
                                 <div className="">
@@ -77,6 +85,9 @@ export default function BrandList() {
                                 </div>
                                 <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-primary rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={() => setSearchKeyword(searchRef.current.value || "0")} >
                                     Search
+                                </button>
+                                <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-primary rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={() => setOpen(s=>!s)} >
+                                    Create New Brand
                                 </button>
                             </div>
                         </div>
