@@ -15,7 +15,7 @@ exports.CreateCategory = (req, res) => {
 // read  Categorys
 exports.SelectCategories = async (req, res) => {
     let query = {};
-    let projection = 'title des img';
+    let projection = 'title  img';
     CategoryModel.find(query, projection, (e, result) => {
         if (e) {
             res.send({ success: false, result: e })
@@ -29,7 +29,7 @@ exports.SelectCategories = async (req, res) => {
 exports.SelectCategory = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = 'title des img';
+    let projection = 'title  img';
     CategoryModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.send({ success: false, result: e })
