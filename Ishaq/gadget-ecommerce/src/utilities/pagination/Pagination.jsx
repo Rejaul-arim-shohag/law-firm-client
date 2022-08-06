@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactPaginate from 'react-paginate';
-import './pagination.sass'
-export default function Pagination({ total, pageNo,handlePageClick }) {
+export default function Pagination({ total, perPage,handlePageClick }) {
     
     return (
         <ReactPaginate
@@ -9,7 +8,7 @@ export default function Pagination({ total, pageNo,handlePageClick }) {
              onPageChange={handlePageClick}
             pageRangeDisplayed={3}
             marginPagesDisplayed={2}
-            pageCount={total / pageNo}
+            pageCount={Math.ceil(total / perPage)}
             previousLabel="<"
             pageClassName="border py-1 px-3  duration-300 rounded-full hover:bg-primary text-white border-transparent bg-secondary "
             pageLinkClassName=" "

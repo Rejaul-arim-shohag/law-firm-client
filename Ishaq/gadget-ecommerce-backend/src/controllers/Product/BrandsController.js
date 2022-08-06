@@ -13,9 +13,56 @@ exports.CreateBrand = (req, res) => {
     })
 }
 // read  Brands
+exports.SelectBrandList = async (req, res) => {
+
+    try {
+        let { pageNo, perPage, searchKeyword } = req.params
+        let skipRow = (+pageNo - 1) * (+perPage)
+        // console.log('pageNo, perPage, searchKeyword ,skipRow', pageNo, perPage, searchKeyword,skipRow);
+        let data;
+        if (searchKeyword !== "null") {
+            let searchRgx = { "$regex": searchKeyword, "$options": "i" }
+            let searchQuery = { $or: [{ name: searchRgx }] }
+            data = await BrandModel.aggregate([
+                {
+                    $facet: {
+                        total: [{ $match: searchQuery }, { $count: "count" }],
+                        rows: [{ $match: searchQuery }, { $skip: skipRow }, { $limit: +perPage }]
+                    }
+                }
+            ])
+        } else {
+            data = await BrandModel.aggregate([
+                {
+                    $facet: {
+                        total: [{ $count: "count" }],
+                        rows: [{ $skip: skipRow }, { $limit: +perPage }]
+                    }
+                }
+            ])
+        }
+
+        res.send({ success: true, result: data })
+
+    } catch (error) {
+        res.send({ success: false, result: error })
+
+    }
+
+    // let projection = 'title des img';
+    // BrandModel.find(query, projection, (e, result) => {
+    //     if (e) {
+    //         res.send({ success: false, result: e })
+    //     } else {
+    //         res.send({ success: true, result })
+
+    //     }
+    // })
+
+}
 exports.SelectBrands = async (req, res) => {
     let query = {};
-    let projection = 'title des img';
+    let projection = 'name des img';
     BrandModel.find(query, projection, (e, result) => {
         if (e) {
             res.send({ success: false, result: e })
@@ -29,7 +76,7 @@ exports.SelectBrands = async (req, res) => {
 exports.SelectBrand = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
-    let projection = 'title des img';
+    let projection = 'name des img';
     BrandModel.findOne(query, projection, (e, result) => {
         if (e) {
             res.send({ success: false, result: e })

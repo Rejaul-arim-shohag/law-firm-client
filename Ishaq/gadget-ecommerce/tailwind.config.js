@@ -31,7 +31,17 @@ module.exports = withMT(
 
         // 2xl: '1536px'
       },
-
+      // select: {
+      //   styles: {
+      //     base: {
+      //       container: {
+             
+            
+      //       },
+      //     },
+      //   },
+      // },
+      
 
       extend: {
         backgroundImage: {
@@ -56,6 +66,6 @@ module.exports = withMT(
         },
       },
     },
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp'),require('preline/plugin')],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp'), require('preline/plugin')],
   }
 )

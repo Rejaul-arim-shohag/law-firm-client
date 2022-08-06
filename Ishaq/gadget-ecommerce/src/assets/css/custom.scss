@@ -8,6 +8,10 @@
     @apply flex justify-center items-center;
   }
 }
+
+body{
+  scroll-behavior: smooth;
+}
 .productTab {
   box-shadow: none !important;
   .z-20 {

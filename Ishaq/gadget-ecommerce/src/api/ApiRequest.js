@@ -1,20 +1,23 @@
+import axios from 'axios'
+import { toast } from "react-toastify"
+import { setALLBrand, setTotal } from "../redux/state/brand.slice"
 import { hideLoader, showLoader } from "../redux/state/loader.slice"
 import store from "../redux/store/store"
-import axios from 'axios'
-import { setALLBrand, setTotal } from "../redux/state/brand.slice"
-import { toast } from "react-toastify"
-import { useState } from "react"
 
-export async function GetItemList(pageNo, perPage, searchKeyword) {
+export async function GetItemList(slug, pageNo, perPage, searchKeyword) {
 
-    let URL = process.env.REACT_APP_SERVER_URI + "/brandList/" + pageNo + "/" + perPage + "/" + searchKeyword
+    let URL = process.env.REACT_APP_SERVER_URI + "/" + slug + "/" + pageNo + "/" + perPage + "/" + searchKeyword
+
     store.dispatch(showLoader())
+
+    // console.log('url -pain  ::', URL);
 
     try {
         const { data } = await axios.get(URL)
+        // console.log('data - pain  :: ',data)
         store.dispatch(hideLoader())
         if (data?.success) {
-            if (data.result[0].total[0].count > 0) {
+            if (data.result[0].total[0]?.count > 0) {
                 store.dispatch(setALLBrand(data.result[0].rows))
                 store.dispatch(setTotal(data.result[0].total[0].count))
             } else {
