@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import "./Contact.css";
 import { BsArrowRight } from "react-icons/bs";
 import { TiLocationArrow } from "react-icons/ti";
@@ -9,8 +9,32 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import contactImage from "../../Assets/images/contact.jpg"
+import { ErrorToast, IsEmail, IsEmpty, IsMobile } from '../../Helper/FormHelper';
+import { CreateMessageRequest } from '../../ApiRequest/APIRequest';
 
 const Contact = () => {
+    
+    let nameRef, emailRef, mobileRef, subjectRef, messageRef = useRef()
+    const handleSendMessage=()=>{
+        const name = nameRef.value;
+        const email = emailRef.value;
+        const mobile = mobileRef.value;
+        const subject = subjectRef.value;
+        const message = messageRef.value;
+        if(IsEmpty(name)){
+            ErrorToast("Name Is Required")
+        } else if(IsEmail(email)){
+            ErrorToast("Valid Email Required")
+        } else if(IsMobile(mobile)){
+            ErrorToast("Valid Mobile Is Required")
+        } else if(IsEmpty(subject)){
+            ErrorToast("Subject Is Required")
+        }else if(IsEmpty(message)){
+            ErrorToast("Message Is Required")
+        } else{
+            CreateMessageRequest(name,email,mobile,subject,message)
+        }
+    }
     return (
         <div className="py-5">
             <div className="container">
@@ -40,7 +64,7 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className="setCommentBtn">
-                            <button className="mainButton2">POST COMMENT<BsArrowRight /></button>
+                            <button onClick={handleSendMessage} className="mainButton2">POST COMMENT<BsArrowRight /></button>
                         </div>
                     </div>
 
