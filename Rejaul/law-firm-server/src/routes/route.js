@@ -51,7 +51,7 @@ router.get("/deleteOurPlan/:PlanID",adminVerifyMiddleware, PlanController.delete
 
 
 //Contact
-router.post("/CreateMessage",authVerifyMiddleware, MessageController.CreateMessage);
+router.post("/CreateMessage", MessageController.CreateMessage);
 router.get("/readMessages",authVerifyMiddleware, MessageController.readMessages);
 router.post("/updateMessage/:id",authVerifyMiddleware, MessageController.updateMessage);
 
