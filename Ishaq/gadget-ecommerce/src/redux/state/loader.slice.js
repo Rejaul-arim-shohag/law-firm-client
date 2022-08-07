@@ -13,11 +13,10 @@ export const loaderSlice = createSlice({
         },
         hideLoader: (state) => {
             state.progress += 100
-
         }
 
     }
 })
 
-export const { initLoader,showLoader, hideLoader } = loaderSlice.actions;
+export const { initLoader, showLoader, hideLoader } = loaderSlice.actions;
 export default loaderSlice.reducer;

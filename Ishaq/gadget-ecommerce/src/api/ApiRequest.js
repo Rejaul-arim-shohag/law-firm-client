@@ -14,7 +14,6 @@ export async function GetItemList(slug, pageNo, perPage, searchKeyword) {
 
     try {
         const { data } = await axios.get(URL)
-        // console.log('data - pain  :: ',data)
         store.dispatch(hideLoader())
         if (data?.success) {
             if (data.result[0].total[0]?.count > 0) {
@@ -27,11 +26,24 @@ export async function GetItemList(slug, pageNo, perPage, searchKeyword) {
             }
         } else {
             toast.error("Something went wrong!!")
-
         }
 
     } catch (error) {
         toast.error("Something went wrong!!")
         store.dispatch(hideLoader())
     }
+}
+
+export async function DeleteItem(slug, id) {
+    let URL = process.env.REACT_APP_SERVER_URI + "/" + slug + "/" + id
+    try {
+
+        const { data } = await axios.delete(URL)
+        // console.log('delete Data :: ', data);
+        return data;
+    } catch (error) {
+        toast.error("Something went wrong!!")
+    }
+
+
 }

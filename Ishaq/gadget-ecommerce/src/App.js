@@ -36,7 +36,7 @@ import UtilitiesPage from './pages/Utilities.page';
 import { initLoader } from "./redux/state/loader.slice";
 import store from './redux/store/store';
 import '/node_modules/preline/dist/hs-ui.bundle.js';
-
+import 'animate.css'
 function App() {
   const queryClient = new QueryClient()
   let progress = useSelector((state) => state.loader.progress)
