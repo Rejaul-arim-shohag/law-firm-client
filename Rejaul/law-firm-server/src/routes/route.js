@@ -30,13 +30,13 @@ router.post("/profileUpdate",authVerifyMiddleware, UserController.profileUpdate)
 
 //attoreny
 router.post("/createAttoreny",adminVerifyMiddleware, AttorneyController.createAttoreny);
-router.get("/readAttorneys",adminVerifyMiddleware, AttorneyController.readAttorneys);
+router.get("/readAttorneys", AttorneyController.readAttorneys);
 router.post("/updateAttorney/:id",adminVerifyMiddleware, AttorneyController.updateAttorney);
 router.get("/deleteAttorney/:id",adminVerifyMiddleware, AttorneyController.deleteAttorney);
 
 //service area 
 router.post("/createService",adminVerifyMiddleware, ServiceAreaController.createService);
-router.get("/readServiceAreas",adminVerifyMiddleware, ServiceAreaController.readServiceAreas);
+router.get("/readServiceAreas",ServiceAreaController.readServiceAreas);
 router.post("/updateServiceArea/:serviceID",adminVerifyMiddleware, ServiceAreaController.updateServiceArea);
 router.get("/deleteServiceArea/:serviceID",adminVerifyMiddleware, ServiceAreaController.deleteServiceArea);
 
@@ -44,7 +44,7 @@ router.get("/deleteServiceArea/:serviceID",adminVerifyMiddleware, ServiceAreaCon
 
 //plan areas
 router.post("/createOurPlan",adminVerifyMiddleware, PlanController.createOurPlan);
-router.get("/readOurPlans",adminVerifyMiddleware, PlanController.readOurPlans);
+router.get("/readOurPlans", PlanController.readOurPlans);
 router.post("/updateOurPlan/:PlanID",adminVerifyMiddleware, PlanController.updateOurPlan);
 router.get("/deleteOurPlan/:PlanID",adminVerifyMiddleware, PlanController.deleteOurPlan);
 
