@@ -1,10 +1,8 @@
 var jwt = require('jsonwebtoken');
 module.exports=(req, res, next)=>{
     let adminToken = req.headers.admintoken;
-    console.log( req.headers)
     jwt.verify(adminToken,"SecretAdmin123456789",(err, decoded)=>{
         if(err){
-            console.log(err)
             res.status(401).json({status:"unauthorized"})
         } else{
             let email=decoded['data'];

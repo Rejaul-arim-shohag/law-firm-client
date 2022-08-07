@@ -75,14 +75,14 @@ const MasterLayout = (props) => {
                     <span className="side-bar-item-caption">Insert Attorney</span>
                 </NavLink>
 
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/All" >
-                    <BsListNested className="side-bar-item-icon" />
-                    <span className="side-bar-item-caption">New Task</span>
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurService" >
+                <AiOutlineEdit className="side-bar-item-icon" />
+                    <span className="side-bar-item-caption">Service Add</span>
                 </NavLink>
 
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Progress" >
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurPlan" >
                     <BsHourglass className="side-bar-item-icon" />
-                    <span className="side-bar-item-caption">In Progress</span>
+                    <span className="side-bar-item-caption">Add Our Plan</span>
                 </NavLink>
 
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Completed" >

@@ -54,7 +54,7 @@ const AttorneyAdd = () => {
                     <div className="card py-5">
                         <div className="card-body">
                             <div className="container-fluid">
-                            <img ref={(input)=>userImgView=input} className="user-profile-img" alt=""/>
+                            <img ref={(input)=>userImgView=input} className="user-profile-img preview_icon" alt=""/>
                                 <div className="row">
                                     <div className="col-4 p-2">
                                         <label>Profile Picture</label>
