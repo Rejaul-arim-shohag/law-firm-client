@@ -34,6 +34,7 @@
     "react-top-loading-bar": "^2.1.0",
     "scss": "^0.2.4",
     "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.4.26",
     "yup": "^0.32.11"
   },
   "scripts": {

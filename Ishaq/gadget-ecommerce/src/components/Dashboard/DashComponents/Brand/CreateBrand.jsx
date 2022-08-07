@@ -4,9 +4,10 @@ import { useForm } from 'react-hook-form';
 import { FcDownload } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
+import { GetItemList } from '../../../../api/ApiRequest';
 import { privateAxios } from '../../../../api/privateAxios';
 import { brandSchema } from '../../../../Schema/brandSchema';
-export default function CreateBrand() {
+export default function CreateBrand({slug,perPage}) {
   const { register, handleSubmit, setValue, reset, watch, formState: { errors } } = useForm({ resolver: yupResolver(brandSchema) });
   const [imgFile, setImgFile] = useState();
   const watchImage = watch("img");
@@ -31,7 +32,7 @@ export default function CreateBrand() {
           toast.success("Brand creates successfully!")
           reset();
           setImgFile();
-          // navigate('/dashboard/manageProduct')
+          GetItemList(slug, 1, perPage, null)
         } else {
           toast.error(data.result.errors.name.message)
         }
