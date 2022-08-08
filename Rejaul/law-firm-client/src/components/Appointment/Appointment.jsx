@@ -14,7 +14,7 @@ const Appointment = () => {
     // const month = date.getMonth() + 1;
     // const day = date.getDate();
     //https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
-    console.log(date)
+    
     let footer = <p>Please pick a day.</p>;
     const appointmentData = [
         {

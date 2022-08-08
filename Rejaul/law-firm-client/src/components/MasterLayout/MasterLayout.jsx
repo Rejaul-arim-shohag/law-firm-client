@@ -1,13 +1,12 @@
 import React, { Fragment, useRef } from "react";
-import { Container, Navbar} from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { AiOutlineCheckCircle, AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfold, AiOutlineUser } from "react-icons/ai";
-import { BsHourglass, BsListNested } from "react-icons/bs";
+import { BsHourglass} from "react-icons/bs";
 import logo from "../../Assets/images/logo2.svg";
 import { MdOutlineCancelPresentation } from "react-icons/md";
 import { RiDashboardLine } from "react-icons/ri";
 import { removeSession } from "../../Helper/SessionHelper";
-
 const MasterLayout = (props) => {
     let contentRef, sideNavRef = useRef();
     const onLogout = () => {
@@ -32,6 +31,7 @@ const MasterLayout = (props) => {
 
     return (
         <Fragment>
+
             <Navbar className="fixed-top px-0 shadow-sm dashboard_nav">
                 <Container fluid={true}>
                     <Navbar.Brand >
@@ -64,39 +64,40 @@ const MasterLayout = (props) => {
                 </Container>
             </Navbar>
 
-            <div ref={(div) => { sideNavRef = div }} className="side-nav-open">
+           
+                <div ref={(div) => { sideNavRef = div }} className="side-nav-open">
 
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/adminDashboard" end>
-                    <RiDashboardLine className="side-bar-item-icon" />
-                    <span className="side-bar-item-caption">Dashboard</span>
-                </NavLink>
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddAtorney" >
-                    <AiOutlineEdit className="side-bar-item-icon" />
-                    <span className="side-bar-item-caption">Insert Attorney</span>
-                </NavLink>
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/adminDashboard" end>
+                        <RiDashboardLine className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Dashboard</span>
+                    </NavLink>
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddAtorney" >
+                        <AiOutlineEdit className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Insert Attorney</span>
+                    </NavLink>
 
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurService" >
-                <AiOutlineEdit className="side-bar-item-icon" />
-                    <span className="side-bar-item-caption">Service Add</span>
-                </NavLink>
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurService" >
+                        <AiOutlineEdit className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Service Add</span>
+                    </NavLink>
 
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurPlan" >
-                    <BsHourglass className="side-bar-item-icon" />
-                    <span className="side-bar-item-caption">Add Our Plan</span>
-                </NavLink>
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurPlan" >
+                        <BsHourglass className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Add Our Plan</span>
+                    </NavLink>
 
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Completed" >
-                    <AiOutlineCheckCircle className="side-bar-item-icon" />
-                    <span className="side-bar-item-caption">Completed</span>
-                </NavLink>
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Completed" >
+                        <AiOutlineCheckCircle className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Completed</span>
+                    </NavLink>
 
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Canceled" >
-                    <MdOutlineCancelPresentation className="side-bar-item-icon" />
-                    <span className="side-bar-item-caption">Canceled</span>
-                </NavLink>
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Canceled" >
+                        <MdOutlineCancelPresentation className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Canceled</span>
+                    </NavLink>
 
-            </div>
-
+                </div>
+            
             <div ref={(div) => contentRef = div} className="content">
                 {props.children}
             </div>

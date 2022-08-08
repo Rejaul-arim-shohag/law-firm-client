@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ContactUsPage from "./Pages/ContactUsPage";
 import HomePage from "./Pages/HomePage";
 import TeamPage from "./Pages/TeamPage";
@@ -14,19 +14,33 @@ import { getAdminToken } from "./Helper/SessionHelper";
 import FullscreenLoader from "../src/components/MasterLayout/FullScreenLoader"
 import ServicesAddPage from "./Pages/AdminDashboardPages/ServicesAddPage";
 import OurPlanAddPage from "./Pages/AdminDashboardPages/OurPlanAddPage";
+import UserProtected from "./components/Protected/UserProtected";
 function App() {
   if (getAdminToken()) {
     return (
       <Fragment>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/adminDashboard"  element={<DashboardPage />} />
-              <Route path="/AddAtorney" element={<AttorneyAddPage />} />
-              <Route path="/AddOurService" element={<ServicesAddPage />} />
-              <Route path="/AddOurPlan" element={<OurPlanAddPage />} />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/team" element={<TeamPage />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/*" element={<UserProtected />} >
+              <Route path="appointment" element={<AppointmentPage />} />
+            </Route>
+            {/* <Route path="/appointment" element={<AppointmentPage />} /> */}
+            <Route path="/aboutUs" element={<AboutUsPage />} />
+            <Route path="/sign-up" element={<RegistrationPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/admin-login" element={<AdminLoginPage />} />
 
-            </Routes>
-          </BrowserRouter>
+            {/* admin pages */}
+            <Route path="/adminDashboard" element={<DashboardPage />} />
+            <Route path="/AddAtorney" element={<AttorneyAddPage />} />
+            <Route path="/AddOurService" element={<ServicesAddPage />} />
+            <Route path="/AddOurPlan" element={<OurPlanAddPage />} />
+          </Routes>
+        </BrowserRouter>
+        <FullscreenLoader />
       </Fragment>
     );
 
@@ -36,7 +50,7 @@ function App() {
     <Fragment>
       <BrowserRouter>
         <Routes>
-          <Route path="/adminDashboard" element={<Navigate to="/admin-login" replace />}/>
+          <Route path="/adminDashboard" element={<Navigate to="/admin-login" replace />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />

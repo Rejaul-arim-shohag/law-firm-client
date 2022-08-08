@@ -26,7 +26,7 @@ const AddOurService = () => {
             ServiceAddRequest( Name,photo, description)
                 .then((res) => {
                     if (res === true) {
-                        navigate("/")
+                        // navigate("/")
                     }
                 })
         }
