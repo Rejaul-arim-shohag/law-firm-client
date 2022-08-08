@@ -12,8 +12,6 @@ const dataSchema = mongoose.Schema({
 dataSchema.plugin(uniqueValidator,{ message: 'Hi,{VALUE}..you already exist in our database.' });
 
 const BrandModel = mongoose.model('brands', dataSchema);
-
-
 module.exports = BrandModel;
 
 
