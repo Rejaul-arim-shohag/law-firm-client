@@ -27,7 +27,6 @@ export default function UpdateBrand({ slug, perPage, item, setOpen }) {
     }, [watchImage])
     const navigate = useNavigate();
     const onSubmitHandler = (value) => {
-        console.log('imgFile', imgFile);
         value.img = imgFile
         privateAxios.put(`/brand/${item._id}`, value)
             .then(({ data }) => {
@@ -46,7 +45,6 @@ export default function UpdateBrand({ slug, perPage, item, setOpen }) {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-
     }, [])
 
 

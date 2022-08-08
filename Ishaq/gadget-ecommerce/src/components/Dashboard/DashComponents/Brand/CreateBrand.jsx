@@ -6,9 +6,11 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import { GetItemList } from '../../../../api/ApiRequest';
 import { privateAxios } from '../../../../api/privateAxios';
+import { setSuccess } from '../../../../redux/state/confetti.slice';
+import store from '../../../../redux/store/store';
 import { brandSchema } from '../../../../Schema/brandSchema';
-export default function CreateBrand({slug,perPage}) {
-  const { register, handleSubmit, setValue, reset, watch, formState: { errors,isDirty,isValid } } = useForm({ resolver: yupResolver(brandSchema) });
+export default function CreateBrand({ slug, perPage }) {
+  const { register, handleSubmit, setValue, reset, watch, formState: { errors, isDirty, isValid } } = useForm({ resolver: yupResolver(brandSchema) });
   const [imgFile, setImgFile] = useState();
   const watchImage = watch("img");
   const convert2base64 = file => {
@@ -32,6 +34,7 @@ export default function CreateBrand({slug,perPage}) {
           toast.success("Brand creates successfully!")
           reset();
           setImgFile();
+          store.dispatch(setSuccess(true))
           GetItemList(slug, 1, perPage, null)
         } else {
           toast.error(data.result.errors.name.message)
@@ -45,6 +48,7 @@ export default function CreateBrand({slug,perPage}) {
   }, [])
 
   // console.log('isDirty,isValid ::',isDirty,isValid);
+
 
   return (
 

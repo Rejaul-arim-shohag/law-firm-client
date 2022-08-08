@@ -18,11 +18,17 @@ export const brandSlice = createSlice({
         allChecked: (state, action) => {
             // console.log('action.payload',action.payload)
             state.allBrand = state.allBrand?.map(i => { return { ...i, isChecked: action.payload } })
+        },
+        deleteMultiple: (state, action) => {
+            // let selectedBrands = state.allBrand?.filter(i => i)
+            // console.log('selectedBrands',selectedBrands);
+            console.log('selectedBrands',state.allBrand);
         }
+      
 
 
     }
 })
 
-export const { setTotal, setALLBrand, setChecked, allChecked } = brandSlice.actions;
+export const { setTotal, setALLBrand, setChecked, allChecked,deleteMultiple} = brandSlice.actions;
 export default brandSlice.reducer;
