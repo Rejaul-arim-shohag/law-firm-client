@@ -18,7 +18,6 @@ exports.SelectBrandList = async (req, res) => {
     try {
         let { pageNo, perPage, searchKeyword } = req.params
         let skipRow = (+pageNo - 1) * (+perPage)
-        // console.log('pageNo, perPage, searchKeyword ,skipRow', pageNo, perPage, searchKeyword,skipRow);
         let data;
         if (searchKeyword !== "null") {
             let searchRgx = { "$regex": searchKeyword, "$options": "i" }
@@ -27,7 +26,7 @@ exports.SelectBrandList = async (req, res) => {
                 {
                     $facet: {
                         total: [{ $match: searchQuery }, { $count: "count" }],
-                        rows: [{ $match: searchQuery }, { $skip: skipRow }, { $limit: +perPage }]
+                        rows: [{ $match: searchQuery }, { $sort: { _id: -1 } }, { $skip: skipRow }, { $limit: +perPage }]
                     }
                 }
             ])
@@ -36,7 +35,7 @@ exports.SelectBrandList = async (req, res) => {
                 {
                     $facet: {
                         total: [{ $count: "count" }],
-                        rows: [{ $skip: skipRow }, { $limit: +perPage }]
+                        rows: [{ $sort: { _id: -1 } }, { $skip: skipRow }, { $limit: +perPage }]
                     }
                 }
             ])
@@ -49,15 +48,7 @@ exports.SelectBrandList = async (req, res) => {
 
     }
 
-    // let projection = 'title des img';
-    // BrandModel.find(query, projection, (e, result) => {
-    //     if (e) {
-    //         res.send({ success: false, result: e })
-    //     } else {
-    //         res.send({ success: true, result })
 
-    //     }
-    // })
 
 }
 exports.SelectBrands = async (req, res) => {
@@ -103,16 +94,23 @@ exports.UpdateBrand = (req, res) => {
 
 }
 // delete  Brands
-exports.DeleteBrand = (req, res) => {
-    let id = req.params.id;
-    let query = { _id: id }
-    BrandModel.deleteOne(query, (e, result) => {
-        if (e) {
-            res.send({ success: false, result: e })
-        } else {
-            res.send({ success: true, result })
+exports.DeleteBrand = async (req, res) => {
+    try {
+        let id = req.params.id;
+        // console.log('delete id :: ',id);
+        let query = { _id: id }
+        BrandModel.deleteOne(query, (e, result) => {
+            if (e) {
+                res.send({ success: false, result: e })
+            } else {
+                res.send({ success: true, result })
 
-        }
-    })
+            }
+        })
+
+    } catch (error) {
+        res.send({ success: false, result: error })
+    }
+
 
 }
