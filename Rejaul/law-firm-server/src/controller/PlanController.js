@@ -17,8 +17,14 @@ exports.readOurPlans = (req, res) => {
                 _id: 1,
                 planName:1,
                 fee: 1,
-                extrabenifit: 1,
-                services:1,
+                benifit: 1,
+                extraBenifit1:1,
+                extraBenifit2:1,
+                extraBenifit3:1,
+                extraBenifit4:1,
+                extraBenifit5:1,
+                extraBenifit6:1,
+
         }
         }
     ], (err, data) => {
