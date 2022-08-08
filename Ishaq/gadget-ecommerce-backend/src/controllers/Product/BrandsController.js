@@ -111,6 +111,15 @@ exports.DeleteBrand = async (req, res) => {
     } catch (error) {
         res.send({ success: false, result: error })
     }
+}
 
+exports.DeleteMultiple = async (req, res) => {
+    try {
+        let data = req.body;
+        let result = await BrandModel.deleteMany({name:{$in:data}})
+        res.send({ success: true, result })
+    } catch (error) {
+        res.send({ success: false, result: error })
 
+    }
 }
