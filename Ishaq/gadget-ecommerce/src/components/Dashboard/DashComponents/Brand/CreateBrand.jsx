@@ -8,7 +8,7 @@ import { GetItemList } from '../../../../api/ApiRequest';
 import { privateAxios } from '../../../../api/privateAxios';
 import { brandSchema } from '../../../../Schema/brandSchema';
 export default function CreateBrand({slug,perPage}) {
-  const { register, handleSubmit, setValue, reset, watch, formState: { errors } } = useForm({ resolver: yupResolver(brandSchema) });
+  const { register, handleSubmit, setValue, reset, watch, formState: { errors,isDirty,isValid } } = useForm({ resolver: yupResolver(brandSchema) });
   const [imgFile, setImgFile] = useState();
   const watchImage = watch("img");
   const convert2base64 = file => {
@@ -43,6 +43,8 @@ export default function CreateBrand({slug,perPage}) {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  // console.log('isDirty,isValid ::',isDirty,isValid);
 
   return (
 

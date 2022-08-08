@@ -1,13 +1,12 @@
 import { Option, Select } from '@material-tailwind/react';
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import { DeleteItem, GetItemList } from '../../../../api/ApiRequest';
+import { GetItemList } from '../../../../api/ApiRequest';
 import { allChecked, setChecked } from '../../../../redux/state/brand.slice';
 import store from '../../../../redux/store/store';
 import Modal from '../../../../utilities/model/Modal';
 import Pagination from '../../../../utilities/pagination/Pagination';
+import BrandItem from './BrandItem';
 import CreateBrand from "./CreateBrand";
 export default function BrandList() {
     const slug = 'brandList'
@@ -16,7 +15,6 @@ export default function BrandList() {
     const [searchKeyword, setSearchKeyword] = useState(null);
     const searchRef = useRef(null);
     const [openCreate, setOpenCreate] = useState(false);
-    const [openEdit, setOpenEdit] = useState(false);
 
     useEffect(() => {
         GetItemList(slug, 1, perPage, searchKeyword);
@@ -52,49 +50,9 @@ export default function BrandList() {
 
     }
 
-    function deleteHandler(id) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!',
-            showClass: {
-                popup: 'animate__animated animate__zoomIn'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__zoomOut'
-            }
-        }).then((result) => {
-            if (result.isConfirmed) {
-                DeleteItem(slug, id)
-                    .then((data) => {
-                        if (data.result.deletedCount > 0) {
-                            Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
-                                'success'
-                            )
-                            handleAllData();
-                        }
-                    })
-
-
-
-            }
-        })
-
-    }
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-
-    // console.log('allBrand', allBrand);
-
-    // let bro = allBrand?.filter(i => i?.isChecked !== true).length < 1
-    // console.log('bro::  ',bro)
 
     let isAllChecked = allBrand?.filter(i => i?.isChecked !== true).length < 1
 
@@ -104,7 +62,7 @@ export default function BrandList() {
         <>
             <div className="container mx-auto px-4 sm:px-8 max-w-6xl mt-10">
                 <Modal open={openCreate} setOpen={setOpenCreate} item={<CreateBrand slug={slug} perPage={perPage} />} />
-                <Modal open={openEdit} setOpen={setOpenEdit} item={<CreateBrand slug={slug} perPage={perPage} />} />
+
                 <div className="py-8">
                     <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
                         <h2 className="text-2xl leading-tight cursor-pointer" onClick={handleAllData}>
@@ -174,61 +132,7 @@ export default function BrandList() {
 
                                     {
                                         // loading ? <Loader isLoading={loading} /> :
-                                        allBrand?.map((item, i) => (
-                                            <tr key={i}>
-                                                <td className="px-5 py-5 border-b border-grey-200 bg-white text-sm">
-                                                    <div className="text-grey-900 whitespace-no-wrap">
-                                                        <label className="flex items-center space-x-3 mb-3">
-                                                            <input type="checkbox" name={item.name} className="form-tick appearance-none bg-white bg-check h-4 w-4 border border-grey-300 rounded-md checked:bg-primary hover:bg-primary  checked:border-transparent focus:ring-0 focus:outline-none" onChange={checkBoxChangeHandler} id={item._id} checked={item?.isChecked || false} />
-                                                            <span className="text-grey-700 dark:text-white font-normal">
-                                                                {((pageNo - 1) * perPage) + (i + 1)}
-                                                            </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                {/* <td className="px-5 py-5 border-b border-grey-200 bg-white text-sm">
-                                                    <p className="text-grey-900 whitespace-no-wrap">
-                                                        {((pageNo - 1) * perPage) + (i + 1)}
-                                                    </p>
-                                                </td> */}
-                                                <td className="px-5 py-5 border-b border-grey-200 bg-white text-sm">
-                                                    <div className="flex items-center">
-                                                        <div className="flex-shrink-0">
-                                                            <Link to="/" className="block relative">
-                                                                <img alt="profil" src={item.img} className="mx-auto object-cover rounded-full h-10 w-10 " />
-                                                            </Link>
-                                                        </div>
-                                                        <div className="ml-3">
-                                                            <p className="text-grey-900 whitespace-no-wrap">
-                                                                {item.name}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="px-5 py-5 border-b border-grey-200 bg-white text-sm">
-                                                    <p className="text-grey-900 whitespace-no-wrap">
-                                                        {item.des}
-                                                    </p>
-                                                </td>
-
-
-                                                <td className="px-5 py-5 border-b border-grey-200 bg-white text-sm">
-                                                    <button className="text-indigo-600 hover:text-indigo-900" onClick={() => deleteHandler(item._id)}>
-                                                        Delete
-                                                    </button>
-                                                </td>
-                                                <td className="px-5 py-5 border-b border-grey-200 bg-white text-sm">
-                                                    <button className="text-indigo-600 hover:text-indigo-900" onClick={() => setOpenEdit(s => !s)}>
-                                                        Edit
-                                                    </button>
-                                                </td>
-                                                {/* <td className="px-5 py-5 border-b border-grey-200 bg-white text-sm">
-                                                    <button className="text-indigo-600 hover:text-indigo-900">
-                                                        Delete
-                                                    </button>
-                                                </td> */}
-                                            </tr>
-                                        ))
+                                        allBrand?.map((item, i) => <BrandItem key={i} i={i} checkBoxChangeHandler={checkBoxChangeHandler} handleAllData={handleAllData} item={item} pageNo={pageNo} perPage={perPage} slug={slug} />)
                                     }
 
                                 </tbody>
