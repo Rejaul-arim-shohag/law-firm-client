@@ -1,6 +1,7 @@
 import axios from "axios";
 import store from "../redux/store";
 import {SetAttorney} from "../redux/stateSlice/attorneySlice"
+import {SetSingleAttorney} from "../redux/stateSlice/singleAttorneySlice"
 import {SetServices} from "../redux/stateSlice/servicesSlice"
 import { HideLoader, ShowLoader } from "../redux/stateSlice/settingSlice";
 import { ErrorToast, SuccessToast } from "../Helper/FormHelper";
@@ -147,6 +148,75 @@ export function AttorneyGetRequest(){
     })
     .catch((err)=>{
         ErrorToast("Something Went Wrong")
+    })
+}
+export function SingleAttorneyGetRequest(id){
+     store.dispatch(ShowLoader())
+    const url = baseUrl + "/readSingleAttorney"+"/"+id;
+    return axios.get(url, AxiosHeader)
+    .then((res)=>{
+        if (res.status === 200) {
+            store.dispatch(HideLoader())
+            store.dispatch(SetSingleAttorney(res.data.data[0]))
+            // return res.data
+        }
+        else {
+            return false;
+        }
+    })
+    .catch((err)=>{
+        store.dispatch(HideLoader())
+        ErrorToast("Something Went Wrong")
+        return false
+    })
+}
+export function attorneyUpdateRequest(email, Name, mobile, title, photo, description,id){
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/updateAttorney"+"/"+id;
+    const postBody = {
+        email: email,
+        Name: Name,
+        mobile: mobile,
+        title: title,
+        photo: photo,
+        description: description
+    }
+    return axios.post(url,postBody, AxiosHeader)
+    .then((res)=>{
+        if (res.status === 200) {
+            store.dispatch(HideLoader())
+            SuccessToast("Saved Success")
+        }
+        else {
+            return false;
+        }
+    })
+    .catch((err)=>{
+        store.dispatch(HideLoader())
+        ErrorToast("Something Went Wrong")
+        return false
+    })
+}
+
+export function AttorneyDeleteRequest(id){
+    store.dispatch(ShowLoader())
+    let url=baseUrl+"/deleteAttorney/"+id;
+    return axios.get(url,AxiosHeader)
+    .then((res)=>{
+        store.dispatch(HideLoader())
+        if(res.status===200){
+            SuccessToast("Delete Successful")
+            return true;
+        }
+        else{
+            ErrorToast("Something Went Wrong")
+            return false;
+        }
+    })
+    .catch((err)=>{
+        ErrorToast("Something Went Wrong")
+        store.dispatch(HideLoader())
+        return false;
     })
 }
 

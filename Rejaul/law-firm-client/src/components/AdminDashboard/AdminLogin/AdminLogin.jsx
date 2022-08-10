@@ -5,9 +5,9 @@ import { AdminLoginRequest } from '../../../ApiRequest/APIRequest';
 import { ErrorToast, IsEmail, IsEmpty } from '../../../Helper/FormHelper';
 
 const AdminLogin = () => {
+    let navigate = useNavigate();
     let adminEmailRef, adminPassRef = useRef()
     const handleAdminLogin=()=>{
-        debugger;
         const adminEmail = adminEmailRef.value;
         const adminPass = adminPassRef.value;
         if(IsEmail(adminEmail)){
@@ -16,9 +16,9 @@ const AdminLogin = () => {
             ErrorToast("Password is required")
         } else{
             AdminLoginRequest(adminEmail, adminPass).then((res)=>{
-                debugger;
                 if(res===true){
-                    window.location.href="/adminDashboard"
+                    navigate("/adminDashboard")
+                    // window.location.href="/adminDashboard"
                 }
             })
         }

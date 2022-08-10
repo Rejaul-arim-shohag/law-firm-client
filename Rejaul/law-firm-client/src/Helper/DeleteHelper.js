@@ -1,6 +1,5 @@
 import Swal from "sweetalert2";
-import { DeleteRequest } from "../ApiRequest/APIRequest";
-export function DeleteToDo(id){
+export function DeleteAlert(){
     return  Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -11,10 +10,11 @@ export function DeleteToDo(id){
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-          return DeleteRequest(id).then((deleteResult)=>{
-                return deleteResult;
-            })
+          return result;
         }
     })
 
 }
+// DeleteRequest(id).then((deleteResult)=>{
+//     return deleteResult;
+// })

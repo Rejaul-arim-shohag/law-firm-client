@@ -15,54 +15,57 @@ import FullscreenLoader from "../src/components/MasterLayout/FullScreenLoader"
 import ServicesAddPage from "./Pages/AdminDashboardPages/ServicesAddPage";
 import OurPlanAddPage from "./Pages/AdminDashboardPages/OurPlanAddPage";
 import UserProtected from "./components/Protected/UserProtected";
+import AdminProtect from "./components/Protected/AdminProtect";
+import AttorneyReadPage from "./Pages/AdminDashboardPages/AttorneyReadPage";
+import AttorneyEditPage from "./Pages/AdminDashboardPages/AttorneyEditPage";
 function App() {
-  if (getAdminToken()) {
-    return (
-      <Fragment>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/team" element={<TeamPage />} />
-            <Route path="/contact-us" element={<ContactUsPage />} />
-            <Route path="/*" element={<UserProtected />} >
-              <Route path="appointment" element={<AppointmentPage />} />
-            </Route>
-            {/* <Route path="/appointment" element={<AppointmentPage />} /> */}
-            <Route path="/aboutUs" element={<AboutUsPage />} />
-            <Route path="/sign-up" element={<RegistrationPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/admin-login" element={<AdminLoginPage />} />
-
-            {/* admin pages */}
-            <Route path="/adminDashboard" element={<DashboardPage />} />
-            <Route path="/AddAtorney" element={<AttorneyAddPage />} />
-            <Route path="/AddOurService" element={<ServicesAddPage />} />
-            <Route path="/AddOurPlan" element={<OurPlanAddPage />} />
-          </Routes>
-        </BrowserRouter>
-        <FullscreenLoader />
-      </Fragment>
-    );
-
-  }
-
   return (
     <Fragment>
       <BrowserRouter>
         <Routes>
-          <Route path="/adminDashboard" element={<Navigate to="/admin-login" replace />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
-          <Route path="/appointment" element={<AppointmentPage />} />
+          <Route
+            path="/appointment"
+            element={
+              <UserProtected>
+                <AppointmentPage />
+              </UserProtected>
+            }
+          />
           <Route path="/aboutUs" element={<AboutUsPage />} />
           <Route path="/sign-up" element={<RegistrationPage />} />
           <Route path="/login" element={<LoginPage />} />
+
+
+          {/* admin page */}
           <Route path="/admin-login" element={<AdminLoginPage />} />
+          <Route path="/adminDashboard" element={<AdminProtect>
+            <DashboardPage />
+          </AdminProtect>} />
+          <Route path="/AddAtorney" element={<AdminProtect>
+            <AttorneyAddPage />
+          </AdminProtect>} />
+          <Route path="/updateAttorney/:id" element={<AdminProtect>
+            <AttorneyEditPage />
+          </AdminProtect>} />
+          <Route path="/AddOurService" element={<AdminProtect>
+            <ServicesAddPage />
+          </AdminProtect>} />
+          <Route path="/AddOurPlan" element={<AdminProtect>
+            <OurPlanAddPage />
+          </AdminProtect>} />
+          <Route path="/AllAttorney" element={<AdminProtect>
+            <AttorneyReadPage />
+          </AdminProtect>} />
         </Routes>
       </BrowserRouter>
+      <FullscreenLoader />
     </Fragment>
   );
+
+
 }
 
 export default App;

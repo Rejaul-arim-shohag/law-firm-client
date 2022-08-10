@@ -16,9 +16,9 @@ const Login = () => {
         }
         else{
             LoginRequest(email,pass).then((result)=>{
-                if(result===true){
-                    window.location.href="/"
-                }
+                // if(result===true){
+                //     window.location.href="/"
+                // }
             })
         }
     }

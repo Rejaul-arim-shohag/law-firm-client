@@ -22,7 +22,6 @@ const AttorneyAdd = () => {
         let title= titleRef.value;
         let photo= userImgView.src;
         let description=descriptionRef.value;
-        debugger;
         if(IsEmail(email)){
             ErrorToast("Valid Email Address Required !")
         }
@@ -33,14 +32,11 @@ const AttorneyAdd = () => {
             ErrorToast("Valid Mobile  Required !")
         }
         else if(IsEmpty(title)){
-            debugger;
             ErrorToast("title Required !")
         }
-         
         else{
             attorneyAddRequest(email,Name,mobile,title,photo,description)
             .then((res)=>{
-            debugger;
                 if(res===true){
                     navigate("/")
                 }
@@ -57,7 +53,7 @@ const AttorneyAdd = () => {
                             <img ref={(input)=>userImgView=input} className="user-profile-img preview_icon" alt=""/>
                                 <div className="row">
                                     <div className="col-4 p-2">
-                                        <label>Profile Picture</label>
+                                        <label>Picture</label>
                                         <input onChange={previewImage} ref={(input)=>userImgRef=input} placeholder="User Email" className="form-control animated fadeInUp" type="file"/>
                                     </div>
                                     <div className="col-4 p-2">

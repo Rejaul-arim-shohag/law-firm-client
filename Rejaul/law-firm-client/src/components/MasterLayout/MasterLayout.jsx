@@ -75,7 +75,10 @@ const MasterLayout = (props) => {
                         <AiOutlineEdit className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Insert Attorney</span>
                     </NavLink>
-
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AllAttorney" >
+                        <AiOutlineEdit className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Attorneys </span>
+                    </NavLink>
                     <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurService" >
                         <AiOutlineEdit className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Service Add</span>
