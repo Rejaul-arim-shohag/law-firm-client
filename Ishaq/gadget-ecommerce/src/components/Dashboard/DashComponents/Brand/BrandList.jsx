@@ -13,7 +13,7 @@ import BrandItem from './BrandItem';
 import CreateBrand from "./CreateBrand";
 
 export default function BrandList() {
-    const slug = 'brandList'
+    const slug = 'brand'
     const [pageNo, setPageNo] = useState(1);
     const [perPage, setPerPage] = useState(8);
     const [searchKeyword, setSearchKeyword] = useState(null);
@@ -25,7 +25,7 @@ export default function BrandList() {
     }, [slug, perPage, searchKeyword])
 
     let allBrand = useSelector((state) => state.brand.allBrand)
-    let total = useSelector((state) => state.brand.total)
+    let total = useSelector((state) => state.brand.totalBrand)
     let success = useSelector((state) => state.confetti.success)
 
     function handlePageClick(e) {
@@ -101,12 +101,12 @@ export default function BrandList() {
         <>
             <div className="container mx-auto px-4 sm:px-8 max-w-6xl mt-10">
                 {/* {success ? <Confetti /> : <></>} */}
-                <Modal open={openCreate} setOpen={setOpenCreate} item={<CreateBrand slug={slug} perPage={perPage} setOpen={setOpenCreate}/>} />
+                <Modal open={openCreate} setOpen={setOpenCreate} item={<CreateBrand slug={slug} perPage={perPage} setOpen={setOpenCreate} />} />
 
                 <div className="py-8">
                     <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
                         <h2 className="text-2xl leading-tight cursor-pointer" onClick={handleAllData}>
-                            Brand List <span className='text-xs'>({"Showing " + perPage + " out of " + total})</span>
+                            Brand List <span className='text-xs'>({`Showing ${perPage > total ? total : perPage} out of ${total}`})</span>
                         </h2>
                         <div className="w-2/3 ">
 
@@ -133,7 +133,7 @@ export default function BrandList() {
                                         </Select>
                                     </div>
                                     <div className=" relative ">
-                                        <input type="text" ref={searchRef} onChange={() => onChangeHandler()} className="rounded-lg border-transparent flex-1 appearance-none border border-grey-300 w-full py-2 px-4 bg-white text-grey-700 placeholder-grey-400 shadow-sm text-base focus:outline-none focus:ring-0 focus:border-transparent" placeholder="name" onKeyDown={(e)=> e.key === "Enter" && setSearchKeyword(searchRef.current.value || "0")}/>
+                                        <input type="text" ref={searchRef} onChange={() => onChangeHandler()} className="rounded-lg border-transparent flex-1 appearance-none border border-grey-300 w-full py-2 px-4 bg-white text-grey-700 placeholder-grey-400 shadow-sm text-base focus:outline-none focus:ring-0 focus:border-transparent" placeholder="name" onKeyDown={(e) => e.key === "Enter" && setSearchKeyword(searchRef.current.value || "0")} />
                                     </div>
                                     <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-primary rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={() => setSearchKeyword(searchRef.current.value || "0")} >
                                         Search

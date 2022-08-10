@@ -6,7 +6,6 @@ import store from "../redux/store/store"
 export async function GetItems(slug, pageNo, perPage, searchKeyword) {
     let allItems = []
     let totalItems = 0
-
     let URL = process.env.REACT_APP_SERVER_URI + "/" + slug + "/" + pageNo + "/" + perPage + "/" + searchKeyword
 
     store.dispatch(showLoader())
@@ -28,8 +27,6 @@ export async function GetItems(slug, pageNo, perPage, searchKeyword) {
         } else {
             toast.error("Something went wrong!!")
         }
-
-
 
     } catch (error) {
         toast.error("Something went wrong!!")

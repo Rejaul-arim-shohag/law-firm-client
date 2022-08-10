@@ -6,7 +6,7 @@ import { GetItems } from './ApiRequest';
 export default function GetItemList(slug, pageNo, perPage, searchKeyword) {
 
     switch (slug) {
-        case 'brandList':
+        case 'brand':
             async function getBrandList() {
                 let { totalItems, allItems } = await GetItems(slug, pageNo, perPage, searchKeyword)
                 store.dispatch(setALLBrand(allItems))
@@ -14,7 +14,7 @@ export default function GetItemList(slug, pageNo, perPage, searchKeyword) {
             }
             getBrandList();
             break;
-        case 'categoryList':
+        case 'category':
             async function getCategoryList() {
                 let { totalItems, allItems } = await GetItems(slug, pageNo, perPage, searchKeyword)
                 store.dispatch(setALLCategory(allItems))
