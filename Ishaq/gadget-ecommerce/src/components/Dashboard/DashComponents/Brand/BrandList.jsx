@@ -100,45 +100,49 @@ export default function BrandList() {
         <>
             <div className="container mx-auto px-4 sm:px-8 max-w-6xl mt-10">
                 {/* {success ? <Confetti /> : <></>} */}
-                <Modal open={openCreate} setOpen={setOpenCreate} item={<CreateBrand slug={slug} perPage={perPage} />} />
+                <Modal open={openCreate} setOpen={setOpenCreate} item={<CreateBrand slug={slug} perPage={perPage} setOpen={setOpenCreate}/>} />
 
                 <div className="py-8">
                     <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
                         <h2 className="text-2xl leading-tight cursor-pointer" onClick={handleAllData}>
-                            Brand List <span className='text-xs'>({"Showing " + perPage + " of " + total})</span>
+                            Brand List <span className='text-xs'>({"Showing " + perPage + " out of " + total})</span>
                         </h2>
                         <div className="w-2/3 ">
 
-                            <div className="flex flex-col md:flex-row  w-full md:w-full  md:space-x-3 space-y-3 md:space-y-0 justify-center">
-                                <div className="">
-                                    <Select
-                                        label="Brands per page"
-                                        animate={{
-                                            mount: { y: 0 },
-                                            unmount: { y: 25 },
-                                        }}
-                                        color="grey"
-                                        className='bg-white border-0 ring-0'
-                                        onChange={(e) => setPerPage(+e)}
-                                    >
-                                        <Option value="3">3 PER PAGE</Option>
-                                        <Option value='4'>4 PER PAGE</Option>
-                                        <Option value='6'>6 PER PAGE</Option>
-                                        <Option value='8'>8 PER PAGE</Option>
+                            <div className="flex flex-col md:flex-row  w-full md:w-full  md:space-x-3 space-y-3 md:space-y-0 justify-end">
 
-                                    </Select>
-                                </div>
 
-                                <div className=" relative ">
-                                    <input type="text" ref={searchRef} onChange={() => onChangeHandler()} className="rounded-lg border-transparent flex-1 appearance-none border border-grey-300 w-full py-2 px-4 bg-white text-grey-700 placeholder-grey-400 shadow-sm text-base focus:outline-none focus:ring-0 focus:border-transparent" placeholder="name" />
-                                </div>
-                                <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-primary rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={() => setSearchKeyword(searchRef.current.value || "0")} >
-                                    Search
-                                </button>
-                                <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-primary rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={() => setOpenCreate(s => !s)} >
-                                    Create New Brand
-                                </button>
-                                {isAnyChecked && <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-primary rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={deleteMultipleBrand} >
+                                {isAllChecked || isAnyChecked ? <></> : <>
+                                    <div className="">
+                                        <Select
+                                            label="Brands per page"
+                                            animate={{
+                                                mount: { y: 0 },
+                                                unmount: { y: 25 },
+                                            }}
+                                            color="grey"
+                                            className='bg-white border-0 ring-0'
+                                            onChange={(e) => setPerPage(+e)}
+                                        >
+                                            <Option value="3">3 PER PAGE</Option>
+                                            <Option value='4'>4 PER PAGE</Option>
+                                            <Option value='6'>6 PER PAGE</Option>
+                                            <Option value='8'>8 PER PAGE</Option>
+
+                                        </Select>
+                                    </div>
+                                    <div className=" relative ">
+                                        <input type="text" ref={searchRef} onChange={() => onChangeHandler()} className="rounded-lg border-transparent flex-1 appearance-none border border-grey-300 w-full py-2 px-4 bg-white text-grey-700 placeholder-grey-400 shadow-sm text-base focus:outline-none focus:ring-0 focus:border-transparent" placeholder="name" onKeyDown={(e)=> e.key === "Enter" && setSearchKeyword(searchRef.current.value || "0")}/>
+                                    </div>
+                                    <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-primary rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={() => setSearchKeyword(searchRef.current.value || "0")} >
+                                        Search
+                                    </button>
+                                    <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-primary rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={() => setOpenCreate(s => !s)} >
+                                        Create New Brand
+                                    </button>
+                                </>}
+
+                                {isAnyChecked && <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-pink-400 rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={deleteMultipleBrand} >
                                     Delete Selected
                                 </button>}
                             </div>
@@ -158,7 +162,7 @@ export default function BrandList() {
                                             </label>
 
                                         </th>
-                                        {/* <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal"> No.</th> */}
+                                        <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal"> Image</th>
 
                                         <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal">
                                             Name
@@ -166,8 +170,8 @@ export default function BrandList() {
                                         <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal">
                                             Description
                                         </th>
-                                        <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal"> </th>
-                                        <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal"> </th>
+                                        <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal"> Action</th>
+                                        <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal"> Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

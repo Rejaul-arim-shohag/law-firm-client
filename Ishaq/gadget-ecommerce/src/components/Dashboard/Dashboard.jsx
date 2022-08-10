@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
-import Footer from '../Footer/Footer'
 import MobileNavbar from '../Navbar/MobileNavbar'
 import Navbar from '../Navbar/Navbar'
 import DashSidebar from './DashSidebar'
@@ -17,7 +16,6 @@ export default function Dashboard() {
                 <Navbar />
                 <MobileNavbar />
                 <Outlet />
-                <Footer />
             </section>
 
         </>

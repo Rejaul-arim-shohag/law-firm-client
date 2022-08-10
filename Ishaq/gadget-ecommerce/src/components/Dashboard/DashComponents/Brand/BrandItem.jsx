@@ -5,6 +5,7 @@ import { DeleteItem } from '../../../../api/ApiRequest'
 import Modal from '../../../../utilities/model/Modal'
 import UpdateBrand from './UpdateBrand'
 import {toast} from 'react-toastify'
+import {AiOutlineDelete,AiOutlineEdit} from 'react-icons/ai'
 export default function BrandItem({ i, item, pageNo, perPage, slug, handleAllData, checkBoxChangeHandler }) {
     const [openEdit, setOpenEdit] = useState(false);
 
@@ -17,12 +18,12 @@ export default function BrandItem({ i, item, pageNo, perPage, slug, handleAllDat
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!',
-            showClass: {
-                popup: 'animate__animated animate__zoomIn'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__zoomOut'
-            }
+            // showClass: {
+            //     popup: 'animate__animated animate__zoomIn'
+            // },
+            // hideClass: {
+            //     popup: 'animate__animated animate__zoomOut'
+            // }
         }).then((result) => {
             if (result.isConfirmed) {
                 DeleteItem(slug, id)
@@ -57,6 +58,12 @@ export default function BrandItem({ i, item, pageNo, perPage, slug, handleAllDat
                             <img alt="profil" src={item.img} className="mx-auto object-cover rounded-full h-10 w-10 " />
                         </Link>
                     </div>
+                   
+                </div>
+            </td>
+            <td className="px-5 py-5 border-b border-grey-200 bg-white text-sm">
+                <div className="flex items-center">
+                  
                     <div className="ml-3">
                         <p className="text-grey-900 whitespace-no-wrap">
                             {item.name}
@@ -72,13 +79,13 @@ export default function BrandItem({ i, item, pageNo, perPage, slug, handleAllDat
 
 
             <td className="px-5 py-5 border-b border-grey-200 bg-white text-sm">
-                <button className="text-indigo-600 hover:text-indigo-900" onClick={() => deleteHandler(item._id)}>
-                    Delete
+                <button className="text-indigo-600 text-2xl hover:text-pink-300" onClick={() => deleteHandler(item._id)}>
+                    <AiOutlineDelete/>
                 </button>
             </td>
             <td className="px-5 py-5 border-b border-grey-200 bg-white text-sm">
-                <button className="text-indigo-600 hover:text-indigo-900" onClick={() => setOpenEdit(s => !s)}>
-                    Edit
+                <button className="text-indigo-600 text-2xl hover:text-pink-300" onClick={() => setOpenEdit(s => !s)}>
+                    <AiOutlineEdit/>
                 </button>
             </td>
 
