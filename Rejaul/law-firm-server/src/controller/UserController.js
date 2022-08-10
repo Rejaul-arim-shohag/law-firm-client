@@ -11,8 +11,6 @@ exports.userRegistration =(req, res)=>{
     })
 }
 
-
-
 exports.login=(req, res)=>{
     const reqBody = req.body;
     UserModel.aggregate([

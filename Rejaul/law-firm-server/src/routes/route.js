@@ -31,6 +31,7 @@ router.post("/profileUpdate",authVerifyMiddleware, UserController.profileUpdate)
 //attoreny
 router.post("/createAttoreny",adminVerifyMiddleware, AttorneyController.createAttoreny);
 router.get("/readAttorneys", AttorneyController.readAttorneys);
+router.get("/readSingleAttorney/:id",adminVerifyMiddleware, AttorneyController.readSingleAttorney);
 router.post("/updateAttorney/:id",adminVerifyMiddleware, AttorneyController.updateAttorney);
 router.get("/deleteAttorney/:id",adminVerifyMiddleware, AttorneyController.deleteAttorney);
 
