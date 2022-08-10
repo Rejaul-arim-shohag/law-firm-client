@@ -3,11 +3,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
-import { DeleteMultipleItem, GetItemList } from '../../../../api/ApiRequest';
-import { allChecked, setChecked } from '../../../../redux/state/brand.slice';
+import { DeleteMultipleItem } from '../../../../api/ApiRequest';
+import { allBrandChecked, setBrandChecked } from '../../../../redux/state/brand.slice';
 import store from '../../../../redux/store/store';
 import Modal from '../../../../utilities/model/Modal';
 import Pagination from '../../../../utilities/pagination/Pagination';
+import GetItemList from '../../../../api/GetItemList'
 import BrandItem from './BrandItem';
 import CreateBrand from "./CreateBrand";
 
@@ -44,11 +45,11 @@ export default function BrandList() {
     const selectRef = useRef();
     function checkBoxChangeHandler(e) {
         if (e.target.name === 'allItems') {
-            store.dispatch(allChecked(selectRef.current.checked))
+            store.dispatch(allBrandChecked(selectRef.current.checked))
 
         } else {
             let { checked, id } = e.target
-            store.dispatch(setChecked({ id, checked }))
+            store.dispatch(setBrandChecked({ id, checked }))
         }
 
 

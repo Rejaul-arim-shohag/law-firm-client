@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FcDownload } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
-import { productSchema } from '../../../utilities/productSchema';
+import { productSchema } from '../../../../utilities/productSchema';
 export default function Product() {
   const { register, handleSubmit, setValue, reset, watch, formState: { errors } } = useForm({ resolver: yupResolver(productSchema) });
   const [imgFile, setImgFile] = useState();
@@ -153,12 +153,8 @@ const navigate = useNavigate();
                 <button
                   type="submit"
                   className="inline-flex font-medium uppercase items-center  justify-center  px-5 py-2 text-white bg-primary rounded-lg sm:w-auto"
-                  
-
                 >
                   Save
-
-
                 </button>
               </div>
             </form>

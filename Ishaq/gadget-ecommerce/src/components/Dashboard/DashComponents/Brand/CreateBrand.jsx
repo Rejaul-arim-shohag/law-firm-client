@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { FcDownload } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
-import { GetItemList } from '../../../../api/ApiRequest';
+import GetItemList from '../../../../api/GetItemList';
 import { privateAxios } from '../../../../api/privateAxios';
 import { setSuccess } from '../../../../redux/state/confetti.slice';
 import store from '../../../../redux/store/store';
