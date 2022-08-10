@@ -12,7 +12,39 @@ exports.CreateCategory = (req, res) => {
         }
     })
 }
-// read  Categorys
+exports.SelectCategoryList = async (req, res) => {
+    try {
+        let { pageNo, perPage, searchKeyword } = req.params
+        let skipRow = (+pageNo - 1) * (+perPage)
+        let data;
+        if (searchKeyword !== "null") {
+            let searchRgx = { "$regex": searchKeyword, "$options": "i" }
+            let searchQuery = { $or: [{ name: searchRgx }] }
+            data = await CategoryModel.aggregate([
+                {
+                    $facet: {
+                        total: [{ $match: searchQuery }, { $count: "count" }],
+                        rows: [{ $match: searchQuery }, { $sort: { _id: -1 } }, { $skip: skipRow }, { $limit: +perPage }]
+                    }
+                }
+            ])
+        } else {
+            data = await CategoryModel.aggregate([
+                {
+                    $facet: {
+                        total: [{ $count: "count" }],
+                        rows: [{ $sort: { _id: -1 } }, { $skip: skipRow }, { $limit: +perPage }]
+                    }
+                }
+            ])
+        }
+        res.send({ success: true, result: data })
+    } catch (error) {
+        res.send({ success: false, result: error })
+    }
+}
+
+// read  Category
 exports.SelectCategories = async (req, res) => {
     let query = {};
     let projection = 'title  img';
@@ -67,5 +99,13 @@ exports.DeleteCategory = (req, res) => {
 
         }
     })
-
+}
+exports.DeleteMultiple = async (req, res) => {
+    try {
+        let data = req.body;
+        let result = await CategoryModel.deleteMany({ name: { $in: data } })
+        res.send({ success: true, result })
+    } catch (error) {
+        res.send({ success: false, result: error })
+    }
 }
