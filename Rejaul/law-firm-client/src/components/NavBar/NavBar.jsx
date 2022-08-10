@@ -52,11 +52,11 @@ const NavBar = () => {
                                                     <h6>{getUserDetails()["fullName"]}</h6>
                                                     <hr className="user-dropdown-divider  p-0" />
                                                 </div>
-                                                <NavLink to="/Profile" className="side-bar-item">
+                                                <NavLink to="/Profile" className="side-bar-item-user">
                                                     <AiOutlineUser className="side-bar-item-icon" />
                                                     <span className="side-bar-item-caption">Profile</span>
                                                 </NavLink>
-                                                <a className="side-bar-item">
+                                                <a className="side-bar-item-user">
                                                     <AiOutlineLogout className="side-bar-item-icon" />
                                                     <span onClick={()=>removeSession()} className="side-bar-item-caption">Logout</span>
                                                 </a>

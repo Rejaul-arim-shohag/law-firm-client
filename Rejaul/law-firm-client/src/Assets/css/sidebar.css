@@ -100,13 +100,27 @@
 
 .side-bar-item{
     display: inline-block;
+    padding: 14px 5px 14px 5px;
+    width: 100% !important;
+}
+.side-bar-item-user{
+    display: inline-block;
     padding: 1px 5px 1px 5px;
     width: 100% !important;
 }
+.side-bar-item-user:hover .side-bar-item-icon {
+    color: #363B64;
+}
+
 .side-bar-item:hover{
-    border-left: 4px solid #CB0C9F;
+    border-left: 4px solid #00d31c;
     transition: 0.2s;
-    background-color: #F3D9EC;
+    background-color: #c6dfcc;
+}
+.side-bar-item-user:hover{
+    border-left: 4px solid #00d31c;
+    transition: 0.2s;
+    background-color: #c6dfcc;
 }
 .side-bar-item:hover .side-bar-item-icon {
     color: #363B64;
@@ -115,8 +129,8 @@
     color: #363B64;
 }
 .side-bar-item-active{
-    border-left: 4px solid #CB0C9F;
-    background-color:#F3D9EC;
+    border-left: 4px solid #2ccb0c;
+    background-color:#c6dfcc;
 }
 .side-bar-item-icon{
     font-size: 18px;

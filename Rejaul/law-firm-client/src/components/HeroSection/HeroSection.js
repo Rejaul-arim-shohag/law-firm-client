@@ -45,20 +45,7 @@ const HeroSection = () => {
                             <button onClick={handleNavigateToAppoinment} className="mainButton">Make an Appointment</button>
 
                         </div>
-                        {/* <div className="heroServices my-3">
-                            <div className="singleService">
-                                <img src={lawImage} alt="" />
-                            </div>
-                            <div className="singleService">
-                                <img src={lawImage} alt="" />
-                            </div>
-                            <div className="singleService">
-                                <img src={lawImage} alt="" />
-                            </div>
-                            <div className="singleService">
-                                <p className="servicePlus">10+</p>
-                            </div>
-                        </div> */}
+                        
                     </div>
                     <div className="heroMainImage pb-5 d-flex col-md-6  justify-content-end">
                         <img src={heroMainImage} alt="" />
