@@ -24,7 +24,7 @@ export default function BrandList() {
         GetItemList(slug, 1, perPage, searchKeyword);
     }, [slug, perPage, searchKeyword])
 
-    let allBrand = useSelector((state) => state.brand.allBrand)
+    let allItems = useSelector((state) => state.brand.allBrand)
     let total = useSelector((state) => state.brand.totalBrand)
     let success = useSelector((state) => state.confetti.success)
 
@@ -54,7 +54,7 @@ export default function BrandList() {
 
 
     }
-    async function deleteMultipleBrand() {
+    async function deleteMultipleHandler() {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -63,15 +63,10 @@ export default function BrandList() {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete all!',
-            showClass: {
-                popup: 'animate__animated animate__zoomIn'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__zoomOut'
-            }
+         
         }).then((result) => {
             if (result.isConfirmed) {
-                let selectedBrands = allBrand?.map(i => i?.isChecked && i.name).filter(Boolean)
+                let selectedBrands = allItems?.map(i => i?.isChecked && i.name).filter(Boolean)
                 DeleteMultipleItem(slug, selectedBrands)
                     .then((data) => {
                         if (data.result.deletedCount > 0) {
@@ -92,21 +87,20 @@ export default function BrandList() {
 
 
 
-    let isAllChecked = allBrand?.filter(i => i?.isChecked !== true).length < 1
-    let isAnyChecked = allBrand?.filter(i => i?.isChecked === true).length > 1
+    let isAllChecked = allItems?.filter(i => i?.isChecked !== true).length < 1
+    let isAnyChecked = allItems?.filter(i => i?.isChecked === true).length > 1
 
 
     return (
 
         <>
             <div className="container mx-auto px-4 sm:px-8 max-w-6xl mt-10">
-                {/* {success ? <Confetti /> : <></>} */}
                 <Modal open={openCreate} setOpen={setOpenCreate} item={<CreateBrand slug={slug} perPage={perPage} setOpen={setOpenCreate} />} />
 
                 <div className="py-8">
                     <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
                         <h2 className="text-2xl leading-tight cursor-pointer" onClick={handleAllData}>
-                            Brand List <span className='text-xs'>({`Showing ${perPage > total ? total : perPage} out of ${total}`})</span>
+                            {slug} list <span className='text-xs'>({`Showing ${perPage > total ? total : perPage} out of ${total}`})</span>
                         </h2>
                         <div className="w-2/3 ">
 
@@ -116,7 +110,7 @@ export default function BrandList() {
                                 {isAllChecked || isAnyChecked ? <></> : <>
                                     <div className="">
                                         <Select
-                                            label="Brands per page"
+                                            label="Items per page"
                                             animate={{
                                                 mount: { y: 0 },
                                                 unmount: { y: 25 },
@@ -139,11 +133,11 @@ export default function BrandList() {
                                         Search
                                     </button>
                                     <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-primary rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={() => setOpenCreate(s => !s)} >
-                                        Create New Brand
+                                        Create new {slug}
                                     </button>
                                 </>}
 
-                                {isAnyChecked && <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-pink-400 rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={deleteMultipleBrand} >
+                                {isAnyChecked && <button className="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-pink-400 rounded-lg shadow-md hover:bg-blue-grey-500 focus:outline-none   focus:ring-0" type="button" onClick={deleteMultipleHandler} >
                                     Delete Selected
                                 </button>}
                             </div>
@@ -178,8 +172,7 @@ export default function BrandList() {
                                 <tbody>
 
                                     {
-                                        // loading ? <Loader isLoading={loading} /> :
-                                        allBrand?.map((item, i) => <BrandItem key={i} i={i} checkBoxChangeHandler={checkBoxChangeHandler} handleAllData={handleAllData} item={item} pageNo={pageNo} perPage={perPage} slug={slug} />)
+                                        allItems?.map((item, i) => <BrandItem key={i} i={i} checkBoxChangeHandler={checkBoxChangeHandler} handleAllData={handleAllData} item={item} pageNo={pageNo} perPage={perPage} slug={slug} />)
                                     }
 
                                 </tbody>

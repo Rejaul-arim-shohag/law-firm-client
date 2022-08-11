@@ -18,12 +18,6 @@ export default function BrandItem({ i, item, pageNo, perPage, slug, handleAllDat
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!',
-            // showClass: {
-            //     popup: 'animate__animated animate__zoomIn'
-            // },
-            // hideClass: {
-            //     popup: 'animate__animated animate__zoomOut'
-            // }
         }).then((result) => {
             if (result.isConfirmed) {
                 DeleteItem(slug, id)
