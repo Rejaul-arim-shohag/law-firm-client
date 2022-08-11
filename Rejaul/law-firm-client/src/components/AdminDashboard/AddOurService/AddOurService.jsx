@@ -46,7 +46,7 @@ const AddOurService = () => {
                                     </div>
                                     <div className="col-4 col-md-6 p-2">
                                         <label>Service Name</label>
-                                        <input key={Date.now()} ref={(input) => nameRef = input} placeholder="Service Name" className="form-control animated fadeInUp" type="email" />
+                                        <input ref={(input) => nameRef = input} placeholder="Service Name" className="form-control animated fadeInUp" type="email" />
                                     </div>
                                 </div>
                                 <div className="row">

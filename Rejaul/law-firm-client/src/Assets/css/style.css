@@ -146,6 +146,12 @@ background-color:#169156;
 .actionBtn>svg{
   color:#fff;
 }
+.iconAvatar{
+  height:30px;
+}
+.iconAdd{
+  width:100% !important;
+}
 @media only screen and (max-width: 1200px) {
   .attorneys>div{
     display:grid;

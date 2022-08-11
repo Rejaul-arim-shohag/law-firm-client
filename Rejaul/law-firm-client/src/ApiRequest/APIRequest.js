@@ -2,6 +2,7 @@ import axios from "axios";
 import store from "../redux/store";
 import {SetAttorney} from "../redux/stateSlice/attorneySlice"
 import {SetSingleAttorney} from "../redux/stateSlice/singleAttorneySlice"
+import {SetSingleService} from "../redux/stateSlice/singleServiceSlice"
 import {SetServices} from "../redux/stateSlice/servicesSlice"
 import { HideLoader, ShowLoader } from "../redux/stateSlice/settingSlice";
 import { ErrorToast, SuccessToast } from "../Helper/FormHelper";
@@ -259,6 +260,45 @@ export function servicesGetRequest(){
      })
 }
 
+export function readServiceById(id){
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/readServiceById"+"/"+id;
+    return axios.get(url,AxiosHeader)
+    .then((res)=>{
+        store.dispatch(HideLoader())
+        if(res.status === 200){
+            console.log(res.data)
+            store.dispatch(SetSingleService(res.data.data))
+        } else{
+            ErrorToast("Something Went Wrong")
+        }
+    })
+    .catch((err)=>{
+        ErrorToast("Something Went Wrong2")
+        store.dispatch(HideLoader())
+    })
+}
+
+export function serviceDeleteRequest(id){
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/deleteServiceArea"+"/"+id;
+    
+    return axios.get(url,AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Delete Success")
+                return true;
+            }
+            else {
+                ErrorToast("Delete failed")
+                return false;
+            }
+        }).catch((err) => {
+            ErrorToast("Something Went Wrong")
+            store.dispatch(HideLoader())
+        })
+}
 
 //paln insert request
 export function PlanAddRequest(planName, fee, benifit, extraBenifit1, extraBenifit2, extraBenifit3, extraBenifit4, extraBenifit5, extraBenifit6) {
