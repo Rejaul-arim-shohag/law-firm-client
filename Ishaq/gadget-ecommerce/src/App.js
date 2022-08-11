@@ -7,12 +7,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import LoadingBar from 'react-top-loading-bar';
 import Analytics from './components/Dashboard/DashComponents/Analytics';
 import BrandList from './components/Dashboard/DashComponents/Brand/BrandList';
-import Category from './components/Dashboard/DashComponents/Category';
 import Customer from './components/Dashboard/DashComponents/Customer';
 import DashHome from './components/Dashboard/DashComponents/DashHome';
 import Expense from './components/Dashboard/DashComponents/Expense';
 import ExpenseType from './components/Dashboard/DashComponents/ExpenseType';
-import Product from './components/Dashboard/DashComponents/Product';
 import Purchase from './components/Dashboard/DashComponents/Purchase';
 import Return from './components/Dashboard/DashComponents/Return';
 import Sell from './components/Dashboard/DashComponents/Sell';
@@ -37,6 +35,8 @@ import { initLoader } from "./redux/state/loader.slice";
 import store from './redux/store/store';
 import '/node_modules/preline/dist/hs-ui.bundle.js';
 import 'animate.css'
+import CategoryList from "./components/Dashboard/DashComponents/Category/CategoryList";
+import Product from "./components/Dashboard/DashComponents/Product/Product";
 function App() {
   const queryClient = new QueryClient()
   let progress = useSelector((state) => state.loader.progress)
@@ -68,7 +68,7 @@ function App() {
                 <Route path='dashHome' index element={<DashHome />} />
                 <Route path='analytics' element={<Analytics />} />
                 <Route path='brand' element={<BrandList />} />
-                <Route path='category' element={<Category />} />
+                <Route path='category' element={<CategoryList />} />
                 <Route path='customer' element={<Customer />} />
                 <Route path='expense' element={<Expense />} />
                 <Route path='expense-type' element={<ExpenseType />} />

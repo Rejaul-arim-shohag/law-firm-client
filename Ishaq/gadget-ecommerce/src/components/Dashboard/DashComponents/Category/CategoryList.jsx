@@ -4,16 +4,16 @@ import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import { DeleteMultipleItem } from '../../../../api/ApiRequest';
-import { allBrandChecked, setBrandChecked } from '../../../../redux/state/brand.slice';
+import GetItemList from '../../../../api/GetItemList';
+import { allCategoryChecked, setCategoryChecked } from '../../../../redux/state/category.slice';
 import store from '../../../../redux/store/store';
 import Modal from '../../../../utilities/model/Modal';
 import Pagination from '../../../../utilities/pagination/Pagination';
-import GetItemList from '../../../../api/GetItemList'
-import BrandItem from './BrandItem';
-import CreateBrand from "./CreateBrand";
+import CategoryItem from './CategoryItem';
+import CreateCategory from './CreateCategory';
 
-export default function BrandList() {
-    const slug = 'brand'
+export default function CategoryList() {
+    const slug = 'category'
     const [pageNo, setPageNo] = useState(1);
     const [perPage, setPerPage] = useState(8);
     const [searchKeyword, setSearchKeyword] = useState(null);
@@ -24,8 +24,8 @@ export default function BrandList() {
         GetItemList(slug, 1, perPage, searchKeyword);
     }, [slug, perPage, searchKeyword])
 
-    let allItems = useSelector((state) => state.brand.allBrand)
-    let total = useSelector((state) => state.brand.totalBrand)
+    let allItems = useSelector((state) => state.category.allCategory)
+    let total = useSelector((state) => state.category.totalCategory)
     let success = useSelector((state) => state.confetti.success)
 
     function handlePageClick(e) {
@@ -45,14 +45,12 @@ export default function BrandList() {
     const selectRef = useRef();
     function checkBoxChangeHandler(e) {
         if (e.target.name === 'allItems') {
-            store.dispatch(allBrandChecked(selectRef.current.checked))
+            store.dispatch(allCategoryChecked(selectRef.current.checked))
 
         } else {
             let { checked, id } = e.target
-            store.dispatch(setBrandChecked({ id, checked }))
+            store.dispatch(setCategoryChecked({ id, checked }))
         }
-
-
     }
     async function deleteMultipleHandler() {
         Swal.fire({
@@ -63,21 +61,18 @@ export default function BrandList() {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete all!',
-         
         }).then((result) => {
             if (result.isConfirmed) {
                 let selectedBrands = allItems?.map(i => i?.isChecked && i.name).filter(Boolean)
                 DeleteMultipleItem(slug, selectedBrands)
                     .then((data) => {
                         if (data.result.deletedCount > 0) {
-                            toast.success(`${data.result.deletedCount} brands has been deleted.`)
+                            toast.success(`${data.result.deletedCount} categories has been deleted.`)
                             handleAllData();
                         }
                     })
             }
         })
-
-
     }
 
     useEffect(() => {
@@ -95,7 +90,7 @@ export default function BrandList() {
 
         <>
             <div className="container mx-auto px-4 sm:px-8 max-w-6xl mt-10">
-                <Modal open={openCreate} setOpen={setOpenCreate} item={<CreateBrand slug={slug} perPage={perPage} setOpen={setOpenCreate} />} />
+                <Modal open={openCreate} setOpen={setOpenCreate} item={<CreateCategory slug={slug} perPage={perPage} setOpen={setOpenCreate} />} />
 
                 <div className="py-8">
                     <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
@@ -162,9 +157,7 @@ export default function BrandList() {
                                         <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal">
                                             Name
                                         </th>
-                                        <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal">
-                                            Description
-                                        </th>
+                                       
                                         <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal"> Action</th>
                                         <th scope="col" className="px-5 py-3 bg-white  border-b border-grey-200 text-grey-800  text-left text-sm uppercase font-normal"> Action</th>
                                     </tr>
@@ -172,7 +165,7 @@ export default function BrandList() {
                                 <tbody>
 
                                     {
-                                        allItems?.map((item, i) => <BrandItem key={i} i={i} checkBoxChangeHandler={checkBoxChangeHandler} handleAllData={handleAllData} item={item} pageNo={pageNo} perPage={perPage} slug={slug} />)
+                                        allItems?.map((item, i) => <CategoryItem key={i} i={i} checkBoxChangeHandler={checkBoxChangeHandler} handleAllData={handleAllData} item={item} pageNo={pageNo} perPage={perPage} slug={slug} />)
                                     }
 
                                 </tbody>

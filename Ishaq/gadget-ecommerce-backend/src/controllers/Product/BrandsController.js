@@ -40,30 +40,13 @@ exports.SelectBrandList = async (req, res) => {
                 }
             ])
         }
-
         res.send({ success: true, result: data })
-
     } catch (error) {
         res.send({ success: false, result: error })
 
     }
-
-
-
 }
-exports.SelectBrands = async (req, res) => {
-    let query = {};
-    let projection = 'name des img';
-    BrandModel.find(query, projection, (e, result) => {
-        if (e) {
-            res.send({ success: false, result: e })
-        } else {
-            res.send({ success: true, result })
 
-        }
-    })
-
-}
 exports.SelectBrand = async (req, res) => {
     let id = req.params.id;
     let query = { _id: id }
@@ -116,7 +99,7 @@ exports.DeleteBrand = async (req, res) => {
 exports.DeleteMultiple = async (req, res) => {
     try {
         let data = req.body;
-        let result = await BrandModel.deleteMany({name:{$in:data}})
+        let result = await BrandModel.deleteMany({ name: { $in: data } })
         res.send({ success: true, result })
     } catch (error) {
         res.send({ success: false, result: error })

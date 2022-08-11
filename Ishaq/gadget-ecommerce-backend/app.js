@@ -57,6 +57,7 @@ app.use("/api/v1", brandRouter);
 app.use("/api/v1", categoryRouter);
 app.use("/api/v1", productRouter);
 
+// userRouter
 app.use("/api/v1", userRouter);
 
 // undefined route

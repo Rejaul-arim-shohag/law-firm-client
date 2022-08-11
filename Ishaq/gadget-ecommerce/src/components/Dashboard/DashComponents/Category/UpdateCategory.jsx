@@ -6,19 +6,19 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import GetItemList from '../../../../api/GetItemList';
 import { privateAxios } from '../../../../api/privateAxios';
-import { setSuccess } from '../../../../redux/state/confetti.slice';
-import store from '../../../../redux/store/store';
-import { brandSchema } from '../../../../Schema/Brand/brandSchema';
-export default function CreateBrand({ slug, perPage, setOpen }) {
-  const { register, handleSubmit, setValue, reset, watch, formState: { errors, isDirty, isValid } } = useForm({ resolver: yupResolver(brandSchema) });
-  const [imgFile, setImgFile] = useState();
+import { categoryUpdateSchema } from '../../../../Schema/Category/categoryUpdateSchema';
+export default function UpdateCategory({ slug, perPage, item, setOpen }) {
+
+  const { register, handleSubmit, setValue, reset, watch, formState: { errors } } = useForm({ resolver: yupResolver(categoryUpdateSchema), defaultValues: { name: item.name }, mode: "onBlur" });
+  const [imgFile, setImgFile] = useState(item.img);
   const watchImage = watch("img");
   const convert2base64 = file => {
     const reader = new FileReader();
     reader.onloadend = () => {
       setImgFile(reader.result.toString())
     }
-    reader.readAsDataURL(file)
+    let bro = reader.readAsDataURL(file)
+    console.log('bro', bro);
   }
   useEffect(() => {
     if (watchImage?.length > 0) {
@@ -28,14 +28,14 @@ export default function CreateBrand({ slug, perPage, setOpen }) {
   const navigate = useNavigate();
   const onSubmitHandler = (value) => {
     value.img = imgFile
-    privateAxios.post(`/${slug}`, value)
+    privateAxios.put(`/${slug}/${item._id}`, value)
       .then(({ data }) => {
         if (data.success) {
-          toast.success("Brand creates successfully!")
+          toast.success("Category update successfully!")
           reset();
           setImgFile();
-          store.dispatch(setSuccess(true))
           GetItemList(slug, 1, perPage, null)
+          setOpen(s => !s)
         } else {
           toast.error(data.result.errors.name.message)
         }
@@ -47,30 +47,19 @@ export default function CreateBrand({ slug, perPage, setOpen }) {
     window.scrollTo(0, 0)
   }, [])
 
-  // console.log('isDirty,isValid ::',isDirty,isValid);
 
 
   return (
 
 
     <div className="p-8 pt-0 bg-white rounded-lg   w-full">
-      <p href="" className="text-xl font-bold text-primary mb-5">Create new {slug}</p>
+      <p href="" className="text-xl font-bold text-primary mb-5">Update {slug}</p>
       <form onSubmit={handleSubmit(onSubmitHandler)} className="space-y-4">
         <div>
           <label className="sr-only" htmlFor="name">Name</label>
           <input className="w-full p-3 text-sm border-gray-200 rounded-lg  focus:ring-0 focus:outline-none focus:border-slate-800" placeholder="Name" type="text" id="name" required {...register("name")} />
         </div>
-        <div>
-          <label className="sr-only" htmlFor="description">Description</label>
-          <textarea
-            className="w-full p-3 text-sm border-gray-200 rounded-lg  focus:ring-0 focus:outline-none focus:border-slate-800"
-            placeholder="Description"
-            rows="3"
-            id="description"
-            required
-            {...register("des")}
-          ></textarea>
-        </div>
+
         <div className='relative'>
           <label className="block text-sm font-medium text-slate-500">Image <span className='text-xs'>(Only SVG file up to 100KB)</span></label>
           <div className="mt-1 flex items-center">
@@ -108,16 +97,9 @@ export default function CreateBrand({ slug, perPage, setOpen }) {
           </button>
           <button
             type="submit"
-            onClick={() => setOpen(s => !s)}
             className="inline-flex font-medium uppercase items-center  justify-center  px-5 py-2 text-white bg-primary rounded-lg sm:w-auto focus:ring-0"
           >
-            Save
-          </button>
-          <button
-            type="submit"
-            className="inline-flex font-medium uppercase items-center  justify-center  px-5 py-2 text-white bg-primary rounded-lg sm:w-auto focus:ring-0"
-          >
-            Save & continue
+            Update
           </button>
         </div>
       </form>
