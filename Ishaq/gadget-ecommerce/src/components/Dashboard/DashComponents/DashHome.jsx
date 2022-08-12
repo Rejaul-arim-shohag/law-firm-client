@@ -1,6 +1,4 @@
 import React from 'react'
-import CardBarChart from '../DashDraft/Cards/CardBarChart'
-import CardLineChart from '../DashDraft/Cards/CardLineChart'
 import CardPageVisits from '../DashDraft/Cards/CardPageVisits'
 import CardSocialTraffic from '../DashDraft/Cards/CardSocialTraffic'
 import HeaderStats from '../DashDraft/HeaderStats'

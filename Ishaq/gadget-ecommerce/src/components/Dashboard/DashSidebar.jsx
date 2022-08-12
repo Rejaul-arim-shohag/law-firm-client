@@ -17,7 +17,7 @@ export default function DashSidebar() {
                 <ul className="nav-list">
 
                     <li>
-                        <NavLink to="/dashboard/dashHome" className={({ isActive }) =>
+                        <NavLink to="/dashboard" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         } >
                             <i className='bx bx-grid-alt'></i>
@@ -25,7 +25,7 @@ export default function DashSidebar() {
                         </NavLink>
                         <span className="tooltip">Dashboard</span>
                     </li>
-                    <li>
+                    {/* <li>
                         <NavLink to="/dashboard/analytics" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName
                         }>
@@ -43,7 +43,7 @@ export default function DashSidebar() {
                         </NavLink>
                         <span className="tooltip">Stock</span>
                     </li>
-                    <hr className='hr' />
+                    <hr className='hr' /> */}
                     <li>
                         <NavLink to="/dashboard/brand" className={({ isActive }) =>
                             isActive ? activeClassName : inActiveClassName

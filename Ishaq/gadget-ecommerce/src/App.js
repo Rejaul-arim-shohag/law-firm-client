@@ -65,8 +65,8 @@ function App() {
               <Route path='/contact' element={<ContactPage />} />
               <Route path='/checkout' element={<ComingSoonPage />} />
               <Route path='/dashboard' element={<DashboardPage />}>
-                <Route path='dashHome' index element={<DashHome />} />
-                <Route path='analytics' element={<Analytics />} />
+                <Route index element={<DashHome />} />
+                {/* <Route path='analytics' element={<Analytics />} /> */}
                 <Route path='brand' element={<BrandList />} />
                 <Route path='category' element={<CategoryList />} />
                 <Route path='customer' element={<Customer />} />
