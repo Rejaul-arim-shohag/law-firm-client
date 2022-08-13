@@ -60,6 +60,10 @@ app.use("/api/v1", productRouter);
 // userRouter
 app.use("/api/v1", userRouter);
 
+app.get('/', (req, res) => {
+    res.send("Hi Dad....I am running")
+  })
+  
 // undefined route
 app.use("*", (req, res) => {
     res.status(404).send({ status: "failed", result: "Not found.." })
