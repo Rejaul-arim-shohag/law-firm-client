@@ -401,7 +401,7 @@ export function CreateMessageRequest(name, email, mobile, subject, message) {
         .then((res) => {
             // store.dispatch(HideLoader())
             if (res.status === 200) {
-                SuccessToast("Message Send Success")
+                // SuccessToast("Message Send Success")
                 return true;
             }
             else {

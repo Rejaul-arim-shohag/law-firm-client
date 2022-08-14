@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import Swal from "sweetalert2";
 import "./Contact.css";
 import { BsArrowRight } from "react-icons/bs";
 import { TiLocationArrow } from "react-icons/ti";
@@ -11,6 +12,7 @@ import { FaFacebookF } from "react-icons/fa";
 import contactImage from "../../Assets/images/contact.jpg"
 import { ErrorToast, IsEmail, IsEmpty, IsMobile } from '../../Helper/FormHelper';
 import { CreateMessageRequest } from '../../ApiRequest/APIRequest';
+import { SuccessAlertHelper } from '../../Helper/SuccessHelper';
 
 const Contact = () => {
     
@@ -33,6 +35,20 @@ const Contact = () => {
             ErrorToast("Message Is Required")
         } else{
             CreateMessageRequest(name,email,mobile,subject,message)
+            .then((result)=>{
+               if(result===true){
+                nameRef.value=""
+                emailRef.value=""
+                mobileRef.value=""
+                subjectRef.value=""
+                messageRef.value=""
+                Swal.fire(
+                    'Thank You!',
+                    'Ass soon as possible, We will reply!',
+                    'success',
+                  )
+               }
+            })
         }
     }
     return (
@@ -44,27 +60,29 @@ const Contact = () => {
                         <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, non?</p>
                         <div className="row  gx-4">
                             <div className="col-md-6">
-                                <input placeholder="Your Name" className="custom-form " type="text" />
+                                <input ref={(input)=>nameRef=input} placeholder="Your Name" className="custom-form " type="text" />
                             </div>
                             <div className="col-md-6">
-                                <input placeholder="Email Address" className="custom-form" type="text" />
+                                <input ref={(input)=>emailRef=input} placeholder="Email Address" className="custom-form" type="text" />
                             </div>
                         </div>
+        
                         <div className="row ">
                             <div className="col-md-6">
-                                <input placeholder="Your Phone" className="custom-form" type="text" />
+                                <input ref={(input)=>mobileRef=input} placeholder="Your Phone" className="custom-form" type="text" />
                             </div>
                             <div className="col-md-6">
-                                <input placeholder="Subject" className="custom-form" type="text" />
+                                <input ref={(input)=>subjectRef=input} placeholder="Subject" className="custom-form" type="text" />
                             </div>
                         </div>
-                        <div className="row ">
-                            <div className="col-md-12">
-                                <input placeholder="Message" className="custom-textArea" type="text" />
+                        <div className="row">
+                            <div className="col-md-12 mt-2">
+                            <textarea ref={(input)=>messageRef=input} class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                
                             </div>
                         </div>
-                        <div className="setCommentBtn">
-                            <button onClick={handleSendMessage} className="mainButton2">POST COMMENT<BsArrowRight /></button>
+                        <div className="setCommentBtn mt-2">
+                            <button onClick={handleSendMessage} className="mainButton2">SEND A MESSAGE<BsArrowRight /></button>
                         </div>
                     </div>
 
