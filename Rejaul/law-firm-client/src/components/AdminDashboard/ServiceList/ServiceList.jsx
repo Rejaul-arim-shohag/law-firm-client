@@ -15,6 +15,11 @@ const ServiceList = () => {
         DeleteAlert().then((result)=>{
             if(result){
                 serviceDeleteRequest(id)
+                .then((result)=>{
+                    if(result===true){
+                        servicesGetRequest()
+                    }
+                })
             }
         })
 

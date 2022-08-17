@@ -5,7 +5,7 @@ import { IoIosPeople } from "react-icons/io";
 import { GoLaw } from "react-icons/go";
 import { FaPlaneArrival } from "react-icons/fa";
 import { RiTornadoLine } from "react-icons/ri";
-
+import { FaGitter } from "react-icons/fa";
 import { AiOutlineCheckCircle, AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfold, AiOutlineUser } from "react-icons/ai";
 import { BsHourglass} from "react-icons/bs";
 import logo from "../../Assets/images/logo2.svg";
@@ -98,6 +98,10 @@ const MasterLayout = (props) => {
                     <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/our-plans" >
                         <RiTornadoLine className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Plans List</span>
+                    </NavLink>
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/client-reviews" >
+                        <FaGitter className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Reviews</span>
                     </NavLink>
                 </div>
             <div ref={(div) => contentRef = div} className="content">

@@ -23,6 +23,8 @@ import NotFound from "./Pages/NotFound";
 import ServiceUpdatePage from "./Pages/AdminDashboardPages/ServiceUpdatePage";
 import OurPlanPage from "./Pages/AdminDashboardPages/OurPlanPage";
 import UserProfile from "./components/UserProfile/UserProfile";
+import DisplayedReviewsPage from "./Pages/AdminDashboardPages/DisplayedReviewsPage";
+import PlanUpdatePage from "./Pages/AdminDashboardPages/PlanUpdatePage";
 function App() {
   return (
     <Fragment>
@@ -79,6 +81,12 @@ function App() {
           </AdminProtect>} />
           <Route path="/our-plans" element={<AdminProtect>
             <OurPlanPage />
+          </AdminProtect>} />
+          <Route path="/client-reviews" element={<AdminProtect>
+            <DisplayedReviewsPage/>
+          </AdminProtect>} />
+          <Route path="/planEdit/:id" element={<AdminProtect>
+            <PlanUpdatePage/>
           </AdminProtect>} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import store from "../redux/store";
 import { SetAttorney } from "../redux/stateSlice/attorneySlice"
+import { setNewReviews, setCompletedReviews, SetCanceledTask } from "../redux/stateSlice/reviewSlice"
 import { SetSingleAttorney } from "../redux/stateSlice/singleAttorneySlice"
 import { SetSingleService } from "../redux/stateSlice/singleServiceSlice"
 import { SetServices } from "../redux/stateSlice/servicesSlice"
@@ -361,7 +362,55 @@ export function PlanAddRequest(planName, fee, benifit, extraBenifit1, extraBenif
         })
 }
 
-
+export function PlanReadById(id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/readPlanById/" + id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res.data.data;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        }).catch((err) => {
+            console.log(err)
+            ErrorToast("Something Went Wrongsss")
+            store.dispatch(HideLoader())
+        })
+}
+export function planUpdate(id, planName, fee, benifit, extraBenifit1, extraBenifit2, extraBenifit3, extraBenifit4, extraBenifit5, extraBenifit6) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/updateOurPlan/" + id;
+    const postBody = {
+        planName: planName,
+        fee: fee,
+        benifit: benifit,
+        extraBenifit1: extraBenifit1,
+        extraBenifit2: extraBenifit2,
+        extraBenifit3: extraBenifit3,
+        extraBenifit4: extraBenifit4,
+        extraBenifit5: extraBenifit5,
+        extraBenifit6: extraBenifit6,
+    }
+    return axios.post(url,postBody, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        }).catch((err) => {
+            console.log(err)
+            ErrorToast("Something Went Wrongsss")
+            store.dispatch(HideLoader())
+        })
+}
 export function planGetRequest() {
     const url = baseUrl + "/readOurPlans";
     return axios.get(url)
@@ -372,13 +421,13 @@ export function planGetRequest() {
         })
 }
 export function PlanDeleteRequest(id) {
-    const url = baseUrl + "/deleteOurPlan"+"/"+id;
-    return axios.get(url,AxiosHeader)
+    const url = baseUrl + "/deleteOurPlan" + "/" + id;
+    return axios.get(url, AxiosHeader)
         .then((res) => {
             if (res.status === 200) {
                 SuccessToast("Delte Success")
                 return true
-            } else{
+            } else {
                 ErrorToast("Something went wrong")
             }
         }).catch((err) => {
@@ -413,3 +462,94 @@ export function CreateMessageRequest(name, email, mobile, subject, message) {
             // store.dispatch(HideLoader())
         })
 }
+
+//create review
+export function createReview(name, email, comment) {
+    const url = baseUrl + "/createUserComment";
+    const postBody = {
+        name: name,
+        email: email,
+        comment: comment
+    }
+    return axios.post(url, postBody)
+        .then((res) => {
+            if (res.status === 200) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        .catch((err) => {
+            ErrorToast("Somrthing went wrong!")
+        })
+}
+
+export function listReviewByStatus(status) {
+    const url = baseUrl + "/listCommentByStatus/" + status;
+    return axios.get(url)
+        .then((res) => {
+            if (res.status === 200) {
+                if (status === "NEW") {
+                    store.dispatch(setNewReviews(res.data["data"]))
+                    return true;
+                } else if (status === "COMPLETE") {
+                    store.dispatch(setCompletedReviews(res.data["data"]))
+                    return true;
+                } else if (status === "CANCEL") {
+                    store.dispatch(SetCanceledTask(res.data["data"]))
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        })
+        .catch((err) => {
+            ErrorToast("Something went wrong")
+        })
+}
+
+export function updateReviewStatus(id, status) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/updateCommentStatus/" + id + "/" + status;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Accept Success")
+                store.dispatch(HideLoader())
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function deleteComment(id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/deleteComment/" + id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Delete Success")
+                store.dispatch(HideLoader())
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+

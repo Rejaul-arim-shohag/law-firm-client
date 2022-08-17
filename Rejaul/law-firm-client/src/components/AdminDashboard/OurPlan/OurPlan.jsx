@@ -3,8 +3,10 @@ import { PlanDeleteRequest, planGetRequest } from '../../../ApiRequest/APIReques
 import { useSelector } from "react-redux";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { DeleteAlert } from '../../../Helper/DeleteHelper';
+import { useNavigate } from 'react-router-dom';
 
 const OurPlan = () => {
+    let navigate = useNavigate()
     useEffect(() => {
         planGetRequest()
     }, [])
@@ -13,10 +15,17 @@ const OurPlan = () => {
         DeleteAlert().then((res) => {
             if (res) {
                 PlanDeleteRequest(id)
-                // planGetRequest()
-                // debugger;
+                .then((result)=>{
+                    if(result===true){
+                        planGetRequest()
+                    }
+                })
+                
             }
         })
+    }
+    const handleNavigate=(id)=>{
+        navigate("/planEdit/"+id)
     }
     return (
         <>
@@ -57,7 +66,7 @@ const OurPlan = () => {
                                                                         <button type="button" class="icon-nav btn btn-success btn-sm actionBtn"><BsThreeDotsVertical /></button>
                                                                         <div className="action-dropdown-content">
                                                                             <a className="side-bar-item-user">
-                                                                                <span className="side-bar-item-caption">Edit</span>
+                                                                                <span onClick={()=>handleNavigate(item._id)}  className="side-bar-item-caption">Edit</span>
                                                                             </a>
 
                                                                             <a className="side-bar-item-user">

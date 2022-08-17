@@ -12,7 +12,6 @@ import { FaFacebookF } from "react-icons/fa";
 import contactImage from "../../Assets/images/contact.jpg"
 import { ErrorToast, IsEmail, IsEmpty, IsMobile } from '../../Helper/FormHelper';
 import { CreateMessageRequest } from '../../ApiRequest/APIRequest';
-import { SuccessAlertHelper } from '../../Helper/SuccessHelper';
 
 const Contact = () => {
     

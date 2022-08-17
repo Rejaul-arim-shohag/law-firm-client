@@ -5,6 +5,7 @@ import servicesReducer from "../redux/stateSlice/servicesSlice";
 import planReducer from "../redux/stateSlice/ourPlanSlice"
 import sinlgeAttorneyReducer from "../redux/stateSlice/singleAttorneySlice"
 import singleServiceReducer from "../redux/stateSlice/singleAttorneySlice"
+import reviewReducer from "../redux/stateSlice/reviewSlice"
 export default configureStore({
     reducer:{
         settings:settingReducer,
@@ -13,5 +14,6 @@ export default configureStore({
         plans:planReducer,
         singleAttorney:sinlgeAttorneyReducer,
         singleService:singleServiceReducer,
+        reviews:reviewReducer,
     }
 })
