@@ -14,7 +14,7 @@ const AttorneyController = require("../controller/AttorneyController");
 const ServiceAreaController =require("../controller/ServiceAreaController")
 const PlanController = require ("../controller/PlanController.js")
 const MessageController = require("../controller/MessageController")
-const UserCommentCOntroller = require("../controller/UserCommentController");
+const UserCommentController = require("../controller/UserCommentController");
 const AdminController = require("../controller/AdminController");
 
 //admin route
@@ -40,6 +40,7 @@ router.post("/createService",adminVerifyMiddleware, ServiceAreaController.create
 router.get("/readServiceAreas",ServiceAreaController.readServiceAreas);
 router.post("/updateServiceArea/:serviceID",adminVerifyMiddleware, ServiceAreaController.updateServiceArea);
 router.get("/deleteServiceArea/:serviceID",adminVerifyMiddleware, ServiceAreaController.deleteServiceArea);
+router.get("/readServiceById/:serviceID",adminVerifyMiddleware, ServiceAreaController.readServiceById);
 
 
 
@@ -48,6 +49,8 @@ router.post("/createOurPlan",adminVerifyMiddleware, PlanController.createOurPlan
 router.get("/readOurPlans", PlanController.readOurPlans);
 router.post("/updateOurPlan/:PlanID",adminVerifyMiddleware, PlanController.updateOurPlan);
 router.get("/deleteOurPlan/:PlanID",adminVerifyMiddleware, PlanController.deleteOurPlan);
+router.get("/readPlanById/:PlanID",adminVerifyMiddleware, PlanController.readPlanById);
+
 
 
 
@@ -57,9 +60,10 @@ router.get("/readMessages",authVerifyMiddleware, MessageController.readMessages)
 router.post("/updateMessage/:id",authVerifyMiddleware, MessageController.updateMessage);
 
 //UserCommet
-router.post("/createUserComment",authVerifyMiddleware, UserCommentCOntroller.createUserComment);
-router.get("/readComment",authVerifyMiddleware, UserCommentCOntroller.readComment);
-router.get("/deleteComment/:id",authVerifyMiddleware, UserCommentCOntroller.deleteComment);
+router.post("/createUserComment",UserCommentController.createUserComment);
+router.get("/listCommentByStatus/:status", UserCommentController.listCommentByStatus);
+router.get("/deleteComment/:id",adminVerifyMiddleware, UserCommentController.deleteComment);
+router.get("/updateCommentStatus/:id/:status",adminVerifyMiddleware, UserCommentController.updateCommentStatus);
 
 
 

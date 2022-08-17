@@ -1,4 +1,5 @@
 const OurPlanModel = require("../model/ourPlanModel");
+const mongoose = require("mongoose");
 
 exports.createOurPlan = (req, res) => {
     OurPlanModel.create(req.body, (err, data) => {
@@ -49,6 +50,19 @@ exports.updateOurPlan=(req, res)=>{
 exports.deleteOurPlan=(req, res)=>{
     const PlanID=req.params.PlanID;
     OurPlanModel.deleteOne({_id:PlanID}, (err, data)=>{
+        if(err){
+            res.status(500).json({"status":"fail", "data":err})
+        } else{
+            res.status(200).json({"status":"success", "data":data})
+        }
+    })
+}
+exports.readPlanById=(req, res)=>{
+    const PlanID=req.params.PlanID;
+    let id = mongoose.Types.ObjectId(PlanID);
+    OurPlanModel.aggregate([
+        {$match:{_id:id}},
+    ], (err, data)=>{
         if(err){
             res.status(500).json({"status":"fail", "data":err})
         } else{
