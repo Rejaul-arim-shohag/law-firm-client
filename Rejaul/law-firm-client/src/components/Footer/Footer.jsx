@@ -22,36 +22,28 @@ const Footer = () => {
                             <FaFacebookF />
                             <FaTwitter />
                             <FaLinkedinIn />
-                            <BsInstagram />
+    
                         </div>
                     </div>
-                    <div>
-                        <h5>Explore our work</h5>
-                        <p>Auto Accident</p>
-                        <p>Constraction Loans</p>
-                        <p>Real State</p>
-                        <p>Finanace Law</p>
-                        <p>Tax Disputes</p>
-                        <p>Divorce</p>
-                        <p>Helth Care</p>
+
+                    <div className="d-flex justify-content-center">
+                        <div>
+                            <h5>Legal Services</h5>
+                            <p>Auto Accident</p>
+                            <p>Constraction Loans</p>
+                            <p>Real State</p>
+                            <p>Finanace Law</p>
+                        </div>
                     </div>
-                    <div>
-                        <h5>Legal Services</h5>
-                        <p>Auto Accident</p>
-                        <p>Constraction Loans</p>
-                        <p>Real State</p>
-                        <p>Finanace Law</p>
-                        <p>Tax Disputes</p>
-                        <p>Divorce</p>
-                        <p>Helth Care</p>
-                    </div>
-                    <div>
-                        <h5>Keep in Touch</h5>
-                        <p><BiTime/>Saturday-Thursday</p>
-                        <p><MdLocationOn/>House 93/3, 4th Floor, Block C,</p>
-                        <p>Niketan, Gulshan 1, Dhaka 1212</p>
-                        <p><AiOutlinePhone/>+07378748783</p>
-                        <p><HiOutlineMail/>rejaulkarim@gmail.com</p>
+                    <div className="d-flex justify-content-end">
+                        <div>
+                            <h5>Keep in Touch</h5>
+                            <p><BiTime />Saturday-Thursday</p>
+                            <p><MdLocationOn />House 93/3, 4th Floor, Block C,</p>
+                            <p>Niketan, Gulshan 1, Dhaka 1212</p>
+                            <p><AiOutlinePhone />+07378748783</p>
+                            <p><HiOutlineMail />rejaulkarim@gmail.com</p>
+                        </div>
                     </div>
                 </div>
             </div>

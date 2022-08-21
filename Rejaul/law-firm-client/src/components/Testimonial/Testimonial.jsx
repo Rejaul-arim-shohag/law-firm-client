@@ -3,30 +3,14 @@ import "./Testimonial.css";
 import clinet1 from "../../Assets/images/clinet1.jpg"
 import clinet2 from "../../Assets/images/client2.jpg"
 import ReviewSlider from '../ReviewSlider/ReviewSlider';
+import ClientTestimonial from '../AboutUs/ClientTestimonial';
 
 const Testimonial = () => {
-    const data = [
-        {
-            img: clinet1
-        },
-        {
-            img: clinet2
-        },
-        {
-            img: clinet1
-        },
-        {
-            img: clinet2
-        },
-        {
-            img: clinet1
-        },
-
-
-    ]
+    
     return (
         <div className="testimonial my-3">
-            <div className="container py-5">
+           <ClientTestimonial/>
+            {/* <div className="container py-5">
                 <div className="row">
                     <div className="col-md-6">
                         <div>
@@ -53,7 +37,7 @@ const Testimonial = () => {
                         <ReviewSlider />
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

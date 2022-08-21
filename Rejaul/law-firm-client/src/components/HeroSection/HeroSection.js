@@ -10,7 +10,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const HeroSection = () => {
     let navigate = useNavigate()
     const handleNavigateToAppoinment=()=>{
-        navigate("/appointment")
+        navigate("/contact-us")
     }
     return (
         <div className="heroSection">

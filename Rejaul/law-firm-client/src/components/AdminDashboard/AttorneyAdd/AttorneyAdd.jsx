@@ -14,7 +14,6 @@ const AttorneyAdd = () => {
             userImgView.src=base64Image
         })
        }
-
     const handleInsertAttorney=()=>{
         let email=emailRef.value;
         let Name=nameRef.value;

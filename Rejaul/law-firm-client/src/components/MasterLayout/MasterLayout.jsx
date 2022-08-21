@@ -1,6 +1,11 @@
 import React, { Fragment, useRef } from "react";
 import { Container, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import { IoIosPeople } from "react-icons/io";
+import { GoLaw } from "react-icons/go";
+import { FaPlaneArrival } from "react-icons/fa";
+import { RiTornadoLine } from "react-icons/ri";
+import { FaGitter } from "react-icons/fa";
 import { AiOutlineCheckCircle, AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfold, AiOutlineUser } from "react-icons/ai";
 import { BsHourglass} from "react-icons/bs";
 import logo from "../../Assets/images/logo2.svg";
@@ -31,7 +36,6 @@ const MasterLayout = (props) => {
 
     return (
         <Fragment>
-
             <Navbar className="fixed-top px-0 shadow-sm dashboard_nav">
                 <Container fluid={true}>
                     <Navbar.Brand >
@@ -63,8 +67,6 @@ const MasterLayout = (props) => {
                     </div>
                 </Container>
             </Navbar>
-
-           
                 <div ref={(div) => { sideNavRef = div }} className="side-nav-open">
 
                     <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/adminDashboard" end>
@@ -76,31 +78,32 @@ const MasterLayout = (props) => {
                         <span className="side-bar-item-caption">Insert Attorney</span>
                     </NavLink>
                     <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AllAttorney" >
-                        <AiOutlineEdit className="side-bar-item-icon" />
-                        <span className="side-bar-item-caption">Attorneys </span>
+                        <IoIosPeople className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Attorney List</span>
                     </NavLink>
                     <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurService" >
                         <AiOutlineEdit className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Service Add</span>
                     </NavLink>
-
+                   
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Services-list" >
+                        < GoLaw className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Services List</span>
+                    </NavLink>
                     <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurPlan" >
-                        <BsHourglass className="side-bar-item-icon" />
+                        <FaPlaneArrival className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Add Our Plan</span>
                     </NavLink>
 
-                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Completed" >
-                        <AiOutlineCheckCircle className="side-bar-item-icon" />
-                        <span className="side-bar-item-caption">Completed</span>
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/our-plans" >
+                        <RiTornadoLine className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Plans List</span>
                     </NavLink>
-
-                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Canceled" >
-                        <MdOutlineCancelPresentation className="side-bar-item-icon" />
-                        <span className="side-bar-item-caption">Canceled</span>
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/client-reviews" >
+                        <FaGitter className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Reviews</span>
                     </NavLink>
-
                 </div>
-            
             <div ref={(div) => contentRef = div} className="content">
                 {props.children}
             </div>

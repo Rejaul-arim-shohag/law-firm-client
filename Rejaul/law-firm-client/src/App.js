@@ -18,6 +18,13 @@ import UserProtected from "./components/Protected/UserProtected";
 import AdminProtect from "./components/Protected/AdminProtect";
 import AttorneyReadPage from "./Pages/AdminDashboardPages/AttorneyReadPage";
 import AttorneyEditPage from "./Pages/AdminDashboardPages/AttorneyEditPage";
+import ServicesListPage from "./Pages/AdminDashboardPages/ServicesListPage";
+import NotFound from "./Pages/NotFound";
+import ServiceUpdatePage from "./Pages/AdminDashboardPages/ServiceUpdatePage";
+import OurPlanPage from "./Pages/AdminDashboardPages/OurPlanPage";
+import UserProfile from "./components/UserProfile/UserProfile";
+import DisplayedReviewsPage from "./Pages/AdminDashboardPages/DisplayedReviewsPage";
+import PlanUpdatePage from "./Pages/AdminDashboardPages/PlanUpdatePage";
 function App() {
   return (
     <Fragment>
@@ -37,7 +44,14 @@ function App() {
           <Route path="/aboutUs" element={<AboutUsPage />} />
           <Route path="/sign-up" element={<RegistrationPage />} />
           <Route path="/login" element={<LoginPage />} />
-
+          <Route
+            path="/profile"
+            element={
+              <UserProtected>
+                <UserProfile />
+              </UserProtected>
+            }
+          />
 
           {/* admin page */}
           <Route path="/admin-login" element={<AdminLoginPage />} />
@@ -53,12 +67,28 @@ function App() {
           <Route path="/AddOurService" element={<AdminProtect>
             <ServicesAddPage />
           </AdminProtect>} />
+          <Route path="/Services-list" element={<AdminProtect>
+            <ServicesListPage />
+          </AdminProtect>} />
+          <Route path="/admin/editService/:id" element={<AdminProtect>
+            <ServiceUpdatePage />
+          </AdminProtect>} />
           <Route path="/AddOurPlan" element={<AdminProtect>
             <OurPlanAddPage />
           </AdminProtect>} />
           <Route path="/AllAttorney" element={<AdminProtect>
             <AttorneyReadPage />
           </AdminProtect>} />
+          <Route path="/our-plans" element={<AdminProtect>
+            <OurPlanPage />
+          </AdminProtect>} />
+          <Route path="/client-reviews" element={<AdminProtect>
+            <DisplayedReviewsPage/>
+          </AdminProtect>} />
+          <Route path="/planEdit/:id" element={<AdminProtect>
+            <PlanUpdatePage/>
+          </AdminProtect>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
       <FullscreenLoader />

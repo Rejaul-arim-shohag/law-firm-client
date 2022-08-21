@@ -1,8 +1,10 @@
 import axios from "axios";
 import store from "../redux/store";
-import {SetAttorney} from "../redux/stateSlice/attorneySlice"
-import {SetSingleAttorney} from "../redux/stateSlice/singleAttorneySlice"
-import {SetServices} from "../redux/stateSlice/servicesSlice"
+import { SetAttorney } from "../redux/stateSlice/attorneySlice"
+import { setNewReviews, setCompletedReviews, SetCanceledTask } from "../redux/stateSlice/reviewSlice"
+import { SetSingleAttorney } from "../redux/stateSlice/singleAttorneySlice"
+import { SetSingleService } from "../redux/stateSlice/singleServiceSlice"
+import { SetServices } from "../redux/stateSlice/servicesSlice"
 import { HideLoader, ShowLoader } from "../redux/stateSlice/settingSlice";
 import { ErrorToast, SuccessToast } from "../Helper/FormHelper";
 import { setAdminToken, getAdminToken, setAdminDetails, setToken, setUserDetails } from "../Helper/SessionHelper";
@@ -38,7 +40,7 @@ export function AdminLoginRequest(adminEmail, adminPass) {
 
 }
 
-export function userRegistrationRequest(email,Name,mobile,password,photo){
+export function userRegistrationRequest(email, Name, mobile, password, photo) {
     store.dispatch(ShowLoader())
     const url = baseUrl + "/createUser";
     const postBody = {
@@ -89,7 +91,7 @@ export function LoginRequest(email, password) {
         .then((res) => {
             store.dispatch(HideLoader())
             if (res.status === 200) {
-                
+
                 setToken(res.data["userToken"])
                 setUserDetails(res.data["data"])
                 SuccessToast("Login Success")
@@ -134,45 +136,45 @@ export function attorneyAddRequest(email, Name, mobile, title, photo, descriptio
         })
 }
 
-export function AttorneyGetRequest(){
+export function AttorneyGetRequest() {
     const url = baseUrl + "/readAttorneys";
     return axios.get(url)
-    .then((res)=>{
-        if (res.status === 200) {
-            store.dispatch(SetAttorney(res.data.data))
-            return res.data
-        }
-        else {
-            return false;
-        }
-    })
-    .catch((err)=>{
-        ErrorToast("Something Went Wrong")
-    })
+        .then((res) => {
+            if (res.status === 200) {
+                store.dispatch(SetAttorney(res.data.data))
+                return res.data
+            }
+            else {
+                return false;
+            }
+        })
+        .catch((err) => {
+            ErrorToast("Something Went Wrong")
+        })
 }
-export function SingleAttorneyGetRequest(id){
-     store.dispatch(ShowLoader())
-    const url = baseUrl + "/readSingleAttorney"+"/"+id;
-    return axios.get(url, AxiosHeader)
-    .then((res)=>{
-        if (res.status === 200) {
-            store.dispatch(HideLoader())
-            store.dispatch(SetSingleAttorney(res.data.data[0]))
-            // return res.data
-        }
-        else {
-            return false;
-        }
-    })
-    .catch((err)=>{
-        store.dispatch(HideLoader())
-        ErrorToast("Something Went Wrong")
-        return false
-    })
-}
-export function attorneyUpdateRequest(email, Name, mobile, title, photo, description,id){
+export function SingleAttorneyGetRequest(id) {
     store.dispatch(ShowLoader())
-    const url = baseUrl + "/updateAttorney"+"/"+id;
+    const url = baseUrl + "/readSingleAttorney" + "/" + id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            if (res.status === 200) {
+                store.dispatch(HideLoader())
+                store.dispatch(SetSingleAttorney(res.data.data[0]))
+                // return res.data
+            }
+            else {
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+            return false
+        })
+}
+export function attorneyUpdateRequest(email, Name, mobile, title, photo, description, id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/updateAttorney" + "/" + id;
     const postBody = {
         email: email,
         Name: Name,
@@ -181,43 +183,43 @@ export function attorneyUpdateRequest(email, Name, mobile, title, photo, descrip
         photo: photo,
         description: description
     }
-    return axios.post(url,postBody, AxiosHeader)
-    .then((res)=>{
-        if (res.status === 200) {
+    return axios.post(url, postBody, AxiosHeader)
+        .then((res) => {
+            if (res.status === 200) {
+                store.dispatch(HideLoader())
+                SuccessToast("Saved Success")
+            }
+            else {
+                return false;
+            }
+        })
+        .catch((err) => {
             store.dispatch(HideLoader())
-            SuccessToast("Saved Success")
-        }
-        else {
-            return false;
-        }
-    })
-    .catch((err)=>{
-        store.dispatch(HideLoader())
-        ErrorToast("Something Went Wrong")
-        return false
-    })
+            ErrorToast("Something Went Wrong")
+            return false
+        })
 }
 
-export function AttorneyDeleteRequest(id){
+export function AttorneyDeleteRequest(id) {
     store.dispatch(ShowLoader())
-    let url=baseUrl+"/deleteAttorney/"+id;
-    return axios.get(url,AxiosHeader)
-    .then((res)=>{
-        store.dispatch(HideLoader())
-        if(res.status===200){
-            SuccessToast("Delete Successful")
-            return true;
-        }
-        else{
+    let url = baseUrl + "/deleteAttorney/" + id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Delete Successful")
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
             ErrorToast("Something Went Wrong")
+            store.dispatch(HideLoader())
             return false;
-        }
-    })
-    .catch((err)=>{
-        ErrorToast("Something Went Wrong")
-        store.dispatch(HideLoader())
-        return false;
-    })
+        })
 }
 
 //service add request
@@ -246,19 +248,86 @@ export function ServiceAddRequest(Name, icon, description) {
         })
 }
 //services get request
-export function servicesGetRequest(){
-     const url = baseUrl + "/readServiceAreas";
-     return axios.get(url)
-     .then((res)=>{
-        if(res.status===200){
-            store.dispatch(SetServices(res.data.data))
-        }
-     })
-     .catch((err)=>{
-        ErrorToast("Something went Wrong")
-     })
+export function servicesGetRequest() {
+    const url = baseUrl + "/readServiceAreas";
+    return axios.get(url)
+        .then((res) => {
+            if (res.status === 200) {
+                store.dispatch(SetServices(res.data.data))
+            }
+        })
+        .catch((err) => {
+            ErrorToast("Something went Wrong")
+        })
 }
 
+export function readServiceById(id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/readServiceById" + "/" + id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                // store.dispatch(SetSingleService(res.data.data))
+                return res.data.data
+            } else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            ErrorToast("Something Went Wrong2")
+            store.dispatch(HideLoader())
+            return false;
+        })
+}
+
+export function serviceDeleteRequest(id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/deleteServiceArea" + "/" + id;
+
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Delete Success")
+                return true;
+            }
+            else {
+                ErrorToast("Delete failed")
+                return false;
+            }
+        }).catch((err) => {
+            ErrorToast("Something Went Wrong")
+            store.dispatch(HideLoader())
+        })
+}
+
+export function ServiceUpdateRequest(icon, Name, description, id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/updateServiceArea" + "/" + id;
+    const postBody = {
+        icon: icon,
+        Name: Name,
+        description: description
+    }
+    return axios.post(url, postBody, AxiosHeader)
+        .then((res) => {
+            if (res.status === 200) {
+                store.dispatch(HideLoader())
+                SuccessToast("Saved Success")
+                return res;
+            }
+            else {
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+            return false
+        })
+}
 
 //paln insert request
 export function PlanAddRequest(planName, fee, benifit, extraBenifit1, extraBenifit2, extraBenifit3, extraBenifit4, extraBenifit5, extraBenifit6) {
@@ -275,7 +344,7 @@ export function PlanAddRequest(planName, fee, benifit, extraBenifit1, extraBenif
         extraBenifit5: extraBenifit5,
         extraBenifit6: extraBenifit6,
     }
-   
+
     return axios.post(url, postBody, AxiosHeader)
         .then((res) => {
             store.dispatch(HideLoader())
@@ -293,17 +362,81 @@ export function PlanAddRequest(planName, fee, benifit, extraBenifit1, extraBenif
         })
 }
 
-export function planGetRequest(){
+export function PlanReadById(id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/readPlanById/" + id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res.data.data;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        }).catch((err) => {
+            console.log(err)
+            ErrorToast("Something Went Wrongsss")
+            store.dispatch(HideLoader())
+        })
+}
+export function planUpdate(id, planName, fee, benifit, extraBenifit1, extraBenifit2, extraBenifit3, extraBenifit4, extraBenifit5, extraBenifit6) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/updateOurPlan/" + id;
+    const postBody = {
+        planName: planName,
+        fee: fee,
+        benifit: benifit,
+        extraBenifit1: extraBenifit1,
+        extraBenifit2: extraBenifit2,
+        extraBenifit3: extraBenifit3,
+        extraBenifit4: extraBenifit4,
+        extraBenifit5: extraBenifit5,
+        extraBenifit6: extraBenifit6,
+    }
+    return axios.post(url,postBody, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        }).catch((err) => {
+            console.log(err)
+            ErrorToast("Something Went Wrongsss")
+            store.dispatch(HideLoader())
+        })
+}
+export function planGetRequest() {
     const url = baseUrl + "/readOurPlans";
     return axios.get(url)
-        .then((res)=>{
-            if(res.status===200){
+        .then((res) => {
+            if (res.status === 200) {
                 store.dispatch(SetPlans(res.data.data))
             }
         })
 }
+export function PlanDeleteRequest(id) {
+    const url = baseUrl + "/deleteOurPlan" + "/" + id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            if (res.status === 200) {
+                SuccessToast("Delte Success")
+                return true
+            } else {
+                ErrorToast("Something went wrong")
+            }
+        }).catch((err) => {
+            console.log(err)
+            ErrorToast("Something went wrongs")
+        })
+}
 
-export function CreateMessageRequest(name,email,mobile,subject,message) {
+export function CreateMessageRequest(name, email, mobile, subject, message) {
     // store.dispatch(ShowLoader())
     const url = baseUrl + "/CreateMessage";
     const postBody = {
@@ -317,7 +450,7 @@ export function CreateMessageRequest(name,email,mobile,subject,message) {
         .then((res) => {
             // store.dispatch(HideLoader())
             if (res.status === 200) {
-                SuccessToast("Message Send Success")
+                // SuccessToast("Message Send Success")
                 return true;
             }
             else {
@@ -329,3 +462,94 @@ export function CreateMessageRequest(name,email,mobile,subject,message) {
             // store.dispatch(HideLoader())
         })
 }
+
+//create review
+export function createReview(name, email, comment) {
+    const url = baseUrl + "/createUserComment";
+    const postBody = {
+        name: name,
+        email: email,
+        comment: comment
+    }
+    return axios.post(url, postBody)
+        .then((res) => {
+            if (res.status === 200) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        .catch((err) => {
+            ErrorToast("Somrthing went wrong!")
+        })
+}
+
+export function listReviewByStatus(status) {
+    const url = baseUrl + "/listCommentByStatus/" + status;
+    return axios.get(url)
+        .then((res) => {
+            if (res.status === 200) {
+                if (status === "NEW") {
+                    store.dispatch(setNewReviews(res.data["data"]))
+                    return true;
+                } else if (status === "COMPLETE") {
+                    store.dispatch(setCompletedReviews(res.data["data"]))
+                    return true;
+                } else if (status === "CANCEL") {
+                    store.dispatch(SetCanceledTask(res.data["data"]))
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        })
+        .catch((err) => {
+            ErrorToast("Something went wrong")
+        })
+}
+
+export function updateReviewStatus(id, status) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/updateCommentStatus/" + id + "/" + status;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Accept Success")
+                store.dispatch(HideLoader())
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function deleteComment(id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/deleteComment/" + id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Delete Success")
+                store.dispatch(HideLoader())
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+

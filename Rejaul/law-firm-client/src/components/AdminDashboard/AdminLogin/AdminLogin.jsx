@@ -17,8 +17,8 @@ const AdminLogin = () => {
         } else{
             AdminLoginRequest(adminEmail, adminPass).then((res)=>{
                 if(res===true){
-                    navigate("/adminDashboard")
-                    // window.location.href="/adminDashboard"
+                    // navigate("/adminDashboard")
+                    window.location.href="/adminDashboard"
                 }
             })
         }

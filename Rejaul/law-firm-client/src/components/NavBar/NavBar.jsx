@@ -20,7 +20,7 @@ const NavBar = () => {
     return (
         <div className={navbar ? "MainNavbar activeNav" : "MainNavbar"}>
             <Navbar className="mainNav mx-w-100  bg-transparent" expand="lg">
-                <Container fluid>
+                <Container>
                     <Navbar.Brand href="#home">
                         <img className="navLogo" src={logo} alt="" />
                     </Navbar.Brand>
@@ -41,14 +41,13 @@ const NavBar = () => {
                             <Nav.Link>
                                 <Link to="/aboutUs">About</Link>
                             </Nav.Link>
-                            <Nav.Link>
+                            {/* <Nav.Link>
                                 {getToken() ?
                                     <div className="float-right h-auto d-flex">
                                         <div className="user-dropdown">
                                             <img className="icon-nav-img icon-nav" src={getUserDetails()["photo"]} alt="" />
                                             <div className="user-dropdown-content ">
                                                 <div className="mt-4 text-center">
-                                                    {/* <img className="icon-nav-img" src={getUserDetails()["photo"]} alt="" /> */}
                                                     <h6>{getUserDetails()["fullName"]}</h6>
                                                     <hr className="user-dropdown-divider  p-0" />
                                                 </div>
@@ -63,9 +62,8 @@ const NavBar = () => {
                                             </div>
                                         </div>
                                     </div> : <Link to="/login">Login</Link>}
-                            </Nav.Link>
+                            </Nav.Link> */}
 
-                            {/* <button onClick={handleNavigateToAppoinment} className="navigationBtn mainButton">Make an Appointment</button> */}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 const commentSchema = mongoose.Schema({
     email: { type: String },
+    name:{type: String},
     comment: { type: String },
-    createDate: { type: Date, default: Date.now() },
+    status:{type: String, default: 'NEW'},
+    createDate: { type: Date, default: Date.now()},
 }, { versionKey: false });
 
 const commentModel = mongoose.model("comments", commentSchema);

@@ -13,7 +13,6 @@ const PricingPlans = () => {
     }, [])
     const ourPlanList = useSelector((state) => state.plans.plansList);
     const ServiceListSlice = ourPlanList.slice(0, 3);
-    console.log(ServiceListSlice)
     return (
         <div className="priceing_plans">
             <div className="container">
@@ -36,32 +35,10 @@ const PricingPlans = () => {
                                     <h6><AiOutlineCheck />{service.extraBenifit5}</h6>
                                     <button className="mainButton2 mt-1">Sign up</button>
                                 </div>
-                            
                         )
                     })
                 }
                 </div>
-                {/* <div className="single_plan shadow">
-                        <h4 className="active_plan">Flat Fee</h4>
-                        <p>$<span className="planing_price h4">3,500</span> <span>Great for big cases</span></p>
-                        <h6><AiOutlineCheck />Lawyer Advice</h6>
-                        <h6><AiOutlineCheck />24/7 Access to lawyer phone</h6>
-                        <h6><AiOutlineCheck />Upfront cost and expectancy</h6>
-                        <h6><AiOutlineCheck />Payment plans available</h6>
-                        <h6><AiOutlineCheck />No overcharges</h6>
-                        <button className="mainButton2 mt-1">Sign up</button>
-                    </div> */}
-                {/* <div className="single_plan shadow">
-                        <h4>Hourly Fee</h4>
-                        <p>$<span className=" h4">500</span> <span>Many Questions</span></p>
-                        <h6><AiOutlineCheck />Lawyer Advice</h6>
-                        <h6><AiOutlineCheck />24/7 Access to lawyer phone</h6>
-                        <h6><AiOutlineCheck />Upfront cost and expectancy</h6>
-                        <h6><AiOutlineCheck />Payment plans available</h6>
-                        <h6><AiOutlineCheck />No overcharges</h6>
-                        <button className="mainButton2 mt-1">Sign up</button>
-                    </div> */}
-
             </div>
         </div>
     );
