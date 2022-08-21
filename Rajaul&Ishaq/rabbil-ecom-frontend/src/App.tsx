@@ -1,5 +1,9 @@
-import { colors, createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
+import BrandList from "./components/Dashboard/brand/BrandList";
+import CategoryList from "./components/Dashboard/category/CategoryList";
+import DashIndex from "./components/Dashboard/dashIndex/DashIndex";
+import ProductList from "./components/Dashboard/product/ProductList";
 import Dashboard from "./pages/Dashboard.page";
 import Home from "./pages/Home.page";
 const theme = createTheme({
@@ -9,7 +13,7 @@ const theme = createTheme({
       light: "#B0EACD",
       dark: "#2E374F",
       contrastText: "#F4F4F6",
-    }
+    },
   },
   typography: {
     fontFamily: [
@@ -30,9 +34,15 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} >
+          <Route index element={<DashIndex/>}/>
+          <Route path="brand" element={<BrandList/>}/>
+          <Route path="category" element={<CategoryList/>}/>
+          <Route path="product" element={<ProductList/>}/>
+        </Route>
       </Routes>
     </ThemeProvider>
   );

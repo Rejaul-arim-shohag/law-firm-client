@@ -1,44 +1,35 @@
-import { ChevronLeft, Notifications } from "@mui/icons-material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { ChevronLeft, Menu, Notifications } from "@mui/icons-material";
 import {
   Badge,
   Box,
-  createTheme,
-  CssBaseline,
+  Container,
   Divider,
   IconButton,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
   styled,
-  ThemeProvider,
   Toolbar,
   Typography,
-  useTheme,
-  List,
-  Container,
-  Grid,
-  Paper,
 } from "@mui/material";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import MuiDrawer from "@mui/material/Drawer";
-import * as React from "react";
-import { Link } from "react-router-dom";
-import Chart from "./Chart";
-import Deposits from "./Deposits";
-import { mainListItems, secondaryListItems } from "./ListItems";
-import Orders from "./Orders";
+import { MouseEvent, useState } from "react";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+
+import { dashMenu } from "./sidebar/dashItem";
 function Copyright(props: any) {
   return (
     <Typography
-      variant="body2"
+      variant="subtitle2"
       color="text.secondary"
       align="center"
+      letterSpacing={2}
       {...props}
     >
-      {"Copyright © "}
-      <Link color="inherit" to="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
+      Copyright © {new Date().getFullYear()} Developed By Rejaul Karim & Md Ishaq{" "}
+  
     </Typography>
   );
 }
@@ -94,18 +85,22 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-const mdTheme = createTheme();
-
 export default function DashboardContent() {
-  const [open, setOpen] = React.useState(true);
-  const theme = useTheme();
+  const [open, setOpen] = useState<boolean>(true);
+  const [selectedItem, setSelectedItem] = useState<number>(0);
+  const navigate = useNavigate();
+  let location = useLocation();
+  let currentLocation = location?.pathname.split('/').at(-1)
   const toggleDrawer = () => {
     setOpen(!open);
+  };
+  const handleMenuClick = (e: MouseEvent<HTMLElement>, i: number,slug:string) => {
+    setSelectedItem(i);
+    navigate(slug)
   };
 
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
       <AppBar position="absolute" open={open}>
         <Toolbar
           sx={{
@@ -122,19 +117,19 @@ export default function DashboardContent() {
               ...(open && { display: "none" }),
             }}
           >
-            <MenuIcon />
+            <Menu />
           </IconButton>
           <Typography
             component="h1"
             variant="h6"
             color="inherit"
             noWrap
-            sx={{ flexGrow: 1 }}
+            sx={{ flexGrow: 1,textTransform:"capitalize" }}
           >
-            Dashboard
+            {currentLocation}
           </Typography>
           <IconButton color="inherit">
-            <Badge badgeContent={4} sx={{color:"common.white"}}>
+            <Badge badgeContent={4} sx={{ color: "custom.contrastText" }}>
               <Notifications />
             </Badge>
           </IconButton>
@@ -149,15 +144,43 @@ export default function DashboardContent() {
             px: [1],
           }}
         >
+          <Typography variant="subtitle2" fontSize={18}>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              gadget ecommerce
+            </Link>
+          </Typography>
           <IconButton onClick={toggleDrawer}>
             <ChevronLeft />
           </IconButton>
         </Toolbar>
         <Divider />
-        <List component="nav">
-          {mainListItems}
-          <Divider sx={{ my: 1 }} />
-          {secondaryListItems}
+        <List
+          component="nav"
+          aria-label="dashboard sidebar menuitems"
+          sx={{
+            "&& .Mui-selected,&& .Mui-selected:hover": {
+              bgcolor: "custom.main",
+              color: "custom.contrastText",
+            },
+          }}
+        >
+          {dashMenu?.map((item, i) => (
+            <ListItemButton
+              key={i}
+              selected={selectedItem === item.id}
+              onClick={(event) => handleMenuClick(event, item.id,item.title)}
+              disableRipple
+            >
+              <ListItemIcon sx={{ color: "inherit" }}>{item.icon}</ListItemIcon>
+              <ListItemText
+                primary={item.title || "Dashboard"}
+                primaryTypographyProps={{
+                  fontSize: "1.3ch",
+                  fontWeight: "700",
+                }}
+              />
+            </ListItemButton>
+          ))}
         </List>
       </Drawer>
       <Box
@@ -174,40 +197,7 @@ export default function DashboardContent() {
       >
         <Toolbar />
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-          <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper
-                sx={{
-                  p: 2,
-                  display: "flex",
-                  flexDirection: "column",
-                  height: 240,
-                }}
-              >
-                <Chart />
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper
-                sx={{
-                  p: 2,
-                  display: "flex",
-                  flexDirection: "column",
-                  height: 240,
-                }}
-              >
-                <Deposits />
-              </Paper>
-            </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                <Orders />
-              </Paper>
-            </Grid>
-          </Grid>
+          <Outlet />
           <Copyright sx={{ pt: 4 }} />
         </Container>
       </Box>
