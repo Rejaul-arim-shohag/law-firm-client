@@ -28,41 +28,25 @@ const NavBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link>
-                                <Link to="/">Home</Link>
+                                <Link to="/">HOME</Link>
                             </Nav.Link>
                             <Nav.Link>
-                                <Link to="/team">Team</Link>
+                                <Link to="/team">TEAM</Link>
                             </Nav.Link>
                             <Nav.Link>
-                                <Link to="/contact-us">Contact</Link>
+                                <Link to="/contact-us">CONTACT</Link>
                             </Nav.Link>
-
-                            {/* <Nav.Link href="#link">Pricing</Nav.Link> */}
-                            <Nav.Link>
-                                <Link to="/aboutUs">About</Link>
+                            <Nav.Link to="/aboutUs">
+                                <Link to="/aboutUs"> ABOUT</Link>
                             </Nav.Link>
-                            {/* <Nav.Link>
-                                {getToken() ?
-                                    <div className="float-right h-auto d-flex">
-                                        <div className="user-dropdown">
-                                            <img className="icon-nav-img icon-nav" src={getUserDetails()["photo"]} alt="" />
-                                            <div className="user-dropdown-content ">
-                                                <div className="mt-4 text-center">
-                                                    <h6>{getUserDetails()["fullName"]}</h6>
-                                                    <hr className="user-dropdown-divider  p-0" />
-                                                </div>
-                                                <NavLink to="/Profile" className="side-bar-item-user">
-                                                    <AiOutlineUser className="side-bar-item-icon" />
-                                                    <span className="side-bar-item-caption">Profile</span>
-                                                </NavLink>
-                                                <a className="side-bar-item-user">
-                                                    <AiOutlineLogout className="side-bar-item-icon" />
-                                                    <span onClick={()=>removeSession()} className="side-bar-item-caption">Logout</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div> : <Link to="/login">Login</Link>}
-                            </Nav.Link> */}
+                            <Nav.Link to="/aboutUs">
+                                <Link to="/aboutUs">BLO</Link>
+                            </Nav.Link>
+                            <Nav.Link to="/aboutUs">
+                                <div className="d-flex">
+                                    <button className="navbarButton">+8801650288673</button>
+                                </div>
+                            </Nav.Link>
 
                         </Nav>
                     </Navbar.Collapse>

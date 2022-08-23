@@ -9,7 +9,7 @@ import { HideLoader, ShowLoader } from "../redux/stateSlice/settingSlice";
 import { ErrorToast, SuccessToast } from "../Helper/FormHelper";
 import { setAdminToken, getAdminToken, setAdminDetails, setToken, setUserDetails } from "../Helper/SessionHelper";
 import { SetPlans } from "../redux/stateSlice/ourPlanSlice";
-const baseUrl = "http://localhost:5000/api/v1";
+const baseUrl = "https://karim-law-firm.herokuapp.com/api/v1";
 const AxiosHeader = { headers: { "adminToken": getAdminToken() } }
 
 //admin login

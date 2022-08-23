@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
-import { useState } from 'react';
 import Slider from "react-slick";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 import { GoQuote } from "react-icons/go";
@@ -53,8 +52,8 @@ const ClientTestimonial = () => {
                 <div className="d-flex justify-content-between flex-wrap gap-5">
                     <div className="col-md-2 col-12 text-center d-flex justify-content-center align-items-center">
                         <div className="">
-                            <h3 className='text-dark'>Testimonial</h3>
-                            <h6 className='text-uppercase'>What out customer says</h6>
+                            <h3 className='text-light'>Testimonial</h3>
+                            <h6 className='text-uppercase text-light'>What out customer says</h6>
                             <div className=" mt-3 d-flex gap-3 justify-content-center">
                                 <button onClick={() => slider.current.slickPrev()} className='testimonialNav rounded-circle bg-light border-0'> <HiOutlineChevronLeft className='m-2' /></button>
                                 <button onClick={() => slider.current.slickNext()} className='testimonialNav rounded-circle bg-light  border-0'> <HiOutlineChevronRight className='m-2' /></button>

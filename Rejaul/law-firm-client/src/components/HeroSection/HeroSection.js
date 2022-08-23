@@ -1,7 +1,9 @@
 import React from 'react';
 import "./heroSection.css";
+import Marquee from "react-fast-marquee";
 import heroMainImage from "../../Assets/images/heroLawyear.svg";
 import lawImage from "../../Assets/images/law-book.webp";
+import image1 from "../../Assets/images/citybank-removebg-preview.png"
 import NavBar from '../NavBar/NavBar';
 import { VscLaw } from "react-icons/vsc";
 import { GiClawHammer } from "react-icons/gi";
@@ -9,7 +11,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
     let navigate = useNavigate()
-    const handleNavigateToAppoinment=()=>{
+    const handleNavigateToAppoinment = () => {
         navigate("/contact-us")
     }
     return (
@@ -37,15 +39,33 @@ const HeroSection = () => {
                                     <p className="text-center">INJURY CASES</p>
                                 </div>
                             </div>
-
                         </div>
                         <div className="serchBox">
                             {/* <input className="serviceSearchField w-100" placeholder="Search" type="text" />
                             <button className="serviceSearchButton">Search</button> */}
-                            <button onClick={handleNavigateToAppoinment} className="mainButton">Make an Appointment</button>
-
+                            <button onClick={handleNavigateToAppoinment} className="navbarButton">Make an Appointment</button>
                         </div>
-                        
+                        <Marquee className="mt-5" gradient={false}>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                        </Marquee>
+
                     </div>
                     <div className="heroMainImage pb-5 d-flex col-md-6  justify-content-end">
                         <img src={heroMainImage} alt="" />

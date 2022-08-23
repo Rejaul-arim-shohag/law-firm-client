@@ -6,6 +6,7 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { useEffect } from 'react';
 import { planGetRequest } from '../../ApiRequest/APIRequest';
+import curveImg from "../../Assets/images/curve-2.b04970a8.svg"
 
 const PricingPlans = () => {
     useEffect(() => {
@@ -16,8 +17,9 @@ const PricingPlans = () => {
     return (
         <div className="priceing_plans">
             <div className="container">
-                <div className="priceing_content">
-                    <h2 className="text-center">Choose Your Plan</h2>
+                <div className="priceing_content mx-auto text-center">
+                    <h2 className="text-center text-uppercase font-weight-bold">OUR PLAN</h2>
+                    <img src={curveImg} style={{ top: "-13px", width:"25%" }} className="position-relative " alt="" />
                     <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nihil <br /> modi ipsum facilis deserunt eveniet explicabo, tenetur impedit iste ea.</p>
                 </div>
                 <div className="plansGridContainer pt-5">
@@ -33,7 +35,7 @@ const PricingPlans = () => {
                                     <h6><AiOutlineCheck />{service.extraBenifit3}</h6>
                                     <h6><AiOutlineCheck />{service.extraBenifit4}</h6>
                                     <h6><AiOutlineCheck />{service.extraBenifit5}</h6>
-                                    <button className="mainButton2 mt-1">Sign up</button>
+                                    <button className="navbarButton mt-1">Book Now</button>
                                 </div>
                         )
                     })
