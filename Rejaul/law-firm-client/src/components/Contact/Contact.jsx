@@ -1,15 +1,7 @@
 import React, { useRef } from 'react';
 import Swal from "sweetalert2";
 import "./Contact.css";
-import { BsArrowRight } from "react-icons/bs";
-import { TiLocationArrow } from "react-icons/ti";
-import { MdEmail } from "react-icons/md";
-import { FaPhoneAlt } from "react-icons/fa";
-import { BsInstagram } from "react-icons/bs";
-import { AiFillLinkedin } from "react-icons/ai";
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import contactImage from "../../Assets/images/contact.jpg"
+import curveImg from "../../Assets/images/curve-2.b04970a8.svg"
 import { ErrorToast, IsEmail, IsEmpty, IsMobile } from '../../Helper/FormHelper';
 import { CreateMessageRequest } from '../../ApiRequest/APIRequest';
 
@@ -51,41 +43,45 @@ const Contact = () => {
         }
     }
     return (
-        <div className="py-5">
+        <div style={{backgroundColor:"#E9F5EC"}} className="py-5">
             <div className="container">
+            <div className="mx-auto text-center mb-5">
+                    <h2 className="text-center text-uppercase font-weight-bold">Contact Us Now</h2>
+                    <img src={curveImg} style={{ top: "-13px", width: "25%" }} className="position-relative " alt="" />
+                    <h5 className="text-secondary col-12 mx-auto col-md-6">Sed perspicias unde omnis iste natus error voluptatem accusantium dolorem laudanme totam rem aperiam eaque quae.</h5>
+                </div>
                 <div className="row gx-5">
-                    <div className="col-md-7">
-                        <h4>Send A Message</h4>
-                        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, non?</p>
+                    <div className="col-12 col-md-8 mx-auto">
+                        <h4>Leave a Message</h4>
                         <div className="row  gx-4">
-                            <div className="col-md-6">
-                                <input ref={(input)=>nameRef=input} placeholder="Your Name" className="custom-form " type="text" />
+                            <div className="col-12 col-md-6 mt-2">
+                                <input ref={(input)=>nameRef=input} placeholder="Your Name" className="py-2 form-control inputTextArea" type="text" />
                             </div>
-                            <div className="col-md-6">
-                                <input ref={(input)=>emailRef=input} placeholder="Email Address" className="custom-form" type="text" />
+                            <div className="col-12 col-md-6 mt-2">
+                                <input ref={(input)=>emailRef=input} placeholder="Email Address" className="py-2 form-control inputTextArea" type="text" />
                             </div>
                         </div>
         
                         <div className="row ">
-                            <div className="col-md-6">
-                                <input ref={(input)=>mobileRef=input} placeholder="Your Phone" className="custom-form" type="text" />
+                            <div className="col-12 col-md-6 mt-4">
+                                <input ref={(input)=>mobileRef=input} placeholder="Your Phone" className="py-2 form-control inputTextArea" type="text" />
                             </div>
-                            <div className="col-md-6">
-                                <input ref={(input)=>subjectRef=input} placeholder="Subject" className="custom-form" type="text" />
+                            <div className="col-12 col-md-6 mt-4">
+                                <input ref={(input)=>subjectRef=input} placeholder="Subject" className="py-2 form-control inputTextArea" type="text" />
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-12 mt-2">
-                            <textarea ref={(input)=>messageRef=input} class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                            <div className=" col-12 col-md-12 mt-4">
+                            <textarea ref={(input)=>messageRef=input} className="form-control inputTextArea" id="exampleFormControlTextarea1" rows="6"></textarea>
                 
                             </div>
                         </div>
-                        <div className="setCommentBtn mt-2">
-                            <button onClick={handleSendMessage} className="mainButton2">SEND A MESSAGE<BsArrowRight /></button>
+                        <div className="setCommentBtn d-flex justify-content-end mt-4">
+                            <button onClick={handleSendMessage} className="btn btn-success px-5 py-3">SEND A MESSAGE</button>
                         </div>
                     </div>
 
-                    <div className="col-md-5 contact-right-side">
+                    {/* <div className="col-md-5 contact-right-side">
                         <div className="contact_details py-3">
                             <h3 className="contact_heading pt-4 px-4">Contact Info</h3>
                             <div className="d-flex my-4 px-3">
@@ -129,7 +125,8 @@ const Contact = () => {
                                 <img src={contactImage} alt="" />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+
                 </div>
             </div>
         </div>

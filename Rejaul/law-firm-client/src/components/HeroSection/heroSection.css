@@ -8,7 +8,7 @@
     background-color: #B0EACD;
     background-size: contain;
     width:30%;
-    height: 700px;
+    height: 662px;
     position:absolute;
     top: -100px;
     right:0;
@@ -25,13 +25,10 @@
 }
 
 .heroMainImage>img{
-    width:90%;
+    width:84%;
     z-index: 78457;
 }
-.serchBox{
-    position: relative;
-    width: 76%;
-}
+
 .serviceSearchField{
     width:100% !important;
     position: inherit;

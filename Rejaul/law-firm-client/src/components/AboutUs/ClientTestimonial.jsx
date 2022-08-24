@@ -19,7 +19,6 @@ const ClientTestimonial = () => {
         // })
     },[])
     const testimonial = useSelector((state) => state.reviews.Completed);
-    console.log(testimonial)
     const settings = {
         dots: false,
         infinite: true,
@@ -65,7 +64,7 @@ const ClientTestimonial = () => {
                             {
                                 testimonial?.map((item, index) => {
                                     return (
-                                        <div key={item._id} className="p-1 w-100 ">
+                                        <div key={item._id} className="p-1 w-100">
                                             <div  className="card  testimonialCard border-start border-top h-100" >
                                                 <div className="card-body h-100 d-flex flex-column justify-content-between">
                                                     <div className="header">

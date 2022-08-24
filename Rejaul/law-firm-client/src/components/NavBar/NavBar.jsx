@@ -40,11 +40,11 @@ const NavBar = () => {
                                 <Link to="/aboutUs"> ABOUT</Link>
                             </Nav.Link>
                             <Nav.Link to="/aboutUs">
-                                <Link to="/aboutUs">BLO</Link>
+                                <Link to="/aboutUs">BLOG</Link>
                             </Nav.Link>
                             <Nav.Link to="/aboutUs">
                                 <div className="d-flex">
-                                    <button className="navbarButton">+8801650288673</button>
+                                    <button className="navbarButton cursor-alias">+8801650288673</button>
                                 </div>
                             </Nav.Link>
 

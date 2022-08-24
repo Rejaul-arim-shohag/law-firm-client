@@ -3,15 +3,15 @@ import curveImg from "../../Assets/images/curve-2.b04970a8.svg"
 import lawImage from "../../Assets/images/compliant.png"
 const WhyChooiceUs = () => {
     return (
-        <div className="py-5">
+        <div style={{backgroundColor:"#E9F5EC"}} className="py-5">
             <div className="container">
-                <div className="mx-auto text-center">
+                <div className="mx-auto text-center mb-5">
                     <h2>WHY CHOOICE US?</h2>
                     <img style={{ top: "-13px" }} className="position-relative" src={curveImg} alt="" />
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-6 col-lg-3 mb-4">
-                        <div className="position-relative border-0 card">
+                        <div className="position-relative border-0 card ">
                             <div className="pt-4  d-flex align-items-center justify-content-center">
                                <img style={{width:"70px"}} src={lawImage} alt="" />
                             </div>
