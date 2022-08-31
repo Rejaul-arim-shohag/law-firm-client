@@ -46,7 +46,7 @@ const ClientTestimonial = () => {
         ]
     };
     return (
-        <div className="py-5">
+        <div style={{backgroundColor:"#21BF73"}} className="py-5">
             <div data-aos="fade-left" className="container">
                 <div className="d-flex justify-content-between flex-wrap gap-5">
                     <div className="col-md-2 col-12 text-center d-flex justify-content-center align-items-center">

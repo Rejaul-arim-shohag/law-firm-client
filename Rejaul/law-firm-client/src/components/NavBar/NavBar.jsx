@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
-import { AiOutlineCheckCircle, AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfold, AiOutlineUser } from "react-icons/ai";
-import logo from "../../Assets/images/logo2.svg"
-import { getToken, getUserDetails, removeSession } from '../../Helper/SessionHelper';
+import logo from "../../Assets/images/lawyerLogo.png"
 import "./NavBar.css"
 const NavBar = () => {
     let navigate = useNavigate()
@@ -36,11 +34,11 @@ const NavBar = () => {
                             <Nav.Link>
                                 <Link to="/contact-us">CONTACT</Link>
                             </Nav.Link>
-                            <Nav.Link to="/aboutUs">
+                            <Nav.Link>
                                 <Link to="/aboutUs"> ABOUT</Link>
                             </Nav.Link>
-                            <Nav.Link to="/aboutUs">
-                                <Link to="/aboutUs">BLOG</Link>
+                            <Nav.Link>
+                                <Link to="/OurBlogList">BLOG</Link>
                             </Nav.Link>
                             <Nav.Link to="/aboutUs">
                                 <div className="d-flex">

@@ -5,7 +5,9 @@ import { useEffect } from 'react';
 import { servicesGetRequest } from '../../ApiRequest/APIRequest';
 import curveSmall from "../../Assets/images/curve-2.b04970a8.svg";
 import { CgArrowLongRight} from "react-icons/cg";
+import { useNavigate } from 'react-router-dom';
 const PracticeArea = () => {
+    let navigate = useNavigate()
     useEffect(() => {
         servicesGetRequest()
     }, [])
@@ -13,7 +15,7 @@ const PracticeArea = () => {
     const ServiceListSlice = ServiceList.slice(0, 6);
     
     return (
-        <div className="pt-2 pb-5  mt-2 mb-5 practice_area-fullSection">
+        <div className="pt-2 pb-5  mt-5 mb-5 practice_area-fullSection">
             <div className="container">
                 <div className="mx-auto text-center">
                     <h2 className="text-center practiceAreaMainHeading">OUR AREA OF PRACTICES</h2>
@@ -37,7 +39,7 @@ const PracticeArea = () => {
                                     {ServiceList.description.slice(0, 150)}
                                 </p>
                                 <div className="practiceArea_button">
-                                    <button className="btn btn-outline-success">READ MORE <CgArrowLongRight/></button>
+                                    <button onClick={()=>navigate("/practiceArea/3")} className="btn btn-outline-success">READ MORE <CgArrowLongRight/></button>
                                 </div>
                             </div>
                         )

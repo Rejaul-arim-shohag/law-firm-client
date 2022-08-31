@@ -6,46 +6,46 @@ import { ErrorToast, IsEmail, IsEmpty, IsMobile } from '../../Helper/FormHelper'
 import { CreateMessageRequest } from '../../ApiRequest/APIRequest';
 
 const Contact = () => {
-    
+
     let nameRef, emailRef, mobileRef, subjectRef, messageRef = useRef()
-    const handleSendMessage=()=>{
+    const handleSendMessage = () => {
         const name = nameRef.value;
         const email = emailRef.value;
         const mobile = mobileRef.value;
         const subject = subjectRef.value;
         const message = messageRef.value;
-        if(IsEmpty(name)){
+        if (IsEmpty(name)) {
             ErrorToast("Name Is Required")
-        } else if(IsEmail(email)){
+        } else if (IsEmail(email)) {
             ErrorToast("Valid Email Required")
-        } else if(IsMobile(mobile)){
+        } else if (IsMobile(mobile)) {
             ErrorToast("Valid Mobile Is Required")
-        } else if(IsEmpty(subject)){
+        } else if (IsEmpty(subject)) {
             ErrorToast("Subject Is Required")
-        }else if(IsEmpty(message)){
+        } else if (IsEmpty(message)) {
             ErrorToast("Message Is Required")
-        } else{
-            CreateMessageRequest(name,email,mobile,subject,message)
-            .then((result)=>{
-               if(result===true){
-                nameRef.value=""
-                emailRef.value=""
-                mobileRef.value=""
-                subjectRef.value=""
-                messageRef.value=""
-                Swal.fire(
-                    'Thank You!',
-                    'Ass soon as possible, We will reply!',
-                    'success',
-                  )
-               }
-            })
+        } else {
+            CreateMessageRequest(name, email, mobile, subject, message)
+                .then((result) => {
+                    if (result === true) {
+                        nameRef.value = ""
+                        emailRef.value = ""
+                        mobileRef.value = ""
+                        subjectRef.value = ""
+                        messageRef.value = ""
+                        Swal.fire(
+                            'Thank You!',
+                            'Ass soon as possible, We will reply!',
+                            'success',
+                        )
+                    }
+                })
         }
     }
     return (
-        <div style={{backgroundColor:"#E9F5EC"}} className="py-5">
+        <div style={{ backgroundColor: "#E9F5EC" }} className="py-5">
             <div className="container">
-            <div className="mx-auto text-center mb-5">
+                <div className="mx-auto text-center mb-5">
                     <h2 className="text-center text-uppercase font-weight-bold">Contact Us Now</h2>
                     <img src={curveImg} style={{ top: "-13px", width: "25%" }} className="position-relative " alt="" />
                     <h5 className="text-secondary col-12 mx-auto col-md-6">Sed perspicias unde omnis iste natus error voluptatem accusantium dolorem laudanme totam rem aperiam eaque quae.</h5>
@@ -55,78 +55,30 @@ const Contact = () => {
                         <h4>Leave a Message</h4>
                         <div className="row  gx-4">
                             <div className="col-12 col-md-6 mt-2">
-                                <input ref={(input)=>nameRef=input} placeholder="Your Name" className="py-2 form-control inputTextArea" type="text" />
+                                <input ref={(input) => nameRef = input} placeholder="Your Name" className="py-2 form-control inputTextArea" type="text" />
                             </div>
                             <div className="col-12 col-md-6 mt-2">
-                                <input ref={(input)=>emailRef=input} placeholder="Email Address" className="py-2 form-control inputTextArea" type="text" />
+                                <input ref={(input) => emailRef = input} placeholder="Email Address" className="py-2 form-control inputTextArea" type="text" />
                             </div>
                         </div>
-        
+
                         <div className="row ">
                             <div className="col-12 col-md-6 mt-4">
-                                <input ref={(input)=>mobileRef=input} placeholder="Your Phone" className="py-2 form-control inputTextArea" type="text" />
+                                <input ref={(input) => mobileRef = input} placeholder="Your Phone" className="py-2 form-control inputTextArea" type="text" />
                             </div>
                             <div className="col-12 col-md-6 mt-4">
-                                <input ref={(input)=>subjectRef=input} placeholder="Subject" className="py-2 form-control inputTextArea" type="text" />
+                                <input ref={(input) => subjectRef = input} placeholder="Subject" className="py-2 form-control inputTextArea" type="text" />
                             </div>
                         </div>
                         <div className="row">
                             <div className=" col-12 col-md-12 mt-4">
-                            <textarea ref={(input)=>messageRef=input} className="form-control inputTextArea" id="exampleFormControlTextarea1" rows="6"></textarea>
-                
+                                <textarea ref={(input) => messageRef = input} className="form-control inputTextArea" id="exampleFormControlTextarea1" rows="6"></textarea>
                             </div>
                         </div>
                         <div className="setCommentBtn d-flex justify-content-end mt-4">
                             <button onClick={handleSendMessage} className="btn btn-success px-5 py-3">SEND A MESSAGE</button>
                         </div>
                     </div>
-
-                    {/* <div className="col-md-5 contact-right-side">
-                        <div className="contact_details py-3">
-                            <h3 className="contact_heading pt-4 px-4">Contact Info</h3>
-                            <div className="d-flex my-4 px-3">
-                                <div className="contact_icon mt-2">
-                                    <TiLocationArrow />
-                                </div>
-                                <div className="contact_info ">
-                                    <p>Location</p>
-                                    <p>Dhaka</p>
-                                    <p>Bangaladesh</p>
-                                </div>
-                            </div>
-                            <div className="d-flex my-4 px-3">
-                                <div className="contact_icon ">
-                                    <MdEmail />
-                                </div>
-                                <div className="contact_info ">
-                                    <p>Email</p>
-                                    <p>rejaulkarim@gmail.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex my-4 px-3">
-                                <div className="contact_icon ">
-                                    <FaPhoneAlt />
-                                </div>
-                                <div className="contact_info ">
-                                    <p>Phone</p>
-                                    <p>(+880) 1778839434</p>
-                                </div>
-                            </div>
-                            <div className="px-3 pb-3">
-                                <h4 className="text-light">Follow Us</h4>
-                                <div className="social_icon d-flex ">
-                                    <FaFacebookF />
-                                    <BsInstagram />
-                                    <AiFillLinkedin />
-                                    <FaTwitter />
-                                </div>
-                            </div>
-                            <div className="contact-image d-none">
-                                <img src={contactImage} alt="" />
-                            </div>
-                        </div>
-                    </div> */}
-
                 </div>
             </div>
         </div>

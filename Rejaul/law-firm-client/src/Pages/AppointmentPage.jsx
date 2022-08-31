@@ -7,7 +7,7 @@ const AppintmentPage = () => {
     return (
         <div>
             <NavBar/>
-            <Appointment/>
+            {/* <Appointment/> */}
             <Footer/>
         </div>
     );
