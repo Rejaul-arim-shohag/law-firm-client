@@ -31,6 +31,10 @@ const OurPlan = () => {
         <>
             <div className="container">
                 <div className="col-12">
+                    <div className="d-flex justify-content-between py-3">
+                        <h5>Our Plans</h5>
+                        <button onClick={()=>navigate("/AddOurPlan")} className="btn btn-success">Add Plan</button>
+                    </div>
                     <div className="card">
                         <div className="card-body">
                             <div className="row">
@@ -39,7 +43,7 @@ const OurPlan = () => {
                                         <table className="table ">
                                             <thead className="sticky-top bg-white">
                                                 <tr>
-                                                    <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Plan Name</th>
+                                                   <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Plan Name</th>
                                                     <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Fee</th>
                                                     <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Title</th>
                                                     <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>

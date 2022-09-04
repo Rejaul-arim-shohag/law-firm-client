@@ -6,10 +6,8 @@ import { GoLaw } from "react-icons/go";
 import { FaPlaneArrival } from "react-icons/fa";
 import { RiTornadoLine } from "react-icons/ri";
 import { FaGitter } from "react-icons/fa";
-import { AiOutlineCheckCircle, AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfold, AiOutlineUser } from "react-icons/ai";
-import { BsHourglass} from "react-icons/bs";
+import {  AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfold, AiOutlineUser } from "react-icons/ai";
 import logo from "../../Assets/images/logo2.svg";
-import { MdOutlineCancelPresentation } from "react-icons/md";
 import { RiDashboardLine } from "react-icons/ri";
 import { removeSession } from "../../Helper/SessionHelper";
 const MasterLayout = (props) => {
@@ -73,32 +71,38 @@ const MasterLayout = (props) => {
                         <RiDashboardLine className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Dashboard</span>
                     </NavLink>
-                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddAtorney" >
+                    {/* <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddAtorney" >
                         <AiOutlineEdit className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Insert Attorney</span>
-                    </NavLink>
+                    </NavLink> */}
                     <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AllAttorney" >
                         <IoIosPeople className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Attorney List</span>
                     </NavLink>
-                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurService" >
+                    {/* <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurService" >
                         <AiOutlineEdit className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Service Add</span>
-                    </NavLink>
+                    </NavLink> */}
                    
                     <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Services-list" >
                         < GoLaw className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Services List</span>
                     </NavLink>
-                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurPlan" >
+                    {/* <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AddOurPlan" >
                         <FaPlaneArrival className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Add Our Plan</span>
-                    </NavLink>
+                    </NavLink> */}
 
                     <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/our-plans" >
                         <RiTornadoLine className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Plans List</span>
                     </NavLink>
+
+                    <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/whyChoiceUsList" >
+                        <RiTornadoLine className="side-bar-item-icon" />
+                        <span className="side-bar-item-caption">Supports</span>
+                    </NavLink>
+
                     <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/client-reviews" >
                         <FaGitter className="side-bar-item-icon" />
                         <span className="side-bar-item-caption">Reviews</span>

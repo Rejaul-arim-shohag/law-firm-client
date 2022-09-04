@@ -35,11 +35,12 @@ const AddOurService = () => {
         <div className="container">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-12">
-                    <div className="card py-5">
+                    <div className="card py-3">
                         <div className="card-body w-60">
                             <div className="container-fluid ">
-                                <img ref={(input) => userImgView = input} className="user-profile-img preview_icon" alt="" />
-                                <div className="row">
+                                <h5>Service Add</h5>
+                                {/* <img ref={(input) => userImgView = input} className="user-profile-img preview_icon" alt="" /> */}
+                                <div className="row mx-1">
                                     <div className="col-6 p-2 col-md-6">
                                         <label>Icon</label>
                                         <input onChange={previewImage} ref={(input) => userImgRef = input} placeholder="Service Icon" className="form-control animated fadeInUp" type="file" />
@@ -49,13 +50,13 @@ const AddOurService = () => {
                                         <input ref={(input) => nameRef = input} placeholder="Service Name" className="form-control animated fadeInUp" type="email" />
                                     </div>
                                 </div>
-                                <div className="row">
+                                <div className="row mx-1">
                                     <label>Service Description</label>
-                                    <textarea rows="4" ref={(input) => descriptionRef = input} className="from-control" />
+                                    <textarea rows="4" ref={(input) => descriptionRef = input} className="form-control px-1 mx-1" />
                                 </div>
-                                <div className="row">
+                                <div className="row mx-1">
                                     <div className="p-2 col-4">
-                                        <button onClick={handleInsertAttorney} className="btn w-100 float-end btn-primary animated fadeInUp">SAVE</button>
+                                        <button onClick={handleInsertAttorney} className="btn w-100 float-end btn-success animated fadeInUp">SAVE</button>
                                     </div>
                                 </div>
                             </div>

@@ -1,41 +1,17 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useSelector } from "react-redux";
-import { AttorneyDeleteRequest, AttorneyGetRequest } from '../../../ApiRequest/APIRequest';
-import { BsThreeDotsVertical } from "react-icons/bs";
-import { NavLink, useNavigate } from 'react-router-dom';
-import { DeleteAlert } from '../../../Helper/DeleteHelper';
-const AttorneyRead = () => {
+import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import ReviewModal from "../../ReviewModal/ReviewModal"
+const ChoiceUsList = () => {
     let navigate = useNavigate()
-    useEffect(() => {
-        AttorneyGetRequest(true)
-    }, [])
-    let attorneyList = useSelector((state) => state.attorney.attorneyList);
-    const navigateToEditProduct = (Id) => {
-        navigate("/updateAttorney" + "/" + Id)
-    }
-
-    const handleDeleteAttorney = (id) => {
-        DeleteAlert().then((res) => {
-            if (res) {
-                AttorneyDeleteRequest(id)
-                    .then((res) => {
-                        if(res===true){
-                            AttorneyGetRequest(true)
-                        }
-                    })
-            }
-        })
-    }
-
+    const [modalShow, setModalShow] = useState(false);
     return (
-        <>
+        <div>
             <div className="container">
                 <div className="d-flex justify-content-between mx-2 py-4">
-                    <h5 className="font-weight-bold">All ATTORNEYS</h5>
-                    <button onClick={() => navigate("/AddAtorney")} className="btn btn-success">Add Attorney</button>
+                    <h5 className="font-weight-bold">Our Supports</h5>
+                    <button onClick={() => setModalShow(true)} className="btn btn-success">Add Support</button>
+                    <ReviewModal  show={modalShow} onHide={() => setModalShow(false)} />
                 </div>
-                
                 <div className="col-12">
                     <div className="card">
                         <div className="card-body">
@@ -45,15 +21,14 @@ const AttorneyRead = () => {
                                         <table className="table ">
                                             <thead className="sticky-top bg-white">
                                                 <tr>
-                                                    <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Attorney</th>
-                                                    <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">email</th>
-                                                    <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">mobile</th>
-                                                    <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">title</th>
+                                                    <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">icon</th>
+                                                    <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Title</th>
+                                                    <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
                                                     <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">action</th>
 
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            {/* <tbody>
                                                 {
                                                     attorneyList.map((item, i) =>
                                                         <tr>
@@ -98,7 +73,7 @@ const AttorneyRead = () => {
                                                 }
 
 
-                                            </tbody>
+                                            </tbody> */}
                                         </table>
                                     </div>
                                 </div>
@@ -107,10 +82,9 @@ const AttorneyRead = () => {
 
                     </div>
                 </div>
-
             </div>
-        </>
+        </div>
     );
 };
 
-export default AttorneyRead;
+export default ChoiceUsList;

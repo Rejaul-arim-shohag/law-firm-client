@@ -25,6 +25,10 @@ import OurPlanPage from "./Pages/AdminDashboardPages/OurPlanPage";
 import UserProfile from "./components/UserProfile/UserProfile";
 import DisplayedReviewsPage from "./Pages/AdminDashboardPages/DisplayedReviewsPage";
 import PlanUpdatePage from "./Pages/AdminDashboardPages/PlanUpdatePage";
+import PracticeAreaDetailPage from "./Pages/PracticeAreaDetailPage";
+import OurBlogPage from "./Pages/OurBlogPage";
+import SingleBlogPage from "./Pages/SingleBlogPage";
+import ChoiceUsListPage from "./Pages/AdminDashboardPages/ChoiceUsListPage";
 function App() {
   return (
     <Fragment>
@@ -33,6 +37,12 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
+          <Route path="/aboutUs" element={<AboutUsPage />} />
+          <Route path="/OurBlogList" element={<OurBlogPage />} />
+          <Route path="/blog/:id" element={<SingleBlogPage />} />
+          <Route path="/practiceArea/:id" element={<PracticeAreaDetailPage />} />
+          <Route path="/sign-up" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route
             path="/appointment"
             element={
@@ -41,9 +51,7 @@ function App() {
               </UserProtected>
             }
           />
-          <Route path="/aboutUs" element={<AboutUsPage />} />
-          <Route path="/sign-up" element={<RegistrationPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          
           <Route
             path="/profile"
             element={
@@ -88,6 +96,11 @@ function App() {
           <Route path="/planEdit/:id" element={<AdminProtect>
             <PlanUpdatePage/>
           </AdminProtect>} />
+
+          <Route path="/whyChoiceUsList" element={<AdminProtect>
+            <ChoiceUsListPage/>
+          </AdminProtect>} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

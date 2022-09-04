@@ -59,7 +59,44 @@ a:hover {
   background-color:#21BF73;
   color:white;
 }
+.navbarButton{
+  transition:0.3s;
+  height: 50px;
+  padding: 5px 20px;
+  border:0;
+  outline: 0;
+  border-radius: 25px;
+  /* border: 1px solid #00ab58; */
+  background-color:#00ab58;
+  cursor:alias;
+  color:rgb(255, 255, 255);
+}
+.navbarButton2{
+  transition:0.3s;
+  height: 50px;
+  padding: 5px 20px;
+  border:0;
+  outline: 0;
+  border: 1px solid #00ab58;
+  background-color:#00ab58;
+  color:rgb(0, 0, 0);
+}
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  color: #028a48 !important;
+}
+.slick-dots li button:before{
+  opacity: .80 !important;
+  color: rgb(147, 147, 147) !important;
+}
+.testimonialNav{
+  width:50px;
+  height:50px;
+}
 
+.testimonialNav:hover{
+  background-color:#169156;
+}
 .mainButton:hover{
 background-color:#169156;
 }
@@ -83,7 +120,20 @@ background-color:#169156;
   background-color:#21BF73;
   color:white;
 }
-
+.inputTextArea:focus{
+  border-color: #21BF73;
+  outline: none !important;
+  box-shadow: none;
+  border-width: 2px;
+  transition:none
+}
+.inputTextArea{
+  border-color: #c8c6c6;
+  outline: none !important;
+  box-shadow: none;
+  border-width: 2px;
+  transition:none
+}
 
 @media only screen and (max-width: 992px) {
   .navbar-nav{

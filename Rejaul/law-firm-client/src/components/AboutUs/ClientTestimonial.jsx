@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
-import { useState } from 'react';
 import Slider from "react-slick";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 import { GoQuote } from "react-icons/go";
@@ -20,7 +19,6 @@ const ClientTestimonial = () => {
         // })
     },[])
     const testimonial = useSelector((state) => state.reviews.Completed);
-    console.log(testimonial)
     const settings = {
         dots: false,
         infinite: true,
@@ -48,13 +46,13 @@ const ClientTestimonial = () => {
         ]
     };
     return (
-        <div className="py-5">
+        <div style={{backgroundColor:"#21BF73"}} className="py-5">
             <div data-aos="fade-left" className="container">
                 <div className="d-flex justify-content-between flex-wrap gap-5">
                     <div className="col-md-2 col-12 text-center d-flex justify-content-center align-items-center">
                         <div className="">
-                            <h3 className='text-dark'>Testimonial</h3>
-                            <h6 className='text-uppercase'>What out customer says</h6>
+                            <h3 className='text-light'>Testimonial</h3>
+                            <h6 className='text-uppercase text-light'>What out customer says</h6>
                             <div className=" mt-3 d-flex gap-3 justify-content-center">
                                 <button onClick={() => slider.current.slickPrev()} className='testimonialNav rounded-circle bg-light border-0'> <HiOutlineChevronLeft className='m-2' /></button>
                                 <button onClick={() => slider.current.slickNext()} className='testimonialNav rounded-circle bg-light  border-0'> <HiOutlineChevronRight className='m-2' /></button>
@@ -66,7 +64,7 @@ const ClientTestimonial = () => {
                             {
                                 testimonial?.map((item, index) => {
                                     return (
-                                        <div key={item._id} className="p-1 w-100 ">
+                                        <div key={item._id} className="p-1 w-100">
                                             <div  className="card  testimonialCard border-start border-top h-100" >
                                                 <div className="card-body h-100 d-flex flex-column justify-content-between">
                                                     <div className="header">

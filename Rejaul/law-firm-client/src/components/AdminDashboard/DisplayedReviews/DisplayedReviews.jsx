@@ -8,46 +8,58 @@ const DisplayedReviews = () => {
         listReviewByStatus("COMPLETE")
     }, [])
     const NewReviewList = useSelector((state) => state.reviews.Completed);
-    const handleDeleteReview=(id)=>{
+    const handleDeleteReview = (id) => {
         DeleteAlert()
-        .then((result)=>{
-            if(result){
-                deleteComment(id)
-                .then((res)=>{
-                    if(res===true){
-                        listReviewByStatus("COMPLETE")
-                    }
-                })
-            }
-        })
+            .then((result) => {
+                if (result) {
+                    deleteComment(id)
+                        .then((res) => {
+                            if (res === true) {
+                                listReviewByStatus("COMPLETE")
+                            }
+                        })
+                }
+            })
     }
     return (
-        <div>
-           <table className="table table-hover">
-                <thead>
-                    <tr>
-                        <th >Name</th>
-                        <th className="text-center" scope="col">Comment</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        NewReviewList.map((item) => {
-                            return (
-                                <tr key={item._id}>
-                                    <td>{item.name}</td>
-                                    <td className="text-center">{item.comment.length>60?item.comment.slice(0, 60)+"...":item.comment}</td>
-                                    <td>
-                                        <button onClick={()=>handleDeleteReview(item._id)} type="button" class="btn btn-danger btn-sm">Delete</button>
-                                    </td>
+        <div className="container">
+            <h5 className="py-2">Reviews</h5>
+            <div className="col-12">
+                <div className="card">
+                    <div className="card-body">
+                        <div className="row">
+                            <div className="col-12">
+                                <table className="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th >Name</th>
+                                            <th className="text-center" scope="col">Comment</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            NewReviewList.map((item) => {
+                                                return (
+                                                    <tr key={item._id}>
+                                                        <td>{item.name}</td>
+                                                        <td className="text-center">{item.comment.length > 60 ? item.comment.slice(0, 60) + "..." : item.comment}</td>
+                                                        <td>
+                                                            <button onClick={() => handleDeleteReview(item._id)} type="button" class="btn btn-danger btn-sm">Delete</button>
+                                                        </td>
 
-                                </tr>
-                            )
-                        })
-                    }
-                </tbody>
-            </table>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };

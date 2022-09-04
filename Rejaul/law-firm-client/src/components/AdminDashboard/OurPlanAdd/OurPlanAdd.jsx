@@ -35,7 +35,8 @@ const OurPlanAdd = () => {
         <div className="container">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-12">
-                    <div className="card py-5">
+                    <h5>Plan Add</h5>
+                    <div className="card py-3">
                         <div className="card-body">
                             <div className="container-fluid ">
                                 <div className="row">
@@ -51,10 +52,6 @@ const OurPlanAdd = () => {
                                         <label>Benifit</label>
                                         <input ref={(input) => benifitRef = input} placeholder="Benifit Title" className="form-control animated fadeInUp" type="text" />
                                     </div>
-                                </div>
-
-                                <div className="row mt-3">
-                                    <h5 className="text-center">Plan Extra Benifits</h5>
                                     <div className="col-4 p-2">
                                         <label>Service</label>
                                         <input ref={(input) => benifitRef1 = input} placeholder="Service" className="form-control animated fadeInUp" type="text" />
@@ -83,9 +80,15 @@ const OurPlanAdd = () => {
                                         <input ref={(input) => benifitRef6 = input} placeholder="Service" className="form-control animated fadeInUp" type="text" />
                                     </div>
                                     <div className="col-4 col-md-4 p-2">
-                                        <button onClick={handleInsertPlan} className="btn w-100 float-end btn-primary animated fadeInUp">SAVE</button>
+                                        <button onClick={handleInsertPlan} className="btn w-100 float-end btn-success animated fadeInUp">SAVE</button>
                                     </div>
+                                    
                                 </div>
+
+                                {/* <div className="row mt-3">
+                
+                                    
+                                </div> */}
                             </div>
                         </div>
                     </div>

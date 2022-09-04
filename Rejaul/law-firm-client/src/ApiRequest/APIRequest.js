@@ -9,7 +9,9 @@ import { HideLoader, ShowLoader } from "../redux/stateSlice/settingSlice";
 import { ErrorToast, SuccessToast } from "../Helper/FormHelper";
 import { setAdminToken, getAdminToken, setAdminDetails, setToken, setUserDetails } from "../Helper/SessionHelper";
 import { SetPlans } from "../redux/stateSlice/ourPlanSlice";
-const baseUrl = "http://localhost:5000/api/v1";
+// const baseUrl = "https://karim-law-firm.herokuapp.com/api/v1";
+const baseUrl = "http://localhost:8080/api/v1";
+
 const AxiosHeader = { headers: { "adminToken": getAdminToken() } }
 
 //admin login
@@ -136,11 +138,14 @@ export function attorneyAddRequest(email, Name, mobile, title, photo, descriptio
         })
 }
 
-export function AttorneyGetRequest() {
+export function AttorneyGetRequest(progress) {
     const url = baseUrl + "/readAttorneys";
+    store.dispatch(ShowLoader())
     return axios.get(url)
         .then((res) => {
+            store.dispatch(HideLoader())
             if (res.status === 200) {
+                store.dispatch(HideLoader())
                 store.dispatch(SetAttorney(res.data.data))
                 return res.data
             }
@@ -188,6 +193,7 @@ export function attorneyUpdateRequest(email, Name, mobile, title, photo, descrip
             if (res.status === 200) {
                 store.dispatch(HideLoader())
                 SuccessToast("Saved Success")
+                return true;
             }
             else {
                 return false;
@@ -249,9 +255,11 @@ export function ServiceAddRequest(Name, icon, description) {
 }
 //services get request
 export function servicesGetRequest() {
+    store.dispatch(ShowLoader())
     const url = baseUrl + "/readServiceAreas";
     return axios.get(url)
         .then((res) => {
+            store.dispatch(HideLoader())
             if (res.status === 200) {
                 store.dispatch(SetServices(res.data.data))
             }
@@ -395,7 +403,7 @@ export function planUpdate(id, planName, fee, benifit, extraBenifit1, extraBenif
         extraBenifit5: extraBenifit5,
         extraBenifit6: extraBenifit6,
     }
-    return axios.post(url,postBody, AxiosHeader)
+    return axios.post(url, postBody, AxiosHeader)
         .then((res) => {
             store.dispatch(HideLoader())
             if (res.status === 200) {
@@ -412,12 +420,22 @@ export function planUpdate(id, planName, fee, benifit, extraBenifit1, extraBenif
         })
 }
 export function planGetRequest() {
+    store.dispatch(ShowLoader())
     const url = baseUrl + "/readOurPlans";
     return axios.get(url)
         .then((res) => {
+            store.dispatch(HideLoader())
             if (res.status === 200) {
                 store.dispatch(SetPlans(res.data.data))
             }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        }).catch((err) => {
+            console.log(err)
+            ErrorToast("Something Went Wrongsss")
+            store.dispatch(HideLoader())
         })
 }
 export function PlanDeleteRequest(id) {
@@ -485,9 +503,11 @@ export function createReview(name, email, comment) {
 }
 
 export function listReviewByStatus(status) {
+    store.dispatch(ShowLoader())
     const url = baseUrl + "/listCommentByStatus/" + status;
     return axios.get(url)
         .then((res) => {
+            store.dispatch(HideLoader())
             if (res.status === 200) {
                 if (status === "NEW") {
                     store.dispatch(setNewReviews(res.data["data"]))
@@ -539,6 +559,35 @@ export function deleteComment(id) {
             if (res.status === 200) {
                 SuccessToast("Delete Success")
                 store.dispatch(HideLoader())
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+
+//choice us 
+export function createChoiceUsItem(image,title,description) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/createChoiceUsItem";
+    console.log(url)
+    const postBody = {
+        image: image,
+        title: title,
+        description:description
+    }
+    return axios.post(url,postBody, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Add Success")
                 return true;
             }
             else {

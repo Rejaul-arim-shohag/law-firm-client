@@ -1,15 +1,13 @@
 import React from 'react';
 import "./heroSection.css";
+import Marquee from "react-fast-marquee";
 import heroMainImage from "../../Assets/images/heroLawyear.svg";
-import lawImage from "../../Assets/images/law-book.webp";
-import NavBar from '../NavBar/NavBar';
-import { VscLaw } from "react-icons/vsc";
-import { GiClawHammer } from "react-icons/gi";
-import { Link, useNavigate } from 'react-router-dom';
+import image1 from "../../Assets/images/citybank-removebg-preview.png"
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
     let navigate = useNavigate()
-    const handleNavigateToAppoinment=()=>{
+    const handleNavigateToAppoinment = () => {
         navigate("/contact-us")
     }
     return (
@@ -20,10 +18,10 @@ const HeroSection = () => {
                 <div className="row heroContentAndImage">
                     <div className="heroContent pt-5 col-md-6">
                         <div>
-                            <h1 className="text-uppercase">Legal Attony  Help In</h1>
-                            <h1 className="highlightName">BANGLADESH.</h1>
-                            <p className="my-2">Appareat reformidans his te. Mundi erroribus <br /> ad eum, mea ut dicam nostro copiosae. </p>
-                            <div className="serviceCounted d-flex justify-content-between">
+                            <h1 style={{fontWeight:"700"}} className="text-uppercase">Protecting businesses</h1>
+                            <h1 style={{fontWeight:"800"}} className="highlightName">IN BANGLADESH.</h1>
+                            <h5 className="my-2">Napoli Shkolnik is a national law firm working for victims of personal  injuries and wrongs.</h5>
+                            {/* <div className="serviceCounted d-flex justify-content-between">
                                 <div>
                                     <h4 className="text-center">98%</h4>
                                     <p className="text-center">SUCCESSFUL CASES</p>
@@ -36,16 +34,34 @@ const HeroSection = () => {
                                     <h4 className="text-center">10,600</h4>
                                     <p className="text-center">INJURY CASES</p>
                                 </div>
-                            </div>
-
+                            </div> */}
                         </div>
                         <div className="serchBox">
                             {/* <input className="serviceSearchField w-100" placeholder="Search" type="text" />
                             <button className="serviceSearchButton">Search</button> */}
-                            <button onClick={handleNavigateToAppoinment} className="mainButton">Make an Appointment</button>
-
+                            <button onClick={handleNavigateToAppoinment} className="navbarButton mt-4">Make an Appointment</button>
                         </div>
-                        
+                        <Marquee className="mt-5" gradient={false}>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                            <div className='w-20 ms-5'>
+                                <img className="opacity-75" style={{ height: '50px'}} src={image1} alt="" />
+                            </div>
+                        </Marquee>
+
                     </div>
                     <div className="heroMainImage pb-5 d-flex col-md-6  justify-content-end">
                         <img src={heroMainImage} alt="" />

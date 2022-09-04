@@ -7,30 +7,34 @@ import { useNavigate } from 'react-router-dom';
 
 const ServiceList = () => {
     let navigate = useNavigate()
-    useEffect(()=>{
+    useEffect(() => {
         servicesGetRequest()
     }, [])
     const ServiceList = useSelector((state) => state.services.serviceList);
-    const handleDeleteService=(id)=>{
-        DeleteAlert().then((result)=>{
-            if(result){
+    const handleDeleteService = (id) => {
+        DeleteAlert().then((result) => {
+            if (result) {
                 serviceDeleteRequest(id)
-                .then((result)=>{
-                    if(result===true){
-                        servicesGetRequest()
-                    }
-                })
+                    .then((result) => {
+                        if (result === true) {
+                            servicesGetRequest()
+                        }
+                    })
             }
         })
 
     }
-    const handleNavigateToUpdate=(id)=>{
-        navigate("/admin/editService/"+id)
+    const handleNavigateToUpdate = (id) => {
+        navigate("/admin/editService/" + id)
     }
     return (
         <>
             <div className="container">
                 <div className="col-12">
+                    <div className="d-flex justify-content-between py-4">
+                        <h5>Services</h5>
+                        <button onClick={()=>navigate("/AddOurService")} className="btn btn-success">Add Service</button>
+                    </div>
                     <div className="card">
                         <div className="card-body">
                             <div className="row">
@@ -59,21 +63,21 @@ const ServiceList = () => {
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            
+
                                                             <td>
-                                                                <p className="text-xs font-weight-bold mb-0">{item.description.slice(0, 60)+"..."}</p>
+                                                                <p className="text-xs font-weight-bold mb-0">{item.description.slice(0, 60) + "..."}</p>
                                                             </td>
                                                             <td>
                                                                 <div className="float-right h-auto">
                                                                     <div className="user-dropdown">
-                                                                    <button type="button" class="icon-nav btn btn-success btn-sm actionBtn"><BsThreeDotsVertical /></button>
+                                                                        <button type="button" class="icon-nav btn btn-success btn-sm actionBtn"><BsThreeDotsVertical /></button>
                                                                         <div className="action-dropdown-content">
-                                                                            <a className="side-bar-item-user">
-                                                                             {/* onClick={()=>navigateToEditProduct(item._id)} */}
-                                                                                <span onClick={()=>handleNavigateToUpdate(item.serviceID)} className="side-bar-item-caption">Edit</span>
+                                                                            <a onClick={() => handleNavigateToUpdate(item.serviceID)} className="side-bar-item-user px-2 py-1">
+                                                                                {/* onClick={()=>navigateToEditProduct(item._id)} */}
+                                                                                <span  className="side-bar-item-caption">Edit</span>
                                                                             </a>
-                                                                            <a className="side-bar-item-user">
-                                                                                <span onClick={()=>handleDeleteService(item.serviceID)} className="side-bar-item-caption">Delete</span>
+                                                                            <a onClick={() => handleDeleteService(item.serviceID)} className="side-bar-item-user px-2 py-1">
+                                                                                <span  className="side-bar-item-caption">Delete</span>
                                                                             </a>
                                                                         </div>
                                                                     </div>
