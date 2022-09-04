@@ -159,8 +159,8 @@ export default function DashboardContent() {
           aria-label="dashboard sidebar menuitems"
           sx={{
             "&& .Mui-selected,&& .Mui-selected:hover": {
-              bgcolor: "custom.light",
-              // color: "custom.contrastText",
+              bgcolor: "custom.dark",
+              color: "custom.contrastText",
             },
           }}
         >
