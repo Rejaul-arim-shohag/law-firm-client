@@ -1,6 +1,6 @@
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
-import BrandList from "./components/Dashboard/brand/BrandList";
+import BrandList from "./components/Dashboard/brand/Brand.list";
 import CategoryList from "./components/Dashboard/category/CategoryList";
 import DashIndex from "./components/Dashboard/dashIndex/DashIndex";
 import ProductList from "./components/Dashboard/product/ProductList";
