@@ -5,7 +5,11 @@ import servicesReducer from "../redux/stateSlice/servicesSlice";
 import planReducer from "../redux/stateSlice/ourPlanSlice"
 import sinlgeAttorneyReducer from "../redux/stateSlice/singleAttorneySlice"
 import singleServiceReducer from "../redux/stateSlice/singleAttorneySlice"
-import reviewReducer from "../redux/stateSlice/reviewSlice"
+import reviewReducer from "../redux/stateSlice/reviewSlice";
+import chooiceUsReducer from "../redux/stateSlice/chooiceUsSlice";
+import blogReducer from "../redux/stateSlice/blogSlice"
+import singleBlogReducer from "../redux/stateSlice/singleBlogSlice"
+
 export default configureStore({
     reducer:{
         settings:settingReducer,
@@ -15,5 +19,8 @@ export default configureStore({
         singleAttorney:sinlgeAttorneyReducer,
         singleService:singleServiceReducer,
         reviews:reviewReducer,
+        chooiceUs:chooiceUsReducer,
+        blogs:blogReducer,
+        singleBlog:singleBlogReducer
     }
 })

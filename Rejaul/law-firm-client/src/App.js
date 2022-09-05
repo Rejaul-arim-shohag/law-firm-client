@@ -29,6 +29,9 @@ import PracticeAreaDetailPage from "./Pages/PracticeAreaDetailPage";
 import OurBlogPage from "./Pages/OurBlogPage";
 import SingleBlogPage from "./Pages/SingleBlogPage";
 import ChoiceUsListPage from "./Pages/AdminDashboardPages/ChoiceUsListPage";
+import WriteBlogPage from "./Pages/WriteBlogPage";
+import OurBlogListPage from "./Pages/AdminDashboardPages/OurBlogListPage";
+import BlogListPage from "./Pages/AdminDashboardPages/BlogListPage";
 function App() {
   return (
     <Fragment>
@@ -38,7 +41,7 @@ function App() {
           <Route path="/team" element={<TeamPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/aboutUs" element={<AboutUsPage />} />
-          <Route path="/OurBlogList" element={<OurBlogPage />} />
+          <Route path="/OurBlog" element={<OurBlogPage />} />
           <Route path="/blog/:id" element={<SingleBlogPage />} />
           <Route path="/practiceArea/:id" element={<PracticeAreaDetailPage />} />
           <Route path="/sign-up" element={<RegistrationPage />} />
@@ -99,6 +102,16 @@ function App() {
 
           <Route path="/whyChoiceUsList" element={<AdminProtect>
             <ChoiceUsListPage/>
+          </AdminProtect>} />
+          <Route path="/blogList" element={<AdminProtect>
+            <OurBlogListPage/>
+          </AdminProtect>} />
+          <Route path="/createBlog" element={<AdminProtect>
+            <WriteBlogPage/>
+          </AdminProtect>} />
+
+          <Route path="/blogList" element={<AdminProtect>
+            <BlogListPage/>
           </AdminProtect>} />
 
           <Route path="*" element={<NotFound />} />

@@ -38,7 +38,7 @@ const NavBar = () => {
                                 <Link to="/aboutUs"> ABOUT</Link>
                             </Nav.Link>
                             <Nav.Link>
-                                <Link to="/OurBlogList">BLOG</Link>
+                                <Link to="/OurBlog">BLOG</Link>
                             </Nav.Link>
                             <Nav.Link to="/aboutUs">
                                 <div className="d-flex">

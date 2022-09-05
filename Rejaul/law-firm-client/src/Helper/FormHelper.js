@@ -16,10 +16,10 @@ class FormHelper {
     }
 
     ErrorToast(msg) {
-        cogoToast.error(msg, { position: "bottom-center" });
+        cogoToast.error(msg, { position: "top-center" });
     }
     SuccessToast(msg) {
-        cogoToast.success(msg, { position: "bottom-center" });
+        cogoToast.success(msg, { position: "top-center" });
     }
 
     getBase64(file) {

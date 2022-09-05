@@ -9,6 +9,10 @@ import { HideLoader, ShowLoader } from "../redux/stateSlice/settingSlice";
 import { ErrorToast, SuccessToast } from "../Helper/FormHelper";
 import { setAdminToken, getAdminToken, setAdminDetails, setToken, setUserDetails } from "../Helper/SessionHelper";
 import { SetPlans } from "../redux/stateSlice/ourPlanSlice";
+import {SetchooiceUs} from "../redux/stateSlice/chooiceUsSlice";
+import {Setblogs} from "../redux/stateSlice/blogSlice";
+import {SetSingleBlog} from "../redux/stateSlice/singleBlogSlice";
+
 // const baseUrl = "https://karim-law-firm.herokuapp.com/api/v1";
 const baseUrl = "http://localhost:8080/api/v1";
 
@@ -600,5 +604,126 @@ export function createChoiceUsItem(image,title,description) {
             ErrorToast("Something Went Wrong")
         })
 }
+
+export function ChooiceUsList() {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/readChoiceUsItem";
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                store.dispatch(SetchooiceUs(res.data["data"]))
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+
+//blog
+export function CreateBlog(image, title, content) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/createBlog";
+    const postBody={
+        authorName:"Rejaul karim",
+        image:image,
+        title:title,
+        description:content
+    }
+    return axios.post(url,postBody, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("create success")
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function readBlogList() {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/readBlogList";
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                store.dispatch(Setblogs(res.data.data))
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+export function readBlogById(id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/readSingleBlog/"+id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                store.dispatch(SetSingleBlog(res.data.data[0]))
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function blogCommentsCreate(id, name, comments) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/createBlogComment";
+    const postBody={
+        blogId:id,
+        name:name,
+        comment:comments
+    }
+    return axios.post(url,postBody, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Comment add Success")
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+
+
+
 
 
