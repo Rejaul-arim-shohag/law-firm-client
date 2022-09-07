@@ -32,6 +32,8 @@ import ChoiceUsListPage from "./Pages/AdminDashboardPages/ChoiceUsListPage";
 import WriteBlogPage from "./Pages/WriteBlogPage";
 import OurBlogListPage from "./Pages/AdminDashboardPages/OurBlogListPage";
 import BlogListPage from "./Pages/AdminDashboardPages/BlogListPage";
+import UpdateBlogPage from "./Pages/AdminDashboardPages/UpdateBlogPage";
+import SmallServicesPage from "./Pages/AdminDashboardPages/SmallServicesPage";
 function App() {
   return (
     <Fragment>
@@ -112,6 +114,14 @@ function App() {
 
           <Route path="/blogList" element={<AdminProtect>
             <BlogListPage/>
+          </AdminProtect>} />
+
+          <Route path="/updateBlog/:id" element={<AdminProtect>
+            <UpdateBlogPage/>
+          </AdminProtect>} />
+
+          <Route path="/Utilities" element={<AdminProtect>
+            <SmallServicesPage/>
           </AdminProtect>} />
 
           <Route path="*" element={<NotFound />} />

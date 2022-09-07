@@ -1,18 +1,31 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { ChooiceUsList } from '../../../ApiRequest/APIRequest';
+import { ChooiceUsList, deleteChooiceUsItem } from '../../../ApiRequest/APIRequest';
 import ReviewModal from "../../ReviewModal/ReviewModal";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useSelector } from "react-redux"
+import { DeleteAlert } from '../../../Helper/DeleteHelper';
 const ChoiceUsList = () => {
     let navigate = useNavigate()
     const [modalShow, setModalShow] = useState(false);
     useEffect(() => {
         ChooiceUsList()
     }, [])
+
+    const handleDeleteItem=(id)=>{
+        debugger;
+       DeleteAlert().then((res)=>{
+        if(res){
+            deleteChooiceUsItem(id)
+            .then((res)=>{
+                ChooiceUsList()
+            })
+        }
+       })
+    }
+    
     const chooiceUsList = useSelector((state) => state.chooiceUs.chooiceUsList);
-    console.log(chooiceUsList)
     return (
         <div>
             <div className="container">
@@ -52,22 +65,11 @@ const ChoiceUsList = () => {
                                                                 <h6 className="mb-0  text-xs">{item.title}</h6>
                                                             </td>
                                                             <td>
-                                                                <p className="text-xs font-weight-bold mb-0">{item.description}</p>
+                                                                <p className="text-xs font-weight-bold mb-0">{item.description.slice(0, 70)}...</p>
                                                             </td >
                                                             <td>
-                                                                <div className="float-right h-auto d-flex">
-                                                                    <div className="user-dropdown">
-                                                                        <button type="button" class="icon-nav btn btn-success btn-sm actionBtn"><BsThreeDotsVertical/></button>
-                                                                        <div className="action-dropdown-content">
-                                                                            <a className="side-bar-item-user py-2">
-                                                                                <span className="side-bar-item-caption">Edit</span>
-                                                                            </a>
-                                                                            <a className="side-bar-item-user py-2">
-                                                                                <span className="side-bar-item-caption">Delete</span>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                <button onClick={()=>handleDeleteItem(item._id)} className="btn btn-danger btn-sm">Delete</button>
+                                                                
                                                             </td>
 
                                                         </tr>

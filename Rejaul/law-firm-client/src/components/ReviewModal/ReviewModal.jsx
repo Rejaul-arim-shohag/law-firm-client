@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { ImCross } from "react-icons/im";
-import { createChoiceUsItem, createReview } from '../../ApiRequest/APIRequest';
+import { ChooiceUsList, createChoiceUsItem, createReview } from '../../ApiRequest/APIRequest';
 import { ErrorToast, getBase64, IsEmail, IsEmpty, SuccessToast } from '../../Helper/FormHelper';
 
 const ReviewModal = (props) => {
@@ -29,6 +29,7 @@ const ReviewModal = (props) => {
             createChoiceUsItem(icon,title,description)
             .then((res)=>{ 
                 if(res===true){
+                    ChooiceUsList()
                     props.onHide()
                 }
             })
@@ -44,7 +45,7 @@ const ReviewModal = (props) => {
 
             <Modal.Body className="px-5 py-5">
                 <div className="d-flex justify-content-between">
-                    <h5>Add Our Support</h5>
+                    <h5>Insert an Item</h5>
                     <h5 onClick={props.onHide}><ImCross /></h5>
                 </div>
                 <div className="row">

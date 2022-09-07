@@ -9,6 +9,7 @@ import reviewReducer from "../redux/stateSlice/reviewSlice";
 import chooiceUsReducer from "../redux/stateSlice/chooiceUsSlice";
 import blogReducer from "../redux/stateSlice/blogSlice"
 import singleBlogReducer from "../redux/stateSlice/singleBlogSlice"
+import certificateReducer from "../redux/stateSlice/certificateSlice"
 
 export default configureStore({
     reducer:{
@@ -21,6 +22,7 @@ export default configureStore({
         reviews:reviewReducer,
         chooiceUs:chooiceUsReducer,
         blogs:blogReducer,
-        singleBlog:singleBlogReducer
+        singleBlog:singleBlogReducer,
+        certificate:certificateReducer
     }
 })

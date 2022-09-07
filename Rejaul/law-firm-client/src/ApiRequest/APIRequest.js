@@ -9,9 +9,10 @@ import { HideLoader, ShowLoader } from "../redux/stateSlice/settingSlice";
 import { ErrorToast, SuccessToast } from "../Helper/FormHelper";
 import { setAdminToken, getAdminToken, setAdminDetails, setToken, setUserDetails } from "../Helper/SessionHelper";
 import { SetPlans } from "../redux/stateSlice/ourPlanSlice";
-import {SetchooiceUs} from "../redux/stateSlice/chooiceUsSlice";
-import {Setblogs} from "../redux/stateSlice/blogSlice";
-import {SetSingleBlog} from "../redux/stateSlice/singleBlogSlice";
+import { SetchooiceUs } from "../redux/stateSlice/chooiceUsSlice";
+import { Setblogs } from "../redux/stateSlice/blogSlice";
+import { SetSingleBlog } from "../redux/stateSlice/singleBlogSlice";
+import { Setcertificate } from "../redux/stateSlice/certificateSlice";
 
 // const baseUrl = "https://karim-law-firm.herokuapp.com/api/v1";
 const baseUrl = "http://localhost:8080/api/v1";
@@ -578,16 +579,16 @@ export function deleteComment(id) {
 
 
 //choice us 
-export function createChoiceUsItem(image,title,description) {
+export function createChoiceUsItem(image, title, description) {
     store.dispatch(ShowLoader())
     const url = baseUrl + "/createChoiceUsItem";
     console.log(url)
     const postBody = {
         image: image,
         title: title,
-        description:description
+        description: description
     }
-    return axios.post(url,postBody, AxiosHeader)
+    return axios.post(url, postBody, AxiosHeader)
         .then((res) => {
             store.dispatch(HideLoader())
             if (res.status === 200) {
@@ -626,18 +627,39 @@ export function ChooiceUsList() {
         })
 }
 
+export function deleteChooiceUsItem(id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/deleteChoiceUsItem/" + id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+
 
 //blog
 export function CreateBlog(image, title, content) {
     store.dispatch(ShowLoader())
     const url = baseUrl + "/createBlog";
-    const postBody={
-        authorName:"Rejaul karim",
-        image:image,
-        title:title,
-        description:content
+    const postBody = {
+        authorName: "Rejaul karim",
+        image: image,
+        title: title,
+        description: content
     }
-    return axios.post(url,postBody, AxiosHeader)
+    return axios.post(url, postBody, AxiosHeader)
         .then((res) => {
             store.dispatch(HideLoader())
             if (res.status === 200) {
@@ -677,13 +699,13 @@ export function readBlogList() {
 }
 export function readBlogById(id) {
     store.dispatch(ShowLoader())
-    const url = baseUrl + "/readSingleBlog/"+id;
+    const url = baseUrl + "/readSingleBlog/" + id;
     return axios.get(url, AxiosHeader)
         .then((res) => {
             store.dispatch(HideLoader())
             if (res.status === 200) {
                 store.dispatch(SetSingleBlog(res.data.data[0]))
-                return true;
+                return res.data.data[0];
             }
             else {
                 ErrorToast("Something Went Wrong")
@@ -691,6 +713,7 @@ export function readBlogById(id) {
             }
         })
         .catch((err) => {
+            console.log(err)
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
         })
@@ -699,12 +722,12 @@ export function readBlogById(id) {
 export function blogCommentsCreate(id, name, comments) {
     store.dispatch(ShowLoader())
     const url = baseUrl + "/createBlogComment";
-    const postBody={
-        blogId:id,
-        name:name,
-        comment:comments
+    const postBody = {
+        blogId: id,
+        name: name,
+        comment: comments
     }
-    return axios.post(url,postBody, AxiosHeader)
+    return axios.post(url, postBody, AxiosHeader)
         .then((res) => {
             store.dispatch(HideLoader())
             if (res.status === 200) {
@@ -721,6 +744,195 @@ export function blogCommentsCreate(id, name, comments) {
             ErrorToast("Something Went Wrong")
         })
 }
+
+export function delteBlogById(id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/deleteBlog/" + id;
+
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrongs")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+
+export function updateBlog(id, image, title, description) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/updateBlog/" + id;
+    console.log(url)
+    const postBody = {
+        image: image,
+        title: title,
+        description: description
+    }
+    return axios.post(url, postBody, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Update Success")
+                store.dispatch(HideLoader())
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrongs")
+                return false;
+            }
+        })
+        .catch((err) => {
+            console.log(err)
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function insertCertificate(image, title) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/insertPortfolio";
+    const postBody = {
+        image: image,
+        name: title,
+    }
+    return axios.post(url, postBody, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Update Success")
+                store.dispatch(HideLoader())
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+
+export function certificateList() {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/portfolioList";
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                store.dispatch(Setcertificate(res.data.data))
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function deleteCertificate(id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/deletePortfolio/" + id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                console.log(res)
+                SuccessToast("Delete Success")
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+
+//footer add
+
+export function insertFooterItem(name,link) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/createLegalService";
+    const postBody = {
+        name: name,
+        link: link
+    }
+    return axios.post(url,postBody, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Footer Add Success")
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function readFooterList() {
+    const url = baseUrl + "/readFooterLegalService";
+    return axios.get(url)
+        .then((res) => {
+            if (res.status === 200) {
+                return res.data.data;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function deleteFooter(id) {
+    const url = baseUrl + "/deleteLegalService/"+id;
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrongs")
+                return false;
+            }
+        })
+        .catch((err) => {
+            console.log(err)
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+
 
 
 

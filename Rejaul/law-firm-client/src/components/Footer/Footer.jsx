@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Footer.css";
 import { BsInstagram } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -8,9 +8,18 @@ import { MdLocationOn } from "react-icons/md";
 import { BiTime } from "react-icons/bi";
 import { AiOutlinePhone } from "react-icons/ai";
 import { HiOutlineMail } from "react-icons/hi";
+import { readFooterList } from '../../ApiRequest/APIRequest';
+import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
+    const [footers, setFooters] = useState([]);
+    useEffect(() => {
+        readFooterList()
+            .then((result) => {
+                setFooters(result)
+            })
+    }, [])
     return (
         <div className="footer py-5">
             <div className="container">
@@ -22,17 +31,25 @@ const Footer = () => {
                             <FaFacebookF />
                             <FaTwitter />
                             <FaLinkedinIn />
-    
                         </div>
                     </div>
 
                     <div className="d-flex justify-content-center">
                         <div>
-                            <h5>Legal Services</h5>
+                        <h5>Legal Services</h5>
+                            {
+                                footers?.map((item, index)=>{
+                                    return(
+                                        <Link key={index} to={item?.link}>{item?.name}</Link>
+                                    )
+                                })
+                            }
+                           
+                            {/* <h5>Legal Services</h5>
                             <p>Auto Accident</p>
                             <p>Constraction Loans</p>
                             <p>Real State</p>
-                            <p>Finanace Law</p>
+                            <p>Finanace Law</p> */}
                         </div>
                     </div>
                     <div className="d-flex justify-content-end">

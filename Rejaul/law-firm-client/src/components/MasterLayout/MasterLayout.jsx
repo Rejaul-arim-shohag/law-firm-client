@@ -100,6 +100,10 @@ const MasterLayout = (props) => {
                     <FaGitter className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Reviews</span>
                 </NavLink>
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Utilities" >
+                    <FaGitter className="side-bar-item-icon" />
+                    <span className="side-bar-item-caption">Utilities</span>
+                </NavLink>
             </div>
 
             <div ref={(div) => contentRef = div} className="content">

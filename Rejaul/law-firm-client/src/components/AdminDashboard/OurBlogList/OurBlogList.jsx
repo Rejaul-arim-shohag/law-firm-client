@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { readBlogList } from '../../../ApiRequest/APIRequest';
+import { delteBlogById, readBlogList } from '../../../ApiRequest/APIRequest';
+import { DeleteAlert } from '../../../Helper/DeleteHelper';
 
 const OurBlogList = () => {
     let navigate = useNavigate()
@@ -10,6 +11,21 @@ const OurBlogList = () => {
         readBlogList()
     }, [])
     const blogList = useSelector(state => state.blogs.blogList);
+    const handleDeleteBlog=(id)=>{
+        DeleteAlert().then((res)=>{
+            if (res) {
+                delteBlogById(id)
+                    .then((res) => {
+                        if(res===true){
+                            readBlogList()
+                        }
+                    })
+            }
+        })
+    
+        // 
+    }
+    
     return (
         <div>
             <div className="container">
@@ -52,10 +68,10 @@ const OurBlogList = () => {
                                                                     <button type="button" class="icon-nav btn btn-success btn-sm actionBtn"><BsThreeDotsVertical /></button>
                                                                     <div className="action-dropdown-content">
                                                                         <a className="side-bar-item-user px-2 py-1">
-                                                                            <span className="side-bar-item-caption">Edit</span>
+                                                                            <span onClick={()=>navigate(`/updateBlog/${item._id}`)} className="side-bar-item-caption">Edit</span>
                                                                         </a>
                                                                         <a className="side-bar-item-user px-2 py-1">
-                                                                            <span className="side-bar-item-caption">Delete</span>
+                                                                            <span onClick={()=>handleDeleteBlog(item._id)} className="side-bar-item-caption">Delete</span>
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -72,6 +88,7 @@ const OurBlogList = () => {
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

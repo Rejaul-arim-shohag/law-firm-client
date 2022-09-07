@@ -12,7 +12,6 @@ const UpdateService = () => {
     useEffect(() => {
         readServiceById(id)
         .then((result)=>{
-            console.log("result", result)
             nameRef.value = result?.Name
             previewIconRef.src=result?.icon
             descriptionRef.value = result?.description

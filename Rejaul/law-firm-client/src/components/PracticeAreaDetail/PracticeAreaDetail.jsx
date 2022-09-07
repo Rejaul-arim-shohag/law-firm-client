@@ -1,13 +1,31 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { readServiceById } from '../../ApiRequest/APIRequest';
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 const PracticeAreaDetail = () => {
+    let { id } = useParams();
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
+    useEffect(() => {
+        readServiceById(id)
+            .then((result) => {
+                setTitle(result.Name)
+                setDescription(result.description)
+            })
+    }, [title, description])
+    console.log(title)
     return (
-        <div style={{backgroundColor: '#E9F5EC'}} className="mb-5">
+        <div style={{ backgroundColor: '#E9F5EC' }} className="mb-5">
             <div className="d-flex container justify-content-center">
-                <div style={{backgroundColor: '#E9F5EC'}}  className="card py-5 border-0 col-12 col-md-12">
+                <div style={{ backgroundColor: '#E9F5EC' }} className="card py-5 border-0 col-12 col-md-12">
                     <div className="card-body">
-                        <h2 className="card-title test-uppercase py-3">PROPERTY LAW </h2>
-                        <h6 className="card-text lh-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quia, odio nihil deserunt natus amet cumque iusto praesentium consequatur dignissimos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, harum!Some quick example text to build on the card title and make up the bulk of the card's content.Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quia, odio nihil deserunt natus amet cumque iusto praesentium consequatur dignissimos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, harum!Some quick example text to build on the card title and make up the bulk of the card's content Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quia, odio nihil deserunt natus amet cumque iusto praesentium consequatur dignissimos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, harum!Some quick example text to build on the card title and make up the bulk of the card's content.Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quia, odio nihil deserunt natus amet cumque iusto praesentium consequatur dignissimos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, harum!Some quick example text to build on the card title and make up the bulk of the card's content.</h6>
+                        <h2 className="mb-4">
+                            {ReactHtmlParser(title)}
+                        </h2>
+                        <p>
+                            {ReactHtmlParser(description)}
+                        </p>
                     </div>
                 </div>
             </div>
