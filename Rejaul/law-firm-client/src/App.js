@@ -34,6 +34,8 @@ import OurBlogListPage from "./Pages/AdminDashboardPages/OurBlogListPage";
 import BlogListPage from "./Pages/AdminDashboardPages/BlogListPage";
 import UpdateBlogPage from "./Pages/AdminDashboardPages/UpdateBlogPage";
 import SmallServicesPage from "./Pages/AdminDashboardPages/SmallServicesPage";
+import AppointmentListPage from "./Pages/AdminDashboardPages/AppointmentListPage";
+import AdminProfile from "./components/AdminDashboard/AdminProfile/AdminProfile";
 function App() {
   return (
     <Fragment>
@@ -48,15 +50,8 @@ function App() {
           <Route path="/practiceArea/:id" element={<PracticeAreaDetailPage />} />
           <Route path="/sign-up" element={<RegistrationPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route
-            path="/appointment"
-            element={
-              <UserProtected>
-                <AppointmentPage />
-              </UserProtected>
-            }
-          />
-          
+          <Route path="/appointment" element={<AppointmentPage />} />
+        
           <Route
             path="/profile"
             element={
@@ -70,6 +65,9 @@ function App() {
           <Route path="/admin-login" element={<AdminLoginPage />} />
           <Route path="/adminDashboard" element={<AdminProtect>
             <DashboardPage />
+          </AdminProtect>} />
+          <Route path="/AppointmentList" element={<AdminProtect>
+            <AppointmentListPage />
           </AdminProtect>} />
           <Route path="/AddAtorney" element={<AdminProtect>
             <AttorneyAddPage />
@@ -122,6 +120,10 @@ function App() {
 
           <Route path="/Utilities" element={<AdminProtect>
             <SmallServicesPage/>
+          </AdminProtect>} />
+
+          <Route path="/adminProfile" element={<AdminProtect>
+            <AdminProfile/>
           </AdminProtect>} />
 
           <Route path="*" element={<NotFound />} />

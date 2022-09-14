@@ -1,50 +1,50 @@
-class SessionHelper{
-    setAdminToken(token){
-        localStorage.setItem("adminToken",token)
+class SessionHelper {
+    setAdminToken(token) {
+        localStorage.setItem("adminToken", token)
     }
-    getAdminToken(){
+    getAdminToken() {
         return localStorage.getItem("adminToken")
     }
 
-    setAdminDetails(AdminDetails){
-        localStorage.setItem("AdminDetails",JSON.stringify(AdminDetails))
+    setAdminDetails(AdminDetails) {
+        localStorage.setItem("AdminDetails", JSON.stringify(AdminDetails))
     }
-    getAdminDetails(){
-       return JSON.parse(localStorage.getItem("AdminDetails"))
+    getAdminDetails() {
+        return JSON.parse(localStorage.getItem("AdminDetails"))
     }
 
-    setToken(token){
-        localStorage.setItem("token",token)
+    setToken(token) {
+        localStorage.setItem("token", token)
     }
-    getToken(){
+    getToken() {
         return localStorage.getItem("token")
     }
 
-    setEmail(email){
-        localStorage.setItem("email",email)
+    setEmail(email) {
+        localStorage.setItem("email", email)
     }
-    getEmail(){
+    getEmail() {
         return localStorage.getItem("email")
     }
-    setOTP(OTP){
-        localStorage.setItem("OTP",OTP)
+    setOTP(OTP) {
+        localStorage.setItem("OTP", OTP)
     }
-    getOTP(){
+    getOTP() {
         return localStorage.getItem("OTP")
     }
 
-    setUserDetails(userDetails){
-        localStorage.setItem("userDetails",JSON.stringify(userDetails))
+    setUserDetails(userDetails) {
+        localStorage.setItem("userDetails", JSON.stringify(userDetails))
     }
-    getUserDetails(){
-       return JSON.parse(localStorage.getItem("userDetails"))
+    getUserDetails() {
+        return JSON.parse(localStorage.getItem("userDetails"))
     }
-    removeSession(){
+    removeSession() {
         localStorage.clear();
-        window.location.href="/"
+        window.location.href = "/admin-login"
     }
 }
 export const {
-    setToken,getToken,setUserDetails,getUserDetails,setAdminDetails,getAdminDetails,
-     removeSession,setEmail,getEmail,setOTP,getOTP, setAdminToken, getAdminToken
-}=new SessionHelper;
+    setToken, getToken, setUserDetails, getUserDetails, setAdminDetails, getAdminDetails,
+    removeSession, setEmail, getEmail, setOTP, getOTP, setAdminToken, getAdminToken
+} = new SessionHelper;

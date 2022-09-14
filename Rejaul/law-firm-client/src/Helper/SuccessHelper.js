@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
 export function SuccessAlertHelper(){
     Swal.fire(
-        'Good job!',
-        'You clicked the button!',
+        'Thank You',
+        'Your appointment has been created successfully',
         'success',
       )
 }

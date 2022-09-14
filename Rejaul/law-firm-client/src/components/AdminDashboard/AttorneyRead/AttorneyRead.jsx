@@ -64,21 +64,20 @@ const AttorneyRead = () => {
                                                                     </div>
                                                                     <div className="d-flex flex-column justify-content-center">
                                                                         <h6 className="mb-0  text-xs">{item.Name}</h6>
-
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                             <td>
-                                                                <p className="text-xs font-weight-bold mb-0">{item.email}</p>
+                                                                <p className="text-xs font-weight-bold mb-0 mt-4">{item.email}</p>
                                                             </td >
                                                             <td>
-                                                                <p className="text-xs font-weight-bold mb-0">{item.mobile}</p>
+                                                                <p className="text-xs font-weight-bold mb-0 mt-4">{item.mobile}</p>
                                                             </td>
                                                             <td>
-                                                                <p className="text-xs font-weight-bold mb-0">{item.title}</p>
+                                                                <p className="text-xs font-weight-bold mb-0 mt-4">{item.title}</p>
                                                             </td>
                                                             <td>
-                                                                <div className="float-right h-auto d-flex">
+                                                                <div className="float-right h-auto d-flex mt-3">
                                                                     <div className="user-dropdown">
                                                                         <button type="button" class="icon-nav btn btn-success btn-sm actionBtn"><BsThreeDotsVertical /></button>
                                                                         <div className="action-dropdown-content">

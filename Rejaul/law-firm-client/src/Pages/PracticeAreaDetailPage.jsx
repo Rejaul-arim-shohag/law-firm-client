@@ -5,6 +5,7 @@ import Contact from "../components/Contact/Contact"
 import PracticeAreaDetail from '../components/PracticeAreaDetail/PracticeAreaDetail';
 import Footer from "../components/Footer/Footer"
 const PracticeAreaDetailPage = () => {
+    
     return (
         <>
             <NavBar />

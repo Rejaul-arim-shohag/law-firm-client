@@ -7,8 +7,10 @@ import { useSelector } from "react-redux";
 import { useEffect } from 'react';
 import { planGetRequest } from '../../ApiRequest/APIRequest';
 import curveImg from "../../Assets/images/curve-2.b04970a8.svg"
+import { useNavigate } from 'react-router-dom';
 
 const PricingPlans = () => {
+    let navigate=useNavigate()
     useEffect(() => {
         planGetRequest()
     }, [])
@@ -35,7 +37,7 @@ const PricingPlans = () => {
                                     <h6><AiOutlineCheck />{service.extraBenifit3}</h6>
                                     <h6><AiOutlineCheck />{service.extraBenifit4}</h6>
                                     <h6><AiOutlineCheck />{service.extraBenifit5}</h6>
-                                    <button className="navbarButton mt-1">Book Now</button>
+                                    <button onClick={()=>navigate("/appointment")} className="navbarButton mt-2">Book Now</button>
                                 </div>
                         )
                     })

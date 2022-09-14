@@ -9,8 +9,8 @@ const DashboardPage = () => {
         <>
             <MasterLayout>
                 <Dashboard/>
+                <NewAppointment/>
                 <Comments/>
-                {/* <NewAppointment/> */}
             </MasterLayout>
         </>
     );

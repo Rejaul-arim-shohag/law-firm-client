@@ -40,7 +40,7 @@ const Footer = () => {
                             {
                                 footers?.map((item, index)=>{
                                     return(
-                                        <Link key={index} to={item?.link}>{item?.name}</Link>
+                                       <h6> <Link key={index} to={item?.link}>{item?.name}</Link></h6>
                                     )
                                 })
                             }

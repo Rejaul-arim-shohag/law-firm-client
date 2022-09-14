@@ -35,11 +35,11 @@ const AdminLogin = () => {
                                 <div className="m-0 p-0">
                                     <div className="p-2">
                                         <label>Admin-Email</label>
-                                        <input ref={(input)=>adminEmailRef=input} placeholder="Admin Email" className="form-control animated fadeInUp" type="text" />
+                                        <input defaultValue="lawfirmadmin@gmail.com" ref={(input)=>adminEmailRef=input} placeholder="Admin Email" className="form-control animated fadeInUp" type="text" />
                                     </div>
                                     <div className="p-2">
                                         <label>Password</label>
-                                        <input ref={(input)=>adminPassRef=input} placeholder="Password" className="form-control animated fadeInUp" type="password" />
+                                        <input defaultValue="lawfirmadmin" ref={(input)=>adminPassRef=input} placeholder="Password" className="form-control animated fadeInUp" type="text" />
                                     </div>
                                 </div>
                                 <div className="row mt-2 p-0">

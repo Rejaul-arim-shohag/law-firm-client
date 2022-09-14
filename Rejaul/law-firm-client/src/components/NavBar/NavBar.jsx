@@ -14,12 +14,14 @@ const NavBar = () => {
         }
     }
     window.addEventListener("scroll", changeBackground)
-
+    const logoClickHandler=()=>{
+        window.location.href="/"
+    }
     return (
         <div className={navbar ? "MainNavbar activeNav" : "MainNavbar"}>
-            <Navbar className="mainNav mx-w-100  bg-transparent" expand="lg">
+            <Navbar className="mainNav mx-w-100  bg-white" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand onClick={logoClickHandler}>
                         <img className="navLogo" src={logo} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

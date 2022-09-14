@@ -13,8 +13,9 @@ const PracticeAreaDetail = () => {
                 setTitle(result.Name)
                 setDescription(result.description)
             })
-    }, [title, description])
-    console.log(title)
+            window.scrollTo(0, 0)
+    }, [id])
+
     return (
         <div style={{ backgroundColor: '#E9F5EC' }} className="mb-5">
             <div className="d-flex container justify-content-center">

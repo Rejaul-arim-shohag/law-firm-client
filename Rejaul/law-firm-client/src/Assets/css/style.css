@@ -3,6 +3,14 @@
 .d-none{
   display: none;
 }
+.dropdown-menu[data-bs-popper] {
+  top: 100%;
+  left: -81px;
+  margin-top: .125rem;
+}
+.dropdown-toggle::after {
+  display: none;
+}
 .modal-backdrop.show {
   opacity: 0.1 !important;
 }

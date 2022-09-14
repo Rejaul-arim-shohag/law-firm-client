@@ -6,9 +6,9 @@ import NavBar from '../components/NavBar/NavBar';
 const AppintmentPage = () => {
     return (
         <div>
-            <NavBar/>
-            {/* <Appointment/> */}
-            <Footer/>
+            <NavBar />
+            <Appointment />
+            <Footer />
         </div>
     );
 };

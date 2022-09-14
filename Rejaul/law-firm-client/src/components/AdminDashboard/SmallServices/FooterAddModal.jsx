@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import { ImCross } from "react-icons/im";
-import { insertFooterItem } from '../../../ApiRequest/APIRequest';
+import { insertFooterItem, readFooterList } from '../../../ApiRequest/APIRequest';
 import { ErrorToast, IsEmpty } from '../../../Helper/FormHelper';
 
 const FooterAddModal = (props) => {
@@ -18,7 +18,9 @@ const FooterAddModal = (props) => {
         else {
             insertFooterItem(name, link)
                 .then((res) => {
-                    // certificateList()
+                    if(res===true){
+                        readFooterList()
+                    }
                     props.onHide()
                 })
         }

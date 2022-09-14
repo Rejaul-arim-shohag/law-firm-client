@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 const HeroSection = () => {
     let navigate = useNavigate()
     const handleNavigateToAppoinment = () => {
-        navigate("/contact-us")
+        navigate("/appointment")
     }
     useEffect(() => {
         certificateList()

@@ -10,7 +10,7 @@ const ClientReview = () => {
                
                 <div className="row gx-5">
                     <div className="col-12 col-md-8 mx-auto">
-                        <h4>Share Your Exprience</h4>
+                        <h4 className="text-secondary mb-4 mt-5">Say Something About Our LAW Firm</h4>
                         <div className="row  gx-4">
                             <div className="col-12 col-md-6 mt-2">
                                 <input placeholder="Your Name" className="py-2 form-control inputTextArea" type="text" />

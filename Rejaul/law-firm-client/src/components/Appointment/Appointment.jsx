@@ -1,174 +1,138 @@
-// import React, { useState } from 'react';
-// import "./Appointment.css";
-// import DatePicker from 'react-datepicker/dist/react-datepicker';
-// import { DayPicker } from 'react-day-picker';
-// import moment from 'moment';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-// import ApointmentModal from './ApointmentModal';
-// const Appointment = () => {
-//     const [date, setDate] = useState(new Date());
-//     const [modalShow, setModalShow] = useState(false);
-//     const today = new Date();
-//     // const year = date.getFullYear();
-//     // const month = date.getMonth() + 1;
-//     // const day = date.getDate();
-//     //https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd
+import React, { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { createAppointment, readSlots, servicesGetRequest } from '../../ApiRequest/APIRequest';
+import { ErrorToast, IsEmail, IsEmpty } from '../../Helper/FormHelper';
+import { SuccessAlertHelper } from '../../Helper/SuccessHelper';
+
+const Appointment = () => {
+    const [slots, setSloat] = useState([])
+    let nameRef, emailRef, phoneRef = useRef();
     
-//     let footer = <p>Please pick a day.</p>;
-//     const appointmentData = [
-//         {
-//             name: "Family Law",
-//             slots: "6",
-//             bill: "70$"
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        readSlots()
+            .then((result) => {
+                setSloat(result)
+            })
+        servicesGetRequest()
+       
+    }, [])
+    
+    const ServiceList = useSelector((state) => state.services.serviceList);
 
-//         },
-//         {
-//             name: "Commercial Law",
-//             slots: "6",
-//             bill: "100$"
+    const [serviceName, setServiceName] = useState("");
+    const [time, setTime] = useState("");
+    const [date, setDate] = useState("");
+    const handleServiceChange = (e) => {
+        setServiceName(e.target.value)
+    }
+    const handleSlotChange = (e) => {
+        setTime(e.target.value)
+    }
+    const handleDateChange = (e) => {
+        setDate(e.target.value)
+    }
 
-//         },
-//         {
-//             name: "Banking Law",
-//             slots: "6",
-//             bill: "80$"
+    const handleCreateAppointment = () => {
+        const name = nameRef.value;
+        const email = emailRef.value;
+        const phone = phoneRef.value;
+        if (IsEmpty(name)) {
+            ErrorToast("Name require")
+        }
+        else if (IsEmail(email)) {
+            ErrorToast("valid email require")
+        }
+        else if (IsEmpty(phone)){
+            ErrorToast("phone number require")
+        }
+        else if (IsEmpty(serviceName)) {
+            ErrorToast("Select your service")
+        }
+        else if (IsEmpty(time)) {
+            ErrorToast("Choose your time")
+        }
+        else if (IsEmpty(date)) {
+            ErrorToast("Choose your Date")
+        }
+        else {
+            createAppointment(name,email,phone,serviceName,time,date)
+            .then((result)=>{
+                if(result===true){
+                    nameRef.value=""
+                    emailRef.value=""
+                    phoneRef.value=""
+                    setServiceName("")
+                    setTime("")
+                    setDate("")
+                    SuccessAlertHelper()
+                }
+            })
+        }
+    }
+    return (
+        <div className="mt-5">
+            <div className="container mb-5">
+                <div className="row d-flex justify-content-center">
+                    <div className="col-md-10 col-12">
+                        <div className="card py-3 px-2 border-0 mb-5">
+                            <h1 className="text-center mt-4 mb-5">Book Appointment</h1>
+                            <div className="card-body">
+                                <div className="row">
+                                    <div className="col-md-4 col-12 mt-3">
+                                        <label className="mb-1">Name</label>
+                                        <input required ref={(input) => nameRef = input} className="form-control outline: none" type="text" style={{ boxShadow: "none", borderRadius: "20px" }} />
+                                    </div>
+                                    <div className="col-md-4 col-12 mt-3">
+                                        <label className="mb-1">Email</label>
+                                        <input required ref={(input) => emailRef = input} className="form-control outline: none" type="text" style={{ boxShadow: "none", borderRadius: "20px" }} />
+                                    </div>
+                                    <div className="col-md-4 col-12 mt-3">
+                                        <label className="mb-1">Phone</label>
+                                        <input required ref={(input) => phoneRef = input} className="form-control outline: none" type="text" style={{ boxShadow: "none", borderRadius: "20px" }} />
+                                    </div>
+                                    <div className="col-md-4 col-12 mt-3">
+                                        <label className="mb-1">Choose Service</label>
+                                        <select onChange={handleServiceChange} className="form-select outline: none" type="text" style={{ boxShadow: "none", borderRadius: "20px" }}>
+                                            <option selected></option>
+                                            {
+                                                ServiceList.map((service) => {
+                                                    return (
+                                                        <option value={service.Name}>{service.Name}</option>
+                                                    )
+                                                })
+                                            }
+                                        </select>
+                                    </div>
+                                    <div className="col-md-4 col-12 mt-3">
+                                        <label className="mb-1">Time</label>
+                                        <select onChange={handleSlotChange} className="form-select outline: none" type="text" style={{ boxShadow: "none", borderRadius: "20px" }}>
+                                            <option selected>Choose Time</option>
+                                            {
+                                                slots.map((slot) => {
+                                                    return (
+                                                        <option value={slot.slotTime}>{slot.slotTime}</option>
+                                                    )
+                                                })
+                                            }
 
-//         },
-//         {
-//             name: "Property Law",
-//             slots: "6",
-//             bill: "120$"
+                                        </select>
+                                    </div>
+                                    <div className="col-md-4 col-12 mt-3">
+                                        <label className="mb-1">Date</label>
+                                        <input onChange={handleDateChange} className="form-control outline: none" type="date" style={{ boxShadow: "none", borderRadius: "20px" }} />
+                                    </div>
+                                    <div className="col-md-4 col-12 mt-4">
+                                        <button onClick={handleCreateAppointment} className="btn btn-success w-100" style={{ boxShadow: "none", borderRadius: "20px" }}>Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
 
-//         },
-//         {
-//             name: "Construction Law",
-//             slots: "6",
-//             bill: "100$"
-
-//         },
-//         {
-//             name: "Investment Law",
-//             slots: "3",
-//             bill: "30$"
-
-//         },
-//         {
-//             name: "Family Law",
-//             slots: "6",
-//             bill: "70$"
-
-//         },
-//     ]
-//     const css = `
-//     .my-selected:not([disabled]) { 
-//         font-weight: bold; 
-//         border: 2px solid  #169156;
-//         color:#169156;
-//     }
-//     .my-selected:hover:not([disabled]) { 
-//         border-color: #000133;
-//         color: #000133;
-//     }
-//     .my-today { 
-//         font-weight: bold;
-//         font-size: 20px;
-//         color: #169156;
-//     }
-//     `;
-//     return (
-//         <div className="appointment my-5 py-2">
-//             <div className="container">
-//                 <div className="row">
-//                     <div className="col-md-4 px-3">
-//                         <style>{css}</style>
-//                         <DayPicker
-//                             mode="single"
-//                             selected={date}
-//                             disabled={{ before: today }}
-//                             onSelect={setDate}
-//                             modifiersClassNames={{
-//                                 selected: 'my-selected',
-//                                 today: 'my-today'
-//                             }}
-//                             modifiersStyles={{
-//                                 disabled: { fontSize: '75%' }
-//                             }}
-//                         // footer={footer}
-//                         />
-//                     </div>
-//                     <div className="col-md-8 px-3">
-//                         <h2>SET A APPOINTMENT</h2>
-//                         <h6 className="mt-3">AVAILABLE APPOINTMENT ON {moment(date).format('Do MMMM, YYYY')}</h6>
-//                         <Row>
-//                             <div className="col-md-4 my-3">
-//                                 <div className="bg-light px-4 py-3">
-//                                     <h6>Company Law</h6>
-//                                     <p>10 slots available</p>
-//                                     <p> $120</p>
-//                                     <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
-//                                     <ApointmentModal
-//                                       show={modalShow} close={() => setModalShow(false)} 
-//                                     />                                </div>
-//                             </div>
-//                             <div className="col-md-4 my-3">
-//                                 <div className="bg-light px-4 py-3">
-//                                     <h6>Commercial Law</h6>
-//                                     <p>10 slots available</p>
-//                                     <p> $123</p>
-//                                     <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
-//                                     <ApointmentModal
-//                                       show={modalShow} close={() => setModalShow(false)} 
-//                                     />
-//                                 </div>
-//                             </div>
-//                             <div className="col-md-4 my-3">
-//                                 <div className="bg-light px-4 py-3">
-//                                     <h6>Banking Law</h6>
-//                                     <p>10 slots available</p>
-//                                     <p> $240</p>
-//                                     <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
-//                                     <ApointmentModal
-//                                       show={modalShow} close={() => setModalShow(false)} 
-//                                     />                                </div>
-//                             </div>
-//                             <div className="col-md-4 my-3">
-//                                 <div className="bg-light px-4 py-3">
-//                                     <h6>Property Law</h6>
-//                                     <p>10 slots available</p>
-//                                     <p> $120</p>
-//                                     <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
-//                                     <ApointmentModal
-//                                       show={modalShow} close={() => setModalShow(false)} 
-//                                     />                                </div>
-//                             </div>
-//                             <div className="col-md-4 my-3">
-//                                 <div className="bg-light px-4 py-3">
-//                                     <h6>Construction Law</h6>
-//                                     <p>3 slots available</p>
-//                                     <p> $199</p>
-//                                     <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
-//                                     <ApointmentModal
-//                                       show={modalShow} close={() => setModalShow(false)} 
-//                                     />
-//                                 </div>
-//                             </div>
-//                             <div className="col-md-4 my-3">
-//                                 <div className="bg-light px-4 py-3">
-//                                     <h6>Investment Services</h6>
-//                                     <p>10 slots available</p>
-//                                     <p> $99</p>
-//                                     <button onClick={() => setModalShow(true)} className="mainButton3">Book Now</button>
-//                                     <ApointmentModal
-//                                       show={modalShow} close={() => setModalShow(false)} 
-//                                     />                                </div>
-//                             </div>
-//                         </Row>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Appointment;
+export default Appointment;

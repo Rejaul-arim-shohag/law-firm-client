@@ -62,13 +62,13 @@ const ChoiceUsList = () => {
 
                                                             </td>
                                                             <td>
-                                                                <h6 className="mb-0  text-xs">{item.title}</h6>
+                                                                <h6 className="mb-0  text-xs mt-3">{item.title}</h6>
                                                             </td>
                                                             <td>
-                                                                <p className="text-xs font-weight-bold mb-0">{item.description.slice(0, 70)}...</p>
+                                                                <p className="text-xs font-weight-bold mb-0  mt-3">{item.description.slice(0, 70)}...</p>
                                                             </td >
                                                             <td>
-                                                                <button onClick={()=>handleDeleteItem(item._id)} className="btn btn-danger btn-sm">Delete</button>
+                                                                <button onClick={()=>handleDeleteItem(item._id)} className="btn btn-danger btn-sm  mt-3">Delete</button>
                                                                 
                                                             </td>
 

@@ -1,16 +1,21 @@
 import React, { Fragment, useRef } from "react";
 import { Container, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { IoIosPeople } from "react-icons/io";
 import { GoLaw } from "react-icons/go";
 import { FaPlaneArrival } from "react-icons/fa";
 import { RiTornadoLine } from "react-icons/ri";
 import { FaGitter } from "react-icons/fa";
 import { AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfold, AiOutlineUser } from "react-icons/ai";
-import logo from "../../Assets/images/logo2.svg";
+import { BsCalendarWeek } from "react-icons/bs";
+import user from "../../Assets/images/user.png";
+import logo from "../../Assets/images/lawyerLogo.png";
 import { RiDashboardLine } from "react-icons/ri";
-import { removeSession } from "../../Helper/SessionHelper";
+import { getAdminDetails, removeSession } from "../../Helper/SessionHelper";
+import Dropdown from 'react-bootstrap/Dropdown';
+import { getUserDetails } from "../../Helper/SessionHelper"
 const MasterLayout = (props) => {
+    let navigate = useNavigate()
     let contentRef, sideNavRef = useRef();
     const onLogout = () => {
         removeSession()
@@ -30,7 +35,7 @@ const MasterLayout = (props) => {
             content.classList.add("content");
         }
     };
-
+    
     return (
         <Fragment>
             <Navbar className="fixed-top px-0 shadow-sm dashboard_nav">
@@ -39,28 +44,20 @@ const MasterLayout = (props) => {
                         <a className="icon-nav m-0 h5 mr-5" onClick={MenuBarClickHandler}>
                             <AiOutlineMenuUnfold />
                         </a>
-                        {/* <img className="nav-logo mx-2 " src={logo} alt="logo" /> */}
+                        <img className="nav-logo mx-3 " src={logo} alt="logo" />
                     </Navbar.Brand>
 
-                    <div className="float-right h-auto d-flex">
-                        <div className="user-dropdown">
-                            <img className="icon-nav-img icon-nav" src={logo} alt="" />
-                            <div className="user-dropdown-content ">
-                                <div className="mt-4 text-center">
-                                    {/* <img className="icon-nav-img" src={getUserDetails()["photo"]} alt="" /> */}
-                                    <h6>Rejaul karim</h6>
-                                    <hr className="user-dropdown-divider  p-0" />
-                                </div>
-                                <NavLink to="/Profile" className="side-bar-item">
-                                    <AiOutlineUser className="side-bar-item-icon" />
-                                    <span className="side-bar-item-caption">Profile</span>
-                                </NavLink>
-                                <a onClick={onLogout} className="side-bar-item">
-                                    <AiOutlineLogout className="side-bar-item-icon" />
-                                    <span className="side-bar-item-caption">Logout</span>
-                                </a>
-                            </div>
-                        </div>
+                    <div className="float-right h-auto d-flex mr-3">
+                        <Dropdown align="end">
+                            <Dropdown.Toggle id="dropdown-menu-align-end" variant="none">
+                                <img className="icon-nav-img" src={getAdminDetails().photo} alt="" />
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu  >
+                                <Dropdown.Item onClick={() => navigate("/adminProfile")}>Profile</Dropdown.Item>
+                                <Dropdown.Item onClick={onLogout}>Logout</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+
                     </div>
                 </Container>
             </Navbar>
@@ -70,12 +67,17 @@ const MasterLayout = (props) => {
                     <RiDashboardLine className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Dashboard</span>
                 </NavLink>
-                
+
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AppointmentList" >
+                    <BsCalendarWeek className="side-bar-item-icon" />
+                    <span className="side-bar-item-caption">Appointments</span>
+                </NavLink>
+
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/AllAttorney" >
                     <IoIosPeople className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Attorney List</span>
                 </NavLink>
-               
+
 
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Services-list" >
                     < GoLaw className="side-bar-item-icon" />
@@ -85,7 +87,7 @@ const MasterLayout = (props) => {
                     < GoLaw className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Blogs</span>
                 </NavLink>
-                
+
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/our-plans" >
                     <RiTornadoLine className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Plans List</span>

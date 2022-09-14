@@ -15,7 +15,6 @@ const HomePage = () => {
         <div>
            <NavBar/>
            <HeroSection/>
-           {/* <TopRecomendaton/> */}
            <PracticeArea/>
            <WhyChooiceUs/>
            <Testimonial/>

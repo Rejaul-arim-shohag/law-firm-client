@@ -11,8 +11,9 @@ import ReactHtmlParser from 'react-html-parser';
 const SingleBlog = () => {
     let { id } = useParams()
     useEffect(() => {
+        window.scrollTo(0, 0)
         readBlogById(id)
-    }, [])
+    }, [id])
     const singleBlog = useSelector(state => state.singleBlog.singleBlog)
     return (
         <div className="bg-white">

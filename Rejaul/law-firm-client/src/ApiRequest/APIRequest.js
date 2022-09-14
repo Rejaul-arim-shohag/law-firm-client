@@ -7,15 +7,18 @@ import { SetSingleService } from "../redux/stateSlice/singleServiceSlice"
 import { SetServices } from "../redux/stateSlice/servicesSlice"
 import { HideLoader, ShowLoader } from "../redux/stateSlice/settingSlice";
 import { ErrorToast, SuccessToast } from "../Helper/FormHelper";
-import { setAdminToken, getAdminToken, setAdminDetails, setToken, setUserDetails } from "../Helper/SessionHelper";
+import { setAdminToken, getAdminToken, setAdminDetails, setToken, setUserDetails, removeSession } from "../Helper/SessionHelper";
 import { SetPlans } from "../redux/stateSlice/ourPlanSlice";
 import { SetchooiceUs } from "../redux/stateSlice/chooiceUsSlice";
 import { Setblogs } from "../redux/stateSlice/blogSlice";
 import { SetSingleBlog } from "../redux/stateSlice/singleBlogSlice";
 import { Setcertificate } from "../redux/stateSlice/certificateSlice";
+import { setNewAppointment, setCompletedAppointment, SetCanceledAppointment } from "../redux/stateSlice/appointmentSlice";
+import { SetTotal, setAllAppointment, setAllNewAppointment, setAllCompletedAppointment, SetAllCanceledAppointment } from "../redux/stateSlice/AllAppointmentSlice";
+
 
 // const baseUrl = "https://karim-law-firm.herokuapp.com/api/v1";
-const baseUrl = "http://localhost:8080/api/v1";
+const baseUrl = "https://karim-law-firm.onrender.com/api/v1";
 
 const AxiosHeader = { headers: { "adminToken": getAdminToken() } }
 
@@ -46,6 +49,57 @@ export function AdminLoginRequest(adminEmail, adminPass) {
         })
 
 }
+
+export function readAdminData() {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/AdminProfileDetails";
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res.data;
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        }).catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+        })
+}
+
+
+export function updateAdminProfile(photo, password, newPassword) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/updateAdminProfile";
+    const postBody = {
+        photo: photo,
+        password: password,
+        newPassword: newPassword
+    }
+    return axios.post(url,postBody, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        }).catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+        })
+}
+
 
 export function userRegistrationRequest(email, Name, mobile, password, photo) {
     store.dispatch(ShowLoader())
@@ -138,8 +192,11 @@ export function attorneyAddRequest(email, Name, mobile, title, photo, descriptio
                 return false;
             }
         }).catch((err) => {
-            ErrorToast("Something Went Wrong")
-            // store.dispatch(HideLoader())
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
         })
 }
 
@@ -159,7 +216,11 @@ export function AttorneyGetRequest(progress) {
             }
         })
         .catch((err) => {
-            ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
         })
 }
 export function SingleAttorneyGetRequest(id) {
@@ -454,8 +515,12 @@ export function PlanDeleteRequest(id) {
                 ErrorToast("Something went wrong")
             }
         }).catch((err) => {
-            console.log(err)
-            ErrorToast("Something went wrongs")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+          
         })
 }
 
@@ -530,6 +595,10 @@ export function listReviewByStatus(status) {
         })
         .catch((err) => {
             ErrorToast("Something went wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
@@ -552,6 +621,10 @@ export function updateReviewStatus(id, status) {
         .catch((err) => {
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
@@ -574,6 +647,10 @@ export function deleteComment(id) {
         .catch((err) => {
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
@@ -603,6 +680,10 @@ export function createChoiceUsItem(image, title, description) {
         .catch((err) => {
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
@@ -624,6 +705,10 @@ export function ChooiceUsList() {
         .catch((err) => {
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
@@ -644,6 +729,10 @@ export function deleteChooiceUsItem(id) {
         .catch((err) => {
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
@@ -674,6 +763,10 @@ export function CreateBlog(image, title, content) {
         .catch((err) => {
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
@@ -695,6 +788,10 @@ export function readBlogList() {
         .catch((err) => {
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 export function readBlogById(id) {
@@ -713,7 +810,10 @@ export function readBlogById(id) {
             }
         })
         .catch((err) => {
-            console.log(err)
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
         })
@@ -763,6 +863,10 @@ export function delteBlogById(id) {
         .catch((err) => {
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
@@ -790,7 +894,10 @@ export function updateBlog(id, image, title, description) {
             }
         })
         .catch((err) => {
-            console.log(err)
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
         })
@@ -817,7 +924,10 @@ export function insertCertificate(image, title) {
             }
         })
         .catch((err) => {
-
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
         })
@@ -840,9 +950,12 @@ export function certificateList() {
             }
         })
         .catch((err) => {
-
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
@@ -865,20 +978,24 @@ export function deleteCertificate(id) {
         .catch((err) => {
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
 
 //footer add
 
-export function insertFooterItem(name,link) {
+export function insertFooterItem(name, link) {
     store.dispatch(ShowLoader())
     const url = baseUrl + "/createLegalService";
     const postBody = {
         name: name,
         link: link
     }
-    return axios.post(url,postBody, AxiosHeader)
+    return axios.post(url, postBody, AxiosHeader)
         .then((res) => {
             store.dispatch(HideLoader())
             if (res.status === 200) {
@@ -893,13 +1010,19 @@ export function insertFooterItem(name,link) {
         .catch((err) => {
             store.dispatch(HideLoader())
             ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
         })
 }
 
 export function readFooterList() {
+    store.dispatch(ShowLoader())
     const url = baseUrl + "/readFooterLegalService";
     return axios.get(url)
         .then((res) => {
+            store.dispatch(HideLoader())
             if (res.status === 200) {
                 return res.data.data;
             }
@@ -915,7 +1038,7 @@ export function readFooterList() {
 }
 
 export function deleteFooter(id) {
-    const url = baseUrl + "/deleteLegalService/"+id;
+    const url = baseUrl + "/deleteLegalService/" + id;
     return axios.get(url, AxiosHeader)
         .then((res) => {
             if (res.status === 200) {
@@ -927,8 +1050,143 @@ export function deleteFooter(id) {
             }
         })
         .catch((err) => {
+            ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+        })
+}
+
+//slot
+export function readSlots() {
+    const url = baseUrl + "/ReadSlot";
+    return axios.get(url)
+        .then((res) => {
+            if (res.status === 200) {
+                return res.data.data;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
             console.log(err)
             ErrorToast("Something Went Wrong")
+        })
+}
+
+//appointment
+
+export function createAppointment(name, email, phone, serviceName, slot, apointmentDate) {
+    const url = baseUrl + "/createAppointment";
+    const postBody = {
+        name: name,
+        email: email,
+        phone: phone,
+        serviceName: serviceName,
+        slot: slot,
+        apointmentDate: apointmentDate,
+    }
+    return axios.post(url, postBody)
+        .then((res) => {
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function readAppointmentList(status) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/readAppointmentList/" + status;
+    return axios.get(url)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                if (status === "NEW") {
+                    store.dispatch(setNewAppointment(res.data["data"]))
+                }
+                else if (status === "COMPLETED") {
+                    store.dispatch(setCompletedAppointment(res.data["data"]))
+                }
+                else if (status === "CANCELED") {
+                    store.dispatch(SetCanceledAppointment(res.data["data"]))
+                }
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            ErrorToast("Something Went Wrong")
+            
+        })
+}
+
+export function updateAppointment(status, id) {
+    store.dispatch(ShowLoader())
+    const url = baseUrl + "/updateAppointment/" + id;
+    return axios.post(url, { status: status }, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            ErrorToast("Something Went Wrong")
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+        })
+}
+
+
+export function readAllAppointmentList(date, pageNo, ParPage, status) {
+    const url = baseUrl + "/readAppointment/" + pageNo + "/" + ParPage + "/" + status;
+    store.dispatch(ShowLoader())
+
+    return axios.post(url, { SearchDate: date })
+        .then((res) => {
+            store.dispatch(HideLoader())
+
+            if (res.status === 200) {
+                if (res.data['data'][0]['Rows'].length > 0) {
+                    console.log(res.data['data'])
+                    store.dispatch(setAllAppointment(res.data['data'][0]['Rows']))
+                    store.dispatch(SetTotal(res.data['data'][0]['total'][0]['count']))
+                } else {
+                    store.dispatch(setAllAppointment([]))
+                    store.dispatch(SetTotal(0))
+                }
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                store.dispatch(HideLoader())
+                return false;
+            }
+        })
+        .catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
         })
 }
 
