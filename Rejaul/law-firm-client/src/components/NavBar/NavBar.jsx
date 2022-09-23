@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
+import { readAddress, readLogo } from '../../ApiRequest/APIRequest';
 import logo from "../../Assets/images/lawyerLogo.png"
 import "./NavBar.css"
 const NavBar = () => {
     let navigate = useNavigate()
     const [navbar, setNavbar] = useState(false);
+    const [logo, setLogo] = useState(false);
+    useEffect(()=>{
+        readAddress()
+        readLogo().then((res) => {
+            setLogo(res?.data)
+        })
+    }, [])
+    const address = useSelector((state) => (state.address.addressList));
+
     const changeBackground = () => {
         if (window.scrollY >= 80) {
             setNavbar(true)
@@ -22,7 +34,7 @@ const NavBar = () => {
             <Navbar className="mainNav mx-w-100  bg-white" expand="lg">
                 <Container>
                     <Navbar.Brand onClick={logoClickHandler}>
-                        <img className="navLogo" src={logo} alt="" />
+                        <img className="navLogo" src={logo[0]?.logo} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -44,7 +56,7 @@ const NavBar = () => {
                             </Nav.Link>
                             <Nav.Link to="/aboutUs">
                                 <div className="d-flex">
-                                    <button className="navbarButton cursor-alias">+8801650288673</button>
+                                    <button className="navbarButton cursor-alias">{address[0]?.address.phone}</button>
                                 </div>
                             </Nav.Link>
 

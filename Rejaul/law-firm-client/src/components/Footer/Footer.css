@@ -7,7 +7,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 5%;
 }
-.footer_socialIcon>svg{
+.footer_socialIcon>a>svg{
     color:rgb(24, 25, 37);
     background-color:#fff;
     font-size:35px;
@@ -15,7 +15,7 @@
     border-radius: 50%;
     margin: 0 2px;
 }
-.footer_socialIcon>svg:first-child{
+.footer_socialIcon>a>svg:first-child{
     color:#fff;
     background-color:#21BF73;
 }

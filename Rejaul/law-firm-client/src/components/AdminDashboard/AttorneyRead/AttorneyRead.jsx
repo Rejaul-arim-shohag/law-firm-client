@@ -101,12 +101,12 @@ const AttorneyRead = () => {
                                         </table>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
 
                     </div>
                 </div>
-
             </div>
         </>
     );

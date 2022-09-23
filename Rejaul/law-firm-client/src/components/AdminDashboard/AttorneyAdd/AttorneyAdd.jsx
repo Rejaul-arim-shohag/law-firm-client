@@ -24,14 +24,17 @@ const AttorneyAdd = () => {
         if (IsEmail(email)) {
             ErrorToast("Valid Email Address Required !")
         }
+        else if(userImgRef.files[0]===undefined){
+            ErrorToast("Image Require !")
+        }
         else if (IsEmpty(Name)) {
-            ErrorToast("Name Required !")
+            ErrorToast("Name Require !")
         }
         else if (IsMobile(mobile)) {
-            ErrorToast("Valid Mobile  Required !")
+            ErrorToast("Valid Mobile  Require !")
         }
         else if (IsEmpty(title)) {
-            ErrorToast("title Required !")
+            ErrorToast("title Require !")
         }
         else {
             attorneyAddRequest(email, Name, mobile, title, photo, description)

@@ -48,7 +48,7 @@ const Contact = () => {
                 <div className="mx-auto text-center mb-5">
                     <h2 className="text-center text-uppercase font-weight-bold">Contact Us Now</h2>
                     <img src={curveImg} style={{ top: "-13px", width: "25%" }} className="position-relative " alt="" />
-                    <h5 className="text-secondary col-12 mx-auto col-md-6">Sed perspicias unde omnis iste natus error voluptatem accusantium dolorem laudanme totam rem aperiam eaque quae.</h5>
+                    {/* <h5 className="text-secondary col-12 mx-auto col-md-6">Sed perspicias unde omnis iste natus error voluptatem accusantium dolorem laudanme totam rem aperiam eaque quae.</h5> */}
                 </div>
                 <div className="row gx-5">
                     <div className="col-12 col-md-8 mx-auto">

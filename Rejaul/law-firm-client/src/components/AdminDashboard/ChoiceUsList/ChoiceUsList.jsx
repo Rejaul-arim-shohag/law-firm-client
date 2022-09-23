@@ -14,7 +14,7 @@ const ChoiceUsList = () => {
     }, [])
 
     const handleDeleteItem=(id)=>{
-        debugger;
+        
        DeleteAlert().then((res)=>{
         if(res){
             deleteChooiceUsItem(id)
@@ -80,6 +80,7 @@ const ChoiceUsList = () => {
                                         </table>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
 

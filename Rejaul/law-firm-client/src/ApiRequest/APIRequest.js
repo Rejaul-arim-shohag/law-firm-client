@@ -15,10 +15,11 @@ import { SetSingleBlog } from "../redux/stateSlice/singleBlogSlice";
 import { Setcertificate } from "../redux/stateSlice/certificateSlice";
 import { setNewAppointment, setCompletedAppointment, SetCanceledAppointment } from "../redux/stateSlice/appointmentSlice";
 import { SetTotal, setAllAppointment, setAllNewAppointment, setAllCompletedAppointment, SetAllCanceledAppointment } from "../redux/stateSlice/AllAppointmentSlice";
+import { SetAddress } from "../redux/stateSlice/addressSlice";
+import {SetSlotList} from "../redux/stateSlice/slotSlice"
 
-
-// const baseUrl = "https://karim-law-firm.herokuapp.com/api/v1";
-const baseUrl = "https://karim-law-firm.onrender.com/api/v1";
+// const baseUrl = "https://karim-law-firm.onrender.com/api/v1";
+const baseUrl="http://localhost:8080/api/v1"
 
 const AxiosHeader = { headers: { "adminToken": getAdminToken() } }
 
@@ -914,7 +915,7 @@ export function insertCertificate(image, title) {
         .then((res) => {
             store.dispatch(HideLoader())
             if (res.status === 200) {
-                SuccessToast("Update Success")
+                SuccessToast("Create Success")
                 store.dispatch(HideLoader())
                 return true;
             }
@@ -1058,25 +1059,6 @@ export function deleteFooter(id) {
         })
 }
 
-//slot
-export function readSlots() {
-    const url = baseUrl + "/ReadSlot";
-    return axios.get(url)
-        .then((res) => {
-            if (res.status === 200) {
-                return res.data.data;
-            }
-            else {
-                ErrorToast("Something Went Wrong")
-                return false;
-            }
-        })
-        .catch((err) => {
-            console.log(err)
-            ErrorToast("Something Went Wrong")
-        })
-}
-
 //appointment
 
 export function createAppointment(name, email, phone, serviceName, slot, apointmentDate) {
@@ -1159,7 +1141,6 @@ export function updateAppointment(status, id) {
 export function readAllAppointmentList(date, pageNo, ParPage, status) {
     const url = baseUrl + "/readAppointment/" + pageNo + "/" + ParPage + "/" + status;
     store.dispatch(ShowLoader())
-
     return axios.post(url, { SearchDate: date })
         .then((res) => {
             store.dispatch(HideLoader())
@@ -1191,6 +1172,544 @@ export function readAllAppointmentList(date, pageNo, ParPage, status) {
 }
 
 
+//slots
+export function readSlots() {
+    const url = baseUrl + "/ReadSlot";
+    store.dispatch(HideLoader())
+    return axios.get(url)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                store.dispatch(SetSlotList(res?.data?.data))
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            console.log(err)
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function CreateSLot(slotTime) {
+    const url = baseUrl + "/CreateSlot";
+    store.dispatch(HideLoader())
+    return axios.post(url,{slotTime:slotTime}, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+               return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            console.log(err)
+            store.dispatch(HideLoader())
+            // if (err.response.status === 401) {
+            //     removeSession()
+            //     window.location.href = "/admin-login"
+            // }
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function deleteSlot(id) {
+    const url = baseUrl + "/deleteSlot/"+id;
+    store.dispatch(HideLoader())
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+               return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+//address
+export function readAddress() {
+    const url = baseUrl + "/FindAddress";
+    store.dispatch(ShowLoader())
+    return axios.get(url)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                store.dispatch(SetAddress(res.data?.data))
+                return res.data.data
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+    
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+export function UpdateAddress(id,day,location,phone,email,about,facebook,twitter,instagram,linkedin,youtube) {
+    const url = baseUrl + "/updateAddress/"+id;
+   
+    const postBody = {
+        address:{
+            worksDay:day,
+            location:location,
+            phone:phone,
+            email:email,
+        },
+        aboutUs:about,
+        socialLink:{
+            facebook:facebook,
+            linkedin:linkedin,
+            instagram:instagram,
+            twitter:twitter,
+            youtube:youtube
+        }
+    }
+   
+    store.dispatch(ShowLoader())
+    return axios.post(url,postBody,AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+           
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+export function insertAddress(day,location,phone,email,about,facebook,twitter,instagram,linkedin,youtube) {
+    const url = baseUrl + "/insertAddress";
+    const postBody = {
+        address:{
+            worksDay:day,
+            location:location,
+            phone:phone,
+            email:email,
+        },
+        aboutUs:about,
+        socialLink:{
+            facebook:facebook,
+            linkedin:linkedin,
+            instagram:instagram,
+            twitter:twitter,
+            youtube:youtube
+        }
+    }
+   
+    store.dispatch(ShowLoader())
+    return axios.post(url,postBody,AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true
+            }
+            else {
+                ErrorToast("Something Went Wrong")
+                return false;
+            }
+        })
+        .catch((err) => {
+           
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong")
+        })
+}
+
+//logo 
+export function readLogo() {
+    const url = baseUrl + "/readLogo";
+    store.dispatch(ShowLoader())
+    return axios.get(url)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res.data
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+        
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+export function insertLogo(logo) {
+    const url = baseUrl + "/insertLogo";
+    store.dispatch(ShowLoader())
+    return axios.post(url,{logo:logo}, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res?.data?.data
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+        
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+
+export function insertHeroImage(image) {
+    const url = baseUrl + "/insertHeroImage";
+    store.dispatch(ShowLoader())
+    return axios.post(url,{photo:image}, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+export function readHeroImage() {
+    const url = baseUrl + "/findHeroImage";
+    store.dispatch(ShowLoader())
+    return axios.get(url)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res?.data
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+export function readHeroContent() {
+    const url = baseUrl + "/findHeroContent";
+    store.dispatch(ShowLoader())
+    return axios.get(url)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res?.data
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+//HERO content: 
+export function insertHeroContent(mainTitle, subTitle) {
+    const url = baseUrl + "/insertHeroContent";
+    store.dispatch(ShowLoader())
+    const postBody={
+        title1:mainTitle,
+        title2:subTitle
+    }
+    return axios.post(url,postBody, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Insert Success")
+                return true
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+export function deleteHeroContent(id) {
+    const url = baseUrl + "/deleteHeroContent/"+id;
+    store.dispatch(ShowLoader())
+    return axios.get(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+export function findHeroContent() {
+    const url = baseUrl + "/deleteHeroContent";
+    store.dispatch(ShowLoader())
+    return axios.get(url)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res.data
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+//terms and condition
+export function insertTermsAndCondition(data) {
+    const url = baseUrl + "/createTerms";
+    store.dispatch(ShowLoader())
+    return axios.post(url,{content:data}, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                SuccessToast("Insert Success")
+                return true
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+export function readTermsAndCondition() {
+    const url = baseUrl + "/readTerms";
+    store.dispatch(ShowLoader())
+    return axios.get(url)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res.data;
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+export function updateTermsAndCondition(data, id) {
+    debugger
+    const url = baseUrl + "/updateTerms/"+id;
+    store.dispatch(ShowLoader())
+    return axios.post(url,{content:data}, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+export function deleteTermsAndCondition(id) {
+    const url = baseUrl + "/deleteTerms";
+    store.dispatch(ShowLoader())
+    return axios.post(url, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res.data;
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+
+export function readPrivacyAndPolicy() {
+    const url = baseUrl + "/readPrivacy";
+    store.dispatch(ShowLoader())
+    return axios.get(url)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return res.data;
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+
+export function createPrivacyAndPolicy(content) {
+    const url = baseUrl + "/createPrivacy";
+    store.dispatch(ShowLoader())
+    return axios.post(url, {content:content}, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
+
+export function updatePrivacyAndPolicy(id,content) {
+    const url = baseUrl + "/updatePrivacy/"+id;
+    store.dispatch(ShowLoader())
+    return axios.post(url, {content:content}, AxiosHeader)
+        .then((res) => {
+            store.dispatch(HideLoader())
+            if (res.status === 200) {
+                return true;
+            }
+            else {
+                ErrorToast("Something Went Wrong1")
+                return false;
+            }
+        })
+        .catch((err) => {
+            if (err.response.status === 401) {
+                removeSession()
+                window.location.href = "/admin-login"
+            }
+            store.dispatch(HideLoader())
+            ErrorToast("Something Went Wrong2")
+        })
+}
 
 
 

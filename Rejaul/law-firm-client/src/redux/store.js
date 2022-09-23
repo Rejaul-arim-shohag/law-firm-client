@@ -13,6 +13,9 @@ import certificateReducer from "../redux/stateSlice/certificateSlice";
 import appointmentReducer from "../redux/stateSlice/appointmentSlice";
 import messageReducer from "../redux/stateSlice/messageSlice";
 import allAppointmentReducer from "../redux/stateSlice/AllAppointmentSlice"
+import addressReducer from "../redux/stateSlice/addressSlice"
+import slotReducer from "../redux/stateSlice/slotSlice"
+
 export default configureStore({
     reducer:{
         settings:settingReducer,
@@ -28,6 +31,8 @@ export default configureStore({
         certificate:certificateReducer,
         appointment:appointmentReducer,
         message:messageReducer,
-        allAppointment:allAppointmentReducer
+        allAppointment:allAppointmentReducer,
+        address:addressReducer,
+        slot:slotReducer
     }
 })

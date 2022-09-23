@@ -13,14 +13,15 @@ const CertificateAddModal = (props) => {
             imageBase64Ref.src = base64Image
         })
     }
-    const handleInsertCertificate=()=>{
+    const handleInsertCertificate=()=>{ 
         let title = titleRef.value;
         let image = imageBase64Ref.src;
-        if(image===""){
+        if(imgRef.files[0]===undefined){
             ErrorToast("Image require")
         } else if(IsEmpty(title)){
-            ErrorToast("Title require")
-        }else{
+            ErrorToast("Company Name require")
+        }
+        else{
             insertCertificate(image,title)
             .then((res)=>{
                 certificateList()
@@ -47,7 +48,7 @@ const CertificateAddModal = (props) => {
                     </div>
                     <div className="p-2">
                         <label className="mb-1">Name</label>
-                        <input ref={(input) => titleRef = input} className="form-control" ></input>
+                        <input ref={(input) => titleRef = input} placeholder="Company Name" className="form-control" ></input>
                     </div>
                     <div className="p-2">
                         <Button onClick={handleInsertCertificate} className="btn-success">Save</Button>

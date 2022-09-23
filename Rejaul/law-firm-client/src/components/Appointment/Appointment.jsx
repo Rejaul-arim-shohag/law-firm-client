@@ -5,19 +5,14 @@ import { ErrorToast, IsEmail, IsEmpty } from '../../Helper/FormHelper';
 import { SuccessAlertHelper } from '../../Helper/SuccessHelper';
 
 const Appointment = () => {
-    const [slots, setSloat] = useState([])
     let nameRef, emailRef, phoneRef = useRef();
-    
     useEffect(() => {
         window.scrollTo(0, 0)
         readSlots()
-            .then((result) => {
-                setSloat(result)
-            })
         servicesGetRequest()
-       
     }, [])
-    
+    const slots = useSelector((state) => (state.slot.slotList));
+
     const ServiceList = useSelector((state) => state.services.serviceList);
 
     const [serviceName, setServiceName] = useState("");
@@ -111,7 +106,7 @@ const Appointment = () => {
                                             {
                                                 slots.map((slot) => {
                                                     return (
-                                                        <option value={slot.slotTime}>{slot.slotTime}</option>
+                                                        <option key={slot._id} value={slot.slotTime}>{slot.slotTime}</option>
                                                     )
                                                 })
                                             }

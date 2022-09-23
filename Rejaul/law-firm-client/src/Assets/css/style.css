@@ -8,6 +8,9 @@
   left: -81px;
   margin-top: .125rem;
 }
+.jodit-status-bar{
+  display: none;
+}
 .dropdown-toggle::after {
   display: none;
 }

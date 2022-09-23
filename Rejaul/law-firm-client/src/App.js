@@ -36,6 +36,19 @@ import UpdateBlogPage from "./Pages/AdminDashboardPages/UpdateBlogPage";
 import SmallServicesPage from "./Pages/AdminDashboardPages/SmallServicesPage";
 import AppointmentListPage from "./Pages/AdminDashboardPages/AppointmentListPage";
 import AdminProfile from "./components/AdminDashboard/AdminProfile/AdminProfile";
+import SettingsPage from "./Pages/AdminDashboardPages/SettingsPage";
+import AddressUpdatePage from "./Pages/AdminDashboardPages/AddressUpdatePage";
+import AddressInsertPage from "./Pages/AdminDashboardPages/AddressInsertPage";
+import TermsAndConditionPage from "./Pages/AdminDashboardPages/TermsAndConditionPage";
+import ReadTermsAndConditionPage from "./Pages/AdminDashboardPages/ReadTermsAndConditionPage";
+import UpdateTermsAndConditionPage from "./Pages/AdminDashboardPages/UpdateTermsAndConditionPage";
+import ReadPrivacyPage from "./Pages/AdminDashboardPages/ReadPrivacyPage";
+import CreatePrivacyPage from "./Pages/AdminDashboardPages/CreatePrivacyPage";
+import UpdatePrivacYPage from "./Pages/AdminDashboardPages/UpdatePrivacyPage";
+import PrivacyAndPolicy from "./Pages/PrivacyAndPolicy";
+import OurTermsAndConditionPage from "./Pages/OurTermsAndConditionPage";
+
+
 function App() {
   return (
     <Fragment>
@@ -51,7 +64,9 @@ function App() {
           <Route path="/sign-up" element={<RegistrationPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/appointment" element={<AppointmentPage />} />
-        
+          <Route path="/privacyAndPolicy" element={<PrivacyAndPolicy />} />
+          <Route path="/termsAndConditions" element={<OurTermsAndConditionPage />} />
+
           <Route
             path="/profile"
             element={
@@ -62,6 +77,40 @@ function App() {
           />
 
           {/* admin page */}
+          <Route path="/allSettings" element={<AdminProtect>
+            <SettingsPage />
+          </AdminProtect>} />
+          <Route path="/insertAddress" element={<AdminProtect>
+            <AddressInsertPage />
+          </AdminProtect>} />
+          <Route path="/addressUpdate" element={<AdminProtect>
+            <AddressUpdatePage />
+          </AdminProtect>} />
+          <Route path="/TermsAndCondition" element={<AdminProtect>
+            <TermsAndConditionPage />
+          </AdminProtect>} />
+          <Route path="/readTermsAndCondition" element={<AdminProtect>
+            <ReadTermsAndConditionPage />
+          </AdminProtect>} />
+          <Route path="/UpdateTermsAndCondition/:id" element={<AdminProtect>
+            <UpdateTermsAndConditionPage />
+          </AdminProtect>} />
+
+          <Route path="/OurPrivacy" element={<AdminProtect>
+            <ReadPrivacyPage />
+          </AdminProtect>} />
+
+          <Route path="/createPrivacy" element={<AdminProtect>
+            <CreatePrivacyPage />
+          </AdminProtect>} />
+
+          <Route path="/UpdatePrivacy/:id" element={<AdminProtect>
+            <UpdatePrivacYPage />
+          </AdminProtect>} />
+
+
+
+
           <Route path="/admin-login" element={<AdminLoginPage />} />
           <Route path="/adminDashboard" element={<AdminProtect>
             <DashboardPage />
@@ -94,36 +143,36 @@ function App() {
             <OurPlanPage />
           </AdminProtect>} />
           <Route path="/client-reviews" element={<AdminProtect>
-            <DisplayedReviewsPage/>
+            <DisplayedReviewsPage />
           </AdminProtect>} />
           <Route path="/planEdit/:id" element={<AdminProtect>
-            <PlanUpdatePage/>
+            <PlanUpdatePage />
           </AdminProtect>} />
 
           <Route path="/whyChoiceUsList" element={<AdminProtect>
-            <ChoiceUsListPage/>
+            <ChoiceUsListPage />
           </AdminProtect>} />
           <Route path="/blogList" element={<AdminProtect>
-            <OurBlogListPage/>
+            <OurBlogListPage />
           </AdminProtect>} />
           <Route path="/createBlog" element={<AdminProtect>
-            <WriteBlogPage/>
+            <WriteBlogPage />
           </AdminProtect>} />
 
           <Route path="/blogList" element={<AdminProtect>
-            <BlogListPage/>
+            <BlogListPage />
           </AdminProtect>} />
 
           <Route path="/updateBlog/:id" element={<AdminProtect>
-            <UpdateBlogPage/>
+            <UpdateBlogPage />
           </AdminProtect>} />
 
           <Route path="/Utilities" element={<AdminProtect>
-            <SmallServicesPage/>
+            <SmallServicesPage />
           </AdminProtect>} />
 
           <Route path="/adminProfile" element={<AdminProtect>
-            <AdminProfile/>
+            <AdminProfile />
           </AdminProtect>} />
 
           <Route path="*" element={<NotFound />} />

@@ -1,5 +1,4 @@
 import React from 'react';
-import Swal from "sweetalert2";
 import { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -20,10 +19,13 @@ const ReviewModal = (props) => {
         let description = descriptionRef.value;
         let icon = imgViewRef.src;
         if (IsEmpty(title)){
-            ErrorToast("Name Is Required")
+            ErrorToast("Title Is Required")
+        }
+        else if (iconRef.files[0]===undefined) {
+            ErrorToast("Icon Is Required")
         }
         else if (IsEmpty(description)) {
-            ErrorToast("comment Is Required")
+            ErrorToast("Description Is Required")
         }
         else{
             createChoiceUsItem(icon,title,description)

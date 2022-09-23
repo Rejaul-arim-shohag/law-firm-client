@@ -22,7 +22,7 @@ const PricingPlans = () => {
                 <div className="priceing_content mx-auto text-center">
                     <h2 className="text-center text-uppercase font-weight-bold">OUR PLAN</h2>
                     <img src={curveImg} style={{ top: "-13px", width:"25%" }} className="position-relative " alt="" />
-                    <h5 className="text-center text-secondary ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nihil <br /> modi ipsum facilis deserunt eveniet explicabo, tenetur impedit iste ea.</h5>
+                    {/* <h5 className="text-center text-secondary ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nihil <br /> modi ipsum facilis deserunt eveniet explicabo, tenetur impedit iste ea.</h5> */}
                 </div>
                 <div className="plansGridContainer pt-5">
 

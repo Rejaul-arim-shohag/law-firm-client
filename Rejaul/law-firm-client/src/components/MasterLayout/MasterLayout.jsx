@@ -106,6 +106,19 @@ const MasterLayout = (props) => {
                     <FaGitter className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Utilities</span>
                 </NavLink>
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/readTermsAndCondition" >
+                    <FaGitter className="side-bar-item-icon" />
+                    <span className="side-bar-item-caption">Terms&Condition</span>
+                </NavLink>
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/OurPrivacy" >
+                    <FaGitter className="side-bar-item-icon" />
+                    <span className="side-bar-item-caption">Privacy&Policy</span>
+                </NavLink>
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/allSettings" >
+                    <FaGitter className="side-bar-item-icon" />
+                    <span className="side-bar-item-caption">Settings</span>
+                </NavLink>
+                
             </div>
 
             <div ref={(div) => contentRef = div} className="content">

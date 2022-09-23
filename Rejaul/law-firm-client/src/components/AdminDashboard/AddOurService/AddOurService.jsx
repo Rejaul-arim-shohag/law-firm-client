@@ -19,6 +19,9 @@ const AddOurService = () => {
         if (IsEmpty(Name)) {
             ErrorToast("Name Required !")
         }
+        else if (userImgRef.files[0]===undefined){
+            ErrorToast("Image Required !")
+        }
         else if (IsEmpty(description)) {
             ErrorToast("title Required !")
         }
