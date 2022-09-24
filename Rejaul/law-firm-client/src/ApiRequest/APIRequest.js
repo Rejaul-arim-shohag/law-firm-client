@@ -7,7 +7,7 @@ import { SetSingleService } from "../redux/stateSlice/singleServiceSlice"
 import { SetServices } from "../redux/stateSlice/servicesSlice"
 import { HideLoader, ShowLoader } from "../redux/stateSlice/settingSlice";
 import { ErrorToast, SuccessToast } from "../Helper/FormHelper";
-import { setAdminToken, getAdminToken, setAdminDetails, setToken, setUserDetails, removeSession } from "../Helper/SessionHelper";
+import { setOTP, setAdminToken, getAdminToken,setEmail, setAdminDetails, setToken, setUserDetails, removeSession } from "../Helper/SessionHelper";
 import { SetPlans } from "../redux/stateSlice/ourPlanSlice";
 import { SetchooiceUs } from "../redux/stateSlice/chooiceUsSlice";
 import { Setblogs } from "../redux/stateSlice/blogSlice";
@@ -1138,10 +1138,10 @@ export function updateAppointment(status, id) {
 }
 
 
-export function readAllAppointmentList(date, pageNo, ParPage, status) {
+export function readAllAppointmentList(SearchEndDate,SearchStartDate, pageNo, ParPage, status) {
     const url = baseUrl + "/readAppointment/" + pageNo + "/" + ParPage + "/" + status;
     store.dispatch(ShowLoader())
-    return axios.post(url, { SearchDate: date })
+    return axios.post(url, { SearchEndDate: SearchEndDate, SearchStartDate:SearchStartDate})
         .then((res) => {
             store.dispatch(HideLoader())
 
@@ -1162,6 +1162,7 @@ export function readAllAppointmentList(date, pageNo, ParPage, status) {
             }
         })
         .catch((err) => {
+            console.log(err)
             if (err.response.status === 401) {
                 removeSession()
                 window.location.href = "/admin-login"
@@ -1711,6 +1712,94 @@ export function updatePrivacyAndPolicy(id,content) {
         })
 }
 
+
+// Recover Password Step 01 Send OTP
+export function RecoverVerifyEmailRequest(email){
+    store.dispatch(ShowLoader())
+let URL=baseUrl+"/RecoverVerifyEmail/"+email
+    return axios.get(URL).then((res)=>{
+        store.dispatch(HideLoader())
+        if(res.status===200){
+
+            if(res.data['status']==="fail"){
+                ErrorToast("No user found");
+                return false;
+            }
+            else{
+                setEmail(email)
+                SuccessToast("A 6 Digit verification code has been sent to your email address. ");
+                return true;
+            }
+        }
+        else{
+            ErrorToast("Something Went Wrong");
+            return false;
+        }
+    }).catch((err)=>{
+        ErrorToast("Something Went Wrong")
+        store.dispatch(HideLoader())
+        return false;
+    });
+}
+
+// Recover Password Step 02 Verify OTP
+export function RecoverVerifyOTPRequest(email,OTP){
+    store.dispatch(ShowLoader())
+    let URL=baseUrl+"/RecoverVerifyOTP/"+email+"/"+OTP;
+    return axios.get(URL).then((res)=>{
+        store.dispatch(HideLoader())
+        if(res.status===200){
+            if(res.data['status']==="fail"){
+                ErrorToast(res.data['data']);
+                return false;
+            }
+            else{
+                setOTP(OTP)
+                SuccessToast("Code Verification Success");
+                return true;
+            }
+        }
+        else{
+            ErrorToast("Something Went Wrong")
+            return false;
+        }
+    }).catch((err)=>{
+        ErrorToast("Something Went Wrong")
+        store.dispatch(HideLoader())
+        return false;
+    });
+}
+
+
+export function RecoverResetPassRequest(email,OTP,password){
+    store.dispatch(ShowLoader())
+    let URL=baseUrl+"/RecoverResetPass";
+    let PostBody={email:email,OTP:OTP,password:password}
+
+    return axios.post(URL,PostBody).then((res)=>{
+        store.dispatch(HideLoader())
+        if(res.status===200){
+
+            if(res.data['status']==="fail"){
+                ErrorToast(res.data['data']);
+                return false;
+            }
+            else{
+                setOTP(OTP)
+                SuccessToast("NEW PASSWORD CREATED");
+                return true;
+            }
+        }
+        else{
+            ErrorToast("Something Went Wrong")
+            return false;
+        }
+    }).catch((err)=>{
+        ErrorToast("Something Went Wrong")
+        store.dispatch(HideLoader())
+        return false;
+    });
+}
 
 
 

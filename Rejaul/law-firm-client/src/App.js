@@ -47,6 +47,9 @@ import CreatePrivacyPage from "./Pages/AdminDashboardPages/CreatePrivacyPage";
 import UpdatePrivacYPage from "./Pages/AdminDashboardPages/UpdatePrivacyPage";
 import PrivacyAndPolicy from "./Pages/PrivacyAndPolicy";
 import OurTermsAndConditionPage from "./Pages/OurTermsAndConditionPage";
+import SendOTPPage from "./components/AcountRecovery/Send-OTP-Page";
+import VerifyOTPPage from "./components/AcountRecovery/VerifyOTPPage";
+import CreatePasswordPage from "./components/AcountRecovery/CreatePasswordPage";
 
 
 function App() {
@@ -66,7 +69,9 @@ function App() {
           <Route path="/appointment" element={<AppointmentPage />} />
           <Route path="/privacyAndPolicy" element={<PrivacyAndPolicy />} />
           <Route path="/termsAndConditions" element={<OurTermsAndConditionPage />} />
-
+          <Route path="/SendOTP" element={<SendOTPPage />} />
+          <Route path="/VerifyOTP" element={<VerifyOTPPage />} />
+          <Route path="/CreatePassword" element={<CreatePasswordPage />} />
           <Route
             path="/profile"
             element={

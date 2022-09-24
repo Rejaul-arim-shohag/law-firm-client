@@ -27,11 +27,11 @@ const Appointment = () => {
     const handleDateChange = (e) => {
         setDate(e.target.value)
     }
-
     const handleCreateAppointment = () => {
         const name = nameRef.value;
         const email = emailRef.value;
         const phone = phoneRef.value;
+        const dateString = new Date(date)
         if (IsEmpty(name)) {
             ErrorToast("Name require")
         }
@@ -51,7 +51,7 @@ const Appointment = () => {
             ErrorToast("Choose your Date")
         }
         else {
-            createAppointment(name,email,phone,serviceName,time,date)
+            createAppointment(name,email,phone,serviceName,time,dateString)
             .then((result)=>{
                 if(result===true){
                     nameRef.value=""
@@ -91,9 +91,9 @@ const Appointment = () => {
                                         <select onChange={handleServiceChange} className="form-select outline: none" type="text" style={{ boxShadow: "none", borderRadius: "20px" }}>
                                             <option selected></option>
                                             {
-                                                ServiceList.map((service) => {
+                                                ServiceList.map((service, index) => {
                                                     return (
-                                                        <option value={service.Name}>{service.Name}</option>
+                                                        <option key={index} value={service.Name}>{service.Name}</option>
                                                     )
                                                 })
                                             }

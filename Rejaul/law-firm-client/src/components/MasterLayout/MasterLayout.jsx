@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { Container, Navbar } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 import { IoIosPeople } from "react-icons/io";
@@ -6,16 +6,25 @@ import { GoLaw } from "react-icons/go";
 import { FaPlaneArrival } from "react-icons/fa";
 import { RiTornadoLine } from "react-icons/ri";
 import { FaGitter } from "react-icons/fa";
-import { AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfold, AiOutlineUser } from "react-icons/ai";
-import { BsCalendarWeek } from "react-icons/bs";
+import { AiOutlineDisconnect, AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfold, AiOutlineUser } from "react-icons/ai";
+import { BsCalendarWeek, BsGearWideConnected } from "react-icons/bs";
+import { BiEdit } from "react-icons/bi";
+import { VscFeedback } from "react-icons/vsc";
+import { MdReviews } from "react-icons/md";
+import { SiGnuprivacyguard } from "react-icons/si";
+
 import user from "../../Assets/images/user.png";
-import logo from "../../Assets/images/lawyerLogo.png";
+// import logo from "../../Assets/images/lawyerLogo.png";
 import { RiDashboardLine } from "react-icons/ri";
 import { getAdminDetails, removeSession } from "../../Helper/SessionHelper";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { getUserDetails } from "../../Helper/SessionHelper"
+import { useEffect } from "react";
+import { readLogo } from "../../ApiRequest/APIRequest";
 const MasterLayout = (props) => {
     let navigate = useNavigate()
+    const [logo, setLogo] = useState(false);
+
     let contentRef, sideNavRef = useRef();
     const onLogout = () => {
         removeSession()
@@ -35,7 +44,11 @@ const MasterLayout = (props) => {
             content.classList.add("content");
         }
     };
-    
+    useEffect(() => {
+        readLogo().then((res) => {
+            setLogo(res?.data)
+        })
+    }, [])
     return (
         <Fragment>
             <Navbar className="fixed-top px-0 shadow-sm dashboard_nav">
@@ -43,8 +56,8 @@ const MasterLayout = (props) => {
                     <Navbar.Brand >
                         <a className="icon-nav m-0 h5 mr-5" onClick={MenuBarClickHandler}>
                             <AiOutlineMenuUnfold />
-                        </a>
-                        <img className="nav-logo mx-3 " src={logo} alt="logo" />
+                        </a> 
+                        <img className="nav-logo mx-3" src={logo[0]?.logo}  alt="logo" />
                     </Navbar.Brand>
 
                     <div className="float-right h-auto d-flex mr-3">
@@ -84,7 +97,7 @@ const MasterLayout = (props) => {
                     <span className="side-bar-item-caption">Services List</span>
                 </NavLink>
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/blogList">
-                    < GoLaw className="side-bar-item-icon" />
+                    < BiEdit className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Blogs</span>
                 </NavLink>
 
@@ -94,12 +107,12 @@ const MasterLayout = (props) => {
                 </NavLink>
 
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/whyChoiceUsList" >
-                    <RiTornadoLine className="side-bar-item-icon" />
+                    <VscFeedback className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Chooice Us List</span>
                 </NavLink>
 
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/client-reviews" >
-                    <FaGitter className="side-bar-item-icon" />
+                    <MdReviews className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Reviews</span>
                 </NavLink>
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/Utilities" >
@@ -107,18 +120,18 @@ const MasterLayout = (props) => {
                     <span className="side-bar-item-caption">Utilities</span>
                 </NavLink>
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/readTermsAndCondition" >
-                    <FaGitter className="side-bar-item-icon" />
+                    <AiOutlineDisconnect className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Terms&Condition</span>
                 </NavLink>
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/OurPrivacy" >
-                    <FaGitter className="side-bar-item-icon" />
+                    <SiGnuprivacyguard className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Privacy&Policy</span>
                 </NavLink>
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2"} to="/allSettings" >
-                    <FaGitter className="side-bar-item-icon" />
+                    <BsGearWideConnected className="side-bar-item-icon" />
                     <span className="side-bar-item-caption">Settings</span>
                 </NavLink>
-                
+
             </div>
 
             <div ref={(div) => contentRef = div} className="content">

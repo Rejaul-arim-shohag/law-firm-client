@@ -4,7 +4,6 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { readAddress, readLogo } from '../../ApiRequest/APIRequest';
-import logo from "../../Assets/images/lawyerLogo.png"
 import "./NavBar.css"
 const NavBar = () => {
     let navigate = useNavigate()

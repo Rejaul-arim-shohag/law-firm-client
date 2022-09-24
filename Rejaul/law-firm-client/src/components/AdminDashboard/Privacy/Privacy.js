@@ -28,7 +28,7 @@ const Privacy = () => {
                     }
 
                 </div>
-                <div className="card mt-2">
+                <div className="card mt-2 ">
                     <div className="card-body">
                         {
                             privacy.length===0?<h3>Privacy and policy not added yet</h3>: ReactHtmlParser(privacy[0]?.content)
